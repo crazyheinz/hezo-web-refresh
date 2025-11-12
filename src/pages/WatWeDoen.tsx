@@ -30,19 +30,28 @@ const WatWeDoen = () => {
         {
           title: "Minder administratie, meer ademruimte",
           content:
-            "We digitaliseren wat kan, zodat jij je aandacht houdt bij de zorg. Facturatie, opvolging van remgeld, planningen en rapportering lopen via geautomatiseerde flows die foutenmarges verkleinen en tijd vrijmaken.",
+            "We digitaliseren wat kan, zodat jij je aandacht houdt bij de zorg. Facturatie, opvolging van remgeld, planningen en rapportering lopen via geautomatiseerde flows die foutenmarges verkleinen en tijd vrijmaken. Elke minuut die je niet aan papierwerk besteedt, is er één die je kan inzetten voor wat er écht toe doet.",
         },
         {
           title: "Samen sterker",
           content:
-            "Hezo gelooft niet in soloritten, maar in verbinding. Door verpleegkundigen en praktijken met elkaar in contact te brengen, ontstaat er een netwerk waarop je kan terugvallen wanneer het even te veel wordt.",
+            "Hezo gelooft niet in soloritten, maar in verbinding. Door verpleegkundigen en praktijken met elkaar in contact te brengen, ontstaat er een netwerk waarop je kan terugvallen wanneer het even te veel wordt. Zo blijft er ruimte voor rust, overleg en wederzijds begrip zonder dat je zelfstandigheid verdwijnt.",
         },
         {
           title: "Een community die samen leert en lacht",
           content:
-            "Hezo is meer dan een platform; het is een gemeenschap van verpleegkundigen die elkaar begrijpen. Via community-momenten, opleidingen en online groepen kan je ervaringen delen, advies vragen of gewoon even ventileren.",
+            "Hezo is meer dan een platform; het is een gemeenschap van verpleegkundigen die elkaar begrijpen. Via community-momenten, opleidingen en online groepen kan je ervaringen delen, advies vragen of gewoon even ventileren. Samenwerken krijgt bij ons een gezicht, met collega's die weten hoe het voelt, en een organisatie die luistert.",
+        },
+        {
+          title: "Verbonden met welzijnsdiensten",
+          content:
+            "Hezo is geen eiland. Dankzij onze samenwerking met partners in huishoudhulp en thuiszorg creëren we een breder welzijnsnetwerk dat jouw werk verlicht. Zo kunnen jouw patiënten ook terecht voor bijkomende ondersteuning, terwijl jij meer evenwicht bewaart tussen werk en herstel.",
         },
       ],
+      extra: {
+        title: "Bij Hezo draait welzijn niet om slogans, maar om structuur",
+        content: "We bouwen een omgeving waarin verpleegkundigen kunnen groeien, herstellen en volhouden.",
+      },
     },
     {
       id: "begeleiding",
@@ -86,7 +95,7 @@ const WatWeDoen = () => {
         {
           title: "Leren op jouw tempo",
           content:
-            "Via het Hezo-platform volg je opleidingen die passen bij je ritme en interesse: korte online modules, praktische sessies in kleine groepen of inspirerende workshops over leiderschap en welzijn.",
+            "Via het Hezo-platform volg je opleidingen die passen bij je ritme en interesse: korte online modules, praktische sessies in kleine groepen of inspirerende workshops over leiderschap en welzijn. Geen eindeloze theorie, wel kennis die je meteen in de praktijk kan gebruiken.",
         },
         {
           title: "Van kennis naar kwaliteit",
@@ -122,6 +131,11 @@ const WatWeDoen = () => {
           title: "MyHezo: jouw digitale omgeving",
           content:
             "Via MyHezo krijg je een volledig overzicht van jouw praktijk. Je vindt er: prestaties, betalingen en documenten, nieuws en updates over belangrijke wijzigingen of sectorinformatie, inschrijvingen voor opleidingen en advies over bijscholing.",
+        },
+        {
+          title: "Softwarekoppeling en ondersteuning",
+          content:
+            "Voor planning en tarificatie werken we met gehomologeerde softwarepakketten uit de sector. Hezo zorgt voor een vlotte koppeling met deze systemen en biedt ondersteuning bij het gebruik ervan. Onze helpdesk kent de werking van deze software door en door en helpt bij vragen over facturatie, nomenclatuur of technische instellingen.",
         },
       ],
     },
