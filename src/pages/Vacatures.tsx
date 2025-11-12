@@ -46,7 +46,7 @@ const Vacatures = () => {
         "Hezo, het netwerk van zelfstandige verpleegkundigen met ondersteuning van Helan - Welzijnsgroep, groeit snel. Daarom zoeken we een praktijkcoach die onze praktijkcoördinatoren en startende zelfstandigen begeleidt, inspireert en ondersteunt.",
       responsibilities: [
         "Je bent het eerste en vaste aanspreekpunt voor onze aangesloten verpleegkundigen en bouwt een vertrouwensrelatie op",
-        "Met jouw ervaring en coachende stijl help je hen groeien — persoonlijk, professioneel en strategisch",
+        "Met jouw ervaring en coachende stijl help je hen groeien - persoonlijk, professioneel en strategisch",
         "Je luistert, adviseert en brengt mensen samen",
         "Je volgt de evoluties in de zorgsector op de voet en vertaalt ze naar concrete tips en oplossingen",
         "Je capteert signalen uit het werkveld en vertaalt die naar suggesties voor de organisatie",
@@ -57,12 +57,12 @@ const Vacatures = () => {
         "Je bent nieuwsgierig, communicatief en oplossingsgericht",
         "Je kent de regelgeving (nomenclatuur, kwaliteitswet, boekhouding) of wil die snel leren",
         "Je werkt zelfstandig, maar voelt je thuis in een team dat samen vooruit wil",
-        "Je houdt van coachen en verbinden — mensen voelen zich op hun gemak bij jou",
+        "Je houdt van coachen en verbinden - mensen voelen zich op hun gemak bij jou",
       ],
       offer: [
         "Een betekenisvolle rol in een vernieuwend project binnen Helan – Welzijnsgroep",
         "Veel autonomie en ruimte om mee te bouwen aan de toekomst van Hezo",
-        "Vorming en groeikansen — ook voor jezelf",
+        "Vorming en groeikansen - ook voor jezelf",
         "Een warm, mensgericht team waar samenwerking centraal staat",
         "Marktconforme verloning en voordelen via Helan",
       ],
@@ -109,10 +109,10 @@ const Vacatures = () => {
             <Briefcase className="h-16 w-16 text-secondary mx-auto mb-6" strokeWidth={1.5} />
             <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">Vacatures</h1>
             <p className="text-xl text-muted-foreground mb-4">
-              Maak het verschil in de zorg – dicht bij de mensen, samen met je team
+              Maak het verschil in de zorg - dicht bij de mensen, samen met je team
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Hezo groeit en zoekt regelmatig nieuwe mensen die ons netwerk willen versterken — van
+              Hezo groeit en zoekt regelmatig nieuwe mensen die ons netwerk willen versterken - van
               coaches en administratieve medewerkers tot ondersteunende profielen met een hart voor
               zorg. Wil je meewerken aan een toekomst waarin zelfstandige verpleegkundigen sterker
               staan? Laat van je horen.
@@ -180,7 +180,12 @@ const Vacatures = () => {
 
                   <Button
                     size="lg"
-                    onClick={() => setSelectedJob(job.id)}
+                    onClick={() => {
+                      setSelectedJob(job.id);
+                      setTimeout(() => {
+                        document.getElementById('sollicitatie')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      }, 100);
+                    }}
                     className="w-full sm:w-auto mt-4"
                   >
                     Solliciteer voor deze functie
