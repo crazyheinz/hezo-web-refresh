@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Users, Heart, Headphones, GraduationCap, FileText } from "lucide-react";
 
 const WatWeDoen = () => {
@@ -196,18 +197,33 @@ const WatWeDoen = () => {
                       )}
 
                       {section.features && (
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                        <Accordion type="single" collapsible className="mt-8">
                           {section.features.map((feature, idx) => (
-                            <div key={idx} className="bg-muted p-6 rounded-lg">
-                              <h3 className="text-lg font-semibold text-foreground mb-2">
+                            <AccordionItem key={idx} value={`item-${idx}`}>
+                              <AccordionTrigger className="text-lg font-semibold text-foreground hover:no-underline">
                                 {feature.title}
-                              </h3>
-                              <p className="text-sm text-muted-foreground leading-relaxed">
-                                {feature.content}
-                              </p>
-                            </div>
+                              </AccordionTrigger>
+                              <AccordionContent>
+                                {feature.title === "HeNurse: jouw digitale omgeving" ? (
+                                  <div className="text-muted-foreground leading-relaxed space-y-3">
+                                    <p>Via HeNurse krijg je een volledig overzicht van jouw praktijk. Je vindt er:</p>
+                                    <ul className="list-disc pl-6 space-y-2">
+                                      <li>prestaties, betalingen en documenten,</li>
+                                      <li>nieuws en updates over belangrijke wijzigingen of sectorinformatie,</li>
+                                      <li>inschrijvingen voor opleidingen en advies over bijscholing,</li>
+                                      <li>sjablonen, handleidingen en andere praktische documenten.</li>
+                                    </ul>
+                                    <p>Zo heb je in één veilige omgeving alles bij de hand om efficiënt te werken.</p>
+                                  </div>
+                                ) : (
+                                  <p className="text-muted-foreground leading-relaxed">
+                                    {feature.content}
+                                  </p>
+                                )}
+                              </AccordionContent>
+                            </AccordionItem>
                           ))}
-                        </div>
+                        </Accordion>
                       )}
 
                       {section.extra && (
