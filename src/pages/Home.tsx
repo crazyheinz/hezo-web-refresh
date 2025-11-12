@@ -38,15 +38,15 @@ const Home = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
-            <div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-                Hezo ondersteunt zelfstandige thuisverpleegkundigen in elke fase van hun traject — van opstart tot groei.
+          <div className="grid lg:grid-cols-2 gap-16 items-start max-w-7xl mx-auto">
+            <div className="max-w-[60%]">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
+                Hezo ondersteunt zelfstandige thuisverpleegkundigen - van opstart tot groei.
               </h1>
-              <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
                 We helpen met administratie, facturatie, patiënteninstroom en begeleiding, in één betrouwbaar netwerk.
               </p>
-              <p className="text-lg text-foreground mb-12 font-medium">
+              <p className="text-base text-foreground mb-12 font-medium">
                 Minder administratie. Meer zorg. Meer mens.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -62,11 +62,11 @@ const Home = () => {
                 </Button>
               </div>
             </div>
-            <div className="relative">
+            <div className="relative lg:pl-8">
               <img 
                 src={homeNursingImage} 
                 alt="Thuisverpleging - professionele zorg aan huis" 
-                className="rounded-lg shadow-2xl w-full h-auto"
+                className="rounded-lg shadow-2xl w-full h-auto object-cover"
               />
             </div>
           </div>
