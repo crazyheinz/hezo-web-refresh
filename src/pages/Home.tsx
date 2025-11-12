@@ -38,10 +38,10 @@ const Home = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-start max-w-7xl mx-auto">
-            <div className="max-w-[60%]">
+          <div className="grid lg:grid-cols-2 gap-8 items-start max-w-7xl mx-auto">
+            <div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
-                Hezo ondersteunt zelfstandige thuisverpleegkundigen - van opstart tot groei.
+                Hezo ondersteunt zelfstandige thuisverpleegkundigen van opstart tot groei.
               </h1>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
                 We helpen met administratie, facturatie, patiënteninstroom en begeleiding, in één betrouwbaar netwerk.
@@ -62,11 +62,11 @@ const Home = () => {
                 </Button>
               </div>
             </div>
-            <div className="relative lg:pl-8">
+            <div className="relative">
               <img 
                 src={homeNursingImage} 
                 alt="Thuisverpleging - professionele zorg aan huis" 
-                className="rounded-lg shadow-2xl w-full h-auto object-cover"
+                className="rounded-lg shadow-2xl w-full h-full min-h-[500px] object-cover"
               />
             </div>
           </div>
