@@ -10,7 +10,7 @@ const WatWeDoen = () => {
       title: "Toestroom van patiënten",
       subtitle: "Een vlotte instroom, met zorg voor de juiste match.",
       content: [
-        "Bij Hezo komt de zorgvraag rechtstreeks vanuit Helan — het ziekenfonds en welzijnsnetwerk dat duizenden klanten ondersteunt in hun zoektocht naar thuisverpleging.",
+        "Bij Hezo komt de zorgvraag rechtstreeks vanuit Helan, het ziekenfonds en welzijnsnetwerk dat duizenden klanten ondersteunt in hun zoektocht naar thuisverpleging.",
         "Vanuit dat netwerk koppelen we zorgvragen zorgvuldig aan zelfstandige verpleegkundigen binnen Hezo.",
         "Zo krijgen verpleegkundigen een regelmatige instroom van nieuwe patiënten en kunnen ze hun ronde geleidelijk uitbreiden.",
       ],

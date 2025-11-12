@@ -73,20 +73,33 @@ const Home = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((feature, index) => {
                 const Icon = feature.icon;
+                const sectionMap: { [key: string]: string } = {
+                  "Toestroom van patiënten": "toestroom",
+                  "Welzijn & werkplezier": "welzijn",
+                  "Persoonlijke begeleiding": "begeleiding",
+                  "Opleiding & groei": "opleiding",
+                  "Administratie & ondersteuning": "administratie",
+                };
                 return (
-                  <Card key={index} className="border-none shadow-sm hover:shadow-md transition-shadow">
-                    <CardContent className="pt-6">
-                      <div className="mb-4">
-                        <Icon className="h-12 w-12 text-secondary" strokeWidth={1.5} />
-                      </div>
-                      <h3 className="text-xl font-semibold mb-3 text-foreground">
-                        {feature.title}
-                      </h3>
-                      <p className="text-muted-foreground leading-relaxed">
-                        {feature.description}
-                      </p>
-                    </CardContent>
-                  </Card>
+                  <Link 
+                    key={index} 
+                    to={`/wat-we-doen#${sectionMap[feature.title]}`}
+                    className="block"
+                  >
+                    <Card className="border-none shadow-sm hover:shadow-md transition-all h-full cursor-pointer hover:scale-105">
+                      <CardContent className="pt-6">
+                        <div className="mb-4">
+                          <Icon className="h-12 w-12 text-secondary" strokeWidth={1.5} />
+                        </div>
+                        <h3 className="text-xl font-semibold mb-3 text-foreground">
+                          {feature.title}
+                        </h3>
+                        <p className="text-muted-foreground leading-relaxed">
+                          {feature.description}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </Link>
                 );
               })}
             </div>
@@ -94,31 +107,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
-              Wil je meer weten?
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Ontdek hoe Hezo zelfstandige verpleegkundigen ondersteunt of neem rechtstreeks contact op met ons team.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" variant="default">
-                <Link to="/wat-we-doen">
-                  Wat we doen <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="outline">
-                <Link to="/contact">
-                  Contact <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
