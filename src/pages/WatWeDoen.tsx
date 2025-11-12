@@ -9,13 +9,14 @@ const WatWeDoen = () => {
       title: "Toestroom van patiënten",
       subtitle: "Een vlotte instroom, met zorg voor de juiste match.",
       content: [
-        "Bij Hezo komt de zorgvraag rechtstreeks vanuit Helan - het ziekenfonds en welzijnsnetwerk dat duizenden klanten begeleidt in hun zoektocht naar betrouwbare thuisverpleging. Vanuit dat netwerk worden zorgvragen zorgvuldig gekoppeld aan zelfstandige verpleegkundigen binnen Hezo.",
-        "Zo krijgen onze verpleegkundigen een stabiele toestroom van nieuwe zorgvragen zonder eindeloze prospectie, en bouwen ze sneller een duurzame ronde op.",
+        "Bij Hezo komt de zorgvraag rechtstreeks vanuit Helan — het ziekenfonds en welzijnsnetwerk dat duizenden klanten ondersteunt in hun zoektocht naar thuisverpleging.",
+        "Vanuit dat netwerk koppelen we zorgvragen zorgvuldig aan zelfstandige verpleegkundigen binnen Hezo.",
+        "Zo krijgen verpleegkundigen een regelmatige instroom van nieuwe patiënten en kunnen ze hun ronde geleidelijk uitbreiden.",
       ],
       extra: {
         title: "Samenwerking met zorgpartners",
         content:
-          "Naast Helan onderhouden we nauwe contacten met huisartsen, ziekenhuizen en lokale welzijnsorganisaties. Via die samenwerking ontstaat een stevig netwerk waarin zorgvragen snel de juiste weg vinden. Hezo bouwt bruggen tussen professionals, zodat patiënten verzekerd zijn van warme, kwalitatieve zorg in hun eigen omgeving.",
+          "Naast Helan werken we samen met huisartsen, ziekenhuizen en lokale welzijnsorganisaties. Door die samenwerking ontstaat een sterk netwerk waarin zorgvragen snel hun weg vinden naar de juiste zorgverlener. Hezo bouwt bruggen tussen professionals, zodat patiënten verzekerd zijn van kwalitatieve zorg in hun eigen omgeving. Bij Hezo verbinden we de zorgvragen van Helan met de mensen die willen zorgen. Zo creëren we stabiliteit voor verpleegkundigen én zekerheid voor patiënten.",
       },
     },
     {
@@ -102,7 +103,16 @@ const WatWeDoen = () => {
           content:
             "Onze opleidingen gaan verder dan technische vaardigheden. Ze helpen je ook groeien als zorgverlener, collega en ondernemer. Thema's zoals communicatie, teamwerking, zelfzorg en innovatie krijgen evenveel aandacht als wondzorg of nomenclatuur.",
         },
+        {
+          title: "Samen slimmer",
+          content:
+            "Leren doe je niet alleen. In de Hezo-community deel je ervaringen met andere verpleegkundigen, bespreek je cases en leer je van elkaar wat echt werkt op het terrein. Zo ontstaat een cultuur waarin kennis vanzelf circuleert - van praktijk tot praktijk, van mens tot mens.",
+        },
       ],
+      extra: {
+        title: "Bij Hezo zien we groei niet als iets wat moet, maar als iets wat loont",
+        content: "Want wie blijft leren, blijft graag zorgen.",
+      },
     },
     {
       id: "administratie",
@@ -115,12 +125,12 @@ const WatWeDoen = () => {
       features: [
         {
           title: "Tarificatie en opvolging",
-          content: "We waken erover dat elke prestatie correct wordt verwerkt.",
+          content: "We waken erover dat elke prestatie correct wordt verwerkt. Hezo zorgt ervoor dat facturen tijdig en foutloos naar de mutualiteiten worden verstuurd, en volgt eventuele weigeringen of correcties op. Wanneer iets niet juist loopt, zoeken we mee naar de oplossing zodat de betaling niet stilvalt.",
         },
         {
           title: "Remgeld en supplementen",
           content:
-            "Voor remgeld of eventuele supplementen die buiten de nomenclatuur vallen, zorgt Hezo voor het volledige proces: van het opstellen en verzenden van de patiëntfactuur tot de opvolging van de betaling.",
+            "Voor remgeld of eventuele supplementen die buiten de nomenclatuur vallen, zorgt Hezo voor het volledige proces: van het opstellen en verzenden van de patiëntfactuur tot de opvolging van de betaling. We houden rekening met verhoogde tegemoetkoming en met de maximumfactuur (MAF), zodat patiënten nooit meer betalen dan wettelijk voorzien. Verpleegkundigen ontvangen de juiste bedragen tijdig en overzichtelijk via onze centrale uitbetalingen.",
         },
         {
           title: "Uitbetalingen aan verpleegkundigen",
@@ -128,9 +138,9 @@ const WatWeDoen = () => {
             "Hezo zorgt voor duidelijke en correcte uitbetalingen aan alle aangesloten verpleegkundigen. Je ontvangt je vergoedingen tijdig, volledig en met overzicht van de bijhorende prestaties.",
         },
         {
-          title: "MyHezo: jouw digitale omgeving",
+          title: "HeNurse: jouw digitale omgeving",
           content:
-            "Via MyHezo krijg je een volledig overzicht van jouw praktijk. Je vindt er: prestaties, betalingen en documenten, nieuws en updates over belangrijke wijzigingen of sectorinformatie, inschrijvingen voor opleidingen en advies over bijscholing.",
+            "Via HeNurse krijg je een volledig overzicht van jouw praktijk. Je vindt er: prestaties, betalingen en documenten, nieuws en updates over belangrijke wijzigingen of sectorinformatie, inschrijvingen voor opleidingen en advies over bijscholing, sjablonen, handleidingen en andere praktische documenten. Zo heb je in één veilige omgeving alles bij de hand om efficiënt te werken.",
         },
         {
           title: "Softwarekoppeling en ondersteuning",
