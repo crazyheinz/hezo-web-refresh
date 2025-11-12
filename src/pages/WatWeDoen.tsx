@@ -56,9 +56,23 @@ const WatWeDoen = () => {
         {
           title: "Voor starters",
           content:
-            "De stap naar zelfstandigheid brengt veel vragen met zich mee. Daarom begeleiden we je van bij het begin: van de administratieve opstart tot de eerste zorgaanvragen. We werken samen met Xerius voor alles wat te maken heeft met het zelfstandigenstatuut en verzekeringen, en helpen bij de keuze en koppeling van software en facturatie.",
+            "De stap naar zelfstandigheid brengt veel vragen met zich mee. Daarom begeleiden we je van bij het begin: van de administratieve opstart tot de eerste zorgaanvragen. We werken samen met Xerius voor alles wat te maken heeft met het zelfstandigenstatuut en verzekeringen, en helpen bij de keuze en koppeling van software en facturatie. Met duidelijke checklists en praktische ondersteuning zorgen we dat je vlot aan de slag kan, zonder dat papierwerk of onzekerheid je tegenhoudt.",
+        },
+        {
+          title: "Voor wie al actief is",
+          content:
+            "Ook wie al zelfstandig werkt, meet niet zonder Hezo terecht voor begeleiding en advies. Onze praktijkcoaches volgen jouw werking in de praktijk en blijven bereikbaar bij vragen over administratie, planning of communicatie met artsen. Samen bekijken we wat goed loopt en waar er ruimte is om te groeien op vlak van organisatie, samenwerking of financiële efficiëntie. De begeleiding is concreet en op maat, met respect voor de autonomie van elke verpleegkundige en praktijk.",
+        },
+        {
+          title: "Juridische ondersteuning",
+          content:
+            "Soms duiken er vragen op rond afspraken, contracten of samenwerking. In die situaties kan je rekenen op advies en begeleiding. We helpen je de juiste stappen te zetten en werken samen met juridische partners die vertrouwd zijn met de zorgsector. Zo blijf je zeker van een correcte en professionele aanpak, ook wanneer het even complex wordt.",
         },
       ],
+      extra: {
+        title: "Hezo biedt ondersteuning die meebeweegt met jouw praktijk",
+        content: "Zodat jij kan blijven zorgen, met zekerheid en vertrouwen.",
+      },
     },
     {
       id: "opleiding",
