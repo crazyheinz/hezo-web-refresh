@@ -1,0 +1,197 @@
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Users, Heart, Headphones, GraduationCap, FileText } from "lucide-react";
+
+const WatWeDoen = () => {
+  const sections = [
+    {
+      id: "toestroom",
+      icon: Users,
+      title: "Toestroom van patiënten",
+      subtitle: "Een vlotte instroom, met zorg voor de juiste match.",
+      content: [
+        "Bij Hezo komt de zorgvraag rechtstreeks vanuit Helan - het ziekenfonds en welzijnsnetwerk dat duizenden klanten begeleidt in hun zoektocht naar betrouwbare thuisverpleging. Vanuit dat netwerk worden zorgvragen zorgvuldig gekoppeld aan zelfstandige verpleegkundigen binnen Hezo.",
+        "Zo krijgen onze verpleegkundigen een stabiele toestroom van nieuwe zorgvragen zonder eindeloze prospectie, en bouwen ze sneller een duurzame ronde op.",
+      ],
+      extra: {
+        title: "Samenwerking met zorgpartners",
+        content:
+          "Naast Helan onderhouden we nauwe contacten met huisartsen, ziekenhuizen en lokale welzijnsorganisaties. Via die samenwerking ontstaat een stevig netwerk waarin zorgvragen snel de juiste weg vinden. Hezo bouwt bruggen tussen professionals, zodat patiënten verzekerd zijn van warme, kwalitatieve zorg in hun eigen omgeving.",
+      },
+    },
+    {
+      id: "welzijn",
+      icon: Heart,
+      title: "Welzijn & werkplezier",
+      subtitle: "Zorg voor anderen begint bij zorg voor jezelf.",
+      content: [
+        "Bij Hezo geloven we dat duurzame zorg alleen mogelijk is als ook de zorgverlener zich goed voelt. Daarom bouwen we niet zomaar een netwerk, maar een vangnet met slimme processen, ondersteunende teams en ruimte voor evenwicht.",
+      ],
+      subsections: [
+        {
+          title: "Minder administratie, meer ademruimte",
+          content:
+            "We digitaliseren wat kan, zodat jij je aandacht houdt bij de zorg. Facturatie, opvolging van remgeld, planningen en rapportering lopen via geautomatiseerde flows die foutenmarges verkleinen en tijd vrijmaken.",
+        },
+        {
+          title: "Samen sterker",
+          content:
+            "Hezo gelooft niet in soloritten, maar in verbinding. Door verpleegkundigen en praktijken met elkaar in contact te brengen, ontstaat er een netwerk waarop je kan terugvallen wanneer het even te veel wordt.",
+        },
+        {
+          title: "Een community die samen leert en lacht",
+          content:
+            "Hezo is meer dan een platform; het is een gemeenschap van verpleegkundigen die elkaar begrijpen. Via community-momenten, opleidingen en online groepen kan je ervaringen delen, advies vragen of gewoon even ventileren.",
+        },
+      ],
+    },
+    {
+      id: "begeleiding",
+      icon: Headphones,
+      title: "Persoonlijke begeleiding & ondersteuning",
+      subtitle: "Zelfstandig, maar nooit alleen.",
+      content: [
+        "Thuisverpleging is mensenwerk, ook voor wie de zorg verleent. Bij Hezo voorzien we begeleiding die aansluit bij wat jij nodig hebt. Of je nu pas start, al jaren zelfstandig werkt of een volledige praktijk runt: je staat er niet alleen voor.",
+      ],
+      subsections: [
+        {
+          title: "Voor starters",
+          content:
+            "De stap naar zelfstandigheid brengt veel vragen met zich mee. Daarom begeleiden we je van bij het begin: van de administratieve opstart tot de eerste zorgaanvragen. We werken samen met Xerius voor alles wat te maken heeft met het zelfstandigenstatuut en verzekeringen, en helpen bij de keuze en koppeling van software en facturatie.",
+        },
+      ],
+    },
+    {
+      id: "opleiding",
+      icon: GraduationCap,
+      title: "Opleiding & groei",
+      subtitle: "Blijven groeien is de beste vorm van zorg.",
+      content: [
+        "De zorg evolueert snel - nieuwe technieken, regels, verwachtingen. Bij Hezo zorgen we dat jij niet achteroprijdt. We geloven dat leren geen verplichting is, maar een manier om sterker, efficiënter en zelfzekerder te worden in je werk.",
+      ],
+      subsections: [
+        {
+          title: "Leren op jouw tempo",
+          content:
+            "Via het Hezo-platform volg je opleidingen die passen bij je ritme en interesse: korte online modules, praktische sessies in kleine groepen of inspirerende workshops over leiderschap en welzijn.",
+        },
+        {
+          title: "Van kennis naar kwaliteit",
+          content:
+            "Onze opleidingen gaan verder dan technische vaardigheden. Ze helpen je ook groeien als zorgverlener, collega en ondernemer. Thema's zoals communicatie, teamwerking, zelfzorg en innovatie krijgen evenveel aandacht als wondzorg of nomenclatuur.",
+        },
+      ],
+    },
+    {
+      id: "administratie",
+      icon: FileText,
+      title: "Administratie & digitale ondersteuning",
+      subtitle: "Betrouwbare opvolging, digitaal overzicht.",
+      content: [
+        "Hezo zorgt voor een vlotte en correcte administratieve afhandeling van alle zorgprestaties. We nemen de complexe opvolging van tarificatie, facturatie en betalingen over, zodat jij met een gerust hart kan focussen op je patiënten.",
+      ],
+      features: [
+        {
+          title: "Tarificatie en opvolging",
+          content: "We waken erover dat elke prestatie correct wordt verwerkt.",
+        },
+        {
+          title: "Remgeld en supplementen",
+          content:
+            "Voor remgeld of eventuele supplementen die buiten de nomenclatuur vallen, zorgt Hezo voor het volledige proces: van het opstellen en verzenden van de patiëntfactuur tot de opvolging van de betaling.",
+        },
+        {
+          title: "Uitbetalingen aan verpleegkundigen",
+          content:
+            "Hezo zorgt voor duidelijke en correcte uitbetalingen aan alle aangesloten verpleegkundigen. Je ontvangt je vergoedingen tijdig, volledig en met overzicht van de bijhorende prestaties.",
+        },
+        {
+          title: "MyHezo: jouw digitale omgeving",
+          content:
+            "Via MyHezo krijg je een volledig overzicht van jouw praktijk. Je vindt er: prestaties, betalingen en documenten, nieuws en updates over belangrijke wijzigingen of sectorinformatie, inschrijvingen voor opleidingen en advies over bijscholing.",
+        },
+      ],
+    },
+  ];
+
+  return (
+    <div className="min-h-screen pt-32 pb-20">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-6 text-center">
+            Wat we doen
+          </h1>
+          <p className="text-xl text-muted-foreground mb-16 text-center">
+            Ontdek hoe Hezo zelfstandige verpleegkundigen ondersteunt in elke fase van hun traject
+          </p>
+
+          <div className="space-y-16">
+            {sections.map((section, index) => {
+              const Icon = section.icon;
+              return (
+                <section key={section.id} id={section.id} className="scroll-mt-24">
+                  <Card className="border-none shadow-lg">
+                    <CardHeader>
+                      <div className="mb-4">
+                        <Icon className="h-14 w-14 text-secondary" strokeWidth={1.5} />
+                      </div>
+                      <CardTitle className="text-3xl">{section.title}</CardTitle>
+                      <p className="text-lg text-muted-foreground mt-2">{section.subtitle}</p>
+                    </CardHeader>
+                    <CardContent className="space-y-6">
+                      {section.content.map((paragraph, idx) => (
+                        <p key={idx} className="text-muted-foreground leading-relaxed">
+                          {paragraph}
+                        </p>
+                      ))}
+
+                      {section.subsections && (
+                        <div className="space-y-6 mt-8">
+                          {section.subsections.map((sub, idx) => (
+                            <div key={idx}>
+                              <h3 className="text-xl font-semibold text-foreground mb-3">
+                                {sub.title}
+                              </h3>
+                              <p className="text-muted-foreground leading-relaxed">{sub.content}</p>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+
+                      {section.features && (
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                          {section.features.map((feature, idx) => (
+                            <div key={idx} className="bg-muted p-6 rounded-lg">
+                              <h3 className="text-lg font-semibold text-foreground mb-2">
+                                {feature.title}
+                              </h3>
+                              <p className="text-sm text-muted-foreground leading-relaxed">
+                                {feature.content}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+
+                      {section.extra && (
+                        <div className="bg-muted p-6 rounded-lg mt-8">
+                          <h3 className="text-xl font-semibold text-foreground mb-3">
+                            {section.extra.title}
+                          </h3>
+                          <p className="text-muted-foreground leading-relaxed">
+                            {section.extra.content}
+                          </p>
+                        </div>
+                      )}
+                    </CardContent>
+                  </Card>
+                </section>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default WatWeDoen;
