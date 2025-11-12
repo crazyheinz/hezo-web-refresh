@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Users, Heart, GraduationCap, FileCheck, Headphones } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import homeNursingImage from "@/assets/home-nursing.jpg";
 
 const Home = () => {
   const features = [
@@ -37,30 +38,36 @@ const Home = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-              Hezo - voor zelfstandige verpleegkundigen die sterker willen staan.
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Hezo ondersteunt zelfstandige thuisverpleegkundigen in elke fase van hun traject: van opstart tot groei.
-            </p>
-            <p className="text-lg text-muted-foreground mb-8">
-              We brengen administratie, facturatie, patiëntenstroom en begeleiding samen in één betrouwbaar netwerk.
-            </p>
-            <p className="text-lg text-foreground mb-12 font-medium">
-              Minder administratie. Meer zorg. Meer mens.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="text-base">
-                <Link to="/wat-we-doen">
-                  Ontdek wat we doen <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="text-base">
-                <Link to="/contact">
-                  Neem contact op <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
+          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+            <div>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
+                Hezo ondersteunt zelfstandige thuisverpleegkundigen in elke fase van hun traject — van opstart tot groei.
+              </h1>
+              <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+                We helpen met administratie, facturatie, patiënteninstroom en begeleiding, in één betrouwbaar netwerk.
+              </p>
+              <p className="text-lg text-foreground mb-12 font-medium">
+                Minder administratie. Meer zorg. Meer mens.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button asChild size="lg" className="text-base">
+                  <Link to="/wat-we-doen">
+                    Ontdek wat we doen <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="text-base">
+                  <Link to="/contact">
+                    Neem contact op <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+            <div className="relative">
+              <img 
+                src={homeNursingImage} 
+                alt="Thuisverpleging - professionele zorg aan huis" 
+                className="rounded-lg shadow-2xl w-full h-auto"
+              />
             </div>
           </div>
         </div>

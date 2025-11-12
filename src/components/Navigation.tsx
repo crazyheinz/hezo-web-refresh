@@ -33,9 +33,9 @@ const Navigation = () => {
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-24">
           <Link to="/" className="flex items-center">
-            <img src={hezoLogo} alt="Hezo" className="h-16 w-auto" />
+            <img src={hezoLogo} alt="Hezo" className="h-20 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -44,7 +44,7 @@ const Navigation = () => {
               <Link
                 key={item.href}
                 to={item.href}
-                className={`text-sm font-medium transition-colors hover:text-secondary ${
+                className={`text-base font-medium transition-colors hover:text-secondary ${
                   location.pathname === item.href
                     ? "text-secondary"
                     : "text-foreground"
@@ -77,7 +77,7 @@ const Navigation = () => {
               <Link
                 key={item.href}
                 to={item.href}
-                className={`block py-2 text-sm font-medium transition-colors hover:text-secondary ${
+                className={`block py-2 text-base font-medium transition-colors hover:text-secondary ${
                   location.pathname === item.href
                     ? "text-secondary"
                     : "text-foreground"
