@@ -155,7 +155,7 @@ const WatWeDoen = () => {
   return (
     <div className="min-h-screen pt-32 pb-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-6 text-center">
             Wat we doen
           </h1>
@@ -167,7 +167,7 @@ const WatWeDoen = () => {
             {sections.map((section, index) => {
               const Icon = section.icon;
               return (
-                <section key={section.id} id={section.id} className="scroll-mt-24">
+                <section key={section.id} id={section.id} className="scroll-mt-32">
                   <Card className="border-none shadow-lg">
                     <CardHeader>
                       <div className="mb-4">

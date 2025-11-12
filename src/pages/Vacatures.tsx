@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useToast } from "@/hooks/use-toast";
 import { Briefcase, CheckCircle2 } from "lucide-react";
 
@@ -42,7 +43,7 @@ const Vacatures = () => {
       title: "Praktijkcoach",
       tagline: "Word jij de motor achter sterke zelfstandige verpleegkundigen?",
       description:
-        "Hezo, het netwerk van zelfstandige verpleegkundigen met ondersteuning van Helan – Welzijnsgroep, groeit snel. Daarom zoeken we een praktijkcoach die onze praktijkcoördinatoren en startende zelfstandigen begeleidt, inspireert en ondersteunt.",
+        "Hezo, het netwerk van zelfstandige verpleegkundigen met ondersteuning van Helan - Welzijnsgroep, groeit snel. Daarom zoeken we een praktijkcoach die onze praktijkcoördinatoren en startende zelfstandigen begeleidt, inspireert en ondersteunt.",
       responsibilities: [
         "Je bent het eerste en vaste aanspreekpunt voor onze aangesloten verpleegkundigen en bouwt een vertrouwensrelatie op",
         "Met jouw ervaring en coachende stijl help je hen groeien — persoonlijk, professioneel en strategisch",
@@ -68,10 +69,10 @@ const Vacatures = () => {
     },
     {
       id: "regiomanager",
-      title: "Zelfstandig Regiomanager – Gent",
+      title: "Zelfstandig Regiomanager - Gent",
       tagline: "Bouw mee aan sterke zorg in jouw regio",
       description:
-        "Hezo is een netwerk van zelfstandige verpleegkundigen met ondersteuning van Helan – Welzijnsgroep. Voor de regio Gent zoeken we een zelfstandig regiomanager: een gedreven verpleegkundige met ambitie om impact te maken op zorgkwaliteit, collega's en patiënten.",
+        "Hezo is een netwerk van zelfstandige verpleegkundigen met ondersteuning van Helan - Welzijnsgroep. Voor de regio Gent zoeken we een zelfstandig regiomanager: een gedreven verpleegkundige met ambitie om impact te maken op zorgkwaliteit, collega's en patiënten.",
       responsibilities: [
         "Je bewaakt de continuïteit en kwaliteit van de zorg in jouw regio",
         "Je organiseert de planning en opvolging van zorgvragen binnen je team",
@@ -103,7 +104,7 @@ const Vacatures = () => {
   return (
     <div className="min-h-screen pt-32 pb-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <Briefcase className="h-16 w-16 text-secondary mx-auto mb-6" strokeWidth={1.5} />
             <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">Vacatures</h1>
@@ -118,60 +119,69 @@ const Vacatures = () => {
             </p>
           </div>
 
-          <div className="space-y-8 mb-16">
+          <div className="space-y-6 mb-16">
             {jobs.map((job) => (
               <Card key={job.id} className="border-secondary/20 shadow-lg">
                 <CardHeader>
                   <CardTitle className="text-2xl">{job.title}</CardTitle>
                   <p className="text-lg text-muted-foreground mt-2">{job.tagline}</p>
+                  <p className="text-muted-foreground leading-relaxed mt-4">{job.description}</p>
                 </CardHeader>
                 <CardContent className="space-y-6">
-                  <p className="text-muted-foreground leading-relaxed">{job.description}</p>
+                  <Accordion type="single" collapsible className="w-full">
+                    <AccordionItem value="responsibilities">
+                      <AccordionTrigger className="text-lg font-semibold">
+                        Wat doe je als {job.title.toLowerCase()}?
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <ul className="space-y-2">
+                          {job.responsibilities.map((item, idx) => (
+                            <li key={idx} className="flex items-start text-muted-foreground">
+                              <CheckCircle2 className="h-5 w-5 text-secondary mr-2 mt-0.5 flex-shrink-0" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </AccordionContent>
+                    </AccordionItem>
 
-                  <div>
-                    <h3 className="text-xl font-semibold text-foreground mb-3">
-                      Wat doe je als {job.title.toLowerCase()}?
-                    </h3>
-                    <ul className="space-y-2">
-                      {job.responsibilities.map((item, idx) => (
-                        <li key={idx} className="flex items-start text-muted-foreground">
-                          <CheckCircle2 className="h-5 w-5 text-secondary mr-2 mt-0.5 flex-shrink-0" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                    <AccordionItem value="profile">
+                      <AccordionTrigger className="text-lg font-semibold">
+                        Wie ben jij?
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <ul className="space-y-2">
+                          {job.profile.map((item, idx) => (
+                            <li key={idx} className="flex items-start text-muted-foreground">
+                              <CheckCircle2 className="h-5 w-5 text-secondary mr-2 mt-0.5 flex-shrink-0" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </AccordionContent>
+                    </AccordionItem>
 
-                  <div>
-                    <h3 className="text-xl font-semibold text-foreground mb-3">Wie ben jij?</h3>
-                    <ul className="space-y-2">
-                      {job.profile.map((item, idx) => (
-                        <li key={idx} className="flex items-start text-muted-foreground">
-                          <CheckCircle2 className="h-5 w-5 text-secondary mr-2 mt-0.5 flex-shrink-0" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h3 className="text-xl font-semibold text-foreground mb-3">
-                      Wat mag je verwachten?
-                    </h3>
-                    <ul className="space-y-2">
-                      {job.offer.map((item, idx) => (
-                        <li key={idx} className="flex items-start text-muted-foreground">
-                          <CheckCircle2 className="h-5 w-5 text-secondary mr-2 mt-0.5 flex-shrink-0" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                    <AccordionItem value="offer">
+                      <AccordionTrigger className="text-lg font-semibold">
+                        Wat mag je verwachten?
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <ul className="space-y-2">
+                          {job.offer.map((item, idx) => (
+                            <li key={idx} className="flex items-start text-muted-foreground">
+                              <CheckCircle2 className="h-5 w-5 text-secondary mr-2 mt-0.5 flex-shrink-0" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
 
                   <Button
                     size="lg"
                     onClick={() => setSelectedJob(job.id)}
-                    className="w-full sm:w-auto"
+                    className="w-full sm:w-auto mt-4"
                   >
                     Solliciteer voor deze functie
                   </Button>
