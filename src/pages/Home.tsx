@@ -66,7 +66,7 @@ const Home = () => {
               <img 
                 src={homeNursingImage} 
                 alt="Thuisverpleging - professionele zorg aan huis" 
-                className="rounded-lg shadow-2xl w-full h-full min-h-[350px] md:min-h-[500px] object-cover object-left"
+                className="rounded-lg shadow-2xl w-full h-auto object-contain"
               />
             </div>
           </div>
