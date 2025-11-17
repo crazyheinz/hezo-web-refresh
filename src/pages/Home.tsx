@@ -90,11 +90,11 @@ const Home = () => {
                 
                 // Define color schemes for each card based on brand guidelines
                 const colorSchemes = [
-                  { bg: "bg-light-blue/10", iconBg: "bg-light-blue", iconColor: "text-light-blue-foreground", border: "hover:border-light-blue/50" },
-                  { bg: "bg-coral/10", iconBg: "bg-coral", iconColor: "text-coral-foreground", border: "hover:border-coral/50" },
-                  { bg: "bg-yellow/10", iconBg: "bg-yellow", iconColor: "text-yellow-foreground", border: "hover:border-yellow/50" },
-                  { bg: "bg-green/10", iconBg: "bg-green", iconColor: "text-green-foreground", border: "hover:border-green/50" },
-                  { bg: "bg-primary/10", iconBg: "bg-primary", iconColor: "text-primary-foreground", border: "hover:border-primary/50" },
+                  { bg: "bg-light-blue/5", iconBg: "bg-light-blue", iconColor: "text-light-blue-foreground", border: "hover:border-light-blue/50" },
+                  { bg: "bg-coral/5", iconBg: "bg-coral", iconColor: "text-coral-foreground", border: "hover:border-coral/50" },
+                  { bg: "bg-yellow/5", iconBg: "bg-yellow", iconColor: "text-yellow-foreground", border: "hover:border-yellow/50" },
+                  { bg: "bg-green/5", iconBg: "bg-green", iconColor: "text-green-foreground", border: "hover:border-green/50" },
+                  { bg: "bg-primary/5", iconBg: "bg-primary", iconColor: "text-primary-foreground", border: "hover:border-primary/50" },
                 ];
                 
                 const colorScheme = colorSchemes[index % colorSchemes.length];
