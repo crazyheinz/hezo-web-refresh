@@ -90,11 +90,11 @@ const Home = () => {
                 
                 // Define color schemes for each card based on brand guidelines
                 const colorSchemes = [
-                  { bg: "bg-light-blue/5", iconBg: "bg-light-blue", iconColor: "text-light-blue-foreground", border: "hover:border-light-blue/50" },
-                  { bg: "bg-coral/5", iconBg: "bg-coral", iconColor: "text-coral-foreground", border: "hover:border-coral/50" },
-                  { bg: "bg-yellow/5", iconBg: "bg-yellow", iconColor: "text-yellow-foreground", border: "hover:border-yellow/50" },
-                  { bg: "bg-green/5", iconBg: "bg-green", iconColor: "text-green-foreground", border: "hover:border-green/50" },
-                  { bg: "bg-primary/5", iconBg: "bg-primary", iconColor: "text-primary-foreground", border: "hover:border-primary/50" },
+                  { iconBg: "bg-light-blue", iconColor: "text-light-blue-foreground", border: "hover:border-light-blue/50" },
+                  { iconBg: "bg-coral", iconColor: "text-coral-foreground", border: "hover:border-coral/50" },
+                  { iconBg: "bg-yellow", iconColor: "text-yellow-foreground", border: "hover:border-yellow/50" },
+                  { iconBg: "bg-green", iconColor: "text-green-foreground", border: "hover:border-green/50" },
+                  { iconBg: "bg-primary", iconColor: "text-primary-foreground", border: "hover:border-primary/50" },
                 ];
                 
                 const colorScheme = colorSchemes[index % colorSchemes.length];
@@ -105,7 +105,7 @@ const Home = () => {
                     to={`/wat-we-doen#${sectionMap[feature.title]}`}
                     className="block"
                   >
-                    <Card className={`border-2 border-transparent ${colorScheme.border} shadow-sm hover:shadow-md transition-all h-full cursor-pointer hover:scale-105 ${colorScheme.bg}`}>
+                    <Card className={`border-2 border-transparent ${colorScheme.border} shadow-sm hover:shadow-md transition-all h-full cursor-pointer hover:scale-105`}>
                       <CardContent className="pt-6">
                         <div className="mb-4">
                           <div className={`inline-flex p-3 rounded-lg ${colorScheme.iconBg}`}>
