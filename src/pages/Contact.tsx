@@ -84,7 +84,8 @@ const Contact = () => {
                   <p className="text-muted-foreground">
                     Samen sterk in zelfstandige thuisverpleging.
                   </p>
-                  <p className="text-sm text-muted-foreground mt-2">(ondersteund door Helan)</p>
+                  <p className="text-sm text-muted-foreground mt-2">
+                </p>
                 </div>
               </CardContent>
             </Card>
