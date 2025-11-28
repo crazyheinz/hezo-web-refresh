@@ -29,8 +29,8 @@ const Home = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto">
-          <div className="grid xl:grid-cols-2 gap-12 xl:gap-16 items-start max-w-7xl mx-auto">
-            <div className="xl:pr-8">
+          <div className="grid xl:grid-cols-2 gap-8 xl:gap-10 items-start max-w-7xl mx-auto">
+            <div className="xl:pr-4">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">Hezo ondersteunt zelfstandige thuisverpleegkundigen van opstart tot groei.</h1>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
                 We helpen met administratie, facturatie, patiënteninstroom en begeleiding, in één betrouwbaar netwerk.
