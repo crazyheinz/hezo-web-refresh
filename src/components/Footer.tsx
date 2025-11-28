@@ -10,8 +10,7 @@ const Footer = () => {
               Samen sterk in zelfstandige thuisverpleging.
             </p>
             <p className="text-sm opacity-75 mt-2">
-              (ondersteund door Helan)
-            </p>
+          </p>
           </div>
 
           <div>
