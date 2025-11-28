@@ -31,7 +31,7 @@ const Home = () => {
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-8 items-start max-w-7xl mx-auto">
             <div>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">test test test</h1>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">Hezo ondersteunt zelfstandige thuisverpleegkundigen van opstart tot groei</h1>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
                 We helpen met administratie, facturatie, patiënteninstroom en begeleiding, in één betrouwbaar netwerk.
               </p>
