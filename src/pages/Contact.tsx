@@ -6,36 +6,40 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, Send } from "lucide-react";
-
 const Contact = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     message: "",
-    privacy: false,
+    privacy: false
   });
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.privacy) {
       toast({
         title: "Privacy akkoord vereist",
         description: "Gelieve akkoord te gaan met het privacybeleid.",
-        variant: "destructive",
+        variant: "destructive"
       });
       return;
     }
     toast({
       title: "Bericht verzonden!",
-      description: "We nemen zo snel mogelijk contact met je op.",
+      description: "We nemen zo snel mogelijk contact met je op."
     });
-    setFormData({ name: "", email: "", phone: "", message: "", privacy: false });
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+      privacy: false
+    });
   };
-
-  return (
-    <div className="min-h-screen pt-32 pb-20">
+  return <div className="min-h-screen pt-32 pb-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -61,12 +65,7 @@ const Contact = () => {
                   <Mail className="h-6 w-6 text-secondary mt-1" />
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">E-mail</h3>
-                    <a
-                      href="mailto:info@Hezo.be"
-                      className="text-muted-foreground hover:text-secondary transition-colors"
-                    >
-                      info@Hezo.be
-                    </a>
+                    <a href="mailto:info@Hezo.be" className="text-muted-foreground hover:text-secondary transition-colors">info@hezo.be</a>
                   </div>
                 </div>
 
@@ -74,10 +73,7 @@ const Contact = () => {
                   <Phone className="h-6 w-6 text-secondary mt-1" />
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Telefoon</h3>
-                    <a
-                      href="tel:+3292651720"
-                      className="text-muted-foreground hover:text-secondary transition-colors"
-                    >
+                    <a href="tel:+3292651720" className="text-muted-foreground hover:text-secondary transition-colors">
                       +32 9 265 17 20
                     </a>
                   </div>
@@ -104,68 +100,48 @@ const Contact = () => {
                     <label htmlFor="name" className="block text-sm font-medium mb-2">
                       Naam *
                     </label>
-                    <Input
-                      id="name"
-                      required
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      placeholder="Je volledige naam"
-                    />
+                    <Input id="name" required value={formData.name} onChange={e => setFormData({
+                    ...formData,
+                    name: e.target.value
+                  })} placeholder="Je volledige naam" />
                   </div>
 
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium mb-2">
                       E-mail *
                     </label>
-                    <Input
-                      id="email"
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="je.email@voorbeeld.be"
-                    />
+                    <Input id="email" type="email" required value={formData.email} onChange={e => setFormData({
+                    ...formData,
+                    email: e.target.value
+                  })} placeholder="je.email@voorbeeld.be" />
                   </div>
 
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium mb-2">
                       Telefoonnummer (optioneel)
                     </label>
-                    <Input
-                      id="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      placeholder="+32 xxx xx xx xx"
-                    />
+                    <Input id="phone" type="tel" value={formData.phone} onChange={e => setFormData({
+                    ...formData,
+                    phone: e.target.value
+                  })} placeholder="+32 xxx xx xx xx" />
                   </div>
 
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium mb-2">
                       Bericht *
                     </label>
-                    <Textarea
-                      id="message"
-                      required
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Vertel ons wat je op het hart hebt..."
-                      rows={6}
-                    />
+                    <Textarea id="message" required value={formData.message} onChange={e => setFormData({
+                    ...formData,
+                    message: e.target.value
+                  })} placeholder="Vertel ons wat je op het hart hebt..." rows={6} />
                   </div>
 
                   <div className="flex items-start space-x-2">
-                    <Checkbox
-                      id="privacy"
-                      checked={formData.privacy}
-                      onCheckedChange={(checked) =>
-                        setFormData({ ...formData, privacy: checked as boolean })
-                      }
-                    />
-                    <label
-                      htmlFor="privacy"
-                      className="text-sm text-muted-foreground leading-relaxed"
-                    >
+                    <Checkbox id="privacy" checked={formData.privacy} onCheckedChange={checked => setFormData({
+                    ...formData,
+                    privacy: checked as boolean
+                  })} />
+                    <label htmlFor="privacy" className="text-sm text-muted-foreground leading-relaxed">
                       Ik ga akkoord met de verwerking van mijn gegevens volgens het privacybeleid
                       van Hezo.
                     </label>
@@ -180,8 +156,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Contact;
