@@ -7,7 +7,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, Send } from "lucide-react";
 
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID"; // Vervang YOUR_FORM_ID met je Formspree ID
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mwpgbwld";
 
 const Contact = () => {
   const { toast } = useToast();
