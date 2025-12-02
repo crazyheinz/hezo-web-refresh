@@ -9,9 +9,12 @@ import { useToast } from "@/hooks/use-toast";
 import { Briefcase, CheckCircle2 } from "lucide-react";
 import SEO from "@/components/SEO";
 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xdkqzpla";
+
 const Vacatures = () => {
   const { toast } = useToast();
   const [selectedJob, setSelectedJob] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -19,8 +22,9 @@ const Vacatures = () => {
     motivation: "",
     privacy: false,
   });
+  const [cvFile, setCvFile] = useState<File | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.privacy) {
       toast({
@@ -30,12 +34,50 @@ const Vacatures = () => {
       });
       return;
     }
-    toast({
-      title: "Bedankt voor je sollicitatie!",
-      description: "We nemen binnenkort contact met je op.",
-    });
-    setFormData({ name: "", email: "", phone: "", motivation: "", privacy: false });
-    setSelectedJob(null);
+
+    setIsSubmitting(true);
+
+    try {
+      const jobTitle = jobs.find((j) => j.id === selectedJob)?.title || selectedJob;
+      
+      const formDataToSend = new FormData();
+      formDataToSend.append("name", formData.name);
+      formDataToSend.append("email", formData.email);
+      formDataToSend.append("phone", formData.phone);
+      formDataToSend.append("motivation", formData.motivation);
+      formDataToSend.append("position", jobTitle);
+      if (cvFile) {
+        formDataToSend.append("cv", cvFile);
+      }
+
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        body: formDataToSend,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Bedankt voor je sollicitatie!",
+          description: "We nemen binnenkort contact met je op.",
+        });
+        setFormData({ name: "", email: "", phone: "", motivation: "", privacy: false });
+        setCvFile(null);
+        setSelectedJob(null);
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
+      toast({
+        title: "Er ging iets mis",
+        description: "Probeer het later opnieuw of mail naar info@hezo.be",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const jobs = [
@@ -269,7 +311,11 @@ const Vacatures = () => {
 
                   <div className="bg-background p-4 rounded-lg">
                     <p className="text-sm text-muted-foreground mb-2">Upload je CV (pdf, docx)</p>
-                    <Input type="file" accept=".pdf,.docx" />
+                    <Input 
+                      type="file" 
+                      accept=".pdf,.docx" 
+                      onChange={(e) => setCvFile(e.target.files?.[0] || null)}
+                    />
                   </div>
 
                   <div className="flex items-start space-x-2">
@@ -290,8 +336,8 @@ const Vacatures = () => {
                   </div>
 
                   <div className="flex gap-4">
-                    <Button type="submit" size="lg">
-                      Verstuur je sollicitatie
+                    <Button type="submit" size="lg" disabled={isSubmitting}>
+                      {isSubmitting ? "Verzenden..." : "Verstuur je sollicitatie"}
                     </Button>
                     <Button
                       type="button"
