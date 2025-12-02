@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, Send } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/mwpgbwld";
 
@@ -76,6 +77,11 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen pt-32 pb-20">
+      <SEO 
+        title="Contact | Hezo - Neem Contact Op"
+        description="Neem contact op met Hezo voor vragen over ons netwerk voor zelfstandige thuisverpleegkundigen. Bel of mail ons."
+        path="/contact"
+      />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">

@@ -3,6 +3,8 @@ import { ArrowRight, Users, Heart, GraduationCap, FileCheck, Headphones } from "
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import homeNursingImage from "@/assets/home-nursing.jpg";
+import SEO from "@/components/SEO";
+
 const Home = () => {
   const features = [{
     icon: Users,
@@ -26,6 +28,11 @@ const Home = () => {
     description: "Betrouwbare opvolging en digitaal overzicht. We nemen het papierwerk over."
   }];
   return <div className="min-h-screen">
+      <SEO 
+        title="Hezo | Ondersteuning voor Zelfstandige Thuisverpleegkundigen"
+        description="Hezo ondersteunt zelfstandige thuisverpleegkundigen met administratie, facturatie, patiëntenstroom en begeleiding. Minder administratie, meer zorg."
+        path="/"
+      />
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto">
