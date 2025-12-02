@@ -8,8 +8,6 @@ import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, Send } from "lucide-react";
 import SEO from "@/components/SEO";
 
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/mwpgbwld";
-
 const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -36,18 +34,21 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch(FORMSPREE_ENDPOINT, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          message: formData.message,
-        }),
-      });
+      const response = await fetch(
+        `https://kbntzeqmbigjycnatlhz.supabase.co/functions/v1/send-contact`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            message: formData.message,
+          }),
+        }
+      );
 
       if (response.ok) {
         toast({
