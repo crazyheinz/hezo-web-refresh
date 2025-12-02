@@ -39,9 +39,16 @@ serve(async (req) => {
       const fileExt = cvFile.name.split(".").pop();
       const fileName = `${Date.now()}-${name.replace(/\s+/g, "-")}.${fileExt}`;
       
-      // Convert file to base64 for email attachment
+      // Convert file to base64 for email attachment (chunked to avoid stack overflow)
       const arrayBuffer = await cvFile.arrayBuffer();
-      const base64Content = btoa(String.fromCharCode(...new Uint8Array(arrayBuffer)));
+      const uint8Array = new Uint8Array(arrayBuffer);
+      let binaryString = "";
+      const chunkSize = 8192;
+      for (let i = 0; i < uint8Array.length; i += chunkSize) {
+        const chunk = uint8Array.subarray(i, i + chunkSize);
+        binaryString += String.fromCharCode(...chunk);
+      }
+      const base64Content = btoa(binaryString);
       cvAttachment = {
         filename: cvFile.name,
         content: base64Content,
