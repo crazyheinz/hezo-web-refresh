@@ -31,14 +31,24 @@ serve(async (req) => {
     const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
     const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
-    let cvUrl = null;
-
     // Upload CV if provided
+    let cvUrl = null;
+    let cvAttachment = null;
+    
     if (cvFile && cvFile.size > 0) {
       const fileExt = cvFile.name.split(".").pop();
       const fileName = `${Date.now()}-${name.replace(/\s+/g, "-")}.${fileExt}`;
       
-      const { data: uploadData, error: uploadError } = await supabase.storage
+      // Convert file to base64 for email attachment
+      const arrayBuffer = await cvFile.arrayBuffer();
+      const base64Content = btoa(String.fromCharCode(...new Uint8Array(arrayBuffer)));
+      cvAttachment = {
+        filename: cvFile.name,
+        content: base64Content,
+      };
+      
+      // Also save to storage as backup
+      const { error: uploadError } = await supabase.storage
         .from("cv-uploads")
         .upload(fileName, cvFile, {
           contentType: cvFile.type,
@@ -46,16 +56,14 @@ serve(async (req) => {
 
       if (uploadError) {
         console.error("CV upload error:", uploadError);
-        throw new Error("Failed to upload CV");
+        // Continue anyway - email attachment is more important
+      } else {
+        const { data: urlData } = await supabase.storage
+          .from("cv-uploads")
+          .createSignedUrl(fileName, 60 * 60 * 24 * 7);
+        cvUrl = urlData?.signedUrl;
+        console.log("CV uploaded to storage:", fileName);
       }
-
-      // Get signed URL for the CV (bucket is private)
-      const { data: urlData } = await supabase.storage
-        .from("cv-uploads")
-        .createSignedUrl(fileName, 60 * 60 * 24 * 7); // 7 days
-      
-      cvUrl = urlData?.signedUrl;
-      console.log("CV uploaded:", fileName);
     }
 
     // Save application to database
@@ -77,31 +85,37 @@ serve(async (req) => {
 
     console.log("Application saved to database");
 
-    // Send email notification to HR via Resend API
+    // Send email notification with attachment to HR
+    const emailPayload: Record<string, unknown> = {
+      from: "Hezo Sollicitaties <onboarding@resend.dev>",
+      to: ["info@hezo.be"],
+      subject: `Nieuwe sollicitatie: ${position} - ${name}`,
+      html: `
+        <h1>Nieuwe sollicitatie ontvangen</h1>
+        <h2>Functie: ${position}</h2>
+        <hr />
+        <p><strong>Naam:</strong> ${name}</p>
+        <p><strong>E-mail:</strong> <a href="mailto:${email}">${email}</a></p>
+        <p><strong>Telefoon:</strong> ${phone || "Niet opgegeven"}</p>
+        <h3>Motivatie:</h3>
+        <p>${motivation.replace(/\n/g, "<br />")}</p>
+        ${cvAttachment ? "<p><strong>CV:</strong> Zie bijlage</p>" : "<p><em>Geen CV bijgevoegd</em></p>"}
+        <hr />
+        <p><small>Deze sollicitatie werd ontvangen via hezo.be</small></p>
+      `,
+    };
+    
+    if (cvAttachment) {
+      emailPayload.attachments = [cvAttachment];
+    }
+
     const emailResponse = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${RESEND_API_KEY}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        from: "Hezo Sollicitaties <onboarding@resend.dev>",
-        to: ["monika.conkova@helan.be"],
-        subject: `Nieuwe sollicitatie: ${position} - ${name}`,
-        html: `
-          <h1>Nieuwe sollicitatie ontvangen</h1>
-          <h2>Functie: ${position}</h2>
-          <hr />
-          <p><strong>Naam:</strong> ${name}</p>
-          <p><strong>E-mail:</strong> <a href="mailto:${email}">${email}</a></p>
-          <p><strong>Telefoon:</strong> ${phone || "Niet opgegeven"}</p>
-          <h3>Motivatie:</h3>
-          <p>${motivation.replace(/\n/g, "<br />")}</p>
-          ${cvUrl ? `<p><strong>CV:</strong> <a href="${cvUrl}">Download CV</a></p>` : "<p><em>Geen CV bijgevoegd</em></p>"}
-          <hr />
-          <p><small>Deze sollicitatie werd ontvangen via hezo.be</small></p>
-        `,
-      }),
+      body: JSON.stringify(emailPayload),
     });
 
     if (!emailResponse.ok) {
