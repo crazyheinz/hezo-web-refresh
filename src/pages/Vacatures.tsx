@@ -7,6 +7,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useToast } from "@/hooks/use-toast";
 import { Briefcase, CheckCircle2 } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const Vacatures = () => {
   const { toast } = useToast();
@@ -103,6 +104,11 @@ const Vacatures = () => {
 
   return (
     <div className="min-h-screen pt-32 pb-20">
+      <SEO 
+        title="Vacatures | Hezo - Werken in de Thuisverpleging"
+        description="Bekijk openstaande vacatures bij Hezo. Werk als praktijkcoach of regiomanager en maak het verschil in de zorg."
+        path="/vacatures"
+      />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">

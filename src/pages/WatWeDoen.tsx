@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Users, Heart, Headphones, GraduationCap, FileText } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const WatWeDoen = () => {
   const sections = [
@@ -154,6 +155,11 @@ const WatWeDoen = () => {
 
   return (
     <div className="min-h-screen pt-32 pb-20">
+      <SEO 
+        title="Wat We Doen | Hezo - Ondersteuning Thuisverpleging"
+        description="Ontdek hoe Hezo zelfstandige thuisverpleegkundigen ondersteunt met patiënteninstroom, welzijn, begeleiding, opleiding en administratie."
+        path="/wat-we-doen"
+      />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-6 text-center">

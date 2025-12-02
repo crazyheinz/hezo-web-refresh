@@ -1,9 +1,15 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { GraduationCap, Calendar, MapPin } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const Opleidingen = () => {
   return (
     <div className="min-h-screen pt-32 pb-20">
+      <SEO 
+        title="Opleidingen | Hezo - Vorming voor Thuisverpleegkundigen"
+        description="Groei in je vak met praktijkgerichte opleidingen van Hezo. Sessies over administratie, communicatie en zorgkwaliteit voor zelfstandige verpleegkundigen."
+        path="/opleidingen"
+      />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
