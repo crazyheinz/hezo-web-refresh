@@ -153,6 +153,37 @@ const Vacatures = () => {
         title="Vacatures | Hezo - Werken in de Thuisverpleging"
         description="Bekijk openstaande vacatures bij Hezo. Werk als praktijkcoach of regiomanager en maak het verschil in de zorg."
         path="/vacatures"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "WebPage",
+              "name": "Vacatures bij Hezo",
+              "description": "Bekijk openstaande vacatures bij Hezo",
+              "url": "https://www.hezo.be/vacatures"
+            },
+            ...jobs.map(job => ({
+              "@type": "JobPosting",
+              "title": job.title,
+              "description": job.description,
+              "datePosted": "2025-01-15",
+              "employmentType": "FULL_TIME",
+              "hiringOrganization": {
+                "@type": "Organization",
+                "name": "Hezo",
+                "sameAs": "https://www.hezo.be"
+              },
+              "jobLocation": {
+                "@type": "Place",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": job.id === "regiomanager" ? "Gent" : "België",
+                  "addressCountry": "BE"
+                }
+              }
+            }))
+          ]
+        }}
       />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">

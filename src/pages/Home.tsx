@@ -32,6 +32,25 @@ const Home = () => {
         title="Hezo | Ondersteuning voor Zelfstandige Thuisverpleegkundigen"
         description="Hezo ondersteunt zelfstandige thuisverpleegkundigen met administratie, facturatie, patiëntenstroom en begeleiding. Minder administratie, meer zorg."
         path="/"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Hezo",
+          "url": "https://www.hezo.be",
+          "logo": "https://www.hezo.be/favicon.png",
+          "description": "Hezo ondersteunt zelfstandige thuisverpleegkundigen met administratie, facturatie, patiëntenstroom en begeleiding.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "BE"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+32 9 265 17 20",
+            "email": "info@hezo.be",
+            "contactType": "customer service",
+            "availableLanguage": ["Dutch"]
+          }
+        }}
       />
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">

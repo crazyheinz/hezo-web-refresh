@@ -82,6 +82,19 @@ const Contact = () => {
         title="Contact | Hezo - Neem Contact Op"
         description="Neem contact op met Hezo voor vragen over ons netwerk voor zelfstandige thuisverpleegkundigen. Bel of mail ons."
         path="/contact"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "name": "Contact Hezo",
+          "description": "Neem contact op met Hezo",
+          "url": "https://www.hezo.be/contact",
+          "mainEntity": {
+            "@type": "Organization",
+            "name": "Hezo",
+            "telephone": "+32 9 265 17 20",
+            "email": "info@hezo.be"
+          }
+        }}
       />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
