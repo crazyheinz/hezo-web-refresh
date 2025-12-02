@@ -94,7 +94,7 @@ serve(async (req) => {
 
     // Send email notification with attachment to HR
     const emailPayload: Record<string, unknown> = {
-      from: "Hezo Sollicitaties <onboarding@resend.dev>",
+      from: "Hezo Sollicitaties <noreply@hezo.be>",
       to: ["info@hezo.be"],
       subject: `Nieuwe sollicitatie: ${position} - ${name}`,
       html: `
