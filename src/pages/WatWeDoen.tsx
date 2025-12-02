@@ -159,6 +159,22 @@ const WatWeDoen = () => {
         title="Wat We Doen | Hezo - Ondersteuning Thuisverpleging"
         description="Ontdek hoe Hezo zelfstandige thuisverpleegkundigen ondersteunt met patiënteninstroom, welzijn, begeleiding, opleiding en administratie."
         path="/wat-we-doen"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Wat We Doen - Hezo",
+          "description": "Ontdek hoe Hezo zelfstandige thuisverpleegkundigen ondersteunt met patiënteninstroom, welzijn, begeleiding, opleiding en administratie.",
+          "url": "https://www.hezo.be/wat-we-doen",
+          "mainEntity": {
+            "@type": "Service",
+            "name": "Ondersteuning voor Thuisverpleegkundigen",
+            "provider": {
+              "@type": "Organization",
+              "name": "Hezo"
+            },
+            "serviceType": "Healthcare Support Services"
+          }
+        }}
       />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">

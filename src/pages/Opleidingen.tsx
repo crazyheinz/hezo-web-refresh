@@ -9,6 +9,28 @@ const Opleidingen = () => {
         title="Opleidingen | Hezo - Vorming voor Thuisverpleegkundigen"
         description="Groei in je vak met praktijkgerichte opleidingen van Hezo. Sessies over administratie, communicatie en zorgkwaliteit voor zelfstandige verpleegkundigen."
         path="/opleidingen"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Course",
+          "name": "Starten als zelfstandige thuisverpleegkundige",
+          "description": "Opleiding voor verpleegkundigen die zelfstandig willen starten of hun overstap voorbereiden.",
+          "provider": {
+            "@type": "Organization",
+            "name": "Hezo",
+            "sameAs": "https://www.hezo.be"
+          },
+          "courseMode": "blended",
+          "startDate": "2026-02",
+          "location": {
+            "@type": "Place",
+            "name": "Gent",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Gent",
+              "addressCountry": "BE"
+            }
+          }
+        }}
       />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
