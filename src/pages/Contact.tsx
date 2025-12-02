@@ -6,10 +6,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, Send } from "lucide-react";
+
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID"; // Vervang YOUR_FORM_ID met je Formspree ID
+
 const Contact = () => {
-  const {
-    toast
-  } = useToast();
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -17,8 +19,10 @@ const Contact = () => {
     message: "",
     privacy: false
   });
-  const handleSubmit = (e: React.FormEvent) => {
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
     if (!formData.privacy) {
       toast({
         title: "Privacy akkoord vereist",
@@ -27,19 +31,51 @@ const Contact = () => {
       });
       return;
     }
-    toast({
-      title: "Bericht verzonden!",
-      description: "We nemen zo snel mogelijk contact met je op."
-    });
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      message: "",
-      privacy: false
-    });
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+        }),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Bericht verzonden!",
+          description: "We nemen zo snel mogelijk contact met je op."
+        });
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+          privacy: false
+        });
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
+      toast({
+        title: "Er ging iets mis",
+        description: "Probeer het later opnieuw of mail naar info@hezo.be",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
-  return <div className="min-h-screen pt-32 pb-20">
+
+  return (
+    <div className="min-h-screen pt-32 pb-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -84,8 +120,6 @@ const Contact = () => {
                   <p className="text-muted-foreground">
                     Samen sterk in zelfstandige thuisverpleging.
                   </p>
-                  <p className="text-sm text-muted-foreground mt-2">
-                </p>
                 </div>
               </CardContent>
             </Card>
@@ -101,55 +135,74 @@ const Contact = () => {
                     <label htmlFor="name" className="block text-sm font-medium mb-2">
                       Naam *
                     </label>
-                    <Input id="name" required value={formData.name} onChange={e => setFormData({
-                    ...formData,
-                    name: e.target.value
-                  })} placeholder="Je volledige naam" />
+                    <Input 
+                      id="name" 
+                      name="name"
+                      required 
+                      value={formData.name} 
+                      onChange={e => setFormData({...formData, name: e.target.value})} 
+                      placeholder="Je volledige naam" 
+                    />
                   </div>
 
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium mb-2">
                       E-mail *
                     </label>
-                    <Input id="email" type="email" required value={formData.email} onChange={e => setFormData({
-                    ...formData,
-                    email: e.target.value
-                  })} placeholder="je.email@voorbeeld.be" />
+                    <Input 
+                      id="email" 
+                      name="email"
+                      type="email" 
+                      required 
+                      value={formData.email} 
+                      onChange={e => setFormData({...formData, email: e.target.value})} 
+                      placeholder="je.email@voorbeeld.be" 
+                    />
                   </div>
 
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium mb-2">
                       Telefoonnummer (optioneel)
                     </label>
-                    <Input id="phone" type="tel" value={formData.phone} onChange={e => setFormData({
-                    ...formData,
-                    phone: e.target.value
-                  })} placeholder="+32 xxx xx xx xx" />
+                    <Input 
+                      id="phone" 
+                      name="phone"
+                      type="tel" 
+                      value={formData.phone} 
+                      onChange={e => setFormData({...formData, phone: e.target.value})} 
+                      placeholder="+32 xxx xx xx xx" 
+                    />
                   </div>
 
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium mb-2">
                       Bericht *
                     </label>
-                    <Textarea id="message" required value={formData.message} onChange={e => setFormData({
-                    ...formData,
-                    message: e.target.value
-                  })} placeholder="Vertel ons wat je op het hart hebt..." rows={6} />
+                    <Textarea 
+                      id="message" 
+                      name="message"
+                      required 
+                      value={formData.message} 
+                      onChange={e => setFormData({...formData, message: e.target.value})} 
+                      placeholder="Vertel ons wat je op het hart hebt..." 
+                      rows={6} 
+                    />
                   </div>
 
                   <div className="flex items-start space-x-2">
-                    <Checkbox id="privacy" checked={formData.privacy} onCheckedChange={checked => setFormData({
-                    ...formData,
-                    privacy: checked as boolean
-                  })} />
+                    <Checkbox 
+                      id="privacy" 
+                      checked={formData.privacy} 
+                      onCheckedChange={checked => setFormData({...formData, privacy: checked as boolean})} 
+                    />
                     <label htmlFor="privacy" className="text-sm text-muted-foreground leading-relaxed">
                       Ik ga akkoord met de verwerking van mijn gegevens volgens het privacybeleid
                       van Hezo.
                     </label>
                   </div>
 
-                  <Button type="submit" size="lg" className="w-full">
-                    Verstuur bericht
+                  <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
+                    {isSubmitting ? "Verzenden..." : "Verstuur bericht"}
                   </Button>
                 </form>
               </CardContent>
@@ -157,6 +210,8 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </div>;
+    </div>
+  );
 };
+
 export default Contact;
