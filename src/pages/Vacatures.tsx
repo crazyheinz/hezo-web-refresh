@@ -67,7 +67,9 @@ const Vacatures = () => {
         setCvFile(null);
         setSelectedJob(null);
       } else {
-        throw new Error("Form submission failed");
+        const errorData = await response.json().catch(() => ({}));
+        console.error("Formspree error:", response.status, errorData);
+        throw new Error(errorData.error || "Form submission failed");
       }
     } catch (error) {
       toast({
