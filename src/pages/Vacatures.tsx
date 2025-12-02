@@ -9,7 +9,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Briefcase, CheckCircle2 } from "lucide-react";
 import SEO from "@/components/SEO";
 
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/xdkqzpla";
+import { supabase } from "@/integrations/supabase/client";
 
 const Vacatures = () => {
   const { toast } = useToast();
@@ -45,33 +45,34 @@ const Vacatures = () => {
       formDataToSend.append("email", formData.email);
       formDataToSend.append("phone", formData.phone);
       formDataToSend.append("motivation", formData.motivation);
-      formDataToSend.append("position", jobTitle);
+      formDataToSend.append("position", jobTitle || "");
       if (cvFile) {
         formDataToSend.append("cv", cvFile);
       }
 
-      const response = await fetch(FORMSPREE_ENDPOINT, {
-        method: "POST",
-        body: formDataToSend,
-        headers: {
-          Accept: "application/json",
-        },
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/submit-application`,
+        {
+          method: "POST",
+          body: formDataToSend,
+        }
+      );
 
-      if (response.ok) {
-        toast({
-          title: "Bedankt voor je sollicitatie!",
-          description: "We nemen binnenkort contact met je op.",
-        });
-        setFormData({ name: "", email: "", phone: "", motivation: "", privacy: false });
-        setCvFile(null);
-        setSelectedJob(null);
-      } else {
+      if (!response.ok) {
         const errorData = await response.json().catch(() => ({}));
-        console.error("Formspree error:", response.status, errorData);
-        throw new Error(errorData.error || "Form submission failed");
+        console.error("Submission error:", response.status, errorData);
+        throw new Error(errorData.error || "Submission failed");
       }
+
+      toast({
+        title: "Bedankt voor je sollicitatie!",
+        description: "We nemen binnenkort contact met je op.",
+      });
+      setFormData({ name: "", email: "", phone: "", motivation: "", privacy: false });
+      setCvFile(null);
+      setSelectedJob(null);
     } catch (error) {
+      console.error("Submission error:", error);
       toast({
         title: "Er ging iets mis",
         description: "Probeer het later opnieuw of mail naar info@hezo.be",
