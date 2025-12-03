@@ -14,7 +14,7 @@ const SEO = ({
   description, 
   path = "", 
   type = "website",
-  image = "https://www.hezo.be/favicon.png",
+  image = "https://www.hezo.be/og-image.png",
   structuredData
 }: SEOProps) => {
   const siteUrl = "https://www.hezo.be";
