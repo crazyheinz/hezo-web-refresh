@@ -1,9 +1,29 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Users, Heart, Headphones, GraduationCap, FileText } from "lucide-react";
 import SEO from "@/components/SEO";
 
 const WatWeDoen = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      // Small delay to ensure the page has rendered
+      setTimeout(() => {
+        const element = document.getElementById(location.hash.slice(1));
+        if (element) {
+          const navHeight = 100; // Account for fixed navigation
+          const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+          window.scrollTo({
+            top: elementPosition - navHeight,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
+    }
+  }, [location.hash]);
   const sections = [
     {
       id: "toestroom",
