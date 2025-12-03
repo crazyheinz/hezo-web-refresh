@@ -204,7 +204,7 @@ const Contact = () => {
                       required 
                       value={formData.message} 
                       onChange={e => setFormData({...formData, message: e.target.value})} 
-                      placeholder="Vertel ons wat je op het hart hebt..." 
+                      placeholder="Vertel ons wat er op je hart ligt..." 
                       rows={6} 
                     />
                   </div>
