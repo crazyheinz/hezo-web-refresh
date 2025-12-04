@@ -131,6 +131,10 @@ const WatWeDoen = () => {
             "Leren doe je niet alleen. In de Hezo-community deel je ervaringen met andere verpleegkundigen, bespreek je cases en leer je wat écht werkt op het terrein. Zo ontstaat een cultuur waarin kennis vlot doorstroomt, van praktijk tot praktijk, van mens tot mens.",
         },
       ],
+      extra: {
+        title: "Bij Hezo ondersteunen we je om mee te blijven met wat verandert in de zorg.",
+        content: "Praktisch, toepasbaar en afgestemd op jouw werk.",
+      },
     },
     {
       id: "administratie",
