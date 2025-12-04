@@ -93,7 +93,7 @@ const WatWeDoen = () => {
         {
           title: "Voor wie al actief is",
           content:
-            "Ook wie al zelfstandig werkt, meet niet zonder Hezo terecht voor begeleiding en advies. Onze praktijkcoaches volgen jouw werking in de praktijk en blijven bereikbaar bij vragen over administratie, planning of communicatie met artsen. Samen bekijken we wat goed loopt en waar er ruimte is om te groeien op vlak van organisatie, samenwerking of financiële efficiëntie. De begeleiding is concreet en op maat, met respect voor de autonomie van elke verpleegkundige en praktijk.",
+            "Ook als je al een draaiende praktijk hebt, kan je bij Hezo terecht voor een klankbord. Onze praktijkcoaches denken met je mee over administratie, planning, samenwerking met artsen en de manier waarop je je praktijk organiseert. We zoeken samen naar wat eenvoudiger en efficiënter kan, zodat jouw praktijk vlotter loopt en jij meer ademruimte krijgt. Altijd met concrete voorstellen, en met respect voor jouw autonomie en manier van werken.",
         },
         {
           title: "Juridische ondersteuning",
