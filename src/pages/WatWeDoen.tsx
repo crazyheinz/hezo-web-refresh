@@ -91,7 +91,11 @@ const WatWeDoen = () => {
             "De stap naar zelfstandigheid brengt veel vragen met zich mee. Daarom begeleiden we je van bij het begin: van de administratieve opstart tot de eerste zorgaanvragen. We werken samen met Xerius voor alles wat te maken heeft met het zelfstandigenstatuut en verzekeringen, en helpen bij de keuze en koppeling van software en facturatie. Met duidelijke checklists en praktische ondersteuning zorgen we dat je vlot aan de slag kan, zonder dat papierwerk of onzekerheid je tegenhoudt.",
         },
         {
-          title: "Voor praktijken",
+          title: "Voor wie zelfstandig werkt",
+          content:
+            "",
+        },
+        {
           content:
             "Ook als je al een draaiende praktijk hebt, kan je bij Hezo terecht voor een klankbord. Onze praktijkcoaches denken met je mee over administratie, planning, samenwerking met artsen en de manier waarop je je praktijk organiseert. We zoeken samen naar wat eenvoudiger en efficiënter kan, zodat jouw praktijk vlotter loopt en jij meer ademruimte krijgt. Altijd met concrete voorstellen, en met respect voor jouw autonomie en manier van werken.",
         },
