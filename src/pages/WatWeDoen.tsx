@@ -61,7 +61,7 @@ const WatWeDoen = () => {
             "Hezo gelooft niet in soloritten, maar in verbinding. Door verpleegkundigen en praktijken met elkaar in contact te brengen, ontstaat er een netwerk waarop je kan terugvallen wanneer het even te veel wordt. Zo blijft er ruimte voor rust, overleg en wederzijds begrip zonder dat je zelfstandigheid verdwijnt.",
         },
         {
-          title: "Een community die samen leert en lacht",
+          title: "Een netwerk dat elkaar versterkt",
           content:
             "Hezo brengt zelfstandige verpleegkundigen samen in een veilige, vertrouwde omgeving waar je ervaringen kan delen, vragen kan stellen en ondersteuning vindt wanneer je die nodig hebt.",
         },
