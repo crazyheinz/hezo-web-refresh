@@ -53,7 +53,7 @@ const WatWeDoen = () => {
         {
           title: "Minder administratie, meer ademruimte",
           content:
-            "We digitaliseren wat kan, zodat jij je aandacht houdt bij de zorg. Facturatie, opvolging van remgeld, planningen en rapportering lopen via geautomatiseerde flows die foutenmarges verkleinen en tijd vrijmaken. Elke minuut die je niet aan papierwerk besteedt, is er één die je kan inzetten voor wat er écht toe doet.",
+            "We automatiseren de stappen die jouw zorgverlening vertragen, zodat jij minder tijd verliest aan administratie en meer tijd overhoudt voor patiënten.",
         },
         {
           title: "Samen sterker",
