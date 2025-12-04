@@ -73,7 +73,7 @@ const WatWeDoen = () => {
       ],
       extra: {
         title: "Bij Hezo draait welzijn niet om slogans, maar om structuur",
-        content: "We bouwen een omgeving waarin verpleegkundigen kunnen floreren, herstellen en volhouden.",
+        content: "We bouwen een omgeving waarin verpleegkundigen kunnen groeien, ontwikkelen en floreren.",
       },
     },
     {
