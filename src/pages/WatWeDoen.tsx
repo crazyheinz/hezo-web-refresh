@@ -63,7 +63,7 @@ const WatWeDoen = () => {
         {
           title: "Een community die samen leert en lacht",
           content:
-            "Hezo is meer dan een platform; het is een gemeenschap van verpleegkundigen die elkaar begrijpen. Via community-momenten, opleidingen en online groepen kan je ervaringen delen, advies vragen of gewoon even ventileren. Samenwerken krijgt bij ons een gezicht, met collega's die weten hoe het voelt, en een organisatie die luistert.",
+            "Hezo brengt zelfstandige verpleegkundigen samen in een veilige, vertrouwde omgeving waar je ervaringen kan delen, vragen kan stellen en ondersteuning vindt wanneer je die nodig hebt.",
         },
         {
           title: "Verbonden met welzijnsdiensten",
