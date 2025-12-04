@@ -56,7 +56,7 @@ const WatWeDoen = () => {
             "We automatiseren de stappen die jouw zorgverlening vertragen, zodat jij minder tijd verliest aan administratie en meer tijd overhoudt voor patiënten.",
         },
         {
-          title: "Samen sterker",
+          title: "Een netwerk dat elkaar versterkt",
           content:
             "Hezo gelooft niet in soloritten, maar in verbinding. Door verpleegkundigen en praktijken met elkaar in contact te brengen, ontstaat er een netwerk waarop je kan terugvallen wanneer het even te veel wordt. Zo blijft er ruimte voor rust, overleg en wederzijds begrip zonder dat je zelfstandigheid verdwijnt.",
         },
