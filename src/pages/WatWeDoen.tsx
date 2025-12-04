@@ -96,11 +96,6 @@ const WatWeDoen = () => {
             "Ook als je al zelfstandig werkt, kan je bij Hezo terecht voor een klankbord. Of je nu alleen werkt of in een kleine praktijk, wij denken met je mee over je dagelijkse werking, administratie, communicatie en de organisatie van je zorg. Wanneer je even perspectief nodig hebt, iemand wil raadplegen of samen wil bekijken hoe iets eenvoudiger of efficiënter kan, kan je altijd bij ons terecht. We denken mee op jouw tempo en in functie van hoe jij je werk organiseert, zonder jouw autonomie uit het oog te verliezen.",
         },
         {
-          title: "Voor praktijken",
-          content:
-            "Heb je een draaiende praktijk, dan bieden onze praktijkcoaches bijkomende ondersteuning. Ze denken mee over administratie, planning, samenwerking met artsen en de manier waarop je je praktijk structureert. We zoeken samen naar wat eenvoudiger en efficiënter kan, zodat je praktijk vlotter loopt en jij meer ademruimte krijgt. Altijd met concrete voorstellen, en met respect voor jouw autonomie en manier van werken.",
-        },
-        {
           title: "Juridische ondersteuning",
           content:
             "Soms duiken er vragen op rond afspraken, contracten of samenwerking. In die situaties kan je rekenen op advies en begeleiding. We helpen je de juiste stappen te zetten en werken samen met juridische partners die vertrouwd zijn met de zorgsector. Zo blijf je zeker van een correcte en professionele aanpak, ook wanneer het even complex wordt.",
