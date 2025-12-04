@@ -102,7 +102,7 @@ const WatWeDoen = () => {
         },
       ],
       extra: {
-        title: "Hezo biedt ondersteuning die meebeweegt met jouw praktijk",
+        title: "Hezo biedt ondersteuning die meegroeit met jouw werk als zelfstandige verpleegkundige",
         content: "Zodat jij kan blijven zorgen, met zekerheid en vertrouwen.",
       },
     },
