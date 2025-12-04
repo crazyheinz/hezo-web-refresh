@@ -112,29 +112,25 @@ const WatWeDoen = () => {
       title: "Opleiding & groei",
       subtitle: "Blijven groeien is de beste vorm van zorg.",
       content: [
-        "De zorg evolueert snel - nieuwe technieken, regels, verwachtingen. Bij Hezo zorgen we dat jij niet achteroprijdt. We geloven dat leren geen verplichting is, maar een manier om sterker, efficiënter en zelfzekerder te worden in je werk.",
+        "De zorg verandert snel: nieuwe technieken, richtlijnen en verwachtingen. Bij Hezo zorgen we ervoor dat je mee bent met wat telt. Leren zien we niet als verplichting, maar als een manier om sterker, efficiënter en zelfzekerder te worden in je werk.",
       ],
       subsections: [
         {
           title: "Leren op jouw tempo",
           content:
-            "Via het Hezo-platform volg je opleidingen die passen bij je ritme en interesse: korte online modules, praktische sessies in kleine groepen of inspirerende workshops over leiderschap en welzijn. Geen eindeloze theorie, wel kennis die je meteen in de praktijk kan gebruiken.",
+            "Op het Hezo-platform volg je opleidingen die aansluiten bij je ritme en noden: korte online modules, praktijkgerichte sessies in kleine groepen en inspirerende workshops. Geen eindeloze theorie, maar kennis die je meteen kan gebruiken in je werking.",
         },
         {
           title: "Van kennis naar kwaliteit",
           content:
-            "Onze opleidingen gaan verder dan technische vaardigheden. Ze helpen je ook groeien als zorgverlener, collega en ondernemer. Thema's zoals communicatie, teamwerking, zelfzorg en innovatie krijgen evenveel aandacht als wondzorg of nomenclatuur.",
+            "Onze opleidingen helpen je groeien als zorgverlener, collega én ondernemer. Naast technische thema's zoals wondzorg, hygiëne en nomenclatuur besteden we aandacht aan communicatie, samenwerking, zelfzorg en praktijkorganisatie, alles wat je helpt om kwalitatief én duurzaam te werken.",
         },
         {
           title: "Samen slimmer",
           content:
-            "Leren doe je niet alleen. In de Hezo-community deel je ervaringen met andere verpleegkundigen, bespreek je cases en leer je van elkaar wat echt werkt op het terrein. Zo ontstaat een cultuur waarin kennis vanzelf circuleert - van praktijk tot praktijk, van mens tot mens.",
+            "Leren doe je niet alleen. In de Hezo-community deel je ervaringen met andere verpleegkundigen, bespreek je cases en leer je wat écht werkt op het terrein. Zo ontstaat een cultuur waarin kennis vlot doorstroomt, van praktijk tot praktijk, van mens tot mens.",
         },
       ],
-      extra: {
-        title: "Bij Hezo zien we groei niet als iets wat moet, maar als iets wat loont",
-        content: "Want wie blijft leren, blijft graag zorgen.",
-      },
     },
     {
       id: "administratie",
