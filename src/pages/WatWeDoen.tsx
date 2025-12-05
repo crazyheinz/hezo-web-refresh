@@ -147,7 +147,7 @@ const WatWeDoen = () => {
       features: [
         {
           title: "Tarificatie en opvolging",
-          content: "We waken erover dat elke prestatie correct wordt verwerkt. Hezo zorgt ervoor dat facturen tijdig en foutloos naar de mutualiteiten worden verstuurd, en volgt eventuele weigeringen of correcties op. Wanneer iets niet juist loopt, zoeken we mee naar de oplossing zodat de betaling niet stilvalt.",
+          content: "We waken erover dat elke prestatie correct wordt verwerkt. Hezo zorgt ervoor dat facturen tijdig en foutloos naar de mutualiteiten worden verstuurd, en volgt eventuele weigeringen of correcties op. Wanneer iets niet juist loopt, zoeken we mee naar de oplossing.",
         },
         {
           title: "Remgeld en supplementen",
