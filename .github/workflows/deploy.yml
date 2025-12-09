@@ -33,6 +33,24 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Create static HTML files for SPA routes
+        run: |
+          # Create directories for each route
+          mkdir -p dist/opleidingen
+          mkdir -p dist/vacatures
+          mkdir -p dist/wat-we-doen
+          mkdir -p dist/contact
+          mkdir -p dist/privacy
+          mkdir -p dist/algemene-voorwaarden
+          
+          # Copy index.html to each route directory
+          cp dist/index.html dist/opleidingen/index.html
+          cp dist/index.html dist/vacatures/index.html
+          cp dist/index.html dist/wat-we-doen/index.html
+          cp dist/index.html dist/contact/index.html
+          cp dist/index.html dist/privacy/index.html
+          cp dist/index.html dist/algemene-voorwaarden/index.html
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
