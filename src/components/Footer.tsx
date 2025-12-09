@@ -22,17 +22,17 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/wat-we-doen" className="text-sm hover:text-secondary transition-colors">
+                <Link to="/wat-we-doen/" className="text-sm hover:text-secondary transition-colors">
                   Wat we doen
                 </Link>
               </li>
               <li>
-                <Link to="/opleidingen" className="text-sm hover:text-secondary transition-colors">
+                <Link to="/opleidingen/" className="text-sm hover:text-secondary transition-colors">
                   Opleidingen
                 </Link>
               </li>
               <li>
-                <Link to="/vacatures" className="text-sm hover:text-secondary transition-colors">
+                <Link to="/vacatures/" className="text-sm hover:text-secondary transition-colors">
                   Vacatures
                 </Link>
               </li>
@@ -57,10 +57,10 @@ const Footer = () => {
         <div className="border-t border-primary-foreground/20 pt-8 flex flex-col md:flex-row justify-between items-center text-sm opacity-75">
           <p>© 2025 Hezo. Alle rechten voorbehouden.</p>
           <div className="flex gap-4 mt-4 md:mt-0">
-            <Link to="/privacy" className="hover:text-secondary transition-colors">
+            <Link to="/privacy/" className="hover:text-secondary transition-colors">
               Privacy
             </Link>
-            <Link to="/algemene-voorwaarden" className="hover:text-secondary transition-colors">
+            <Link to="/algemene-voorwaarden/" className="hover:text-secondary transition-colors">
               Algemene voorwaarden
             </Link>
           </div>

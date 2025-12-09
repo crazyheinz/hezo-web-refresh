@@ -20,10 +20,10 @@ const Navigation = () => {
 
   const navItems = [
     { label: "Home", href: "/" },
-    { label: "Wat we doen", href: "/wat-we-doen" },
-    { label: "Opleidingen", href: "/opleidingen" },
-    { label: "Vacatures", href: "/vacatures" },
-    { label: "Contact", href: "/contact" },
+    { label: "Wat we doen", href: "/wat-we-doen/" },
+    { label: "Opleidingen", href: "/opleidingen/" },
+    { label: "Vacatures", href: "/vacatures/" },
+    { label: "Contact", href: "/contact/" },
   ];
 
   return (
@@ -45,7 +45,7 @@ const Navigation = () => {
                 key={item.href}
                 to={item.href}
                 className={`text-base font-medium transition-colors hover:text-secondary ${
-                  location.pathname === item.href
+                  location.pathname === item.href || location.pathname + "/" === item.href
                     ? "text-secondary"
                     : "text-foreground"
                 }`}
@@ -78,7 +78,7 @@ const Navigation = () => {
                 key={item.href}
                 to={item.href}
                 className={`block py-2 text-base font-medium transition-colors hover:text-secondary ${
-                  location.pathname === item.href
+                  location.pathname === item.href || location.pathname + "/" === item.href
                     ? "text-secondary"
                     : "text-foreground"
                 }`}
