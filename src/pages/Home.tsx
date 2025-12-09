@@ -66,12 +66,12 @@ const Home = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild size="lg" className="text-base bg-yellow text-yellow-foreground hover:bg-yellow/90">
-                  <Link to="/wat-we-doen">
+                  <Link to="/wat-we-doen/">
                     Ontdek wat we doen <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="text-base border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                  <Link to="/contact">
+                  <Link to="/contact/">
                     Neem contact op <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
@@ -124,7 +124,7 @@ const Home = () => {
                 border: "hover:border-primary/50"
               }];
               const colorScheme = colorSchemes[index % colorSchemes.length];
-              return <Link key={index} to={`/wat-we-doen#${sectionMap[feature.title]}`} className="block">
+              return <Link key={index} to={`/wat-we-doen/#${sectionMap[feature.title]}`} className="block">
                     <Card className={`border-2 border-transparent ${colorScheme.border} shadow-sm hover:shadow-md transition-all h-full cursor-pointer hover:scale-105`}>
                       <CardContent className="pt-6">
                         <div className="mb-4">
