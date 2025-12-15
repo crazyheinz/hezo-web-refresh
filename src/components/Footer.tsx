@@ -36,6 +36,11 @@ const Footer = () => {
                   Vacatures
                 </Link>
               </li>
+              <li>
+                <Link to="/blog/" className="text-sm hover:text-secondary transition-colors">
+                  Blog
+                </Link>
+              </li>
             </ul>
           </div>
 
