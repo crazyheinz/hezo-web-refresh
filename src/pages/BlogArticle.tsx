@@ -10,7 +10,8 @@ const articleContent: Record<string, { content: React.ReactNode }> = {
       <>
         <p className="lead">
           Als zelfstandig verpleegkundige combineer je je passie voor zorg met ondernemerschap. 
-          Het biedt flexibiliteit, autonomie en de mogelijkheid om je eigen praktijk vorm te geven.
+          Het biedt flexibiliteit, autonomie en de mogelijkheid om je eigen praktijk vorm te geven. 
+          En je hoeft het niet alleen te doen — Hezo ondersteunt je bij elke stap.
         </p>
 
         <h2>Waarom kiezen voor zelfstandig ondernemen?</h2>
@@ -37,6 +38,14 @@ const articleContent: Record<string, { content: React.ReactNode }> = {
           <li>Aansluiten bij een sociaal verzekeringsfonds</li>
         </ul>
 
+        <div className="my-6 p-5 bg-primary/5 border-l-4 border-primary rounded-r-lg">
+          <p className="font-medium text-primary mb-2">Hezo helpt</p>
+          <p className="text-muted-foreground text-base">
+            Heb je vragen over je registratie, RIZIV-nummer of andere formaliteiten? 
+            Hezo geeft je advies en wijst je de juiste richting.
+          </p>
+        </div>
+
         <h2>Stap 2: Kies je ondernemingsvorm</h2>
         <p>
           Je kunt kiezen om als eenmanszaak te starten of een vennootschap op te richten. 
@@ -59,22 +68,55 @@ const articleContent: Record<string, { content: React.ReactNode }> = {
           </a>
         </div>
 
+        <div className="my-6 p-5 bg-primary/5 border-l-4 border-primary rounded-r-lg">
+          <p className="font-medium text-primary mb-2">Hezo helpt</p>
+          <p className="text-muted-foreground text-base">
+            Twijfel je over welke ondernemingsvorm het beste bij jou past? 
+            Hezo denkt mee en kan je doorverwijzen naar de juiste partners.
+          </p>
+        </div>
+
         <h2>Stap 3: Bouw je praktijk op</h2>
         <p>
           Een goede start is cruciaal. Denk aan:
         </p>
         <ul>
-          <li>Netwerken met huisartsen en andere zorgverleners</li>
+          <li>Patiëntentoestroom opbouwen via netwerken met huisartsen en andere zorgverleners</li>
           <li>Investeren in kwaliteitsvolle materialen</li>
           <li>Een betrouwbare software voor planning en facturatie</li>
           <li>Bijscholing om je expertise te blijven ontwikkelen</li>
         </ul>
 
-        <h2>Ondersteuning van Hezo</h2>
+        <div className="my-6 p-5 bg-primary/5 border-l-4 border-primary rounded-r-lg">
+          <p className="font-medium text-primary mb-2">Hezo neemt dit uit handen</p>
+          <p className="text-muted-foreground text-base">
+            Bij Hezo hoef je dit niet alleen te doen. Wij kunnen je praktijk mee uitbouwen of zelfs volledig uit handen nemen:
+          </p>
+          <ul className="mt-3 space-y-2 text-muted-foreground text-base">
+            <li className="flex items-start gap-2">
+              <span className="text-primary font-bold">•</span>
+              <span><strong>Patiëntentoestroom:</strong> Hezo zorgt voor voldoende patiënten, zodat jij je kunt focussen op zorg verlenen.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-primary font-bold">•</span>
+              <span><strong>Software & facturatie:</strong> Wij regelen de planning, administratie en facturatie voor je.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-primary font-bold">•</span>
+              <span><strong>Opleiding & bijscholing:</strong> Toegang tot trainingen en een netwerk van collega's.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-primary font-bold">•</span>
+              <span><strong>Materialen:</strong> Voor de aankoop van materialen verwijzen we je door naar betrouwbare leveranciers.</span>
+            </li>
+          </ul>
+        </div>
+
+        <h2>Conclusie: ondernemen hoeft niet alleen</h2>
         <p>
-          Bij Hezo ondersteunen we zelfstandige verpleegkundigen op alle vlakken. 
-          Van administratie en facturatie tot opleiding en netwerken met collega's. 
-          Je behoudt je vrijheid als ondernemer, maar staat er nooit alleen voor.
+          Als zelfstandig verpleegkundige behoud je je vrijheid en autonomie. 
+          Maar bij Hezo sta je er nooit alleen voor. Van de eerste stap tot het dagelijks runnen van je praktijk — 
+          wij ondersteunen, adviseren en nemen werk uit handen waar we kunnen. Zo houd jij tijd over voor wat écht telt: zorg voor je patiënten.
         </p>
       </>
     ),
