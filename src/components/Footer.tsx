@@ -38,7 +38,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link to="/blog/" className="text-sm hover:text-secondary transition-colors">
-                  Blog
+                  Kennis & inzichten
                 </Link>
               </li>
             </ul>

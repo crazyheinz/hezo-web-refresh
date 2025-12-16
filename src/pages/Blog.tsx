@@ -28,15 +28,15 @@ const Blog = () => {
   return (
     <>
       <SEO
-        title="Blog | Hezo - Inzichten over thuisverpleging"
-        description="Lees onze artikelen over thuisverpleging, zelfstandig ondernemen als verpleegkundige, en tips voor een succesvolle carrière in de zorgsector."
+        title="Kennis & inzichten | Hezo - Artikelen voor thuisverpleegkundigen"
+        description="Praktische kennis en inzichten voor zelfstandige thuisverpleegkundigen. Tips over ondernemen, facturatie, verzekeringen en professionele groei."
         path="/blog/"
         type="website"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "Blog",
-          "name": "Hezo Blog",
-          "description": "Artikelen over thuisverpleging en zelfstandig ondernemen als verpleegkundige",
+          "name": "Hezo Kennis & inzichten",
+          "description": "Praktische kennis en inzichten voor zelfstandige thuisverpleegkundigen",
           "url": "https://www.hezo.be/blog/",
           "publisher": {
             "@type": "Organization",
@@ -55,10 +55,10 @@ const Blog = () => {
                 Kenniscentrum
               </span>
               <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-                Blog
+                Kennis & inzichten
               </h1>
               <p className="text-lg text-muted-foreground">
-                Inzichten, tips en nieuws over thuisverpleging en zelfstandig ondernemen in de zorgsector.
+                Praktische kennis en tips voor zelfstandige thuisverpleegkundigen.
               </p>
             </div>
           </div>
