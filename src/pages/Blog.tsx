@@ -6,14 +6,6 @@ import { Card, CardContent } from "@/components/ui/card";
 // Blog articles data - add new articles here
 export const blogArticles = [
   {
-    id: "thuisverpleging-wat-is-het",
-    title: "Wat is thuisverpleging en voor wie is het bedoeld?",
-    excerpt: "Thuisverpleging biedt professionele zorg aan huis voor mensen die door ziekte, ouderdom of een beperking ondersteuning nodig hebben. Ontdek wat thuisverpleging inhoudt en wie er baat bij heeft.",
-    date: "2025-01-15",
-    category: "Thuisverpleging",
-    readTime: "5 min"
-  },
-  {
     id: "zelfstandig-verpleegkundige-worden",
     title: "Zelfstandig verpleegkundige worden: stappen en tips",
     excerpt: "Droom je ervan om als zelfstandig verpleegkundige te werken? We bespreken de belangrijkste stappen, van opleiding tot praktijk opstarten, en geven praktische tips voor een succesvolle start.",

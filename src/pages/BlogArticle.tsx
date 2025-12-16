@@ -5,51 +5,6 @@ import { blogArticles } from "./Blog";
 
 // Full article content - add content for each article ID
 const articleContent: Record<string, { content: React.ReactNode }> = {
-  "thuisverpleging-wat-is-het": {
-    content: (
-      <>
-        <p className="lead">
-          Thuisverpleging is een vorm van gezondheidszorg waarbij verpleegkundigen medische zorgen verlenen bij de patiënt thuis. 
-          Dit kan variëren van eenvoudige handelingen zoals het toedienen van medicatie tot complexe medische behandelingen.
-        </p>
-
-        <h2>Wat houdt thuisverpleging precies in?</h2>
-        <p>
-          Thuisverpleging omvat een breed scala aan verpleegkundige handelingen die bij u thuis worden uitgevoerd. 
-          Een thuisverpleegkundige kan helpen bij:
-        </p>
-        <ul>
-          <li>Wondverzorging en verbandwissels</li>
-          <li>Toedienen van injecties en medicatie</li>
-          <li>Bloedafnames en controles</li>
-          <li>Stomazorg</li>
-          <li>Diabeteszorg en glycemiecontroles</li>
-          <li>Hygiënische verzorging</li>
-          <li>Palliatieve zorg</li>
-        </ul>
-
-        <h2>Voor wie is thuisverpleging bedoeld?</h2>
-        <p>
-          Thuisverpleging is geschikt voor iedereen die tijdelijk of langdurig verpleegkundige zorg nodig heeft, 
-          maar deze liever in de vertrouwde thuisomgeving ontvangt. Dit kan zijn:
-        </p>
-        <ul>
-          <li>Ouderen die ondersteuning nodig hebben bij dagelijkse verzorging</li>
-          <li>Patiënten die herstellen na een operatie of ziekenhuisopname</li>
-          <li>Mensen met chronische aandoeningen zoals diabetes of COPD</li>
-          <li>Personen met een beperking die hulp nodig hebben</li>
-          <li>Patiënten in palliatieve zorg</li>
-        </ul>
-
-        <h2>Wordt thuisverpleging terugbetaald?</h2>
-        <p>
-          Ja, thuisverpleging wordt grotendeels terugbetaald door het RIZIV (Rijksinstituut voor Ziekte- en Invaliditeitsverzekering). 
-          Het bedrag dat je zelf moet betalen hangt af van je verzekeringsstatus. 
-          Bij Hezo zorgen wij voor de volledige administratieve afhandeling, zodat jij je geen zorgen hoeft te maken.
-        </p>
-      </>
-    ),
-  },
   "zelfstandig-verpleegkundige-worden": {
     content: (
       <>
