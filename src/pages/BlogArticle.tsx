@@ -85,9 +85,24 @@ const articleContent: Record<string, { content: React.ReactNode }> = {
         <h2>Stap 2: Kies je ondernemingsvorm</h2>
         <p>
           Je kunt kiezen om als eenmanszaak te starten of een vennootschap op te richten. 
-          Elke vorm heeft voor- en nadelen op vlak van aansprakelijkheid, fiscaliteit en administratie. 
-          Laat je goed adviseren door een boekhouder.
+          Elke vorm heeft voor- en nadelen op vlak van aansprakelijkheid, fiscaliteit en administratie.
         </p>
+
+        <div className="my-6 p-5 bg-secondary/5 border-l-4 border-secondary rounded-r-lg">
+          <p className="font-medium text-primary mb-2">💡 Tip</p>
+          <p className="text-muted-foreground text-base mb-3">
+            Een sociaal verzekeringsfonds zoals Xerius kan je gratis adviseren bij het opstarten als zelfstandige. 
+            Zij helpen je met de keuze van je ondernemingsvorm, administratieve verplichtingen én bieden ondersteuning als boekhouder.
+          </p>
+          <a 
+            href="https://www.xerius.be" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-secondary font-medium hover:underline"
+          >
+            Bezoek Xerius →
+          </a>
+        </div>
 
         <h2>Stap 3: Bouw je praktijk op</h2>
         <p>
