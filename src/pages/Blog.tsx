@@ -21,14 +21,6 @@ export const blogArticles = [
     category: "Carrière",
     readTime: "7 min"
   },
-  {
-    id: "voordelen-thuisverpleging",
-    title: "5 voordelen van thuisverpleging voor patiënten",
-    excerpt: "Thuisverpleging biedt tal van voordelen voor patiënten die zorg nodig hebben. Van comfort tot persoonlijke aandacht - ontdek waarom steeds meer mensen kiezen voor zorg aan huis.",
-    date: "2025-01-05",
-    category: "Thuisverpleging",
-    readTime: "4 min"
-  },
 ];
 
 const formatDate = (dateString: string) => {

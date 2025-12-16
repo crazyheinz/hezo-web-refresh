@@ -109,58 +109,6 @@ const articleContent: Record<string, { content: React.ReactNode }> = {
       </>
     ),
   },
-  "voordelen-thuisverpleging": {
-    content: (
-      <>
-        <p className="lead">
-          Thuisverpleging wint steeds meer aan populariteit. En terecht: zorg ontvangen in je eigen vertrouwde omgeving 
-          biedt tal van voordelen voor patiënten én hun familie.
-        </p>
-
-        <h2>1. Comfort van de eigen omgeving</h2>
-        <p>
-          Thuis zijn betekent omringd zijn door vertrouwde spullen, geuren en geluiden. 
-          Dit draagt bij aan het welzijn en kan het herstelproces positief beïnvloeden. 
-          Patiënten voelen zich vaak rustiger en meer ontspannen in hun eigen omgeving.
-        </p>
-
-        <h2>2. Persoonlijke en individuele aandacht</h2>
-        <p>
-          In tegenstelling tot een ziekenhuis waar verpleegkundigen voor meerdere patiënten zorgen, 
-          krijg je bij thuisverpleging onverdeelde aandacht. De verpleegkundige heeft tijd voor jou, 
-          kent je situatie en kan de zorg volledig afstemmen op jouw behoeften.
-        </p>
-
-        <h2>3. Behoud van autonomie</h2>
-        <p>
-          Thuisverpleging stelt patiënten in staat om zo lang mogelijk zelfstandig te blijven wonen. 
-          Je behoudt je eigen ritme, je eigen gewoontes en je onafhankelijkheid, 
-          terwijl je toch de nodige professionele ondersteuning krijgt.
-        </p>
-
-        <h2>4. Betrokkenheid van familie</h2>
-        <p>
-          Wanneer zorg thuis wordt verleend, kunnen familieleden gemakkelijker betrokken worden bij het zorgproces. 
-          Dit is niet alleen fijn voor de patiënt, maar geeft ook mantelzorgers de kans om te leren 
-          en ondersteuning te krijgen van de verpleegkundige.
-        </p>
-
-        <h2>5. Kostenbesparing</h2>
-        <p>
-          Thuisverpleging is vaak voordeliger dan een langdurig verblijf in het ziekenhuis of een zorginstelling. 
-          Bovendien wordt thuisverpleging grotendeels terugbetaald door de ziekteverzekering, 
-          waardoor de kosten voor de patiënt beperkt blijven.
-        </p>
-
-        <h2>Thuisverpleging bij Hezo</h2>
-        <p>
-          Bij Hezo staan professionele, gedreven verpleegkundigen klaar om jou de beste zorg aan huis te bieden. 
-          Wij geloven dat kwalitatieve zorg en persoonlijke aandacht hand in hand gaan. 
-          Neem contact met ons op om te ontdekken hoe wij jou kunnen helpen.
-        </p>
-      </>
-    ),
-  },
 };
 
 const formatDate = (dateString: string) => {
