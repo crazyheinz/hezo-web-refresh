@@ -23,7 +23,7 @@ const Navigation = () => {
     { label: "Wat we doen", href: "/wat-we-doen/" },
     { label: "Opleidingen", href: "/opleidingen/" },
     { label: "Vacatures", href: "/vacatures/" },
-    { label: "Blog", href: "/blog/" },
+    { label: "Kennis & inzichten", href: "/blog/" },
     { label: "Contact", href: "/contact/" },
   ];
 
