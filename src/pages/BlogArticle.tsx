@@ -68,14 +68,6 @@ const articleContent: Record<string, { content: React.ReactNode }> = {
           </a>
         </div>
 
-        <div className="my-6 p-5 bg-primary/5 border-l-4 border-primary rounded-r-lg">
-          <p className="font-medium text-primary mb-2">Hezo helpt</p>
-          <p className="text-muted-foreground text-base">
-            Twijfel je over welke ondernemingsvorm het beste bij jou past? 
-            Hezo denkt mee en kan je doorverwijzen naar de juiste partners.
-          </p>
-        </div>
-
         <h2>Stap 3: Bouw je praktijk op</h2>
         <p>
           Een goede start is cruciaal. Denk aan:
