@@ -64,7 +64,7 @@ const articleContent: Record<string, { content: React.ReactNode }> = {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1 text-secondary font-medium hover:underline"
           >
-            Bezoek Xerius →
+            Bezoek Xerius
           </a>
         </div>
 
