@@ -5,7 +5,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
-            <img src={hezoLogo} alt="Hezo" className="h-20 w-auto mb-4" />
+            <img src={hezoLogo} alt="Hezo" className="h-12 w-auto mb-4" />
             <p className="text-sm opacity-90">
               Samen sterk in zelfstandige thuisverpleging.
             </p>
