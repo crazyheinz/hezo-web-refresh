@@ -76,18 +76,16 @@ const articleContent: Record<string, { content: React.ReactNode }> = {
         <p>
           We ondersteunen zelfstandige verpleegkundigen onder andere via:
         </p>
-        <p><strong>Patiëntentoestroom</strong><br />
-          Voldoende en gespreide instroom van patiënten, afgestemd op je beschikbaarheid en werkritme.
-        </p>
-        <p><strong>Planning, software en facturatie</strong><br />
-          Ondersteuning bij agenda-beheer, administratie en facturatie om tijdsverlies te beperken.
-        </p>
-        <p><strong>Opleiding en professionele ontwikkeling</strong><br />
-          Toegang tot opleidingen, bijscholing en een netwerk van collega-verpleegkundigen.
-        </p>
-        <p><strong>Praktische ondersteuning</strong><br />
-          Advies over materialen en doorverwijzing naar betrouwbare leveranciers, zonder commerciële verplichtingen.
-        </p>
+        <ul>
+          <li><strong>Patiëntentoestroom</strong><br />
+            Voldoende en gespreide instroom van patiënten, afgestemd op je beschikbaarheid en werkritme.</li>
+          <li><strong>Planning, software en facturatie</strong><br />
+            Ondersteuning bij agenda-beheer, administratie en facturatie om tijdsverlies te beperken.</li>
+          <li><strong>Opleiding en professionele ontwikkeling</strong><br />
+            Toegang tot opleidingen, bijscholing en een netwerk van collega-verpleegkundigen.</li>
+          <li><strong>Praktische ondersteuning</strong><br />
+            Advies over materialen en doorverwijzing naar betrouwbare leveranciers, zonder commerciële verplichtingen.</li>
+        </ul>
 
         <h2>Conclusie: ondernemen hoeft niet alleen</h2>
         <p>
