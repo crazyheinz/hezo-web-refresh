@@ -41,13 +41,6 @@ const articleContent: Record<string, { content: React.ReactNode }> = {
           <li>Patiënten in palliatieve zorg</li>
         </ul>
 
-        <h2>Hoe vraag je thuisverpleging aan?</h2>
-        <p>
-          Om thuisverpleging te krijgen, heb je een voorschrift nodig van je huisarts of specialist. 
-          Met dit voorschrift kun je contact opnemen met een thuisverpleegdienst zoals Hezo. 
-          Wij regelen vervolgens alles, van de planning tot de administratie.
-        </p>
-
         <h2>Wordt thuisverpleging terugbetaald?</h2>
         <p>
           Ja, thuisverpleging wordt grotendeels terugbetaald door het RIZIV (Rijksinstituut voor Ziekte- en Invaliditeitsverzekering). 
@@ -262,6 +255,7 @@ const BlogArticle = () => {
             <div className="flex flex-wrap gap-4">
               <Link 
                 to="/wat-we-doen/"
+                onClick={() => window.scrollTo(0, 0)}
                 className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-6 py-3 rounded-lg font-medium hover:bg-secondary/90 transition-colors"
               >
                 Wat we doen
