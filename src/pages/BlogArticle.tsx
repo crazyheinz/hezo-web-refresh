@@ -150,7 +150,7 @@ const BlogArticle = () => {
             className="inline-flex items-center gap-2 text-secondary hover:text-secondary/80 mb-8 transition-colors"
           >
             <ArrowLeft className="h-4 w-4" />
-            Terug naar blog
+            Terug naar Kennis & inzichten
           </Link>
 
           {/* Article header */}
