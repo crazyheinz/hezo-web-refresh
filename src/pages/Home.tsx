@@ -65,7 +65,7 @@ const Home = () => {
                 Minder administratie. Meer zorg. Meer mens.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild size="lg" className="text-base bg-yellow text-yellow-foreground hover:bg-yellow/90">
+                <Button asChild size="lg" className="text-base bg-light-blue text-light-blue-foreground hover:bg-light-blue/90">
                   <Link to="/wat-we-doen/">
                     Ontdek wat we doen <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
