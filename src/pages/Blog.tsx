@@ -54,11 +54,14 @@ const Blog = () => {
         }}
       />
 
-      <div className="pt-24 pb-16">
+      <div className="pt-32 pb-16">
         {/* Hero Section */}
-        <section className="bg-muted py-16">
+        <section className="pb-12">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
+              <span className="text-secondary font-medium text-sm uppercase tracking-wider mb-3 block">
+                Kenniscentrum
+              </span>
               <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">
                 Blog
               </h1>
