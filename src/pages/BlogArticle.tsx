@@ -68,17 +68,26 @@ const articleContent: Record<string, { content: React.ReactNode }> = {
           </a>
         </div>
 
-        <h2>Stap 3: Bouw je praktijk op</h2>
+        <h2>Stap 3: Bouw je praktijk duurzaam uit</h2>
         <p>
-          Een goede start is cruciaal. Bij Hezo hoef je dit niet alleen te doen. 
-          Wij kunnen je praktijk mee uitbouwen of zelfs volledig uit handen nemen:
+          Na je administratieve opstart begint het echte werk: je praktijk uitbouwen en draaiende houden. 
+          Dat vraagt tijd, organisatie en continuïteit. Bij Hezo kan je kiezen hoeveel ondersteuning je daarbij wil.
         </p>
-        <ul>
-          <li><strong>Patiëntentoestroom:</strong> Hezo zorgt voor voldoende patiënten, zodat jij je kunt focussen op zorg verlenen.</li>
-          <li><strong>Software & facturatie:</strong> Wij regelen de planning, administratie en facturatie voor je.</li>
-          <li><strong>Opleiding & bijscholing:</strong> Toegang tot trainingen en een netwerk van collega's.</li>
-          <li><strong>Materialen:</strong> Voor de aankoop van materialen verwijzen we je door naar betrouwbare leveranciers.</li>
-        </ul>
+        <p>
+          We ondersteunen zelfstandige verpleegkundigen onder andere via:
+        </p>
+        <p><strong>Patiëntentoestroom</strong><br />
+          Voldoende en gespreide instroom van patiënten, afgestemd op je beschikbaarheid en werkritme.
+        </p>
+        <p><strong>Planning, software en facturatie</strong><br />
+          Ondersteuning bij agenda-beheer, administratie en facturatie om tijdsverlies te beperken.
+        </p>
+        <p><strong>Opleiding en professionele ontwikkeling</strong><br />
+          Toegang tot opleidingen, bijscholing en een netwerk van collega-verpleegkundigen.
+        </p>
+        <p><strong>Praktische ondersteuning</strong><br />
+          Advies over materialen en doorverwijzing naar betrouwbare leveranciers, zonder commerciële verplichtingen.
+        </p>
 
         <h2>Conclusie: ondernemen hoeft niet alleen</h2>
         <p>
