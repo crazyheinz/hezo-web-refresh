@@ -85,35 +85,6 @@ const Vacatures = () => {
 
   const jobs = [
     {
-      id: "praktijkcoach",
-      title: "Praktijkcoach",
-      tagline: "Word jij de motor achter sterke zelfstandige verpleegkundigen?",
-      description:
-        "Hezo, het netwerk van zelfstandige verpleegkundigen met ondersteuning van Helan - Welzijnsgroep, groeit snel. Daarom zoeken we een praktijkcoach die onze praktijkcoördinatoren en startende zelfstandigen begeleidt, inspireert en ondersteunt.",
-      responsibilities: [
-        "Je bent het eerste en vaste aanspreekpunt voor onze aangesloten verpleegkundigen en bouwt een vertrouwensrelatie op",
-        "Met jouw ervaring en coachende stijl help je hen groeien - persoonlijk, professioneel en strategisch",
-        "Je luistert, adviseert en brengt mensen samen",
-        "Je volgt de evoluties in de zorgsector op de voet en vertaalt ze naar concrete tips en oplossingen",
-        "Je capteert signalen uit het werkveld en vertaalt die naar suggesties voor de organisatie",
-        "Je werkt actief mee aan interne projecten rond opleiding, kwaliteit en innovatie",
-      ],
-      profile: [
-        "Je hebt een diploma verpleegkunde en ervaring als zelfstandige thuisverpleegkundige",
-        "Je bent nieuwsgierig, communicatief en oplossingsgericht",
-        "Je kent de regelgeving (nomenclatuur, kwaliteitswet, boekhouding) of wil die snel leren",
-        "Je werkt zelfstandig, maar voelt je thuis in een team dat samen vooruit wil",
-        "Je houdt van coachen en verbinden - mensen voelen zich op hun gemak bij jou",
-      ],
-      offer: [
-        "Een betekenisvolle rol in een vernieuwend project binnen Helan – Welzijnsgroep",
-        "Veel autonomie en ruimte om mee te bouwen aan de toekomst van Hezo",
-        "Vorming en groeikansen - ook voor jezelf",
-        "Een warm, mensgericht team waar samenwerking centraal staat",
-        "Marktconforme verloning en voordelen via Helan",
-      ],
-    },
-    {
       id: "regiomanager",
       title: "Zelfstandig Regiomanager Thuisverpleging - Gent",
       tagline: "Wil jij mee een nieuw netwerk voor zelfstandige thuisverpleging uitbouwen én regiomanager worden van jouw eigen zorgregio?",
@@ -190,6 +161,35 @@ const Vacatures = () => {
         "Hybride werken: 3 dagen thuiswerk per week en 2 dagen op het kantoor in Gent",
         "Coaching en opleiding op maat om te groeien op persoonlijk en professioneel vlak",
         "Opleidings- en groeikansen, inclusief sectorgerichte kennisontwikkeling",
+      ],
+    },
+    {
+      id: "praktijkcoach",
+      title: "Praktijkcoach",
+      tagline: "Word jij de motor achter sterke zelfstandige verpleegkundigen?",
+      description:
+        "Hezo, het netwerk van zelfstandige verpleegkundigen met ondersteuning van Helan - Welzijnsgroep, groeit snel. Daarom zoeken we een praktijkcoach die onze praktijkcoördinatoren en startende zelfstandigen begeleidt, inspireert en ondersteunt.",
+      responsibilities: [
+        "Je bent het eerste en vaste aanspreekpunt voor onze aangesloten verpleegkundigen en bouwt een vertrouwensrelatie op",
+        "Met jouw ervaring en coachende stijl help je hen groeien - persoonlijk, professioneel en strategisch",
+        "Je luistert, adviseert en brengt mensen samen",
+        "Je volgt de evoluties in de zorgsector op de voet en vertaalt ze naar concrete tips en oplossingen",
+        "Je capteert signalen uit het werkveld en vertaalt die naar suggesties voor de organisatie",
+        "Je werkt actief mee aan interne projecten rond opleiding, kwaliteit en innovatie",
+      ],
+      profile: [
+        "Je hebt een diploma verpleegkunde en ervaring als zelfstandige thuisverpleegkundige",
+        "Je bent nieuwsgierig, communicatief en oplossingsgericht",
+        "Je kent de regelgeving (nomenclatuur, kwaliteitswet, boekhouding) of wil die snel leren",
+        "Je werkt zelfstandig, maar voelt je thuis in een team dat samen vooruit wil",
+        "Je houdt van coachen en verbinden - mensen voelen zich op hun gemak bij jou",
+      ],
+      offer: [
+        "Een betekenisvolle rol in een vernieuwend project binnen Helan – Welzijnsgroep",
+        "Veel autonomie en ruimte om mee te bouwen aan de toekomst van Hezo",
+        "Vorming en groeikansen - ook voor jezelf",
+        "Een warm, mensgericht team waar samenwerking centraal staat",
+        "Marktconforme verloning en voordelen via Helan",
       ],
     },
   ];
