@@ -155,6 +155,43 @@ const Vacatures = () => {
         "Een aantrekkelijk ereloon op basis van prestaties + een managementvergoeding",
       ],
     },
+    {
+      id: "administratief-coordinator",
+      title: "Zorgondersteunend Administratief Coördinator",
+      tagline: "Wil jij meebouwen aan een vernieuwend netwerk voor zelfstandige thuisverpleging?",
+      description:
+        "Bij Hezo krijg je als administratief zorgcoördinator een centrale rol. Je combineert administratieve taken met het ontwikkelen en optimaliseren van processen, en zet jouw (verpleegkundige) expertise in om het Hezo team én aangesloten verpleegkundigen te ondersteunen bij hun vragen. In deze rol ben je een onmisbare schakel binnen een startende organisatie in volle groei. Naarmate de organisatie groeit zal ook jouw rol evolueren in functie van jouw talenten en kwaliteiten.",
+      responsibilities: [
+        "Je beheert de facturatieflow en controleert binnenkomende prestatiegegevens van de aangesloten verpleegkundigen",
+        "Je volgt betalingen op, signaleert fouten en bewaakt deadlines",
+        "Je zorgt voor een correcte uitbetaling van de geleverde prestaties",
+        "Je bent het aanspreekpunt voor administratieve vragen van collega's en zelfstandige verpleegkundigen",
+        "Je ondersteunt in documentenbeheer, afsprakenbeheer en interne communicatie",
+        "Je beheert en actualiseert het klanten-systeem en bewaakt dat data volledig en correct is",
+        "Je verzamelt kwaliteitsdata en zet die om in heldere, bruikbare rapporten",
+        "Je signaleert kwaliteitsafwijkingen en ondersteunt verbeteracties",
+        "Je analyseert bestaande processen en brengt verbeterpunten in kaart",
+        "Je zet bestaande processen om in duidelijke werkinstructies en handleidingen die efficiëntie en uniformiteit garanderen",
+      ],
+      profile: [
+        "Je hebt kennis van en bent vertrouwd met alle aspecten van (thuis)verpleging",
+        "Je hebt aantoonbare ervaring in officemanagement en/of kwaliteitsopvolging",
+        "Je bent communicatief sterk en bent vlot in de omgang",
+        "Je werkt gestructureerd en nauwkeurig",
+        "Je haalt energie uit efficiëntie, duidelijkheid en gestroomlijnde processen en begrijpt dat sterke administratie een fundament is voor goede ondersteuning van zorgverstrekkers",
+        "Je bent digitaal vaardig en vindt snel je weg in nieuwe systemen, Excel en rapporteringstools",
+      ],
+      offer: [
+        "Flexibiliteit in je takenpakket op basis van je expertise",
+        "Werknemersvorm, verloning en tewerkstellingsgraad zijn te bespreken - deze functie kan uitgevoerd worden als loontrekkende of zelfstandige",
+        "Een functie met betekenis in een groeiend zorgplatform",
+        "Een rol met veel autonomie en impact",
+        "Een warm en gedreven team dat inzet op samenwerking, groei en innovatie",
+        "Hybride werken: 3 dagen thuiswerk per week en 2 dagen op het kantoor in Gent",
+        "Coaching en opleiding op maat om te groeien op persoonlijk en professioneel vlak",
+        "Opleidings- en groeikansen, inclusief sectorgerichte kennisontwikkeling",
+      ],
+    },
   ];
 
   return (
