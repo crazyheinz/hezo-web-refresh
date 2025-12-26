@@ -115,7 +115,7 @@ const Vacatures = () => {
     },
     {
       id: "regiomanager",
-      title: "Zelfstandig Regiomanager Thuisverpleging",
+      title: "Zelfstandig Regiomanager Thuisverpleging - Gent",
       tagline: "Wil jij mee een nieuw netwerk voor zelfstandige thuisverpleging uitbouwen én regiomanager worden van jouw eigen zorgregio?",
       description:
         "Bij Hezo bouw je als zelfstandig regiomanager aan een sterk lokaal netwerk van verpleegkundigen en zorgpartners. Je combineert organisatie en inhoudelijke zorgexpertise: je ondersteunt zelfstandige thuisverpleegkundigen, bewaakt de kwaliteit van zorg én helpt Hezo groeien in jouw regio. Hier ben je niet alleen een planner, maar ook een vertrouwenspersoon voor je team én een strategische partner in de verdere uitbouw van het Hezo-netwerk.",
