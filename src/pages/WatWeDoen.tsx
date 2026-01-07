@@ -155,9 +155,9 @@ const WatWeDoen = () => {
             "Hezo zorgt voor duidelijke en correcte uitbetalingen aan alle aangesloten verpleegkundigen. Je ontvangt je vergoedingen tijdig, volledig en met overzicht van de bijhorende prestaties.",
         },
         {
-          title: "HeNurse: jouw digitale omgeving",
+          title: "MijnHezo: jouw digitale omgeving",
           content:
-            "Via HeNurse krijg je een volledig overzicht van jouw praktijk. Je vindt er: prestaties, betalingen en documenten, nieuws en updates over belangrijke wijzigingen of sectorinformatie, inschrijvingen voor opleidingen en advies over bijscholing, sjablonen, handleidingen en andere praktische documenten. Zo heb je in één veilige omgeving alles bij de hand om efficiënt te werken.",
+            "Via MijnHezo krijg je een volledig overzicht van jouw praktijk. Je vindt er: prestaties, betalingen en documenten, nieuws en updates over belangrijke wijzigingen of sectorinformatie, inschrijvingen voor opleidingen en advies over bijscholing, sjablonen, handleidingen en andere praktische documenten. Zo heb je in één veilige omgeving alles bij de hand om efficiënt te werken.",
         },
         {
           title: "Softwarekoppeling en ondersteuning",
@@ -241,9 +241,9 @@ const WatWeDoen = () => {
                                 {feature.title}
                               </AccordionTrigger>
                               <AccordionContent>
-                                {feature.title === "HeNurse: jouw digitale omgeving" ? (
+                              {feature.title === "MijnHezo: jouw digitale omgeving" ? (
                                   <div className="text-muted-foreground leading-relaxed space-y-3">
-                                    <p>Via HeNurse krijg je een volledig overzicht van jouw praktijk. Je vindt er:</p>
+                                    <p>Via MijnHezo krijg je een volledig overzicht van jouw praktijk. Je vindt er:</p>
                                     <ul className="list-disc pl-6 space-y-2">
                                       <li>prestaties, betalingen en documenten,</li>
                                       <li>nieuws en updates over belangrijke wijzigingen of sectorinformatie,</li>
