@@ -127,10 +127,53 @@ serve(async (req) => {
 
     if (!emailResponse.ok) {
       const emailError = await emailResponse.text();
-      console.error("Email error:", emailError);
+      console.error("Email error to HR:", emailError);
       // Don't throw - application is saved, email is secondary
     } else {
       console.log("Email notification sent to HR");
+    }
+
+    // Send confirmation email to applicant
+    const confirmationEmailResponse = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${RESEND_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: "Hezo <info@hezo.be>",
+        to: [email],
+        subject: `Bevestiging sollicitatie: ${position}`,
+        html: `
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+            <h1 style="color: #1a365d;">Bedankt voor je sollicitatie, ${name}!</h1>
+            <p>We hebben je sollicitatie voor de functie <strong>${position}</strong> goed ontvangen.</p>
+            <p>Ons team zal je kandidatuur zorgvuldig bekijken. We nemen zo snel mogelijk contact met je op.</p>
+            <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 24px 0;" />
+            <h3 style="color: #1a365d;">Jouw gegevens:</h3>
+            <ul style="list-style: none; padding: 0;">
+              <li><strong>Naam:</strong> ${name}</li>
+              <li><strong>E-mail:</strong> ${email}</li>
+              ${phone ? `<li><strong>Telefoon:</strong> ${phone}</li>` : ""}
+            </ul>
+            <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 24px 0;" />
+            <p style="color: #718096; font-size: 14px;">
+              Met vriendelijke groeten,<br />
+              <strong>Het Hezo Team</strong>
+            </p>
+            <p style="color: #a0aec0; font-size: 12px;">
+              Heb je vragen? Neem gerust contact met ons op via <a href="mailto:info@hezo.be" style="color: #3182ce;">info@hezo.be</a>
+            </p>
+          </div>
+        `,
+      }),
+    });
+
+    if (!confirmationEmailResponse.ok) {
+      const confirmError = await confirmationEmailResponse.text();
+      console.error("Confirmation email error:", confirmError);
+    } else {
+      console.log("Confirmation email sent to applicant:", email);
     }
 
     return new Response(
