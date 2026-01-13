@@ -83,11 +83,12 @@ const Vacatures = () => {
     }
   };
 
-  const jobs = [
+  const allJobs = [
     {
       id: "regiomanager",
       title: "Zelfstandig Regiomanager Thuisverpleging - Gent",
       tagline: "Wil jij mee een nieuw netwerk voor zelfstandige thuisverpleging uitbouwen én regiomanager worden van jouw eigen zorgregio?",
+      active: true,
       description:
         "Bij Hezo bouw je als zelfstandig regiomanager aan een sterk lokaal netwerk van verpleegkundigen en zorgpartners. Je combineert organisatie en inhoudelijke zorgexpertise: je ondersteunt zelfstandige thuisverpleegkundigen, bewaakt de kwaliteit van zorg én helpt Hezo groeien in jouw regio. Hier ben je niet alleen een planner, maar ook een vertrouwenspersoon voor je team én een strategische partner in de verdere uitbouw van het Hezo-netwerk.",
       responsibilities: [
@@ -130,6 +131,7 @@ const Vacatures = () => {
       id: "administratief-coordinator",
       title: "Zorgondersteunend Administratief Coördinator",
       tagline: "Wil jij meebouwen aan een vernieuwend netwerk voor zelfstandige thuisverpleging?",
+      active: false, // Vacature inactief gezet
       description:
         "Bij Hezo krijg je als administratief zorgcoördinator een centrale rol. Je combineert administratieve taken met het ontwikkelen en optimaliseren van processen, en zet jouw (verpleegkundige) expertise in om het Hezo team én aangesloten verpleegkundigen te ondersteunen bij hun vragen. In deze rol ben je een onmisbare schakel binnen een startende organisatie in volle groei. Naarmate de organisatie groeit zal ook jouw rol evolueren in functie van jouw talenten en kwaliteiten.",
       responsibilities: [
@@ -167,6 +169,7 @@ const Vacatures = () => {
       id: "praktijkcoach",
       title: "Praktijkcoach",
       tagline: "Word jij de motor achter sterke zelfstandige verpleegkundigen?",
+      active: true,
       description:
         "Hezo, het netwerk van zelfstandige verpleegkundigen met ondersteuning van Helan - Welzijnsgroep, groeit snel. Daarom zoeken we een praktijkcoach die onze praktijkcoördinatoren en startende zelfstandigen begeleidt, inspireert en ondersteunt.",
       responsibilities: [
@@ -193,6 +196,9 @@ const Vacatures = () => {
       ],
     },
   ];
+
+  // Filter alleen actieve vacatures voor weergave
+  const jobs = allJobs.filter(job => job.active);
 
   return (
     <div className="min-h-screen pt-32 pb-20">
