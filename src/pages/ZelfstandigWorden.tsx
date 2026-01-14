@@ -18,6 +18,7 @@ import {
   Building2,
   Rocket,
   HelpCircle,
+  ArrowRight,
 } from "lucide-react";
 
 const ZelfstandigWorden = () => {
@@ -312,58 +313,58 @@ const ZelfstandigWorden = () => {
             <Card className="mb-8">
               <CardContent className="p-6 md:p-8">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center">
-                    <Users className="h-6 w-6 text-secondary" />
+                  <div className="w-12 h-12 rounded-full bg-green/20 flex items-center justify-center">
+                    <Users className="h-6 w-6 text-green" />
                   </div>
                   <h3 className="text-xl md:text-2xl font-semibold text-primary">
-                    Stap 4: Bouw je praktijk duurzaam uit met Hezo
+                    Stap 4: Bouw je praktijk duurzaam uit
                   </h3>
                 </div>
                 
                 <p className="text-muted-foreground mb-6">
-                  Hezo ondersteunt zelfstandige thuisverpleegkundigen onder andere via:
+                  Na de administratieve opstart begint het echte werk: je praktijk uitbouwen en duurzaam draaiende houden. Dat vraagt tijd, organisatie en continuïteit. Als zelfstandig thuisverpleegkundige sta je dagelijks voor keuzes rond planning, administratie, zorgopvolging en professionele ontwikkeling.
                 </p>
 
-                <div className="space-y-4">
-                  <div className="flex items-start gap-4 p-4 bg-muted/50 rounded-lg">
-                    <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0">
-                      <Users className="h-5 w-5 text-secondary" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground">Patiënteninstroom</h4>
-                      <p className="text-muted-foreground text-sm">Gespreide instroom van zorgvragen, afgestemd op jouw beschikbaarheid.</p>
-                    </div>
+                <p className="text-muted-foreground mb-6">
+                  Bij Hezo kies je zelf hoeveel ondersteuning je daarbij wenst. Je behoudt je zelfstandigheid, terwijl je kan rekenen op gerichte ondersteuning waar dat voor jou het verschil maakt.
+                </p>
+
+                <h4 className="text-lg font-semibold text-foreground mb-4">Waarmee ondersteunen we zelfstandige verpleegkundigen?</h4>
+
+                <div className="space-y-4 mb-6">
+                  <div className="p-4 bg-light-blue/10 border-l-4 border-light-blue rounded-r-lg">
+                    <h5 className="font-semibold text-foreground mb-1">Patiënteninstroom</h5>
+                    <p className="text-muted-foreground text-sm">We zorgen voor een voldoende en gespreide instroom van patiënten, afgestemd op jouw beschikbaarheid, regio en werkschema. Zo kan je je praktijk stap voor stap uitbouwen zonder overbelasting en met behoud van werk-privébalans.</p>
                   </div>
                   
-                  <div className="flex items-start gap-4 p-4 bg-muted/50 rounded-lg">
-                    <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0">
-                      <Calendar className="h-5 w-5 text-secondary" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground">Planning, software en facturatie</h4>
-                      <p className="text-muted-foreground text-sm">Ondersteuning bij administratie om tijdsverlies te beperken.</p>
-                    </div>
+                  <div className="p-4 bg-coral/10 border-l-4 border-coral rounded-r-lg">
+                    <h5 className="font-semibold text-foreground mb-1">Planning, software en facturatie</h5>
+                    <p className="text-muted-foreground text-sm">We ondersteunen je bij agendabeheer, administratie en facturatie. Door processen te stroomlijnen en digitale tools slim in te zetten, beperken we tijdsverlies en vermijd je onnodige administratieve druk.</p>
                   </div>
                   
-                  <div className="flex items-start gap-4 p-4 bg-muted/50 rounded-lg">
-                    <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0">
-                      <GraduationCap className="h-5 w-5 text-secondary" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground">Opleiding en professionele ontwikkeling</h4>
-                      <p className="text-muted-foreground text-sm">Toegang tot opleidingen en een netwerk van collega-verpleegkundigen.</p>
-                    </div>
+                  <div className="p-4 bg-yellow/10 border-l-4 border-yellow rounded-r-lg">
+                    <h5 className="font-semibold text-foreground mb-1">Opleiding en professionele ontwikkeling</h5>
+                    <p className="text-muted-foreground text-sm">Via Hezo krijg je toegang tot opleidingen, bijscholing en een netwerk van collega-verpleegkundigen. Zo blijf je professioneel groeien, deel je kennis en blijf je mee met evoluties in de zorg.</p>
                   </div>
                   
-                  <div className="flex items-start gap-4 p-4 bg-muted/50 rounded-lg">
-                    <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0">
-                      <Briefcase className="h-5 w-5 text-secondary" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground">Praktische ondersteuning</h4>
-                      <p className="text-muted-foreground text-sm">Advies en begeleiding zonder commerciële verplichtingen.</p>
-                    </div>
+                  <div className="p-4 bg-green/10 border-l-4 border-green rounded-r-lg">
+                    <h5 className="font-semibold text-foreground mb-1">Praktische ondersteuning</h5>
+                    <p className="text-muted-foreground text-sm">We geven advies over materialen, organisatie en praktische vragen uit het werkveld. Waar nodig verwijzen we door naar betrouwbare partners en leveranciers, steeds zonder commerciële verplichtingen.</p>
                   </div>
+                </div>
+
+                <div className="p-5 bg-muted/50 rounded-lg">
+                  <h5 className="font-semibold text-foreground mb-2">Ondernemen hoef je niet alleen te doen</h5>
+                  <p className="text-muted-foreground mb-4">
+                    Als zelfstandig verpleegkundige behoud je je vrijheid en autonomie. Tegelijk sta je er bij Hezo nooit alleen voor. Van de eerste stappen tot het dagelijkse beheer van je praktijk ondersteunen en adviseren we waar mogelijk, en nemen we werk uit handen waar dat zinvol is.
+                  </p>
+                  <Link 
+                    to="/wat-we-doen" 
+                    className="inline-flex items-center gap-2 text-secondary font-medium hover:underline"
+                  >
+                    Ontdek alles wat we doen
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
                 </div>
               </CardContent>
             </Card>
