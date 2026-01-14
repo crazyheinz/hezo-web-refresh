@@ -140,7 +140,7 @@ const articleContent: Record<string, { content: React.ReactNode }> = {
         <p>Voor verpleegkundigen in de thuiszorg betekent dit ook:</p>
         <ul>
           <li>meer nood aan duidelijke richtlijnen en kwaliteitskaders</li>
-          <li>ondersteuning bij <Link to="/wat-we-doen/" className="text-secondary hover:underline">administratie, planning en organisatie</Link></li>
+          <li>ondersteuning bij <Link to="/wat-we-doen/" className="text-secondary hover:underline" onClick={() => window.scrollTo(0, 0)}>administratie, planning en organisatie</Link></li>
           <li>ruimte om zich te focussen op zorg, niet op randtaken</li>
         </ul>
 
@@ -153,7 +153,7 @@ const articleContent: Record<string, { content: React.ReactNode }> = {
         </ul>
         <p>
           Zeker in de thuisverpleging biedt dit kansen: wie zijn rol goed kent en ondersteund wordt, 
-          kan zich duurzaam en met voldoening inzetten. Overweeg je om <Link to="/zelfstandig-worden/" className="text-secondary hover:underline">zelfstandig thuisverpleegkundige te worden</Link>? 
+          kan zich duurzaam en met voldoening inzetten. Overweeg je om <Link to="/zelfstandig-worden/" className="text-secondary hover:underline" onClick={() => window.scrollTo(0, 0)}>zelfstandig thuisverpleegkundige te worden</Link>? 
           Dan is het essentieel om deze profielen goed te begrijpen.
         </p>
 
