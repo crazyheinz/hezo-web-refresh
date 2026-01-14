@@ -28,7 +28,7 @@ const Blog = () => {
   return (
     <>
       <SEO
-        title="Kennis & inzichten | Hezo - Artikelen voor thuisverpleegkundigen"
+        title="Blog"
         description="Praktische kennis en inzichten voor zelfstandige thuisverpleegkundigen. Tips over ondernemen, facturatie, verzekeringen en professionele groei."
         path="/blog/"
         type="website"
