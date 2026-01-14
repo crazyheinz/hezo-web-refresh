@@ -49,8 +49,8 @@ const articleContent: Record<string, { content: React.ReactNode }> = {
           <li>het beroep toekomstbestendiger en aantrekkelijker maken</li>
         </ul>
 
-        <h2>Welke verpleegkundige opleidingen bestaan er vandaag in Vlaanderen?</h2>
-        <p>In januari 2026 zijn er twee hoofdopleidingen voor wie verpleegkundige wil worden.</p>
+        <h2>Welke verpleegkundige opleidingen bestaan er in Vlaanderen?</h2>
+        <p>Anno 2026 zijn er twee hoofdopleidingen voor wie verpleegkundige wil worden.</p>
 
         <div className="my-6 p-5 bg-light-blue/10 border-l-4 border-light-blue rounded-r-lg">
           <h3 className="font-semibold text-primary mb-3">1. Graduaat Basisverpleegkunde</h3>
@@ -79,7 +79,7 @@ const articleContent: Record<string, { content: React.ReactNode }> = {
           </p>
         </div>
 
-        <h2>Wat is vandaag het concrete verschil tussen graduaat en bachelor?</h2>
+        <h2>Wat is het concrete verschil tussen graduaat en bachelor?</h2>
         <p>
           Hoewel beide opleidingen opleiden tot verpleegkundige functies, zijn er duidelijke verschillen.
         </p>
@@ -120,7 +120,7 @@ const articleContent: Record<string, { content: React.ReactNode }> = {
         <p>De hervorming heeft een directe impact op de organisatie van thuiszorg.</p>
 
         <h3>Twee duidelijke verpleegkundige profielen</h3>
-        <p>Thuisverplegingsteams bestaan vandaag steeds vaker uit een mix van profielen:</p>
+        <p>Thuisverplegingsteams bestaan steeds vaker uit een mix van profielen:</p>
         <ul>
           <li><strong>basisverpleegkundigen</strong> die sterk ingezet worden in directe, geplande zorg</li>
           <li><strong>bachelorverpleegkundigen</strong> die instaan voor complexere zorgsituaties, coördinatie en opvolging</li>
@@ -128,7 +128,7 @@ const articleContent: Record<string, { content: React.ReactNode }> = {
         <p>Dit vraagt een duidelijke taakafbakening, goede samenwerking en heldere afspraken binnen teams.</p>
 
         <h3>Toenemende complexiteit van thuiszorg</h3>
-        <p>De zorg die vandaag thuis wordt verleend, is vaak complexer dan vroeger:</p>
+        <p>De zorg die thuis wordt verleend, is vaak complexer dan vroeger:</p>
         <ul>
           <li>vroegtijdige ziekenhuisontslagen</li>
           <li>chronische en multimorbide patiënten</li>
@@ -145,7 +145,7 @@ const articleContent: Record<string, { content: React.ReactNode }> = {
         </ul>
 
         <h2>Wat betekent dit voor (toekomstige) verpleegkundigen?</h2>
-        <p>Voor wie vandaag studeert of al actief is als verpleegkundige, is het belangrijk om:</p>
+        <p>Voor wie studeert of al actief is als verpleegkundige, is het belangrijk om:</p>
         <ul>
           <li>goed te begrijpen welk profiel je hebt en welke bevoegdheden daarbij horen</li>
           <li>bewust te kiezen voor een werkomgeving die past bij je opleiding en ambities</li>
@@ -159,7 +159,7 @@ const articleContent: Record<string, { content: React.ReactNode }> = {
         <h2>Conclusie</h2>
         <p>
           De hervorming van HBO5 naar het graduaat Basisverpleegkunde is in 2026 geen overgangsfase meer, 
-          maar een nieuwe realiteit. Vlaanderen telt vandaag duidelijk onderscheiden verpleegkundige profielen, 
+          maar een nieuwe realiteit. Vlaanderen telt duidelijk onderscheiden verpleegkundige profielen, 
           elk met hun eigen sterktes en verantwoordelijkheden.
         </p>
         <p>Voor de thuisverpleging betekent dit:</p>
