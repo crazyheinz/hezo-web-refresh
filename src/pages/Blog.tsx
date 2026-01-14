@@ -15,15 +15,14 @@ export interface BlogArticle {
 
 // Blog articles data - add new articles here
 export const blogArticles: BlogArticle[] = [
-  // Uncomment when ready to publish:
-  // {
-  //   id: "zelfstandig-verpleegkundige-worden",
-  //   title: "Zelfstandig verpleegkundige worden: stappen en tips",
-  //   excerpt: "Droom je ervan om als zelfstandig verpleegkundige te werken? We bespreken de belangrijkste stappen, van opleiding tot praktijk opstarten, en geven praktische tips voor een succesvolle start.",
-  //   date: "2025-01-10",
-  //   category: "Carrière",
-  //   readTime: "7 min"
-  // },
+  {
+    id: "hbo5-graduaat-basisverpleegkunde",
+    title: "Van HBO5 naar graduaat Basisverpleegkunde: wat betekent de hervorming vandaag voor (thuis)verpleegkundigen?",
+    excerpt: "De vroegere HBO5-opleiding Verpleegkunde werd stapsgewijs omgevormd tot het graduaat Basisverpleegkunde. Welke opleidingen bestaan er vandaag? En wat betekent dit concreet voor verpleegkundigen in de thuiszorg?",
+    date: "2026-01-14",
+    category: "Opleiding",
+    readTime: "8 min"
+  },
 ];
 
 const formatDate = (dateString: string) => {

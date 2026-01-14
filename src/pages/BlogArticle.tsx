@@ -5,94 +5,176 @@ import { blogArticles, type BlogArticle } from "./Blog";
 
 // Full article content - add content for each article ID
 const articleContent: Record<string, { content: React.ReactNode }> = {
-  "zelfstandig-verpleegkundige-worden": {
+  "hbo5-graduaat-basisverpleegkunde": {
     content: (
       <>
+        <p className="lead italic text-muted-foreground mb-8">
+          Geüpdatet: januari 2026
+        </p>
+
         <p className="lead">
-          Als zelfstandig verpleegkundige combineer je je passie voor zorg met ondernemerschap. 
-          Het biedt flexibiliteit, autonomie en de mogelijkheid om je eigen praktijk vorm te geven. 
-          En je hoeft het niet alleen te doen, Hezo ondersteunt je bij elke stap.
+          De opleiding tot verpleegkundige in Vlaanderen is de voorbije jaren grondig hervormd. 
+          De vroegere HBO5-opleiding Verpleegkunde werd stapsgewijs omgevormd tot het graduaat Basisverpleegkunde. 
+          Die hervorming is intussen geen toekomstmuziek meer: in 2026 zijn de gevolgen ervan duidelijk voelbaar in het werkveld, 
+          en zeker ook binnen de thuisverpleging.
         </p>
 
-        <h2>Waarom kiezen voor zelfstandig ondernemen?</h2>
         <p>
-          Steeds meer verpleegkundigen kiezen ervoor om zelfstandig te werken. De voordelen zijn talrijk:
+          Maar wat houdt die hervorming precies in? Welke opleidingen bestaan er vandaag? 
+          En wat betekent dit concreet voor verpleegkundigen die (willen) werken in de thuiszorg?
+        </p>
+
+        <h2>Waarom werd de HBO5-opleiding hervormd?</h2>
+        <p>
+          De hervorming van HBO5 naar het graduaat Basisverpleegkunde was geen louter Vlaamse keuze. 
+          Ze was noodzakelijk om te voldoen aan de Europese richtlijnen voor verpleegkundige opleidingen, 
+          die minimale eisen opleggen rond:
         </p>
         <ul>
-          <li>Flexibele werkuren die passen bij jouw leven</li>
-          <li>Zelf bepalen hoeveel je werkt</li>
-          <li>Directe relatie met je patiënten</li>
-          <li>Hogere vergoeding per prestatie</li>
-          <li>Persoonlijke en professionele groei</li>
+          <li>opleidingsduur en -niveau</li>
+          <li>competenties en verantwoordelijkheden</li>
+          <li>klinische stage-uren</li>
         </ul>
 
-        <h2>Stap 1: Zorg dat je aan de voorwaarden voldoet</h2>
         <p>
-          Om als zelfstandig verpleegkundige te werken in België, moet je:
+          De vroegere HBO5-opleiding voldeed hier niet langer volledig aan. 
+          Tegelijk evolueerde de zorgcontext sterk: patiënten worden sneller ontslagen uit het ziekenhuis, 
+          zorg wordt complexer en verschuift steeds vaker naar de thuisomgeving.
         </p>
+
+        <p>De hervorming had daarom drie duidelijke doelstellingen:</p>
         <ul>
-          <li>Een erkend verpleegkundig diploma hebben</li>
-          <li>Geregistreerd zijn bij de FOD Volksgezondheid</li>
-          <li>Een RIZIV-nummer hebben</li>
-          <li>Ingeschreven zijn bij een ondernemingsloket</li>
-          <li>Aansluiten bij een sociaal verzekeringsfonds</li>
+          <li>de opleiding beter afstemmen op de realiteit van het werkveld</li>
+          <li>een helder onderscheid maken tussen verschillende verpleegkundige profielen</li>
+          <li>het beroep toekomstbestendiger en aantrekkelijker maken</li>
         </ul>
 
-        <div className="my-6 p-5 bg-primary/5 border-l-4 border-primary rounded-r-lg">
-          <p className="font-medium text-primary mb-2">Hezo helpt</p>
-          <p className="text-muted-foreground text-base">
-            Heb je vragen over je registratie, RIZIV-nummer of andere formaliteiten? 
-            Hezo geeft je advies en wijst je de juiste richting.
+        <h2>Welke verpleegkundige opleidingen bestaan er vandaag in Vlaanderen?</h2>
+        <p>In januari 2026 zijn er twee hoofdopleidingen voor wie verpleegkundige wil worden.</p>
+
+        <div className="my-6 p-5 bg-light-blue/10 border-l-4 border-light-blue rounded-r-lg">
+          <h3 className="font-semibold text-primary mb-3">1. Graduaat Basisverpleegkunde</h3>
+          <ul className="text-muted-foreground text-base space-y-1 mb-0">
+            <li><strong>Duur:</strong> 3 jaar</li>
+            <li><strong>Niveau:</strong> Vlaams kwalificatieniveau 5</li>
+            <li><strong>Organisatie:</strong> secundaire scholen in samenwerking met hogescholen</li>
+            <li><strong>Focus:</strong> sterk praktijkgericht</li>
+            <li><strong>Opleidingsomvang:</strong> ± 3.800 uur, waarvan ongeveer de helft stage</li>
+          </ul>
+          <p className="text-muted-foreground text-base mt-3 mb-0">
+            Afgestudeerden behalen de titel <strong>gegradueerde basisverpleegkundige</strong>.
           </p>
         </div>
 
-        <h2>Stap 2: Kies je ondernemingsvorm</h2>
-        <p>
-          Je kunt kiezen om als eenmanszaak te starten of een vennootschap op te richten. 
-          Elke vorm heeft voor- en nadelen op vlak van aansprakelijkheid, fiscaliteit en administratie.
-        </p>
-
-        <div className="my-6 p-5 bg-secondary/5 border-l-4 border-secondary rounded-r-lg">
-          <p className="font-medium text-primary mb-2">💡 Tip</p>
-          <p className="text-muted-foreground text-base mb-3">
-            Een sociaal verzekeringsfonds zoals Xerius kan je gratis adviseren bij het opstarten als zelfstandige. 
-            Zij helpen je met de keuze van je ondernemingsvorm, administratieve verplichtingen én bieden ondersteuning als boekhouder.
+        <div className="my-6 p-5 bg-coral/10 border-l-4 border-coral rounded-r-lg">
+          <h3 className="font-semibold text-primary mb-3">2. Professionele Bachelor Verpleegkunde</h3>
+          <ul className="text-muted-foreground text-base space-y-1 mb-0">
+            <li><strong>Duur:</strong> 4 jaar</li>
+            <li><strong>Niveau:</strong> Vlaams kwalificatieniveau 6</li>
+            <li><strong>Organisatie:</strong> hogescholen</li>
+            <li><strong>Focus:</strong> combinatie van theorie, praktijk en klinisch redeneren</li>
+          </ul>
+          <p className="text-muted-foreground text-base mt-3 mb-0">
+            Afgestudeerden behalen de titel <strong>verpleegkundige verantwoordelijk voor algemene zorg</strong>.
           </p>
-          <a 
-            href="https://www.xerius.be" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-secondary font-medium hover:underline"
-          >
-            Bezoek Xerius
-          </a>
         </div>
 
-        <h2>Stap 3: Bouw je praktijk duurzaam uit</h2>
+        <h2>Wat is vandaag het concrete verschil tussen graduaat en bachelor?</h2>
         <p>
-          Na je administratieve opstart begint het echte werk: je praktijk uitbouwen en draaiende houden. 
-          Dat vraagt tijd, organisatie en continuïteit. Bij Hezo kan je kiezen hoeveel ondersteuning je daarbij wil.
+          Hoewel beide opleidingen opleiden tot verpleegkundige functies, zijn er duidelijke verschillen.
         </p>
-        <p>
-          We ondersteunen zelfstandige verpleegkundigen onder andere via:
-        </p>
+
+        <h3>Niveau en verantwoordelijkheden</h3>
         <ul>
-          <li><strong>Patiëntentoestroom</strong><br />
-            Voldoende en gespreide instroom van patiënten, afgestemd op je beschikbaarheid en werkritme.</li>
-          <li><strong>Planning, software en facturatie</strong><br />
-            Ondersteuning bij agenda-beheer, administratie en facturatie om tijdsverlies te beperken.</li>
-          <li><strong>Opleiding en professionele ontwikkeling</strong><br />
-            Toegang tot opleidingen, bijscholing en een netwerk van collega-verpleegkundigen.</li>
-          <li><strong>Praktische ondersteuning</strong><br />
-            Advies over materialen en doorverwijzing naar betrouwbare leveranciers, zonder commerciële verplichtingen.</li>
+          <li><strong>Basisverpleegkundigen (graduaat)</strong> werken autonoom binnen meer afgebakende en minder complexe zorgsituaties.</li>
+          <li><strong>Bachelorverpleegkundigen</strong> dragen eindverantwoordelijkheid in complexere zorgcontexten, nemen vaker coördinerende taken op en hebben een bredere klinische verantwoordelijkheid.</li>
         </ul>
 
-        <h2>Conclusie: ondernemen hoeft niet alleen</h2>
+        <h3>Opleidingsfocus</h3>
+        <ul>
+          <li>Het <strong>graduaat</strong> is uitgesproken praktijkgericht, met veel stages en directe inzetbaarheid.</li>
+          <li>De <strong>bacheloropleiding</strong> legt meer nadruk op klinisch redeneren, coördinatie, kwaliteit en verantwoordelijkheid.</li>
+        </ul>
+
+        <h3>Doorgroeimogelijkheden</h3>
         <p>
-          Als zelfstandig verpleegkundige behoud je je vrijheid en autonomie. 
-          Maar bij Hezo sta je er nooit alleen voor. Van de eerste stap tot het dagelijks runnen van je praktijk, 
-          wij ondersteunen, adviseren en nemen werk uit handen waar we kunnen. Zo houd jij tijd over voor wat écht telt: zorg voor je patiënten.
+          Gegradueerde basisverpleegkundigen kunnen via brug- of vervolgtrajecten alsnog doorgroeien naar het bachelorniveau.
         </p>
+
+        <h2>Overgangsmaatregelen: wat geldt er in 2026?</h2>
+        <p>
+          Voor studenten die gestart zijn in de schooljaren 2023-2024 of 2024-2025 gelden overgangsmaatregelen. 
+          Zij volgen een aangepast programma dat nog gebaseerd is op de vroegere HBO5-structuur, 
+          maar inhoudelijk afgestemd is op het nieuwe profiel van basisverpleegkundige.
+        </p>
+
+        <div className="my-6 p-5 bg-yellow/10 border-l-4 border-yellow rounded-r-lg">
+          <p className="font-medium text-primary mb-2">👉 Belangrijk</p>
+          <p className="text-muted-foreground text-base mb-0">
+            In 2026 zijn deze overgangsmaatregelen nog steeds van kracht en lopen ze tot en met het schooljaar 2026-2027.
+            Studenten die vóór of in het schooljaar 2022-2023 met HBO5 zijn gestart, kunnen hun opleiding afwerken onder de oude regeling.
+          </p>
+        </div>
+
+        <h2>Wat betekent dit specifiek voor de thuisverpleging?</h2>
+        <p>De hervorming heeft een directe impact op de organisatie van thuiszorg.</p>
+
+        <h3>Twee duidelijke verpleegkundige profielen</h3>
+        <p>Thuisverplegingsteams bestaan vandaag steeds vaker uit een mix van profielen:</p>
+        <ul>
+          <li><strong>basisverpleegkundigen</strong> die sterk ingezet worden in directe, geplande zorg</li>
+          <li><strong>bachelorverpleegkundigen</strong> die instaan voor complexere zorgsituaties, coördinatie en opvolging</li>
+        </ul>
+        <p>Dit vraagt een duidelijke taakafbakening, goede samenwerking en heldere afspraken binnen teams.</p>
+
+        <h3>Toenemende complexiteit van thuiszorg</h3>
+        <p>De zorg die vandaag thuis wordt verleend, is vaak complexer dan vroeger:</p>
+        <ul>
+          <li>vroegtijdige ziekenhuisontslagen</li>
+          <li>chronische en multimorbide patiënten</li>
+          <li>technische handelingen in de thuissituatie</li>
+        </ul>
+        <p>Dat maakt een doordachte inzet van competenties essentieel.</p>
+
+        <h3>Meer nood aan ondersteuning en structuur</h3>
+        <p>Voor verpleegkundigen in de thuiszorg betekent dit ook:</p>
+        <ul>
+          <li>meer nood aan duidelijke richtlijnen en kwaliteitskaders</li>
+          <li>ondersteuning bij administratie, planning en organisatie</li>
+          <li>ruimte om zich te focussen op zorg, niet op randtaken</li>
+        </ul>
+
+        <h2>Wat betekent dit voor (toekomstige) verpleegkundigen?</h2>
+        <p>Voor wie vandaag studeert of al actief is als verpleegkundige, is het belangrijk om:</p>
+        <ul>
+          <li>goed te begrijpen welk profiel je hebt en welke bevoegdheden daarbij horen</li>
+          <li>bewust te kiezen voor een werkomgeving die past bij je opleiding en ambities</li>
+          <li>te weten dat doorgroeien mogelijk blijft, maar niet automatisch is</li>
+        </ul>
+        <p>
+          Zeker in de thuisverpleging biedt dit kansen: wie zijn rol goed kent en ondersteund wordt, 
+          kan zich duurzaam en met voldoening inzetten.
+        </p>
+
+        <h2>Conclusie</h2>
+        <p>
+          De hervorming van HBO5 naar het graduaat Basisverpleegkunde is in 2026 geen overgangsfase meer, 
+          maar een nieuwe realiteit. Vlaanderen telt vandaag duidelijk onderscheiden verpleegkundige profielen, 
+          elk met hun eigen sterktes en verantwoordelijkheden.
+        </p>
+        <p>Voor de thuisverpleging betekent dit:</p>
+        <ul>
+          <li>meer diversiteit in teams</li>
+          <li>meer nood aan afstemming en ondersteuning</li>
+          <li>maar ook kansen om zorg beter te organiseren rond competenties</li>
+        </ul>
+
+        <div className="my-8 p-6 bg-green/10 border-l-4 border-green rounded-r-lg">
+          <p className="text-primary text-lg font-medium mb-0">
+            Goede zorg begint bij duidelijke rollen, correcte informatie en een context die verpleegkundigen toelaat 
+            te doen waar ze sterk in zijn: zorg verlenen, dicht bij de patiënt.
+          </p>
+        </div>
       </>
     ),
   },
