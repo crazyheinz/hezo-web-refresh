@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import WatWeDoen from "./pages/WatWeDoen";
+import ZelfstandigWorden from "./pages/ZelfstandigWorden";
 import Opleidingen from "./pages/Opleidingen";
 import Vacatures from "./pages/Vacatures";
 import Blog from "./pages/Blog";
@@ -30,6 +31,7 @@ const App = () => (
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/wat-we-doen" element={<WatWeDoen />} />
+                <Route path="/zelfstandig-worden" element={<ZelfstandigWorden />} />
                 <Route path="/opleidingen" element={<Opleidingen />} />
                 <Route path="/vacatures" element={<Vacatures />} />
                 <Route path="/blog" element={<Blog />} />
