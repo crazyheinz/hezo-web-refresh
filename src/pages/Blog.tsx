@@ -46,15 +46,43 @@ const Blog = () => {
         type="website"
         structuredData={{
           "@context": "https://schema.org",
-          "@type": "Blog",
-          name: "Blog",
-          description: "Praktische kennis en inzichten voor zelfstandige thuisverpleegkundigen",
-          url: "https://www.hezo.be/blog/",
-          publisher: {
-            "@type": "Organization",
-            name: "Hezo",
-            url: "https://www.hezo.be",
-          },
+          "@graph": [
+            {
+              "@type": "Blog",
+              "@id": "https://www.hezo.be/blog/#blog",
+              "name": "Hezo Blog",
+              "description": "Praktische kennis en inzichten voor zelfstandige thuisverpleegkundigen. Artikelen over ondernemen, facturatie, verzekeringen, opleiding en professionele groei in de thuiszorg.",
+              "url": "https://www.hezo.be/blog/",
+              "inLanguage": "nl-BE",
+              "publisher": {
+                "@type": "Organization",
+                "name": "Hezo",
+                "url": "https://www.hezo.be"
+              },
+              "blogPost": blogArticles.map(article => ({
+                "@type": "BlogPosting",
+                "headline": article.title,
+                "description": article.excerpt,
+                "datePublished": article.date,
+                "url": `https://www.hezo.be/blog/${article.id}/`,
+                "author": {
+                  "@type": "Organization",
+                  "name": "Hezo"
+                }
+              }))
+            },
+            {
+              "@type": "CollectionPage",
+              "name": "Hezo Blog - Kenniscentrum voor Thuisverpleegkundigen",
+              "description": "Verzameling van artikelen en inzichten voor zelfstandige thuisverpleegkundigen over ondernemen, facturatie, opleidingen en professionele groei.",
+              "url": "https://www.hezo.be/blog/",
+              "isPartOf": {
+                "@type": "WebSite",
+                "name": "Hezo",
+                "url": "https://www.hezo.be"
+              }
+            }
+          ]
         }}
       />
 

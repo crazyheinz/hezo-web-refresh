@@ -212,29 +212,63 @@ const Vacatures = () => {
             {
               "@type": "WebPage",
               "name": "Vacatures bij Hezo",
-              "description": "Bekijk openstaande vacatures bij Hezo",
-              "url": "https://www.hezo.be/vacatures"
+              "description": "Bekijk openstaande vacatures bij Hezo. Werk als praktijkcoach, regiomanager of administratief coördinator in de thuisverpleging.",
+              "url": "https://www.hezo.be/vacatures/"
             },
             ...jobs.map(job => ({
               "@type": "JobPosting",
               "title": job.title,
               "description": job.description,
               "datePosted": "2025-01-15",
+              "validThrough": "2026-12-31",
               "employmentType": "FULL_TIME",
               "hiringOrganization": {
                 "@type": "Organization",
                 "name": "Hezo",
-                "sameAs": "https://www.hezo.be"
+                "sameAs": "https://www.hezo.be",
+                "logo": "https://www.hezo.be/favicon.png"
               },
               "jobLocation": {
                 "@type": "Place",
                 "address": {
                   "@type": "PostalAddress",
                   "addressLocality": job.id === "regiomanager" ? "Gent" : "België",
+                  "addressRegion": "Vlaanderen",
                   "addressCountry": "BE"
                 }
-              }
-            }))
+              },
+              "industry": "Healthcare",
+              "occupationalCategory": "Healthcare Support"
+            })),
+            {
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Welke vacatures zijn er bij Hezo?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Hezo zoekt regelmatig nieuwe mensen: praktijkcoaches, regiomanagers en administratieve medewerkers met een hart voor zorg. Bekijk de actuele vacatures op hezo.be/vacatures."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Wat doet een regiomanager bij Hezo?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Als zelfstandig regiomanager bouw je aan een sterk lokaal netwerk van verpleegkundigen en zorgpartners. Je combineert organisatie en inhoudelijke zorgexpertise, ondersteunt zelfstandige thuisverpleegkundigen en bewaakt de kwaliteit van zorg."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Wat doet een praktijkcoach bij Hezo?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Als praktijkcoach begeleid en inspireer je onze praktijkcoördinatoren en startende zelfstandigen. Je bent het vaste aanspreekpunt voor aangesloten verpleegkundigen en helpt hen groeien, persoonlijk, professioneel en strategisch."
+                  }
+                }
+              ]
+            }
           ]
         }}
       />

@@ -34,22 +34,81 @@ const Home = () => {
         path="/"
         structuredData={{
           "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "Hezo",
-          "url": "https://www.hezo.be",
-          "logo": "https://www.hezo.be/favicon.png",
-          "description": "Hezo ondersteunt zelfstandige thuisverpleegkundigen met administratie, facturatie, patiëntenstroom en begeleiding.",
-          "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "BE"
-          },
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+32 9 265 17 20",
-            "email": "info@hezo.be",
-            "contactType": "customer service",
-            "availableLanguage": ["Dutch"]
-          }
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": "https://www.hezo.be/#organization",
+              "name": "Hezo",
+              "url": "https://www.hezo.be",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.hezo.be/favicon.png"
+              },
+              "description": "Hezo is een Belgisch netwerk dat zelfstandige thuisverpleegkundigen ondersteunt met administratie, facturatie, patiëntenstroom en begeleiding.",
+              "foundingDate": "2025",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Gent",
+                "addressCountry": "BE"
+              },
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+32 9 265 17 20",
+                "email": "info@hezo.be",
+                "contactType": "customer service",
+                "availableLanguage": ["nl"]
+              },
+              "knowsAbout": [
+                "Thuisverpleging",
+                "Zelfstandige verpleegkundigen",
+                "Thuiszorg België",
+                "RIZIV-facturatie",
+                "Verpleegkundige administratie"
+              ]
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://www.hezo.be/#website",
+              "url": "https://www.hezo.be",
+              "name": "Hezo",
+              "publisher": {
+                "@id": "https://www.hezo.be/#organization"
+              },
+              "inLanguage": "nl-BE"
+            },
+            {
+              "@type": "WebPage",
+              "@id": "https://www.hezo.be/#webpage",
+              "url": "https://www.hezo.be",
+              "name": "Hezo | Ondersteuning voor Zelfstandige Thuisverpleegkundigen",
+              "description": "Hezo ondersteunt zelfstandige thuisverpleegkundigen met administratie, facturatie, patiëntenstroom en begeleiding.",
+              "isPartOf": {
+                "@id": "https://www.hezo.be/#website"
+              },
+              "about": {
+                "@id": "https://www.hezo.be/#organization"
+              },
+              "inLanguage": "nl-BE"
+            },
+            {
+              "@type": "HealthcareService",
+              "name": "Hezo - Ondersteuning Thuisverpleging",
+              "description": "Hezo biedt ondersteuning voor zelfstandige thuisverpleegkundigen in België: patiënteninstroom, administratie, facturatie, opleiding en begeleiding.",
+              "provider": {
+                "@id": "https://www.hezo.be/#organization"
+              },
+              "serviceType": "Ondersteuning voor zelfstandige thuisverpleegkundigen",
+              "areaServed": {
+                "@type": "Country",
+                "name": "België"
+              },
+              "availableChannel": {
+                "@type": "ServiceChannel",
+                "serviceUrl": "https://www.hezo.be/contact/",
+                "servicePhone": "+32 9 265 17 20"
+              }
+            }
+          ]
         }}
       />
       {/* Hero Section */}

@@ -176,19 +176,97 @@ const WatWeDoen = () => {
         path="/wat-we-doen"
         structuredData={{
           "@context": "https://schema.org",
-          "@type": "WebPage",
-          "name": "Wat We Doen - Hezo",
-          "description": "Ontdek hoe Hezo zelfstandige thuisverpleegkundigen ondersteunt met patiënteninstroom, welzijn, begeleiding, opleiding en administratie.",
-          "url": "https://www.hezo.be/wat-we-doen",
-          "mainEntity": {
-            "@type": "Service",
-            "name": "Ondersteuning voor Thuisverpleegkundigen",
-            "provider": {
-              "@type": "Organization",
-              "name": "Hezo"
+          "@graph": [
+            {
+              "@type": "WebPage",
+              "name": "Wat We Doen - Hezo",
+              "description": "Hezo ondersteunt zelfstandige thuisverpleegkundigen met patiënteninstroom, welzijn, begeleiding, opleiding en administratie.",
+              "url": "https://www.hezo.be/wat-we-doen/"
             },
-            "serviceType": "Healthcare Support Services"
-          }
+            {
+              "@type": "Service",
+              "@id": "https://www.hezo.be/#service",
+              "name": "Ondersteuning voor Zelfstandige Thuisverpleegkundigen",
+              "description": "Hezo biedt complete ondersteuning voor zelfstandige thuisverpleegkundigen: patiënteninstroom via het Helan-netwerk, administratieve ondersteuning, facturatie, welzijnsprogramma's, begeleiding en opleidingen.",
+              "provider": {
+                "@type": "Organization",
+                "name": "Hezo",
+                "url": "https://www.hezo.be"
+              },
+              "serviceType": "Ondersteuning thuisverpleging",
+              "areaServed": {
+                "@type": "Country",
+                "name": "België"
+              },
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Diensten voor thuisverpleegkundigen",
+                "itemListElement": [
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Patiënteninstroom",
+                      "description": "Regelmatige instroom van nieuwe patiënten via het Helan-netwerk voor zelfstandige thuisverpleegkundigen."
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Administratie en facturatie",
+                      "description": "Volledige administratieve ondersteuning inclusief tarificatie, facturatie naar mutualiteiten en remgeldopvolging."
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Begeleiding",
+                      "description": "Persoonlijke begeleiding voor startende en ervaren zelfstandige verpleegkundigen."
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Opleiding",
+                      "description": "Praktijkgerichte opleidingen en bijscholing voor thuisverpleegkundigen."
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Wat is Hezo?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Hezo is een Belgisch netwerk dat zelfstandige thuisverpleegkundigen ondersteunt met administratie, facturatie, patiëntenstroom en begeleiding. Het netwerk is verbonden aan Helan, een groot ziekenfonds en welzijnsnetwerk."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Hoe zorgt Hezo voor patiënteninstroom?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Bij Hezo komt de zorgvraag rechtstreeks vanuit Helan, het ziekenfonds en welzijnsnetwerk dat duizenden klanten ondersteunt. Vanuit dat netwerk worden zorgvragen zorgvuldig gekoppeld aan zelfstandige verpleegkundigen."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Welke administratieve ondersteuning biedt Hezo?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Hezo zorgt voor tarificatie, facturatie naar mutualiteiten, opvolging van weigeringen en correcties, remgeldverwerking en tijdige uitbetalingen aan verpleegkundigen."
+                  }
+                }
+              ]
+            }
+          ]
         }}
       />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">

@@ -24,31 +24,98 @@ import {
 const ZelfstandigWorden = () => {
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "HowTo",
-    name: "Zelfstandig thuisverpleegkundige worden",
-    description: "Stappenplan om als zelfstandig thuisverpleegkundige te starten in België met ondersteuning van Hezo.",
-    step: [
+    "@graph": [
       {
-        "@type": "HowToStep",
-        name: "Check of je aan de voorwaarden voldoet",
-        text: "Zorg dat je een erkend verpleegkundig diploma hebt, erkenning door FOD Volksgezondheid, een RIZIV-nummer, en registratie bij ondernemingsloket en sociaal verzekeringsfonds.",
+        "@type": "HowTo",
+        "name": "Zelfstandig thuisverpleegkundige worden in België",
+        "description": "Stappenplan om als zelfstandig thuisverpleegkundige te starten in België. Van diploma en RIZIV-nummer tot het uitbouwen van je praktijk met ondersteuning van Hezo.",
+        "totalTime": "P30D",
+        "estimatedCost": {
+          "@type": "MonetaryAmount",
+          "currency": "EUR",
+          "value": "500-1500"
+        },
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": 1,
+            "name": "Check of je aan de voorwaarden voldoet",
+            "text": "Om als zelfstandig thuisverpleegkundige te starten heb je nodig: een erkend verpleegkundig diploma, erkenning door FOD Volksgezondheid (visum), een RIZIV-nummer, inschrijving bij een ondernemingsloket, en aansluiting bij een sociaal verzekeringsfonds."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 2,
+            "name": "Kies je ondernemingsvorm",
+            "text": "Kies tussen een eenmanszaak (meest gekozen bij opstart, eenvoudiger en sneller) of een vennootschap (interessant bij samenwerking of hogere omzet). De juiste keuze hangt af van omzet, samenwerking en toekomstplannen."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 3,
+            "name": "Regel je opstart als zelfstandige",
+            "text": "Start je eenmanszaak via een erkend ondernemingsloket zoals Xerius. Zorg dat je inschrijving correct verloopt en je dossier volledig is."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 4,
+            "name": "Bouw je praktijk duurzaam uit",
+            "text": "Na de administratieve opstart bouw je je praktijk uit met ondersteuning bij patiënteninstroom, planning, software, facturatie, opleiding en praktische begeleiding."
+          }
+        ]
       },
       {
-        "@type": "HowToStep",
-        name: "Kies je ondernemingsvorm",
-        text: "Kies tussen een eenmanszaak of vennootschap, afhankelijk van je situatie en toekomstplannen.",
-      },
-      {
-        "@type": "HowToStep",
-        name: "Regel je opstart als zelfstandige",
-        text: "Start je eenmanszaak via een erkend ondernemingsloket en zorg dat je dossier volledig is.",
-      },
-      {
-        "@type": "HowToStep",
-        name: "Bouw je praktijk duurzaam uit met Hezo",
-        text: "Ontvang ondersteuning bij patiënteninstroom, planning, facturatie, opleiding en praktische begeleiding.",
-      },
-    ],
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Wat heb ik nodig om zelfstandig thuisverpleegkundige te worden in België?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Om als zelfstandig thuisverpleegkundige te starten heb je nodig: een erkend verpleegkundig diploma (HBO5/graduaat of bachelor), erkenning door FOD Volksgezondheid, een RIZIV-nummer, inschrijving bij een ondernemingsloket, en aansluiting bij een sociaal verzekeringsfonds."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Heb ik altijd een RIZIV-nummer nodig als thuisverpleegkundige?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja, als je prestaties wil aanrekenen in de thuisverpleging is een RIZIV-nummer verplicht. Dit nummer laat je toe om verpleegkundige prestaties correct aan te rekenen binnen de ziekteverzekering."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wat is het verschil tussen een eenmanszaak en vennootschap voor thuisverpleegkundigen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Een eenmanszaak is vaak eenvoudiger en sneller bij opstart. Een vennootschap kan fiscaal interessanter worden bij groei of samenwerking. De juiste keuze hangt af van omzet, samenwerking en toekomstplannen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wat als ik ziek word als zelfstandig verpleegkundige?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Als zelfstandige heb je bij ziekte recht op een uitkering via je sociaal verzekeringsfonds, op voorwaarde dat je in orde bent met je sociale bijdragen. De uitkering start vanaf de 8ste dag arbeidsongeschiktheid. Veel zelfstandige verpleegkundigen kiezen voor een aanvullende verzekering (gewaarborgd inkomen) voor betere bescherming."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Heb ik een boekhouder nodig als zelfstandig thuisverpleegkundige?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Als zelfstandig thuisverpleegkundige ben je niet verplicht om met een boekhouder te werken, maar in de praktijk kiezen veel starters daar wél voor. Een boekhouder kan helpen bij de keuze tussen eenmanszaak of vennootschap, correcte btw- en fiscale aangiftes, en inzicht in inkomsten en kosten."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hoe vraag ik een RIZIV-nummer aan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Eerst heb je erkenning nodig van de FOD Volksgezondheid (visum). Bij een Belgisch of Europees diploma wordt dit vaak automatisch toegekend. Daarna schrijf je je in bij het RIZIV via het officiële inschrijvingsformulier. Na goedkeuring ontvang je je persoonlijke RIZIV-nummer."
+            }
+          }
+        ]
+      }
+    ]
   };
 
   return (
