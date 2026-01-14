@@ -440,29 +440,6 @@ const ZelfstandigWorden = () => {
           </div>
         </div>
       </section>
-
-      {/* Conclusion Section */}
-      <section className="py-16 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-6">
-              Conclusie: zelfstandig ondernemen hoeft niet alleen
-            </h2>
-            <p className="text-lg mb-4 opacity-90">
-              Als zelfstandig thuisverpleegkundige behoud je vrijheid en autonomie.
-            </p>
-            <p className="text-lg mb-8 opacity-90">
-              Met Hezo sta je er niet alleen voor: wij ondersteunen je bij administratie, instroom en verdere uitbouw, zodat jij je kan focussen op wat echt telt: zorg voor je patiënten.
-            </p>
-            <p className="text-lg mb-8">
-              Heb je vragen of wil je starten?
-            </p>
-            <Button asChild size="lg" variant="secondary">
-              <Link to="/contact/">Neem contact op met Hezo</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
