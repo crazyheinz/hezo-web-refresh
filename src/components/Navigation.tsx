@@ -21,6 +21,7 @@ const Navigation = () => {
   const navItems = [
     { label: "Home", href: "/" },
     { label: "Wat we doen", href: "/wat-we-doen/" },
+    { label: "Zelfstandig worden", href: "/zelfstandig-worden/" },
     { label: "Opleidingen", href: "/opleidingen/" },
     { label: "Vacatures", href: "/vacatures/" },
     { label: "Kennis & inzichten", href: "/blog/" },
