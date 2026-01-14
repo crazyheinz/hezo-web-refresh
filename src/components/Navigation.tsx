@@ -56,10 +56,10 @@ const Navigation = () => {
       dropdown: [
         { label: "Zelfstandig worden", href: "/zelfstandig-worden/" },
         { label: "Opleidingen", href: "/opleidingen/" },
-        { label: "Blog", href: "/blog/" },
       ]
     },
     { label: "Vacatures", href: "/vacatures/" },
+    { label: "Blog", href: "/blog/" },
     { label: "Contact", href: "/contact/" },
   ];
 
