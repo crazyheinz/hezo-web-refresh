@@ -24,7 +24,7 @@ const Navigation = () => {
     { label: "Zelfstandig worden", href: "/zelfstandig-worden/" },
     { label: "Opleidingen", href: "/opleidingen/" },
     { label: "Vacatures", href: "/vacatures/" },
-    { label: "Kennis & inzichten", href: "/blog/" },
+    { label: "Blog", href: "/blog/" },
     { label: "Contact", href: "/contact/" },
   ];
 
@@ -64,11 +64,7 @@ const Navigation = () => {
             className="md:hidden"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
+            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>
         </div>
 
