@@ -56,10 +56,10 @@ const Navigation = () => {
       dropdown: [
         { label: "Zelfstandig worden", href: "/zelfstandig-worden/" },
         { label: "Opleidingen", href: "/opleidingen/" },
-        { label: "Vacatures", href: "/vacatures/" },
         { label: "Blog", href: "/blog/" },
       ]
     },
+    { label: "Vacatures", href: "/vacatures/" },
     { label: "Contact", href: "/contact/" },
   ];
 
@@ -104,7 +104,7 @@ const Navigation = () => {
                         <Link
                           key={dropdownItem.href}
                           to={dropdownItem.href}
-                          className={`block px-4 py-2.5 text-sm font-medium transition-colors hover:bg-muted hover:text-secondary ${
+                          className={`block px-4 py-2.5 text-base font-medium transition-colors hover:bg-muted hover:text-secondary ${
                             isActiveLink(dropdownItem.href) ? "text-secondary bg-muted/50" : "text-foreground"
                           }`}
                         >
@@ -161,7 +161,7 @@ const Navigation = () => {
                         <Link
                           key={dropdownItem.href}
                           to={dropdownItem.href}
-                          className={`block py-2 text-sm font-medium transition-colors hover:text-secondary ${
+                          className={`block py-2 text-base font-medium transition-colors hover:text-secondary ${
                             isActiveLink(dropdownItem.href) ? "text-secondary" : "text-muted-foreground"
                           }`}
                           onClick={() => setIsMobileMenuOpen(false)}
