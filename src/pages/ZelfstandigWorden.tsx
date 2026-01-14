@@ -214,7 +214,7 @@ const ZelfstandigWorden = () => {
                     <Building2 className="h-6 w-6 text-secondary" />
                   </div>
                   <h3 className="text-xl md:text-2xl font-semibold text-primary">
-                    Stap 2: Kies je ondernemingsvorm
+                    Stap 2: Kies je ondernemingsvorm en ondersteuning
                   </h3>
                 </div>
                 
