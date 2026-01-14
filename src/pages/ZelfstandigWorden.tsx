@@ -257,6 +257,32 @@ const ZelfstandigWorden = () => {
                       <p className="mt-4 text-muted-foreground">Hezo helpt je deze keuze begrijpen vóór je officieel start.</p>
                     </AccordionContent>
                   </AccordionItem>
+
+                  <AccordionItem value="boekhouder" className="border rounded-lg">
+                    <AccordionTrigger className="px-4 hover:no-underline">
+                      <span className="text-left font-medium">Heb ik een boekhouder nodig als zelfstandig thuisverpleegkundige?</span>
+                    </AccordionTrigger>
+                    <AccordionContent className="px-4 pb-4">
+                      <div className="space-y-4 text-muted-foreground">
+                        <p>Als zelfstandig thuisverpleegkundige ben je niet verplicht om met een boekhouder te werken, maar in de praktijk kiezen veel starters daar wél voor — zeker in de eerste jaren.</p>
+                        
+                        <p className="text-foreground font-medium">Een boekhouder kan je onder andere helpen bij:</p>
+                        <ul className="list-disc list-inside space-y-1 ml-2">
+                          <li>de keuze tussen eenmanszaak of vennootschap (nu én op middellange termijn),</li>
+                          <li>correcte btw- en fiscale aangiftes,</li>
+                          <li>inzicht in inkomsten, kosten en optimalisaties,</li>
+                          <li>voorbereiding op groei of samenwerking.</li>
+                        </ul>
+                        
+                        <div className="bg-yellow/10 border border-yellow/20 rounded-lg p-3 mt-4">
+                          <p><strong>Hezo helpt:</strong> We bekijken samen met jou of en wanneer een boekhouder voor jou relevant is. Heb je al een boekhouder, dan sluiten we daarop aan. Heb je er nog geen, dan helpen we je gericht op weg — zonder verplichtingen.</p>
+                          <Link to="/contact/" className="inline-block mt-3 text-secondary font-medium hover:underline">
+                            Neem contact op
+                          </Link>
+                        </div>
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
                 </Accordion>
               </CardContent>
             </Card>
@@ -395,19 +421,19 @@ const ZelfstandigWorden = () => {
               
               <AccordionItem value="faq-1" className="border rounded-lg">
                 <AccordionTrigger className="px-4 hover:no-underline">
-                  <span className="text-left font-medium">Heb ik een boekhouder nodig?</span>
-                </AccordionTrigger>
-                <AccordionContent className="px-4 pb-4 text-muted-foreground">
-                  Niet verplicht, maar sterk aangeraden voor fiscale en administratieve opvolging.
-                </AccordionContent>
-              </AccordionItem>
-              
-              <AccordionItem value="faq-2" className="border rounded-lg">
-                <AccordionTrigger className="px-4 hover:no-underline">
                   <span className="text-left font-medium">Wat als ik ziek word als zelfstandige?</span>
                 </AccordionTrigger>
                 <AccordionContent className="px-4 pb-4 text-muted-foreground">
-                  Je hebt recht op een uitkering vanaf een bepaald moment. Je kan je aanvullend verzekeren voor extra bescherming.
+                  <p className="mb-4">Als zelfstandige heb je bij ziekte recht op een uitkering via je sociaal verzekeringsfonds, op voorwaarde dat je in orde bent met je sociale bijdragen.</p>
+                  
+                  <p className="font-medium text-foreground mb-2">Concreet:</p>
+                  <ul className="list-disc list-inside space-y-1 mb-4">
+                    <li>De uitkering start vanaf de 8ste dag arbeidsongeschiktheid.</li>
+                    <li>Het bedrag hangt af van je gezins- en statuut (alleenstaand, met gezin, samenwonend).</li>
+                    <li>De uitkering wordt per dag uitgekeerd zolang je erkend arbeidsongeschikt bent.</li>
+                  </ul>
+                  
+                  <p>Veel zelfstandige verpleegkundigen kiezen er daarom voor om zich aanvullend te verzekeren (bv. gewaarborgd inkomen), zodat hun inkomen ook bij langere ziekte beter beschermd is.</p>
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
