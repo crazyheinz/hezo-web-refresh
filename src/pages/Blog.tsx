@@ -35,7 +35,7 @@ const Blog = () => {
         structuredData={{
           "@context": "https://schema.org",
           "@type": "Blog",
-          name: "Hezo Kennis & inzichten",
+          name: "Blog",
           description: "Praktische kennis en inzichten voor zelfstandige thuisverpleegkundigen",
           url: "https://www.hezo.be/blog/",
           publisher: {
