@@ -21,60 +21,6 @@ import {
 } from "lucide-react";
 
 const ZelfstandigWorden = () => {
-  const benefits = [
-    "Meer autonomie over je agenda, regio en werkritme",
-    "Directe relatie met je patiënten",
-    "Hogere vergoeding per prestatie binnen de RIZIV-kaders",
-    "Flexibiliteit om werk en privé beter te combineren",
-    "Ruimte voor professionele en persoonlijke groei",
-  ];
-
-  const requirements = [
-    "Een erkend verpleegkundig diploma",
-    "Erkenning door de FOD Volksgezondheid",
-    "Een RIZIV-nummer",
-    "Inschrijving bij een ondernemingsloket",
-    "Aansluiting bij een sociaal verzekeringsfonds",
-  ];
-
-  const hezoSupport = [
-    {
-      title: "Patiënteninstroom",
-      description: "Gespreide instroom van zorgvragen, afgestemd op jouw beschikbaarheid.",
-      icon: Users,
-    },
-    {
-      title: "Planning, software en facturatie",
-      description: "Ondersteuning bij administratie om tijdsverlies te beperken.",
-      icon: Calendar,
-    },
-    {
-      title: "Opleiding en professionele ontwikkeling",
-      description: "Toegang tot opleidingen en een netwerk van collega-verpleegkundigen.",
-      icon: GraduationCap,
-    },
-    {
-      title: "Praktische ondersteuning",
-      description: "Advies en begeleiding zonder commerciële verplichtingen.",
-      icon: Briefcase,
-    },
-  ];
-
-  const faqs = [
-    {
-      question: "Heb ik altijd een RIZIV-nummer nodig?",
-      answer: "Ja, als je prestaties wil aanrekenen in de thuisverpleging is een RIZIV-nummer verplicht.",
-    },
-    {
-      question: "Heb ik een boekhouder nodig?",
-      answer: "Niet verplicht, maar sterk aangeraden voor fiscale en administratieve opvolging.",
-    },
-    {
-      question: "Wat als ik ziek word als zelfstandige?",
-      answer: "Je hebt recht op een uitkering vanaf een bepaald moment. Je kan je aanvullend verzekeren voor extra bescherming.",
-    },
-  ];
-
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "HowTo",
@@ -136,12 +82,26 @@ const ZelfstandigWorden = () => {
               Waarom kiezen voor zelfstandig werken als thuisverpleegkundige?
             </h2>
             <ul className="space-y-4 mb-8">
-              {benefits.map((benefit, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-secondary flex-shrink-0 mt-0.5" />
-                  <span className="text-foreground">{benefit}</span>
-                </li>
-              ))}
+              <li className="flex items-start gap-3">
+                <CheckCircle className="h-6 w-6 text-secondary flex-shrink-0 mt-0.5" />
+                <span className="text-foreground">Meer autonomie over je agenda, regio en werkritme</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="h-6 w-6 text-secondary flex-shrink-0 mt-0.5" />
+                <span className="text-foreground">Directe relatie met je patiënten</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="h-6 w-6 text-secondary flex-shrink-0 mt-0.5" />
+                <span className="text-foreground">Hogere vergoeding per prestatie binnen de RIZIV-kaders</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="h-6 w-6 text-secondary flex-shrink-0 mt-0.5" />
+                <span className="text-foreground">Flexibiliteit om werk en privé beter te combineren</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="h-6 w-6 text-secondary flex-shrink-0 mt-0.5" />
+                <span className="text-foreground">Ruimte voor professionele en persoonlijke groei</span>
+              </li>
             </ul>
             <p className="text-muted-foreground italic">
               Zelfstandig werken biedt veel vrijheid, mits je goed voorbereid start.
@@ -174,12 +134,26 @@ const ZelfstandigWorden = () => {
                   Om als zelfstandig thuisverpleegkundige te starten in België heb je nodig:
                 </p>
                 <ul className="space-y-2 mb-6">
-                  {requirements.map((req, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-secondary flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground">{req}</span>
-                    </li>
-                  ))}
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-5 w-5 text-secondary flex-shrink-0 mt-0.5" />
+                    <span className="text-foreground">Een erkend verpleegkundig diploma</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-5 w-5 text-secondary flex-shrink-0 mt-0.5" />
+                    <span className="text-foreground">Erkenning door de FOD Volksgezondheid</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-5 w-5 text-secondary flex-shrink-0 mt-0.5" />
+                    <span className="text-foreground">Een RIZIV-nummer</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-5 w-5 text-secondary flex-shrink-0 mt-0.5" />
+                    <span className="text-foreground">Inschrijving bij een ondernemingsloket</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-5 w-5 text-secondary flex-shrink-0 mt-0.5" />
+                    <span className="text-foreground">Aansluiting bij een sociaal verzekeringsfonds</span>
+                  </li>
                 </ul>
 
                 {/* Hezo helpt infobox */}
@@ -286,8 +260,8 @@ const ZelfstandigWorden = () => {
               </CardContent>
             </Card>
 
-            {/* Step 3 */}
-            <Card className="mb-8">
+            {/* Step 3 - CTA with Xerius */}
+            <Card className="mb-8 border-secondary/30">
               <CardContent className="p-6 md:p-8">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center">
@@ -298,21 +272,21 @@ const ZelfstandigWorden = () => {
                   </h3>
                 </div>
                 
-                <p className="text-muted-foreground mb-6">
+                <p className="text-foreground mb-6">
                   Ben je klaar om effectief te starten als zelfstandige thuisverpleegkundige? Dan kan je je administratieve opstart officieel regelen.
                 </p>
 
-                <div className="bg-secondary/10 border border-secondary/20 rounded-lg p-6 mb-6">
-                  <p className="text-foreground mb-4">
-                    <strong>Start je eenmanszaak via onze partner Xerius</strong>
+                <div className="bg-secondary/10 border border-secondary/30 rounded-lg p-6 mb-6">
+                  <p className="text-foreground mb-4 font-medium">
+                    👉 Start je eenmanszaak via onze partner Xerius
                   </p>
                   <a
                     href="https://www.xerius.be/viaxerius/nl/Opstart%20Eenmanszaak?utm_source=hezo&utm_medium=referral&utm_campaign=2026_hezo_helan"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-secondary hover:underline font-medium"
+                    className="inline-block bg-secondary text-secondary-foreground px-6 py-3 rounded-lg font-medium hover:bg-secondary/90 transition-colors"
                   >
-                    www.xerius.be/viaxerius
+                    Start je eenmanszaak bij Xerius
                   </a>
                 </div>
 
@@ -350,18 +324,46 @@ const ZelfstandigWorden = () => {
                   Hezo ondersteunt zelfstandige thuisverpleegkundigen onder andere via:
                 </p>
 
-                <div className="grid gap-4">
-                  {hezoSupport.map((item, index) => (
-                    <div key={index} className="flex items-start gap-4 p-4 bg-muted/50 rounded-lg">
-                      <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0">
-                        <item.icon className="h-5 w-5 text-secondary" />
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-foreground">{item.title}</h4>
-                        <p className="text-muted-foreground text-sm">{item.description}</p>
-                      </div>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4 p-4 bg-muted/50 rounded-lg">
+                    <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0">
+                      <Users className="h-5 w-5 text-secondary" />
                     </div>
-                  ))}
+                    <div>
+                      <h4 className="font-semibold text-foreground">Patiënteninstroom</h4>
+                      <p className="text-muted-foreground text-sm">Gespreide instroom van zorgvragen, afgestemd op jouw beschikbaarheid.</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-4 p-4 bg-muted/50 rounded-lg">
+                    <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0">
+                      <Calendar className="h-5 w-5 text-secondary" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground">Planning, software en facturatie</h4>
+                      <p className="text-muted-foreground text-sm">Ondersteuning bij administratie om tijdsverlies te beperken.</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-4 p-4 bg-muted/50 rounded-lg">
+                    <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0">
+                      <GraduationCap className="h-5 w-5 text-secondary" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground">Opleiding en professionele ontwikkeling</h4>
+                      <p className="text-muted-foreground text-sm">Toegang tot opleidingen en een netwerk van collega-verpleegkundigen.</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-4 p-4 bg-muted/50 rounded-lg">
+                    <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0">
+                      <Briefcase className="h-5 w-5 text-secondary" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground">Praktische ondersteuning</h4>
+                      <p className="text-muted-foreground text-sm">Advies en begeleiding zonder commerciële verplichtingen.</p>
+                    </div>
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -381,16 +383,32 @@ const ZelfstandigWorden = () => {
             </div>
 
             <Accordion type="single" collapsible className="w-full space-y-4">
-              {faqs.map((faq, index) => (
-                <AccordionItem key={index} value={`faq-${index}`} className="border rounded-lg">
-                  <AccordionTrigger className="px-4 hover:no-underline">
-                    <span className="text-left font-medium">{faq.question}</span>
-                  </AccordionTrigger>
-                  <AccordionContent className="px-4 pb-4 text-muted-foreground">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
+              <AccordionItem value="faq-0" className="border rounded-lg">
+                <AccordionTrigger className="px-4 hover:no-underline">
+                  <span className="text-left font-medium">Heb ik altijd een RIZIV-nummer nodig?</span>
+                </AccordionTrigger>
+                <AccordionContent className="px-4 pb-4 text-muted-foreground">
+                  Ja, als je prestaties wil aanrekenen in de thuisverpleging is een RIZIV-nummer verplicht.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="faq-1" className="border rounded-lg">
+                <AccordionTrigger className="px-4 hover:no-underline">
+                  <span className="text-left font-medium">Heb ik een boekhouder nodig?</span>
+                </AccordionTrigger>
+                <AccordionContent className="px-4 pb-4 text-muted-foreground">
+                  Niet verplicht, maar sterk aangeraden voor fiscale en administratieve opvolging.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="faq-2" className="border rounded-lg">
+                <AccordionTrigger className="px-4 hover:no-underline">
+                  <span className="text-left font-medium">Wat als ik ziek word als zelfstandige?</span>
+                </AccordionTrigger>
+                <AccordionContent className="px-4 pb-4 text-muted-foreground">
+                  Je hebt recht op een uitkering vanaf een bepaald moment. Je kan je aanvullend verzekeren voor extra bescherming.
+                </AccordionContent>
+              </AccordionItem>
             </Accordion>
           </div>
         </div>
@@ -408,6 +426,9 @@ const ZelfstandigWorden = () => {
             </p>
             <p className="text-lg mb-8 opacity-90">
               Met Hezo sta je er niet alleen voor: wij ondersteunen je bij administratie, instroom en verdere uitbouw, zodat jij je kan focussen op wat echt telt: zorg voor je patiënten.
+            </p>
+            <p className="text-lg mb-8">
+              Heb je vragen of wil je starten?
             </p>
             <Button asChild size="lg" variant="secondary">
               <Link to="/contact/">Neem contact op met Hezo</Link>
