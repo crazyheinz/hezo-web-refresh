@@ -1,7 +1,7 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import SEO from "@/components/SEO";
 import { Calendar, ArrowLeft, Clock } from "lucide-react";
-import { blogArticles, type BlogArticle } from "./Blog";
+import { blogArticles } from "./Blog";
 
 // Full article content - add content for each article ID
 const articleContent: Record<string, { content: React.ReactNode }> = {
@@ -20,7 +20,7 @@ const articleContent: Record<string, { content: React.ReactNode }> = {
         </p>
 
         <p>
-          Maar wat houdt die hervorming precies in? Welke opleidingen bestaan er vandaag? 
+          Maar wat houdt die hervorming precies in? Welke opleidingen bestaan er? 
           En wat betekent dit concreet voor verpleegkundigen die (willen) werken in de thuiszorg?
         </p>
 
@@ -140,7 +140,7 @@ const articleContent: Record<string, { content: React.ReactNode }> = {
         <p>Voor verpleegkundigen in de thuiszorg betekent dit ook:</p>
         <ul>
           <li>meer nood aan duidelijke richtlijnen en kwaliteitskaders</li>
-          <li>ondersteuning bij administratie, planning en organisatie</li>
+          <li>ondersteuning bij <Link to="/wat-we-doen/" className="text-secondary hover:underline">administratie, planning en organisatie</Link></li>
           <li>ruimte om zich te focussen op zorg, niet op randtaken</li>
         </ul>
 
@@ -153,7 +153,8 @@ const articleContent: Record<string, { content: React.ReactNode }> = {
         </ul>
         <p>
           Zeker in de thuisverpleging biedt dit kansen: wie zijn rol goed kent en ondersteund wordt, 
-          kan zich duurzaam en met voldoening inzetten.
+          kan zich duurzaam en met voldoening inzetten. Overweeg je om <Link to="/zelfstandig-worden/" className="text-secondary hover:underline">zelfstandig thuisverpleegkundige te worden</Link>? 
+          Dan is het essentieel om deze profielen goed te begrijpen.
         </p>
 
         <h2>Conclusie</h2>
@@ -202,7 +203,7 @@ const BlogArticle = () => {
   return (
     <>
       <SEO
-        title={`${article.title} | Hezo Blog`}
+        title={article.metaTitle}
         description={article.excerpt}
         path={`/blog/${article.id}/`}
         type="article"

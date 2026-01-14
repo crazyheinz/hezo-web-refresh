@@ -8,6 +8,7 @@ export interface BlogArticle {
   id: string;
   title: string;
   excerpt: string;
+  metaTitle: string;
   date: string;
   category: string;
   readTime: string;
@@ -17,8 +18,9 @@ export interface BlogArticle {
 export const blogArticles: BlogArticle[] = [
   {
     id: "hbo5-graduaat-basisverpleegkunde",
-    title: "Van HBO5 naar graduaat Basisverpleegkunde: wat betekent de hervorming vandaag voor (thuis)verpleegkundigen?",
-    excerpt: "De vroegere HBO5-opleiding Verpleegkunde werd stapsgewijs omgevormd tot het graduaat Basisverpleegkunde. Welke opleidingen bestaan er vandaag? En wat betekent dit concreet voor verpleegkundigen in de thuiszorg?",
+    title: "Van HBO5 naar graduaat Basisverpleegkunde: wat betekent de hervorming voor (thuis)verpleegkundigen?",
+    excerpt: "Graduaat Basisverpleegkunde vervangt HBO5: ontdek de twee verpleegkundige opleidingen in Vlaanderen en hun impact op thuisverpleging.",
+    metaTitle: "Graduaat Basisverpleegkunde vs HBO5: de hervorming uitgelegd",
     date: "2026-01-14",
     category: "Opleiding",
     readTime: "8 min"
