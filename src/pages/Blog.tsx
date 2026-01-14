@@ -6,12 +6,12 @@ import { Card, CardContent } from "@/components/ui/card";
 // Blog articles data - add new articles here
 export const blogArticles = [
   {
-    id: "zelfstandig-verpleegkundige-worden",
-    title: "Zelfstandig verpleegkundige worden: stappen en tips",
-    excerpt: "Droom je ervan om als zelfstandig verpleegkundige te werken? We bespreken de belangrijkste stappen, van opleiding tot praktijk opstarten, en geven praktische tips voor een succesvolle start.",
-    date: "2025-01-10",
-    category: "Carrière",
-    readTime: "7 min"
+    // id: "zelfstandig-verpleegkundige-worden",
+    //title: "Zelfstandig verpleegkundige worden: stappen en tips",
+    //excerpt: "Droom je ervan om als zelfstandig verpleegkundige te werken? We bespreken de belangrijkste stappen, van opleiding tot praktijk opstarten, en geven praktische tips voor een succesvolle start.",
+    //date: "2025-01-10",
+    //category: "Carrière",
+    //readTime: "7 min"
   },
 ];
 
@@ -35,14 +35,14 @@ const Blog = () => {
         structuredData={{
           "@context": "https://schema.org",
           "@type": "Blog",
-          "name": "Hezo Kennis & inzichten",
-          "description": "Praktische kennis en inzichten voor zelfstandige thuisverpleegkundigen",
-          "url": "https://www.hezo.be/blog/",
-          "publisher": {
+          name: "Hezo Kennis & inzichten",
+          description: "Praktische kennis en inzichten voor zelfstandige thuisverpleegkundigen",
+          url: "https://www.hezo.be/blog/",
+          publisher: {
             "@type": "Organization",
-            "name": "Hezo",
-            "url": "https://www.hezo.be"
-          }
+            name: "Hezo",
+            url: "https://www.hezo.be",
+          },
         }}
       />
 
@@ -51,9 +51,7 @@ const Blog = () => {
         <section className="pb-12">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-                Kennis & inzichten
-              </h1>
+              <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">Kennis & inzichten</h1>
               <p className="text-lg text-muted-foreground">
                 Praktische kennis en tips voor zelfstandige thuisverpleegkundigen.
               </p>
@@ -66,7 +64,10 @@ const Blog = () => {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {blogArticles.map((article) => (
-                <Card key={article.id} className="group hover:shadow-lg transition-shadow duration-300 border-border/50">
+                <Card
+                  key={article.id}
+                  className="group hover:shadow-lg transition-shadow duration-300 border-border/50"
+                >
                   <CardContent className="p-6">
                     <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
                       <span className="bg-secondary/10 text-secondary px-2 py-1 rounded-full text-xs font-medium">
@@ -75,24 +76,20 @@ const Blog = () => {
                       <span>•</span>
                       <span>{article.readTime}</span>
                     </div>
-                    
+
                     <h2 className="text-xl font-semibold text-primary mb-3 group-hover:text-secondary transition-colors">
-                      <Link to={`/blog/${article.id}/`}>
-                        {article.title}
-                      </Link>
+                      <Link to={`/blog/${article.id}/`}>{article.title}</Link>
                     </h2>
-                    
-                    <p className="text-muted-foreground mb-4 line-clamp-3">
-                      {article.excerpt}
-                    </p>
-                    
+
+                    <p className="text-muted-foreground mb-4 line-clamp-3">{article.excerpt}</p>
+
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
                         <Calendar className="h-4 w-4" />
                         <span>{formatDate(article.date)}</span>
                       </div>
-                      
-                      <Link 
+
+                      <Link
                         to={`/blog/${article.id}/`}
                         className="inline-flex items-center gap-1 text-secondary font-medium hover:gap-2 transition-all"
                       >
