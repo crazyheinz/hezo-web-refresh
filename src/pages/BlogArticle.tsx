@@ -109,7 +109,7 @@ const articleContent: Record<string, { content: React.ReactNode }> = {
         </p>
 
         <div className="my-6 p-5 bg-yellow/10 border-l-4 border-yellow rounded-r-lg">
-          <p className="font-medium text-primary mb-2">👉 Belangrijk</p>
+          <p className="font-medium text-primary mb-2">Belangrijk</p>
           <p className="text-muted-foreground text-base mb-0">
             In 2026 zijn deze overgangsmaatregelen nog steeds van kracht en lopen ze tot en met het schooljaar 2026-2027.
             Studenten die vóór of in het schooljaar 2022-2023 met HBO5 zijn gestart, kunnen hun opleiding afwerken onder de oude regeling.

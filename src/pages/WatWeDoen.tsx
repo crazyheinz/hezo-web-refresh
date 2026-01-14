@@ -203,12 +203,22 @@ const WatWeDoen = () => {
           <div className="space-y-16">
             {sections.map((section, index) => {
               const Icon = section.icon;
+              // Color schemes for different sections
+              const colorSchemes = [
+                { icon: "text-light-blue", extraBg: "bg-light-blue/10", extraBorder: "border-l-4 border-light-blue" },
+                { icon: "text-coral", extraBg: "bg-coral/10", extraBorder: "border-l-4 border-coral" },
+                { icon: "text-yellow", extraBg: "bg-yellow/10", extraBorder: "border-l-4 border-yellow" },
+                { icon: "text-green", extraBg: "bg-green/10", extraBorder: "border-l-4 border-green" },
+                { icon: "text-light-blue", extraBg: "bg-light-blue/10", extraBorder: "border-l-4 border-light-blue" },
+              ];
+              const colorScheme = colorSchemes[index % colorSchemes.length];
+
               return (
                 <section key={section.id} id={section.id} className="scroll-mt-32">
                   <Card className="border-none shadow-lg">
                     <CardHeader>
                       <div className="mb-4">
-                        <Icon className="h-14 w-14 text-secondary" strokeWidth={1.5} />
+                        <Icon className={`h-14 w-14 ${colorScheme.icon}`} strokeWidth={1.5} />
                       </div>
                       <CardTitle className="text-3xl">{section.title}</CardTitle>
                       <p className="text-lg text-muted-foreground mt-2">{section.subtitle}</p>
@@ -264,7 +274,7 @@ const WatWeDoen = () => {
                       )}
 
                       {section.extra && (
-                        <div className="bg-muted p-6 rounded-lg mt-8">
+                        <div className={`${colorScheme.extraBg} ${colorScheme.extraBorder} p-6 rounded-r-lg mt-8`}>
                           <h3 className="text-xl font-semibold text-foreground mb-3">
                             {section.extra.title}
                           </h3>
