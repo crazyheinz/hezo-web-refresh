@@ -157,7 +157,7 @@ const ZelfstandigWorden = () => {
                 </ul>
 
                 {/* Hezo helpt infobox */}
-                <div className="bg-secondary/10 border border-secondary/20 rounded-lg p-4 mb-6">
+                <div className="bg-light-blue/10 border border-light-blue/20 rounded-lg p-4 mb-6">
                   <p className="text-foreground">
                     <strong>Hezo helpt:</strong> Heb je vragen over erkenning, RIZIV of formaliteiten? Hezo helpt je begrijpen wat voor jou van toepassing is, nog vóór je effectief start.
                   </p>
@@ -195,7 +195,7 @@ const ZelfstandigWorden = () => {
                           <p>Na goedkeuring ontvang je je persoonlijke RIZIV-nummer en kan je prestaties aanrekenen.</p>
                         </div>
                         
-                        <div className="bg-secondary/10 border border-secondary/20 rounded-lg p-3 mt-4">
+                        <div className="bg-green/10 border border-green/20 rounded-lg p-3 mt-4">
                           <p><strong>Hezo helpt:</strong> Twijfel je over je situatie? Hezo helpt je inschatten wanneer je dit best aanvraagt en wat de juiste volgorde is.</p>
                         </div>
                       </div>
@@ -276,15 +276,15 @@ const ZelfstandigWorden = () => {
                   Ben je klaar om effectief te starten als zelfstandige thuisverpleegkundige? Dan kan je je administratieve opstart officieel regelen.
                 </p>
 
-                <div className="bg-secondary/10 border border-secondary/30 rounded-lg p-6 mb-6">
+                <div className="bg-coral/10 border border-coral/30 rounded-lg p-6 mb-6">
                   <p className="text-foreground mb-4 font-medium">
-                    👉 Start je eenmanszaak via onze partner Xerius
+                    Start je eenmanszaak via onze partner Xerius
                   </p>
                   <a
                     href="https://www.xerius.be/viaxerius/nl/Opstart%20Eenmanszaak?utm_source=hezo&utm_medium=referral&utm_campaign=2026_hezo_helan"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block bg-secondary text-secondary-foreground px-6 py-3 rounded-lg font-medium hover:bg-secondary/90 transition-colors"
+                    className="inline-block bg-coral text-coral-foreground px-6 py-3 rounded-lg font-medium hover:bg-coral/90 transition-colors"
                   >
                     Start je eenmanszaak bij Xerius
                   </a>
