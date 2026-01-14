@@ -209,19 +209,60 @@ const BlogArticle = () => {
         type="article"
         structuredData={{
           "@context": "https://schema.org",
-          "@type": "Article",
-          "headline": article.title,
-          "description": article.excerpt,
-          "datePublished": article.date,
-          "author": {
-            "@type": "Organization",
-            "name": "Hezo"
-          },
-          "publisher": {
-            "@type": "Organization",
-            "name": "Hezo",
-            "url": "https://www.hezo.be"
-          }
+          "@graph": [
+            {
+              "@type": "Article",
+              "@id": `https://www.hezo.be/blog/${article.id}/#article`,
+              "headline": article.title,
+              "description": article.excerpt,
+              "datePublished": article.date,
+              "dateModified": article.date,
+              "inLanguage": "nl-BE",
+              "isPartOf": {
+                "@id": "https://www.hezo.be/blog/#blog"
+              },
+              "author": {
+                "@type": "Organization",
+                "name": "Hezo",
+                "url": "https://www.hezo.be"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "Hezo",
+                "url": "https://www.hezo.be",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://www.hezo.be/favicon.png"
+                }
+              },
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": `https://www.hezo.be/blog/${article.id}/`
+              }
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://www.hezo.be/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Blog",
+                  "item": "https://www.hezo.be/blog/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": article.title
+                }
+              ]
+            }
+          ]
         }}
       />
 

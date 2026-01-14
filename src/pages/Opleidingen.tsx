@@ -11,25 +11,67 @@ const Opleidingen = () => {
         path="/opleidingen"
         structuredData={{
           "@context": "https://schema.org",
-          "@type": "Course",
-          "name": "Starten als zelfstandige thuisverpleegkundige",
-          "description": "Opleiding voor verpleegkundigen die zelfstandig willen starten of hun overstap voorbereiden.",
-          "provider": {
-            "@type": "Organization",
-            "name": "Hezo",
-            "sameAs": "https://www.hezo.be"
-          },
-          "courseMode": "blended",
-          "startDate": "2026-02",
-          "location": {
-            "@type": "Place",
-            "name": "Gent",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Gent",
-              "addressCountry": "BE"
+          "@graph": [
+            {
+              "@type": "Course",
+              "name": "Starten als zelfstandige thuisverpleegkundige",
+              "description": "Opleiding voor verpleegkundigen die zelfstandig willen starten of hun overstap voorbereiden. Leer over RIZIV- en verzekeringsadministratie, software en tools voor facturatie, tarificatie en remgeld, patiëntenwerving en communicatie met artsen.",
+              "provider": {
+                "@type": "Organization",
+                "name": "Hezo",
+                "sameAs": "https://www.hezo.be"
+              },
+              "courseMode": "blended",
+              "startDate": "2026-02",
+              "educationalLevel": "Professional",
+              "teaches": [
+                "RIZIV-administratie",
+                "Facturatie thuisverpleging",
+                "Tarificatie en remgeld",
+                "Patiëntenwerving",
+                "Communicatie met artsen"
+              ],
+              "location": {
+                "@type": "Place",
+                "name": "Gent",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Gent",
+                  "addressCountry": "BE"
+                }
+              },
+              "inLanguage": "nl"
+            },
+            {
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Welke opleidingen biedt Hezo voor thuisverpleegkundigen?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Hezo biedt praktijkgerichte opleidingen voor zelfstandige thuisverpleegkundigen. De eerste opleiding 'Starten als zelfstandige thuisverpleegkundige' start in februari 2026 en behandelt RIZIV-administratie, facturatie, tarificatie en patiëntenwerving."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Wanneer starten de opleidingen van Hezo?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "De eerste opleidingen starten in februari 2026. Inschrijven kan vanaf januari 2026. Daarna bouwt Hezo stap voor stap een aanbod uit met bijscholingen, webinars en leermomenten."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Waar vinden de opleidingen van Hezo plaats?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "De opleidingen vinden plaats in Gent en online (hybride vorm). Dit combineert infosessies met praktijkvoorbeelden."
+                  }
+                }
+              ]
             }
-          }
+          ]
         }}
       />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
