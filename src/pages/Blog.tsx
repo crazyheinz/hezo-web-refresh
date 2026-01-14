@@ -3,16 +3,27 @@ import SEO from "@/components/SEO";
 import { Calendar, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
+// Blog article type
+export interface BlogArticle {
+  id: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  category: string;
+  readTime: string;
+}
+
 // Blog articles data - add new articles here
-export const blogArticles = [
-  {
-    // id: "zelfstandig-verpleegkundige-worden",
-    //title: "Zelfstandig verpleegkundige worden: stappen en tips",
-    //excerpt: "Droom je ervan om als zelfstandig verpleegkundige te werken? We bespreken de belangrijkste stappen, van opleiding tot praktijk opstarten, en geven praktische tips voor een succesvolle start.",
-    //date: "2025-01-10",
-    //category: "Carrière",
-    //readTime: "7 min"
-  },
+export const blogArticles: BlogArticle[] = [
+  // Uncomment when ready to publish:
+  // {
+  //   id: "zelfstandig-verpleegkundige-worden",
+  //   title: "Zelfstandig verpleegkundige worden: stappen en tips",
+  //   excerpt: "Droom je ervan om als zelfstandig verpleegkundige te werken? We bespreken de belangrijkste stappen, van opleiding tot praktijk opstarten, en geven praktische tips voor een succesvolle start.",
+  //   date: "2025-01-10",
+  //   category: "Carrière",
+  //   readTime: "7 min"
+  // },
 ];
 
 const formatDate = (dateString: string) => {
@@ -51,7 +62,7 @@ const Blog = () => {
         <section className="pb-12">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">Kennis & inzichten</h1>
+              <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">Blog</h1>
               <p className="text-lg text-muted-foreground">
                 Praktische kennis en tips voor zelfstandige thuisverpleegkundigen.
               </p>

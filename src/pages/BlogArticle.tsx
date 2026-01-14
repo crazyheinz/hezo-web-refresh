@@ -1,7 +1,7 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import SEO from "@/components/SEO";
 import { Calendar, ArrowLeft, Clock } from "lucide-react";
-import { blogArticles } from "./Blog";
+import { blogArticles, type BlogArticle } from "./Blog";
 
 // Full article content - add content for each article ID
 const articleContent: Record<string, { content: React.ReactNode }> = {
@@ -150,7 +150,7 @@ const BlogArticle = () => {
             className="inline-flex items-center gap-2 text-secondary hover:text-secondary/80 mb-8 transition-colors"
           >
             <ArrowLeft className="h-4 w-4" />
-            Terug naar Kennis & inzichten
+            Terug naar Blog
           </Link>
 
           {/* Article header */}
