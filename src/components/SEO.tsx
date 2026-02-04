@@ -7,6 +7,7 @@ interface SEOProps {
   type?: string;
   image?: string;
   structuredData?: object;
+  noIndex?: boolean;
 }
 
 const SEO = ({ 
@@ -15,7 +16,8 @@ const SEO = ({
   path = "", 
   type = "website",
   image = "https://www.hezo.be/og-image.png",
-  structuredData
+  structuredData,
+  noIndex = false
 }: SEOProps) => {
   const siteUrl = "https://www.hezo.be";
   const fullUrl = `${siteUrl}${path}`;
@@ -47,6 +49,7 @@ const SEO = ({
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
+      {noIndex && <meta name="robots" content="noindex, nofollow" />}
       <link rel="canonical" href={fullUrl} />
 
       {/* Open Graph */}
