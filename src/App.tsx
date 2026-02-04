@@ -14,6 +14,8 @@ import Vacatures from "./pages/Vacatures";
 import Blog from "./pages/Blog";
 import BlogArticle from "./pages/BlogArticle";
 import Contact from "./pages/Contact";
+import WebinarAdmin from "./pages/WebinarAdmin";
+import WebinarView from "./pages/WebinarView";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -37,6 +39,8 @@ const App = () => (
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/blog/:articleId" element={<BlogArticle />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="/webinar-admin" element={<WebinarAdmin />} />
+                <Route path="/webinar/:token" element={<WebinarView />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
