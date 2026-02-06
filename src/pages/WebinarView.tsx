@@ -7,19 +7,10 @@ import { Loader2, Lock, ArrowLeft } from "lucide-react";
 import SEO from "@/components/SEO";
 
 interface WebinarData {
-  id: string;
   title: string;
   description: string | null;
   video_url: string;
   thumbnail_url: string | null;
-}
-
-interface InviteData {
-  id: string;
-  webinar_id: string;
-  token: string;
-  expires_at: string | null;
-  view_count: number;
 }
 
 const WebinarView = () => {
@@ -37,50 +28,36 @@ const WebinarView = () => {
       }
 
       try {
-        // Fetch the invite by token
-        const { data: invite, error: inviteError } = await supabase
-          .from('webinar_invites')
-          .select('*')
-          .eq('token', token)
-          .single();
+        // Use edge function for secure token validation
+        const { data, error: fnError } = await supabase.functions.invoke('webinar-view', {
+          body: { token }
+        });
 
-        if (inviteError || !invite) {
-          setError("Deze link is ongeldig of verlopen");
+        if (fnError) {
+          console.error("Edge function error:", fnError);
+          setError("Er is een fout opgetreden");
           setIsLoading(false);
           return;
         }
 
-        // Check if expired
-        if (invite.expires_at && new Date(invite.expires_at) < new Date()) {
-          setError("Deze link is verlopen");
+        if (data?.error) {
+          // Map error codes to user-friendly messages
+          const errorMessages: Record<string, string> = {
+            INVALID_TOKEN: "Ongeldige link",
+            NOT_FOUND: "Deze link is ongeldig of verlopen",
+            EXPIRED: "Deze link is verlopen",
+            WEBINAR_UNAVAILABLE: "Deze webinar is niet beschikbaar",
+          };
+          setError(errorMessages[data.code] || "Er is een fout opgetreden");
           setIsLoading(false);
           return;
         }
 
-        // Fetch the webinar
-        const { data: webinarData, error: webinarError } = await supabase
-          .from('webinars')
-          .select('*')
-          .eq('id', invite.webinar_id)
-          .eq('is_active', true)
-          .single();
-
-        if (webinarError || !webinarData) {
-          setError("Deze webinar is niet beschikbaar");
-          setIsLoading(false);
-          return;
+        if (data?.webinar) {
+          setWebinar(data.webinar);
+        } else {
+          setError("Er is een fout opgetreden");
         }
-
-        // Update view stats
-        await supabase
-          .from('webinar_invites')
-          .update({
-            viewed_at: invite.viewed_at || new Date().toISOString(),
-            view_count: (invite.view_count || 0) + 1,
-          })
-          .eq('id', invite.id);
-
-        setWebinar(webinarData);
       } catch (err) {
         console.error("Error loading webinar:", err);
         setError("Er is een fout opgetreden");
