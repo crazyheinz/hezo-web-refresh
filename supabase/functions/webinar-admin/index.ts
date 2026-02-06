@@ -1,7 +1,9 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { Resend } from "npm:resend@4.0.0";
 
 const ADMIN_PASSWORD = Deno.env.get("WEBINAR_ADMIN_PASSWORD");
+const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
 const allowedOrigins = [
   'https://hezo.be',
@@ -23,6 +25,105 @@ function getCorsHeaders(origin: string | null): Record<string, string> {
 function validateAdminPassword(req: Request): boolean {
   const password = req.headers.get('x-admin-password');
   return password === ADMIN_PASSWORD;
+}
+
+async function sendInviteEmail(
+  email: string,
+  name: string | null,
+  webinarTitle: string,
+  magicLink: string
+): Promise<{ success: boolean; error?: string }> {
+  try {
+    const greeting = name ? `Beste ${name}` : 'Beste';
+    
+    const { error } = await resend.emails.send({
+      from: 'Hezo <info@hezo.be>',
+      to: [email],
+      subject: `Uitnodiging: ${webinarTitle}`,
+      html: `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f5f5f5;">
+  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #f5f5f5;">
+    <tr>
+      <td style="padding: 40px 20px;">
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          <!-- Header -->
+          <tr>
+            <td style="background-color: #1a365d; padding: 30px 40px; text-align: center;">
+              <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 600;">Hezo</h1>
+            </td>
+          </tr>
+          
+          <!-- Content -->
+          <tr>
+            <td style="padding: 40px;">
+              <h2 style="margin: 0 0 20px 0; color: #1a365d; font-size: 22px;">${greeting},</h2>
+              
+              <p style="margin: 0 0 20px 0; color: #4a5568; font-size: 16px; line-height: 1.6;">
+                Je bent uitgenodigd om de volgende webinar te bekijken:
+              </p>
+              
+              <div style="background-color: #f7fafc; border-left: 4px solid #1a365d; padding: 20px; margin: 20px 0; border-radius: 0 4px 4px 0;">
+                <h3 style="margin: 0; color: #1a365d; font-size: 18px;">${webinarTitle}</h3>
+              </div>
+              
+              <p style="margin: 0 0 30px 0; color: #4a5568; font-size: 16px; line-height: 1.6;">
+                Klik op onderstaande knop om de webinar te bekijken. Deze link is persoonlijk en kan niet gedeeld worden.
+              </p>
+              
+              <!-- CTA Button -->
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                  <td style="text-align: center;">
+                    <a href="${magicLink}" style="display: inline-block; background-color: #1a365d; color: #ffffff; text-decoration: none; padding: 16px 40px; border-radius: 6px; font-size: 16px; font-weight: 600;">
+                      Bekijk Webinar
+                    </a>
+                  </td>
+                </tr>
+              </table>
+              
+              <p style="margin: 30px 0 0 0; color: #718096; font-size: 14px; line-height: 1.6;">
+                Werkt de knop niet? Kopieer en plak deze link in je browser:<br>
+                <a href="${magicLink}" style="color: #1a365d; word-break: break-all;">${magicLink}</a>
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Footer -->
+          <tr>
+            <td style="background-color: #f7fafc; padding: 30px 40px; text-align: center; border-top: 1px solid #e2e8f0;">
+              <p style="margin: 0; color: #718096; font-size: 14px;">
+                © ${new Date().getFullYear()} Hezo. Alle rechten voorbehouden.
+              </p>
+              <p style="margin: 10px 0 0 0; color: #a0aec0; font-size: 12px;">
+                Deze email werd verstuurd omdat je bent uitgenodigd voor een webinar.
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+      `,
+    });
+
+    if (error) {
+      console.error('Email sending error:', error);
+      return { success: false, error: error.message };
+    }
+
+    return { success: true };
+  } catch (err) {
+    console.error('Email sending exception:', err);
+    return { success: false, error: String(err) };
+  }
 }
 
 serve(async (req) => {
@@ -140,7 +241,7 @@ serve(async (req) => {
     // POST /webinar-admin/invites - Create invite(s)
     if (req.method === "POST" && path === "invites") {
       const body = await req.json();
-      const { webinar_id, email, name, expires_at, count } = body;
+      const { webinar_id, email, name, expires_at, recipients, send_email } = body;
 
       if (!webinar_id) {
         return new Response(
@@ -149,10 +250,22 @@ serve(async (req) => {
         );
       }
 
-      // Create multiple anonymous invites if count is provided
-      if (count && count > 1) {
-        const invites = Array.from({ length: count }, () => ({
+      // Get webinar title for emails
+      const { data: webinar } = await supabase
+        .from('webinars')
+        .select('title')
+        .eq('id', webinar_id)
+        .single();
+
+      const webinarTitle = webinar?.title || 'Webinar';
+      const baseUrl = origin || 'https://hezo.be';
+
+      // Bulk create from recipients array (CSV/textarea import)
+      if (recipients && Array.isArray(recipients) && recipients.length > 0) {
+        const invites = recipients.map((r: { name?: string; email?: string }) => ({
           webinar_id,
+          name: r.name || null,
+          email: r.email || null,
           expires_at: expires_at || null
         }));
 
@@ -162,7 +275,24 @@ serve(async (req) => {
           .select();
 
         if (error) throw error;
-        return new Response(JSON.stringify(data), {
+
+        // Send emails for recipients with email addresses if send_email is true
+        const emailResults: { email: string; success: boolean; error?: string }[] = [];
+        if (send_email && data) {
+          for (const invite of data) {
+            if (invite.email) {
+              const magicLink = `${baseUrl}/webinar/${invite.token}`;
+              const result = await sendInviteEmail(invite.email, invite.name, webinarTitle, magicLink);
+              emailResults.push({ email: invite.email, ...result });
+            }
+          }
+        }
+
+        return new Response(JSON.stringify({ 
+          invites: data, 
+          emails_sent: emailResults.filter(r => r.success).length,
+          email_errors: emailResults.filter(r => !r.success)
+        }), {
           status: 201,
           headers: { ...corsHeaders, "Content-Type": "application/json" }
         });
@@ -176,7 +306,22 @@ serve(async (req) => {
         .single();
 
       if (error) throw error;
-      return new Response(JSON.stringify(data), {
+
+      // Send email if email is provided and send_email is true
+      let emailSent = false;
+      let emailError: string | undefined;
+      if (send_email && email && data) {
+        const magicLink = `${baseUrl}/webinar/${data.token}`;
+        const result = await sendInviteEmail(email, name, webinarTitle, magicLink);
+        emailSent = result.success;
+        emailError = result.error;
+      }
+
+      return new Response(JSON.stringify({ 
+        ...data, 
+        email_sent: emailSent,
+        email_error: emailError 
+      }), {
         status: 201,
         headers: { ...corsHeaders, "Content-Type": "application/json" }
       });

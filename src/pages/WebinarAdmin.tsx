@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { Trash2, Plus, Copy, Eye, Link2 } from "lucide-react";
+import { Trash2, Plus, Copy, Eye, Link2, Mail } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -21,6 +21,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { BulkInviteForm } from "@/components/webinar/BulkInviteForm";
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 
@@ -61,11 +62,6 @@ const WebinarAdmin = () => {
   const [newDescription, setNewDescription] = useState("");
   const [newVideoUrl, setNewVideoUrl] = useState("");
   const [newThumbnailUrl, setNewThumbnailUrl] = useState("");
-
-  // New invite form
-  const [inviteEmail, setInviteEmail] = useState("");
-  const [inviteName, setInviteName] = useState("");
-  const [inviteCount, setInviteCount] = useState(1);
 
   const getHeaders = () => ({
     "Content-Type": "application/json",
@@ -169,36 +165,6 @@ const WebinarAdmin = () => {
     }
   };
 
-  const createInvite = async () => {
-    if (!selectedWebinar) {
-      toast({ title: "Selecteer eerst een webinar", variant: "destructive" });
-      return;
-    }
-
-    setIsLoading(true);
-    try {
-      const res = await fetch(`${SUPABASE_URL}/functions/v1/webinar-admin/invites`, {
-        method: "POST",
-        headers: getHeaders(),
-        body: JSON.stringify({
-          webinar_id: selectedWebinar,
-          email: inviteEmail || null,
-          name: inviteName || null,
-          count: inviteCount > 1 ? inviteCount : undefined,
-        }),
-      });
-      if (!res.ok) throw new Error("Failed to create invite");
-      
-      toast({ title: inviteCount > 1 ? `${inviteCount} uitnodigingen aangemaakt!` : "Uitnodiging aangemaakt!" });
-      setInviteEmail("");
-      setInviteName("");
-      setInviteCount(1);
-      fetchInvites(selectedWebinar);
-    } catch {
-      toast({ title: "Fout bij aanmaken uitnodiging", variant: "destructive" });
-    }
-    setIsLoading(false);
-  };
 
   const deleteInvite = async (id: string) => {
     try {
@@ -367,40 +333,11 @@ const WebinarAdmin = () => {
                               </DialogHeader>
                               <div className="space-y-4">
                                 {/* Create Invite Form */}
-                                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 p-4 bg-muted rounded-lg">
-                                  <div>
-                                    <Label>Email (optioneel)</Label>
-                                    <Input
-                                      value={inviteEmail}
-                                      onChange={(e) => setInviteEmail(e.target.value)}
-                                      placeholder="email@voorbeeld.be"
-                                    />
-                                  </div>
-                                  <div>
-                                    <Label>Naam (optioneel)</Label>
-                                    <Input
-                                      value={inviteName}
-                                      onChange={(e) => setInviteName(e.target.value)}
-                                      placeholder="Naam ontvanger"
-                                    />
-                                  </div>
-                                  <div>
-                                    <Label>Aantal</Label>
-                                    <Input
-                                      type="number"
-                                      min={1}
-                                      max={100}
-                                      value={inviteCount}
-                                      onChange={(e) => setInviteCount(parseInt(e.target.value) || 1)}
-                                    />
-                                  </div>
-                                  <div className="flex items-end">
-                                    <Button onClick={createInvite} disabled={isLoading}>
-                                      <Plus className="w-4 h-4 mr-1" />
-                                      Maak Link(s)
-                                    </Button>
-                                  </div>
-                                </div>
+                                <BulkInviteForm
+                                  webinarId={webinar.id}
+                                  password={password}
+                                  onSuccess={() => fetchInvites(webinar.id)}
+                                />
 
                                 {/* Invites Table */}
                                 <Table>
@@ -423,7 +360,7 @@ const WebinarAdmin = () => {
                                           </TableCell>
                                           <TableCell>
                                             {invite.viewed_at ? (
-                                              <span className="text-green-600">{formatDate(invite.viewed_at)}</span>
+                                              <span className="text-primary">{formatDate(invite.viewed_at)}</span>
                                             ) : (
                                               <span className="text-muted-foreground">Nog niet</span>
                                             )}
