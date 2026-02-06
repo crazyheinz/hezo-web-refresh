@@ -127,8 +127,8 @@ const WebinarView = () => {
         description={webinar.description || "Bekijk deze exclusieve webinar van Hezo."}
         noIndex={true}
       />
-      <div className="min-h-screen bg-background">
-        <div className="max-w-6xl mx-auto px-4 py-8">
+      <div className="min-h-screen bg-background pt-32 pb-12">
+        <div className="max-w-6xl mx-auto px-4">
           {/* Header */}
           <div className="mb-8">
             <Link to="/" className="inline-flex items-center text-muted-foreground hover:text-foreground mb-4">
