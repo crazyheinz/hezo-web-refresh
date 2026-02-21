@@ -193,7 +193,7 @@ const Privacy = () => {
           <section className="mb-8">
             <h2 className="text-xl font-semibold text-foreground mb-3">6. Doorgifte buiten de EER</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Indien persoonsgegevens worden verwerkt door partijen buiten de Europese Economische Ruimte, gebeurt dit uitsluitend met passende waarborgen conform de GDPR (bijvoorbeeld via standaardcontractbepalingen). Indien van toepassing informeren wij betrokkenen hierover.
+              Indien persoonsgegevens worden verwerkt door partijen buiten de Europese Economische Ruimte, gebeurt dit uitsluitend met passende waarborgen conform de GDPR (bijvoorbeeld via standaardcontractbepalingen). Indien van toepassing informeren wij betrokkenen hierover en zorgen wij voor passende waarborgen overeenkomstig de GDPR.
             </p>
           </section>
 
