@@ -98,7 +98,7 @@ const Privacy = () => {
                 <span className="font-medium text-foreground">Doel van verwerking:</span> Beantwoorden van uw vraag of verzoek.
               </p>
               <p className="text-muted-foreground leading-relaxed mt-1">
-                <span className="font-medium text-foreground">Rechtsgrond:</span> Gerechtvaardigd belang (beantwoorden van contactaanvragen).
+                <span className="font-medium text-foreground">Rechtsgrond:</span> Gerechtvaardigd belang (beantwoorden van vragen) en/of uitvoering van een overeenkomst indien de aanvraag daartoe strekt.
               </p>
               <p className="text-muted-foreground leading-relaxed mt-1">
                 <span className="font-medium text-foreground">Opslag:</span> De gegevens worden niet opgeslagen in een database, maar enkel doorgestuurd via e-mail naar info@hezo.be.
@@ -122,7 +122,7 @@ const Privacy = () => {
                 <span className="font-medium text-foreground">Doel van verwerking:</span> Beoordeling van uw kandidatuur in het kader van een mogelijke samenwerking of aanwerving.
               </p>
               <p className="text-muted-foreground leading-relaxed mt-1">
-                <span className="font-medium text-foreground">Rechtsgrond:</span> Toestemming en/of het nemen van precontractuele maatregelen op uw verzoek.
+                <span className="font-medium text-foreground">Rechtsgrond:</span> Nemen van precontractuele maatregelen op verzoek van de betrokkene (art. 6.1.b GDPR).
               </p>
               <p className="text-muted-foreground leading-relaxed mt-1">
                 <span className="font-medium text-foreground">Opslag en bewaartermijn:</span> De gegevens worden opgeslagen in een beveiligde database. CV-bestanden worden opgeslagen in bestandsopslag. Alle sollicitatiegegevens worden automatisch verwijderd na 60 dagen.
@@ -139,7 +139,7 @@ const Privacy = () => {
                 <li>Naam</li>
                 <li>E-mailadres</li>
                 <li>Unieke toegangstoken</li>
-                <li>Kijkgegevens (bijvoorbeeld deelnamegegevens)</li>
+                <li>Kijkgegevens (zoals duur van deelname en technische loggegevens)</li>
               </ul>
               <p className="text-muted-foreground leading-relaxed mt-3">
                 <span className="font-medium text-foreground">Doel van verwerking:</span> Organisatie en opvolging van webinars.
@@ -159,7 +159,7 @@ const Privacy = () => {
               Wij bewaren uw persoonsgegevens niet langer dan noodzakelijk voor de doeleinden waarvoor ze worden verzameld.
             </p>
             <ul className="list-disc list-inside text-muted-foreground space-y-1 ml-2">
-              <li>Contactaanvragen: maximaal 6 maanden</li>
+              <li>Contactaanvragen: maximaal 6 maanden, tenzij verdere opvolging vereist is</li>
               <li>Sollicitaties: automatisch verwijderd na 60 dagen</li>
               <li>Webinargegevens: maximaal 12 maanden (tenzij anders wettelijk vereist)</li>
             </ul>
@@ -177,8 +177,9 @@ const Privacy = () => {
               Indien noodzakelijk voor de uitvoering van onze dienstverlening kunnen gegevens gedeeld worden met:
             </p>
             <ul className="list-disc list-inside text-muted-foreground space-y-1 ml-2">
-              <li>IT- en hostingpartners</li>
-              <li>E-mail- of webinarplatformleveranciers</li>
+              <li>IT- en cloudhostingpartners</li>
+              <li>E-mailverzendingsdiensten</li>
+              <li>Webinar- en eventplatformen</li>
               <li>Technische ontwikkelpartners</li>
             </ul>
             <p className="text-muted-foreground leading-relaxed mt-3">
@@ -192,7 +193,7 @@ const Privacy = () => {
           <section className="mb-8">
             <h2 className="text-xl font-semibold text-foreground mb-3">6. Doorgifte buiten de EER</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Indien persoonsgegevens worden verwerkt door partijen buiten de Europese Economische Ruimte, gebeurt dit uitsluitend met passende waarborgen conform de GDPR (bijvoorbeeld via standaardcontractbepalingen).
+              Indien persoonsgegevens worden verwerkt door partijen buiten de Europese Economische Ruimte, gebeurt dit uitsluitend met passende waarborgen conform de GDPR (bijvoorbeeld via standaardcontractbepalingen). Indien van toepassing informeren wij betrokkenen hierover.
             </p>
           </section>
 
@@ -202,7 +203,7 @@ const Privacy = () => {
           <section className="mb-8">
             <h2 className="text-xl font-semibold text-foreground mb-3">7. Beveiliging</h2>
             <p className="text-muted-foreground leading-relaxed mb-2">
-              Hezo vzw neemt passende technische en organisatorische maatregelen om uw persoonsgegevens te beschermen tegen:
+              Hezo vzw neemt passende technische en organisatorische maatregelen, waaronder toegangsbeheer, versleuteling waar passend, logging en beveiligde hostingomgevingen, om uw persoonsgegevens te beschermen tegen:
             </p>
             <ul className="list-disc list-inside text-muted-foreground space-y-1 ml-2">
               <li>ongeoorloofde toegang</li>
