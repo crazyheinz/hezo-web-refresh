@@ -1,24 +1,34 @@
 
-# Fix: Scroll naar bovenkant bij navigatie
 
-## Probleem
-Wanneer je naar de webinar pagina navigeert via een magic link, wordt de pagina niet naar boven gescrold. Hierdoor is de titel ("test") half afgesneden en moet je eerst naar beneden scrollen om de volledige content te zien.
+# Privacy pagina aanmaken
 
-## Oorzaak
-React Router behoudt standaard de scroll positie bij navigatie. Er is momenteel geen component die de pagina automatisch naar boven scrollt wanneer je naar een nieuwe route navigeert.
+## Wat wordt er gemaakt
 
-## Oplossing
-Een `ScrollToTop` component toevoegen die bij elke route-wijziging automatisch naar boven scrollt.
+Een professioneel opgemaakte **Privacy pagina** op `/privacy` met:
+- Het **Hezo logo** bovenaan
+- De volledige tekst exact zoals aangeleverd
+- Dezelfde stijl als de rest van de website
+- Een **"Download als PDF" knop** zodat bezoekers de privacyverklaring kunnen downloaden (via de browser print-to-PDF functie)
 
----
+## Over de PDF
 
-## Technische Details
+Een echte PDF genereren vereist extra libraries. In plaats daarvan voeg ik een slimme **"Download als PDF" knop** toe die de browser print-functie opent met geoptimaliseerde print-styling. Dit geeft een nette PDF zonder extra dependencies.
 
-### Stap 1: ScrollToTop component aanmaken
-Een nieuw bestand `src/components/ScrollToTop.tsx` met de volgende functionaliteit:
-- Luistert naar wijzigingen in de URL pathname via `useLocation()` van React Router
-- Scrollt automatisch naar `top: 0` wanneer de route verandert
-- Gebruikt `behavior: "instant"` voor directe scroll (geen animatie)
+## Technische aanpak
 
-### Stap 2: Component toevoegen aan App.tsx
-De `ScrollToTop` component wordt toegevoegd direct binnen de `BrowserRouter`, zodat het bij elke route-wijziging wordt getriggerd. Dit lost het probleem op voor alle pagina's in de applicatie, niet alleen de webinar pagina.
+### Nieuw bestand: `src/pages/Privacy.tsx`
+- Hero-sectie met Hezo logo en titel "Privacyverklaring"
+- Alle 10 secties netjes opgemaakt met duidelijke koppen en lijsten
+- Print-optimized CSS zodat de PDF er professioneel uitziet (logo zichtbaar, geen navigatie/footer)
+- "Download als PDF" knop bovenaan
+- SEO-component met `noIndex: true` (juridische pagina's hoeven niet in Google)
+
+### Aangepast bestand: `src/App.tsx`
+- Import van Privacy component
+- Nieuwe route `/privacy` toevoegen
+
+### Stijl
+- Consistente typografie en spacing
+- Secties gescheiden met subtiele lijnen
+- Lijsten met bullet points voor leesbaarheid
+- Print-stylesheet verbergt navigatie en footer, toont enkel de inhoud met logo
