@@ -32,8 +32,8 @@ const Privacy = () => {
         <div className="container mx-auto max-w-3xl privacy-content">
           {/* Logo (always visible, prominent in print) */}
           <div className="mb-8 flex items-center justify-between">
-            <img src={hezoLogo} alt="Hezo" className="h-16 w-auto print-logo" />
-            <Button onClick={handlePrint} variant="outline" className="no-print gap-2">
+            <img src={hezoLogo} alt="Hezo" className="h-16 w-auto hidden print:block" />
+            <Button onClick={handlePrint} variant="outline" className="no-print gap-2 ml-auto">
               <Download className="h-4 w-4" />
               Download als PDF
             </Button>
