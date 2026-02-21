@@ -15,8 +15,8 @@ const Privacy = () => {
         title="Privacyverklaring | Hezo"
         description="Privacyverklaring van Hezo vzw – hoe wij omgaan met uw persoonsgegevens conform de GDPR."
         path="/privacy"
-        noIndex={true}
-      />
+        noIndex={true} />
+
 
       {/* Print-only styles */}
       <style>{`
@@ -192,8 +192,8 @@ const Privacy = () => {
           {/* 6. Doorgifte */}
           <section className="mb-8">
             <h2 className="text-xl font-semibold text-foreground mb-3">6. Doorgifte buiten de EER</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              Indien persoonsgegevens worden verwerkt door partijen buiten de Europese Economische Ruimte, gebeurt dit uitsluitend met passende waarborgen conform de GDPR (bijvoorbeeld via standaardcontractbepalingen). Indien van toepassing informeren wij betrokkenen hierover en zorgen wij voor passende waarborgen overeenkomstig de GDPR.
+            <p className="text-muted-foreground leading-relaxed">Indien persoonsgegevens worden verwerkt door partijen buiten de Europese Economische Ruimte, gebeurt dit uitsluitend met passende waarborgen conform de GDPR (bijvoorbeeld via standaardcontractbepalingen). In voorkomend geval informeren wij betrokkenen hierover.
+
             </p>
           </section>
 
@@ -234,9 +234,6 @@ const Privacy = () => {
               U kan uw rechten uitoefenen via: <a href="mailto:info@hezo.be" className="text-secondary hover:underline">info@hezo.be</a>
             </p>
             <p className="text-muted-foreground leading-relaxed mt-3">
-              Wij reageren op uw verzoek binnen één maand na ontvangst, conform de GDPR. Wij kunnen u vragen om uw identiteit te verifiëren alvorens uw verzoek te behandelen.
-            </p>
-            <p className="text-muted-foreground leading-relaxed mt-3">
               Daarnaast kan u klacht indienen bij de Belgische Gegevensbeschermingsautoriteit:{" "}
               <a href="https://www.gegevensbeschermingsautoriteit.be" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">
                 www.gegevensbeschermingsautoriteit.be
@@ -266,8 +263,8 @@ const Privacy = () => {
           </section>
         </div>
       </section>
-    </div>
-  );
+    </div>);
+
 };
 
 export default Privacy;
