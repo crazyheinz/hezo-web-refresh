@@ -234,7 +234,7 @@ const Privacy = () => {
               U kan uw rechten uitoefenen via: <a href="mailto:info@hezo.be" className="text-secondary hover:underline">info@hezo.be</a>
             </p>
             <p className="text-muted-foreground leading-relaxed mt-3">
-              Wij reageren op uw verzoek binnen één maand na ontvangst, conform de GDPR.
+              Wij reageren op uw verzoek binnen één maand na ontvangst, conform de GDPR. Wij kunnen u vragen om uw identiteit te verifiëren alvorens uw verzoek te behandelen.
             </p>
             <p className="text-muted-foreground leading-relaxed mt-3">
               Daarnaast kan u klacht indienen bij de Belgische Gegevensbeschermingsautoriteit:{" "}
