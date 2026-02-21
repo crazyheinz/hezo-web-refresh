@@ -84,7 +84,7 @@ const Navigation = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8" ref={dropdownRef}>
+          <div className="hidden lg:flex items-center space-x-8" ref={dropdownRef}>
             {navItems.map((item) => (
               item.dropdown ? (
                 <div key={item.label} className="relative">
@@ -132,7 +132,7 @@ const Navigation = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className="lg:hidden"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -141,7 +141,7 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden pb-4">
+          <div className="lg:hidden pb-4">
             {navItems.map((item) => (
               item.dropdown ? (
                 <div key={item.label} className="py-2">
