@@ -64,13 +64,11 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/20 pt-8 flex flex-col md:flex-row justify-between items-center text-sm opacity-75">
+        <div className="border-t border-primary-foreground/20 pt-8 flex flex-col items-center text-sm opacity-75 gap-2">
+          <Link to="/privacy/" className="hover:text-secondary transition-colors">
+            Privacy
+          </Link>
           <p>© 2025 Hezo. Alle rechten voorbehouden.</p>
-          <div className="flex gap-4 mt-4 md:mt-0">
-            <Link to="/privacy/" className="hover:text-secondary transition-colors">
-              Privacy
-            </Link>
-          </div>
         </div>
       </div>
     </footer>
