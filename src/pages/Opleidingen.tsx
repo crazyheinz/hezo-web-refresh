@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { GraduationCap, Calendar, MapPin } from "lucide-react";
+import { GraduationCap, Calendar, MapPin, Clock, Users, Monitor, Building2, Euro } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 import SEO from "@/components/SEO";
 
 const Opleidingen = () => {
@@ -96,99 +97,128 @@ const Opleidingen = () => {
               administratie, communicatie, samenwerking en zorgkwaliteit. Elke sessie is opgebouwd
               rond herkenbare situaties, met aandacht voor efficiëntie én welzijn.
             </p>
-            <p className="text-lg text-foreground font-medium">
-              De eerste opleidingen starten in februari 2026. Daarna bouwen we stap voor stap een
-              aanbod uit met bijscholingen, webinars en leermomenten afgestemd op de noden van
-              zelfstandige thuisverpleging.
-            </p>
           </div>
 
-          {/* Featured Training */}
-          <Card className="mb-16 border-secondary/20 shadow-lg">
-            <CardHeader>
+          {/* Opleiding 1 */}
+          <Card className="mb-8 border-secondary/20 shadow-lg overflow-hidden">
+            <CardHeader className="pb-4">
+              <div className="flex flex-wrap items-center gap-3 mb-2">
+                <Badge className="bg-secondary/10 text-secondary border-secondary/20 hover:bg-secondary/10">
+                  <Monitor className="h-3 w-3 mr-1" />
+                  Webinar
+                </Badge>
+                <Badge variant="outline" className="text-muted-foreground">
+                  Opname beschikbaar
+                </Badge>
+              </div>
               <CardTitle className="text-2xl">
-                Starten als zelfstandige thuisverpleegkundige
+                Poortkatheters voor verpleegkundigen in de thuiszorg
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
-              <div className="flex flex-wrap gap-6">
+              <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
                 <div className="flex items-center gap-2">
-                  <Calendar className="h-5 w-5 text-secondary" />
-                  <span className="text-muted-foreground">Start: februari 2026</span>
+                  <Calendar className="h-4 w-4 text-secondary" />
+                  <span className="text-muted-foreground">23 maart 2026</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <MapPin className="h-5 w-5 text-secondary" />
-                  <span className="text-muted-foreground">Locatie: Gent (en online)</span>
+                  <Clock className="h-4 w-4 text-secondary" />
+                  <span className="text-muted-foreground">13:30 – 15:00 (1u30)</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Users className="h-4 w-4 text-secondary" />
+                  <span className="text-muted-foreground">Max. 50 deelnemers</span>
                 </div>
               </div>
 
               <p className="text-muted-foreground leading-relaxed">
-                Denk je eraan om als zelfstandige te starten? Deze opleiding helpt je om voorbereid en
-                met vertrouwen van start te gaan.
+                De verschillende stappen van de procedure rond poortkatheters in de thuiszorg.
               </p>
 
-              <div className="bg-muted p-6 rounded-lg">
-                <h3 className="text-lg font-semibold text-foreground mb-4">Je leert:</h3>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li className="flex items-start">
-                    <span className="text-secondary mr-2">•</span>
-                    <span>hoe je jouw RIZIV- en verzekeringsadministratie in orde brengt,</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-secondary mr-2">•</span>
-                    <span>welke software en tools je nodig hebt voor facturatie en opvolging,</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-secondary mr-2">•</span>
-                    <span>hoe tarificatie en remgeld in de praktijk werken,</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-secondary mr-2">•</span>
-                    <span>hoe je patiënten vindt en communiceert met artsen,</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-secondary mr-2">•</span>
-                    <span>wat er komt kijken bij je eerste zorgaanvragen.</span>
-                  </li>
-                </ul>
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <GraduationCap className="h-4 w-4 text-secondary" />
+                <span>Lesgever: Artevelde Hogeschool</span>
               </div>
 
-              <div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">Voor wie:</h3>
-                <p className="text-muted-foreground">
-                  Verpleegkundigen die zelfstandig willen starten of hun overstap voorbereiden.
-                </p>
+              <div className="bg-muted p-5 rounded-lg">
+                <h3 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+                  <Euro className="h-4 w-4 text-secondary" />
+                  Kostprijs
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                  <div className="flex justify-between sm:flex-col sm:gap-1">
+                    <span className="text-muted-foreground">Hezo-klanten</span>
+                    <span className="font-semibold text-secondary text-lg">Gratis</span>
+                  </div>
+                  <div className="flex justify-between sm:flex-col sm:gap-1">
+                    <span className="text-muted-foreground">Niet-Hezo-klanten</span>
+                    <span className="font-semibold text-foreground text-lg">€ 35</span>
+                  </div>
+                </div>
               </div>
-
-              <p className="text-sm text-muted-foreground italic">
-                Inschrijven kan vanaf januari 2026.
-              </p>
             </CardContent>
           </Card>
 
-          {/* Coming Soon Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-            <Card>
-              <CardHeader>
-                <CardTitle>Nieuwe opleiding</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">Meer informatie volgt binnenkort.</p>
-                <p className="text-sm text-muted-foreground">
-                  Vorm: hybride opleiding – combinatie van infosessies en praktijkvoorbeelden
-                </p>
-              </CardContent>
-            </Card>
+          {/* Opleiding 2 */}
+          <Card className="mb-16 border-secondary/20 shadow-lg overflow-hidden">
+            <CardHeader className="pb-4">
+              <div className="flex flex-wrap items-center gap-3 mb-2">
+                <Badge className="bg-secondary/10 text-secondary border-secondary/20 hover:bg-secondary/10">
+                  <Building2 className="h-3 w-3 mr-1" />
+                  Fysieke opleiding
+                </Badge>
+              </div>
+              <CardTitle className="text-2xl">
+                BLS/AED – officieel certificaat
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
+                <div className="flex items-center gap-2">
+                  <Calendar className="h-4 w-4 text-secondary" />
+                  <span className="text-muted-foreground">11 mei 2026</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Clock className="h-4 w-4 text-secondary" />
+                  <span className="text-muted-foreground">13:30 – 17:30 (4u00)</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <MapPin className="h-4 w-4 text-secondary" />
+                  <span className="text-muted-foreground">Helan Hoofdkantoor – zaal Magnolia</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Users className="h-4 w-4 text-secondary" />
+                  <span className="text-muted-foreground">Max. 12 deelnemers</span>
+                </div>
+              </div>
 
-            <Card>
-              <CardHeader>
-                <CardTitle>Webinar</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">Meer informatie volgt binnenkort.</p>
-              </CardContent>
-            </Card>
-          </div>
+              <p className="text-muted-foreground leading-relaxed">
+                Wist je dat je elke 2 jaar een gecertificeerde BLS/AED-opleiding moet volgen? Schrijf je nu in voor deze officieel gecertificeerde sessie.
+              </p>
+
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <GraduationCap className="h-4 w-4 text-secondary" />
+                <span>Lesgever: Hogent</span>
+              </div>
+
+              <div className="bg-muted p-5 rounded-lg">
+                <h3 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+                  <Euro className="h-4 w-4 text-secondary" />
+                  Kostprijs
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                  <div className="flex justify-between sm:flex-col sm:gap-1">
+                    <span className="text-muted-foreground">Hezo-klanten</span>
+                    <span className="font-semibold text-secondary text-lg">Gratis</span>
+                  </div>
+                  <div className="flex justify-between sm:flex-col sm:gap-1">
+                    <span className="text-muted-foreground">Niet-Hezo-klanten</span>
+                    <span className="font-semibold text-foreground text-lg">€ 85</span>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
 
         </div>
       </div>
