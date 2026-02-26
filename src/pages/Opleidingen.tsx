@@ -1,7 +1,9 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { GraduationCap, Calendar, MapPin, Clock, Users, Monitor, Building2, Euro } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
+import InschrijfDialog from "@/components/opleidingen/InschrijfDialog";
 
 const Opleidingen = () => {
   return (
@@ -156,6 +158,10 @@ const Opleidingen = () => {
                   </div>
                 </div>
               </div>
+
+              <InschrijfDialog opleidingNaam="Poortkatheters voor verpleegkundigen in de thuiszorg" opleidingDatum="23 maart 2026">
+                <Button className="w-full sm:w-auto">Schrijf je in</Button>
+              </InschrijfDialog>
             </CardContent>
           </Card>
 
@@ -217,6 +223,10 @@ const Opleidingen = () => {
                   </div>
                 </div>
               </div>
+
+              <InschrijfDialog opleidingNaam="BLS/AED – officieel certificaat" opleidingDatum="11 mei 2026">
+                <Button className="w-full sm:w-auto">Schrijf je in</Button>
+              </InschrijfDialog>
             </CardContent>
           </Card>
 
