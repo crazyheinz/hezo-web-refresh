@@ -132,7 +132,7 @@ const Opleidingen = () => {
               </div>
 
               <p className="text-muted-foreground leading-relaxed">
-                De verschillende stappen van de procedure rond poortkatheters in de thuiszorg.
+                De verschillende stappen van de procedure rond poortkatheters worden behandeld: aanprikken, bloedafname, afsluiten en spoelen. Tijdens deze sessie worden de belangrijkste aandachtspunten per stap duidelijk toegelicht door middel van foto's, uitleg, kennisclips. De webinar is te herbekijken tot 10 dagen na de datum.
               </p>
 
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -193,7 +193,7 @@ const Opleidingen = () => {
               </div>
 
               <p className="text-muted-foreground leading-relaxed">
-                Wist je dat je elke 2 jaar een gecertificeerde BLS/AED-opleiding moet volgen? Schrijf je nu in voor deze officieel gecertificeerde sessie.
+                Wist je dat je elke 2 jaar een gecertificeerde opleiding BLS/AED moet volgen? Deze opleiding, onder begeleiding van Hogent, neemt je mee in alle principes van BLS en het gebruik van een AED.
               </p>
 
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
