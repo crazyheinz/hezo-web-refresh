@@ -142,21 +142,16 @@ const Opleidingen = () => {
                 <span>Lesgever: Artevelde Hogeschool</span>
               </div>
 
-              <div className="bg-muted p-5 rounded-lg">
-                <h3 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+              <div className="bg-muted p-5 rounded-lg space-y-3">
+                <div className="flex items-center gap-2 text-sm">
                   <Euro className="h-4 w-4 text-secondary" />
-                  Kostprijs
-                </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-                  <div className="flex justify-between sm:flex-col sm:gap-1">
-                    <span className="text-muted-foreground">Hezo-klanten</span>
-                    <span className="font-semibold text-secondary text-lg">Gratis</span>
-                  </div>
-                  <div className="flex justify-between sm:flex-col sm:gap-1">
-                    <span className="text-muted-foreground">Niet-Hezo-klanten</span>
-                    <span className="font-semibold text-foreground text-lg">€ 35</span>
-                  </div>
+                  <span className="font-semibold text-foreground">Hezo-klanten:</span>
+                  <span className="font-semibold text-secondary text-lg">Gratis</span>
                 </div>
+                <p className="text-sm text-muted-foreground">
+                  Ben je geen klant bij Hezo, maar wil je toch graag deelnemen aan de opleiding? Neem dan contact met ons op via{" "}
+                  <a href="mailto:info@hezo.be" className="text-secondary hover:underline">info@hezo.be</a>.
+                </p>
               </div>
 
               <InschrijfDialog opleidingNaam="Poortkatheters voor verpleegkundigen in de thuiszorg" opleidingDatum="23 maart 2026">
@@ -207,21 +202,16 @@ const Opleidingen = () => {
                 <span>Lesgever: Hogent</span>
               </div>
 
-              <div className="bg-muted p-5 rounded-lg">
-                <h3 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+              <div className="bg-muted p-5 rounded-lg space-y-3">
+                <div className="flex items-center gap-2 text-sm">
                   <Euro className="h-4 w-4 text-secondary" />
-                  Kostprijs
-                </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-                  <div className="flex justify-between sm:flex-col sm:gap-1">
-                    <span className="text-muted-foreground">Hezo-klanten</span>
-                    <span className="font-semibold text-secondary text-lg">Gratis</span>
-                  </div>
-                  <div className="flex justify-between sm:flex-col sm:gap-1">
-                    <span className="text-muted-foreground">Niet-Hezo-klanten</span>
-                    <span className="font-semibold text-foreground text-lg">€ 85</span>
-                  </div>
+                  <span className="font-semibold text-foreground">Hezo-klanten:</span>
+                  <span className="font-semibold text-secondary text-lg">Gratis</span>
                 </div>
+                <p className="text-sm text-muted-foreground">
+                  Ben je geen klant bij Hezo, maar wil je toch graag deelnemen aan de opleiding? Neem dan contact met ons op via{" "}
+                  <a href="mailto:info@hezo.be" className="text-secondary hover:underline">info@hezo.be</a>.
+                </p>
               </div>
 
               <InschrijfDialog opleidingNaam="BLS/AED – officieel certificaat" opleidingDatum="11 mei 2026">
