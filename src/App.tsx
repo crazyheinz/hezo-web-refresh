@@ -18,6 +18,7 @@ import Contact from "./pages/Contact";
 import WebinarAdmin from "./pages/WebinarAdmin";
 import WebinarView from "./pages/WebinarView";
 import Privacy from "./pages/Privacy";
+import Cookies from "./pages/Cookies";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -50,6 +51,8 @@ const App = () => (
                 <Route path="/contact/" element={<Contact />} />
                 <Route path="/privacy" element={<Privacy />} />
                 <Route path="/privacy/" element={<Privacy />} />
+                <Route path="/cookies" element={<Cookies />} />
+                <Route path="/cookies/" element={<Cookies />} />
                 <Route path="/webinar-admin" element={<WebinarAdmin />} />
                 <Route path="/webinar/:token" element={<WebinarView />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
