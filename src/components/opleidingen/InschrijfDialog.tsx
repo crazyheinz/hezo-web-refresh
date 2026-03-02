@@ -17,7 +17,8 @@ const InschrijfDialog = ({ opleidingNaam, opleidingDatum, children }: InschrijfD
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
-    name: "",
+    voornaam: "",
+    achternaam: "",
     email: "",
     phone: "",
     opmerking: "",
@@ -31,7 +32,7 @@ const InschrijfDialog = ({ opleidingNaam, opleidingDatum, children }: InschrijfD
     try {
       const { data, error } = await supabase.functions.invoke("send-contact", {
         body: {
-          name: formData.name,
+          name: `${formData.voornaam} ${formData.achternaam}`,
           email: formData.email,
           phone: formData.phone,
           message: `Inschrijving voor opleiding: ${opleidingNaam}\nDatum: ${opleidingDatum}\n\n${formData.opmerking ? `Opmerking: ${formData.opmerking}` : "Geen opmerking"}`,
@@ -44,7 +45,7 @@ const InschrijfDialog = ({ opleidingNaam, opleidingDatum, children }: InschrijfD
         title: "Inschrijving verzonden!",
         description: "We nemen zo snel mogelijk contact met je op.",
       });
-      setFormData({ name: "", email: "", phone: "", opmerking: "" });
+      setFormData({ voornaam: "", achternaam: "", email: "", phone: "", opmerking: "" });
       setOpen(false);
     } catch (err) {
       toast({
@@ -66,13 +67,23 @@ const InschrijfDialog = ({ opleidingNaam, opleidingDatum, children }: InschrijfD
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="name">Naam *</Label>
+            <Label htmlFor="voornaam">Voornaam *</Label>
             <Input
-              id="name"
+              id="voornaam"
               required
-              value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              placeholder="Je volledige naam"
+              value={formData.voornaam}
+              onChange={(e) => setFormData({ ...formData, voornaam: e.target.value })}
+              placeholder="Je voornaam"
+            />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="achternaam">Achternaam *</Label>
+            <Input
+              id="achternaam"
+              required
+              value={formData.achternaam}
+              onChange={(e) => setFormData({ ...formData, achternaam: e.target.value })}
+              placeholder="Je achternaam"
             />
           </div>
           <div className="space-y-2">

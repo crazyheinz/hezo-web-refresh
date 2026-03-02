@@ -7,6 +7,8 @@ const allowedOrigins = [
   'https://hezo.be',
   'https://www.hezo.be',
   'https://id-preview--a96ce8fe-4af9-40f6-ac0c-9214f80fd048.lovable.app',
+  'https://a96ce8fe-4af9-40f6-ac0c-9214f80fd048.lovableproject.com',
+  'https://hezo-web-refresh.lovable.app',
   'http://localhost:8080',
   'http://localhost:5173',
 ];
