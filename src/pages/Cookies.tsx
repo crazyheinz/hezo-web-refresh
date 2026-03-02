@@ -59,15 +59,6 @@ const Cookies = () => {
             <p className="text-muted-foreground leading-relaxed mb-4">
               Hezo vzw maakt op haar website <span className="font-medium text-foreground">uitsluitend gebruik van strikt noodzakelijke (functionele) cookies</span>. Deze cookies zijn essentieel voor de goede werking van de website en kunnen niet worden uitgeschakeld.
             </p>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              Wij gebruiken <span className="font-medium text-foreground">geen</span>:
-            </p>
-            <ul className="list-disc list-inside text-muted-foreground space-y-1 ml-2">
-              <li>Analytische cookies (bv. Google Analytics)</li>
-              <li>Tracking- of advertentiecookies</li>
-              <li>Cookies van sociale media</li>
-              <li>Cookies van derden voor commerciële doeleinden</li>
-            </ul>
           </section>
 
           <Separator className="mb-8" />
