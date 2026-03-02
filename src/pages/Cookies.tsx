@@ -97,19 +97,9 @@ const Cookies = () => {
 
           <Separator className="mb-8" />
 
-          {/* 4. Cookiebanner */}
+          {/* 4. Cookies beheren */}
           <section className="mb-8">
-            <h2 className="text-xl font-semibold text-foreground mb-3">4. Waarom geen cookiebanner?</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              Aangezien wij uitsluitend strikt noodzakelijke cookies gebruiken die essentieel zijn voor de werking van de website, is een cookiebanner wettelijk niet vereist. De Europese ePrivacy-richtlijn en de GDPR vereisen enkel toestemming voor niet-essentiële cookies.
-            </p>
-          </section>
-
-          <Separator className="mb-8" />
-
-          {/* 5. Cookies beheren */}
-          <section className="mb-8">
-            <h2 className="text-xl font-semibold text-foreground mb-3">5. Cookies beheren</h2>
+            <h2 className="text-xl font-semibold text-foreground mb-3">4. Cookies beheren</h2>
             <p className="text-muted-foreground leading-relaxed mb-3">
               U kunt cookies steeds beheren of verwijderen via de instellingen van uw browser. Houd er wel rekening mee dat het blokkeren van functionele cookies de werking van de website kan beïnvloeden.
             </p>
@@ -123,9 +113,9 @@ const Cookies = () => {
 
           <Separator className="mb-8" />
 
-          {/* 6. Wijzigingen */}
+          {/* 5. Wijzigingen */}
           <section className="mb-8">
-            <h2 className="text-xl font-semibold text-foreground mb-3">6. Wijzigingen</h2>
+            <h2 className="text-xl font-semibold text-foreground mb-3">5. Wijzigingen</h2>
             <p className="text-muted-foreground leading-relaxed">
               Hezo vzw kan dit cookiebeleid aanpassen. De meest recente versie is steeds beschikbaar op{" "}
               <a href="https://www.hezo.be/cookies" className="text-secondary hover:underline">www.hezo.be/cookies</a>.
@@ -136,7 +126,7 @@ const Cookies = () => {
 
           {/* 7. Contact */}
           <section className="mb-8">
-            <h2 className="text-xl font-semibold text-foreground mb-3">7. Contact</h2>
+            <h2 className="text-xl font-semibold text-foreground mb-3">6. Contact</h2>
             <p className="text-muted-foreground leading-relaxed">
               Voor vragen over dit cookiebeleid kan u ons contacteren via:{" "}
               <a href="mailto:privacy@hezo.be" className="text-secondary hover:underline">privacy@hezo.be</a>
