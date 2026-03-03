@@ -196,6 +196,54 @@ serve(async (req) => {
 
     console.log("Contact email sent successfully");
 
+    // Send confirmation email to registrant for opleiding registrations
+    if (rawData.type === "opleiding" && data.email) {
+      const confirmationResponse = await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${RESEND_API_KEY}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          from: "Hezo <info@hezo.be>",
+          to: [data.email],
+          subject: `Bevestiging aanvraag: ${escapeHtml(rawData.opleidingNaam || "")}`,
+          html: `
+            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+              <h1 style="color: #1a365d;">Bedankt voor je aanvraag, ${safeName}!</h1>
+              <p>We hebben je aanvraag voor de opleiding <strong>${escapeHtml(rawData.opleidingNaam || "")}</strong> goed ontvangen.</p>
+              <p style="background: #f7fafc; border-left: 4px solid #3182ce; padding: 12px 16px; margin: 20px 0;">
+                <strong>Belangrijk:</strong> Het invullen van dit formulier is nog geen definitieve inschrijving. 
+                Wij bekijken je aanvraag en bezorgen je zo snel mogelijk een bevestiging van inschrijving.
+              </p>
+              <h3 style="color: #1a365d;">Jouw gegevens:</h3>
+              <ul style="list-style: none; padding: 0;">
+                <li><strong>Naam:</strong> ${safeName}</li>
+                <li><strong>E-mail:</strong> ${safeEmail}</li>
+                <li><strong>Opleiding:</strong> ${escapeHtml(rawData.opleidingNaam || "")}</li>
+                <li><strong>Datum:</strong> ${escapeHtml(rawData.opleidingDatum || "")}</li>
+              </ul>
+              <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 24px 0;" />
+              <p style="color: #718096; font-size: 14px;">
+                Met vriendelijke groeten,<br />
+                <strong>Het Hezo Team</strong>
+              </p>
+              <p style="color: #a0aec0; font-size: 12px;">
+                Heb je vragen? Neem gerust contact met ons op via <a href="mailto:info@hezo.be" style="color: #3182ce;">info@hezo.be</a>
+              </p>
+            </div>
+          `,
+        }),
+      });
+
+      if (!confirmationResponse.ok) {
+        const confirmError = await confirmationResponse.text();
+        console.error("Opleiding confirmation email error:", confirmError);
+      } else {
+        console.log("Opleiding confirmation email sent to:", data.email);
+      }
+    }
+
     return new Response(JSON.stringify({ success: true }), {
       status: 200,
       headers: { 
