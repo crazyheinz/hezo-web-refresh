@@ -36,14 +36,17 @@ const InschrijfDialog = ({ opleidingNaam, opleidingDatum, children }: InschrijfD
           email: formData.email,
           phone: formData.phone,
           message: `Inschrijving voor opleiding: ${opleidingNaam}\nDatum: ${opleidingDatum}\n\n${formData.opmerking ? `Opmerking: ${formData.opmerking}` : "Geen opmerking"}`,
+          type: "opleiding",
+          opleidingNaam,
+          opleidingDatum,
         },
       });
 
       if (error) throw error;
 
       toast({
-        title: "Inschrijving verzonden!",
-        description: "We nemen zo snel mogelijk contact met je op.",
+        title: "Aanvraag ontvangen!",
+        description: "Je ontvangt een bevestigingsmail. Let op: dit is nog geen definitieve inschrijving. Wij bezorgen je binnenkort een bevestiging van inschrijving.",
       });
       setFormData({ voornaam: "", achternaam: "", email: "", phone: "", opmerking: "" });
       setOpen(false);
