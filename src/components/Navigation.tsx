@@ -84,7 +84,7 @@ const Navigation = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24">
           <Link to="/" className="flex items-center">
-            <img src={hezoLogo} alt="Hezo" className="h-20 w-auto" />
+            <img src={hezoLogo} alt="Hezo" className="h-14 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
