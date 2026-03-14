@@ -157,7 +157,7 @@ const Home = () => {
               Je blijft volledig zelfstandig werken: je organiseert je eigen praktijk, behoudt je patiëntenbestand en kiest zelf met wie je samenwerkt.
             </p>
             <p>
-              Hezo helpt je praktijk groeien door zorgvragen uit je regio door te geven en administratieve ondersteuning te bieden.
+              Hezo helpt je praktijk groeien door zorgvragen uit je regio door te geven en te ondersteunen met administratie, begeleiding en opleiding.
             </p>
           </div>
         </div>
