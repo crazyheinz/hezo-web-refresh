@@ -39,10 +39,10 @@ const TestimonialsSection = () => {
                 <blockquote className="text-muted-foreground leading-relaxed mb-6 flex-grow italic">
                   "{testimonial.quote}"
                 </blockquote>
-                <div className="border-t border-border pt-4">
+                {/* <div className="border-t border-border pt-4">
                   <p className="font-semibold text-foreground">{testimonial.name}</p>
                   <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                </div>
+                </div> */}
               </CardContent>
             </Card>
           ))}
