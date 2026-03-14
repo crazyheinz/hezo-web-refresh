@@ -3,7 +3,7 @@ const MissionSection = () => {
     <section className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-4xl">
         <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6 text-center">
-          Voor wie is Hezo er?
+          Voor wie is Hezo?
         </h2>
         <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
           <p>
