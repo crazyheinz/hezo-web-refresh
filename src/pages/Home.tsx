@@ -143,6 +143,26 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Autonomy Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto max-w-3xl text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">
+            Volledig zelfstandig, sterker in een netwerk
+          </h2>
+          <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
+            <p>
+              Hezo is een ondersteuningsnetwerk voor <strong className="text-foreground">zelfstandige thuisverpleegkundigen</strong>.
+            </p>
+            <p>
+              Je blijft volledig zelfstandig werken: je organiseert je eigen praktijk, behoudt je patiëntenbestand en kiest zelf met wie je samenwerkt.
+            </p>
+            <p>
+              Hezo helpt je praktijk groeien door zorgvragen uit je regio door te geven en administratieve ondersteuning te bieden.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Features Grid */}
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
