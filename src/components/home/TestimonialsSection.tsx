@@ -8,12 +8,12 @@ const testimonials = [
     role: "Zelfstandig thuisverpleegkundige",
   },
   {
-    quote: "Ik was net gestart als zelfstandige en wist niet waar te beginnen. Hezo heeft me geholpen om alles op de rails te krijgen.",
+    quote: "IToen ik mijn eigen praktijk startte, kwam er veel op me af. Hezo hielp me om alles snel op de rails te krijgen.",
     name: "Starter",
     role: "Zelfstandig thuisverpleegkundige",
   },
   {
-    quote: "Het netwerk zorgt voor een constante instroom van patiënten. Dat geeft rust en zekerheid.",
+    quote: "Via het netwerk krijg ik patiënten uit mijn regio. Dat geeft rust en helpt om mijn praktijk stabiel uit te bouwen.",
     name: "Ervaren verpleegkundige",
     role: "Zelfstandig thuisverpleegkundige",
   },
