@@ -19,6 +19,14 @@ const MissionSection = () => {
           <div className="grid md:grid-cols-3 gap-8 pt-4">
             <div className="space-y-2">
               <h3 className="text-foreground font-semibold text-lg">
+                Zoek je extra ondersteuning?
+              </h3>
+              <p className="text-base">
+                Groeien of simpelweg je werkdruk verlagen? Wij ontzorgen jou en je praktijk.
+              </p>
+            </div>
+            <div className="space-y-2">
+              <h3 className="text-foreground font-semibold text-lg">
                 Start je net als zelfstandige thuisverpleegkundige?
               </h3>
               <p className="text-base">
@@ -31,14 +39,6 @@ const MissionSection = () => {
               </h3>
               <p className="text-base">
                 Een praktijk opzetten vraagt structuur. Wij bieden de juiste omkadering.
-              </p>
-            </div>
-            <div className="space-y-2">
-              <h3 className="text-foreground font-semibold text-lg">
-                Zoek je extra ondersteuning?
-              </h3>
-              <p className="text-base">
-                Groeien of simpelweg je werkdruk verlagen? Wij ontzorgen jou en je praktijk.
               </p>
             </div>
           </div>
