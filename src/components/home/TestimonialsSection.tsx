@@ -8,7 +8,7 @@ const testimonials = [
     role: "Zelfstandig thuisverpleegkundige",
   },
   {
-    quote: "IToen ik mijn eigen praktijk startte, kwam er veel op me af. Hezo hielp me om alles snel op de rails te krijgen.",
+    quote: "Toen ik mijn eigen praktijk startte, kwam er veel op me af. Hezo hielp me om alles snel op de rails te krijgen.",
     name: "Starter",
     role: "Zelfstandig thuisverpleegkundige",
   },
