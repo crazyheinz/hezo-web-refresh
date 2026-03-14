@@ -7,7 +7,7 @@ const MissionSection = () => {
         </h2>
         <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
           <p>
-            Hezo is er voor iedere zelfstandige verpleegkundige die zich elke dag met hart en ziel inzet voor patiënten. Maar administratie, facturatie en planning nemen steeds meer tijd in beslag. Terwijl de zorgvraag groeit, loopt de werkdruk op.
+            Hezo is er voor iedere zelfstandige verpleegkundige die zich elke dag met hart en ziel inzet voor patiënten. Maar administratie en facturatie nemen steeds meer tijd in beslag. Terwijl de zorgvraag groeit, loopt de werkdruk op.
           </p>
           <p>
             Hezo helpt je die druk te verminderen. Zo hou je meer tijd over voor wat er echt toe doet: zorgen voor patiënten.
@@ -22,23 +22,23 @@ const MissionSection = () => {
                 Start je net als zelfstandige thuisverpleegkundige?
               </h3>
               <p className="text-base">
-                Dan komt er veel op je af: Hezo helpt je je administratie op orde te krijgen en je goed op te starten.
+                Er komt veel op je af bij je opstart. Wij zetten je op het juiste spoor.
               </p>
             </div>
             <div className="space-y-2">
               <h3 className="text-foreground font-semibold text-lg">
-                Werk je al langer in de thuisverpleging?
+                Start je een eigen praktijk?
               </h3>
               <p className="text-base">
-                Hezo zorgt voor meer overzicht in je administratie en facturatie, zodat je werkdag rustiger verloopt.
+                Een praktijk opzetten vraagt structuur. Wij bieden de juiste omkadering.
               </p>
             </div>
             <div className="space-y-2">
               <h3 className="text-foreground font-semibold text-lg">
-                Heb je een eigen praktijk of werk je in een praktijk?
+                Zoek je extra ondersteuning?
               </h3>
               <p className="text-base">
-                Ook praktijken krijgen dezelfde ondersteuning bij administratie, patiënteninstroom en groei.
+                Groeien of simpelweg je werkdruk verlagen? Wij ontzorgen jou en je praktijk.
               </p>
             </div>
           </div>
