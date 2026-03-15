@@ -123,7 +123,7 @@ const AdminSection = () => {
                   Meer ruimte voor evenwicht
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Wanneer administratie helder en correct verloopt, ontstaat er ruimte. Ruimte om je te focussen op je patiënten. En ruimte om je werk en privé beter in balans te houden. Daar waken we mee over.
+                  Wanneer administratie helder en correct verloopt, ontstaat er ruimte. Ruimte om je te focussen op je patiënten. En ruimte om je werk en privé beter in balans te houden.
                 </p>
               </div>
             </motion.div>
