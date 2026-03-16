@@ -89,6 +89,7 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8" ref={dropdownRef}>
+            {/* Nav items will render below, then CTA button after the map */}
             {navItems.map((item) => (
               item.dropdown ? (
                 <div key={item.label} className="relative">
