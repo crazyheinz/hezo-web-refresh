@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Sprout, HeartHandshake, Building2 } from "lucide-react";
 
