@@ -16,7 +16,7 @@ const HeroSection = () => {
               Wij ontzorgen zodat jij kan zorgen
             </p>
             <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
-              Hezo is jouw serviceplatform als zelfstandig thuisverpleegkundige. Krijg ondersteuning bij administratie, facturatie, patiënteninstroom en meer.
+              Hezo is jouw ondersteuningsnetwerk als zelfstandig thuisverpleegkundige. Krijg ondersteuning bij administratie, facturatie, patiënteninstroom en meer.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild size="lg" className="text-base bg-light-blue text-light-blue-foreground hover:bg-light-blue/90">
