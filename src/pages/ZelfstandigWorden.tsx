@@ -452,7 +452,7 @@ const ZelfstandigWorden = () => {
                     Als zelfstandig verpleegkundige behoud je je vrijheid en autonomie. Tegelijk sta je er bij Hezo nooit alleen voor. Van de eerste stappen tot het dagelijkse beheer van je praktijk ondersteunen en adviseren we waar mogelijk, en nemen we werk uit handen waar dat zinvol is.
                   </p>
                   <Link 
-                    to="/wat-we-doen" 
+                    to="/onze-diensten/" 
                     className="inline-flex items-center gap-2 text-secondary font-medium hover:underline"
                   >
                     Ontdek alles wat we doen
