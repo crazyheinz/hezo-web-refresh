@@ -131,6 +131,11 @@ const Navigation = () => {
                 </Link>
               )
             ))}
+            <Link to="/zo-sluit-je-aan/">
+              <Button size="sm" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-medium px-5">
+                Sluit aan
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
