@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { GraduationCap, BookOpen, Layers, Users } from "lucide-react";
+import { GraduationCap, BookOpen, Layers, Users, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },

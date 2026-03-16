@@ -25,7 +25,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/zelfstandig-worden/" className="text-sm hover:text-secondary transition-colors">
+                <Link to="/blog/zelfstandig-thuisverpleegkundige-worden/" className="text-sm hover:text-secondary transition-colors">
                   Zelfstandig worden
                 </Link>
               </li>

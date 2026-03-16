@@ -55,13 +55,7 @@ const Navigation = () => {
   const navItems: NavItem[] = [
     { label: "Home", href: "/" },
     { label: "Ons aanbod", href: "/onze-diensten/" },
-    { 
-      label: "Voor verpleegkundigen",
-      dropdown: [
-        { label: "Zelfstandig worden", href: "/zelfstandig-worden/" },
-        { label: "Opleidingen", href: "/opleidingen/" },
-      ]
-    },
+    { label: "Opleidingen", href: "/opleidingen/" },
     { label: "Vacatures", href: "/vacatures/" },
     { label: "Blog", href: "/blog/" },
     { label: "Contact", href: "/contact/" },
