@@ -10,7 +10,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
 import OnzeDiensten from "./pages/OnzeDiensten";
 import ZoSluitJeAan from "./pages/ZoSluitJeAan";
-import ZelfstandigWorden from "./pages/ZelfstandigWorden";
+
 import Opleidingen from "./pages/Opleidingen";
 import Vacatures from "./pages/Vacatures";
 import Blog from "./pages/Blog";
