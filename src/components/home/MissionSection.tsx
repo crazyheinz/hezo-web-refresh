@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Sprout, HeartHandshake, Building2 } from "lucide-react";
 
@@ -9,6 +10,7 @@ const cards = [
       "Groeien of simpelweg je werkdruk verlagen? Wij ontzorgen jou en je praktijk.",
     color: "bg-secondary/10",
     iconColor: "text-secondary",
+    href: "/onze-diensten/",
   },
   {
     icon: Sprout,
@@ -17,6 +19,7 @@ const cards = [
       "Er komt veel op je af bij je opstart. Wij zetten je op het juiste spoor.",
     color: "bg-green/10",
     iconColor: "text-green",
+    href: "/blog/zelfstandig-thuisverpleegkundige-worden/",
   },
   {
     icon: Building2,
@@ -25,6 +28,7 @@ const cards = [
       "Een praktijk opzetten vraagt structuur. Wij bieden de juiste omkadering.",
     color: "bg-coral/10",
     iconColor: "text-coral",
+    href: "/zo-sluit-je-aan/",
   },
 ];
 
@@ -104,24 +108,25 @@ const MissionSection = () => {
           variants={containerVariants}
         >
           {cards.map((card, i) => (
-            <motion.div
-              key={i}
-              variants={cardVariants}
-              whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              className="group relative rounded-2xl border border-border/60 bg-card p-8 shadow-sm hover:shadow-lg transition-shadow duration-300"
-            >
-              <div
-                className={`inline-flex items-center justify-center w-12 h-12 rounded-xl ${card.color} mb-5 transition-transform duration-300 group-hover:scale-110`}
+            <Link key={i} to={card.href}>
+              <motion.div
+                variants={cardVariants}
+                whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                className="group relative rounded-2xl border border-border/60 bg-card p-8 shadow-sm hover:shadow-lg transition-shadow duration-300 h-full"
               >
-                <card.icon className={`w-6 h-6 ${card.iconColor}`} />
-              </div>
-              <h3 className="text-foreground font-semibold text-lg mb-3 leading-snug">
-                {card.title}
-              </h3>
-              <p className="text-muted-foreground text-base leading-relaxed">
-                {card.description}
-              </p>
-            </motion.div>
+                <div
+                  className={`inline-flex items-center justify-center w-12 h-12 rounded-xl ${card.color} mb-5 transition-transform duration-300 group-hover:scale-110`}
+                >
+                  <card.icon className={`w-6 h-6 ${card.iconColor}`} />
+                </div>
+                <h3 className="text-foreground font-semibold text-lg mb-3 leading-snug">
+                  {card.title}
+                </h3>
+                <p className="text-muted-foreground text-base leading-relaxed">
+                  {card.description}
+                </p>
+              </motion.div>
+            </Link>
           ))}
         </motion.div>
       </motion.div>

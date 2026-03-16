@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
@@ -10,7 +10,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
 import OnzeDiensten from "./pages/OnzeDiensten";
 import ZoSluitJeAan from "./pages/ZoSluitJeAan";
-import ZelfstandigWorden from "./pages/ZelfstandigWorden";
+
 import Opleidingen from "./pages/Opleidingen";
 import Vacatures from "./pages/Vacatures";
 import Blog from "./pages/Blog";
@@ -43,8 +43,8 @@ const App = () => (
                 <Route path="/wat-we-doen/" element={<OnzeDiensten />} />
                 <Route path="/zo-sluit-je-aan" element={<ZoSluitJeAan />} />
                 <Route path="/zo-sluit-je-aan/" element={<ZoSluitJeAan />} />
-                <Route path="/zelfstandig-worden" element={<ZelfstandigWorden />} />
-                <Route path="/zelfstandig-worden/" element={<ZelfstandigWorden />} />
+                <Route path="/zelfstandig-worden" element={<Navigate to="/blog/zelfstandig-thuisverpleegkundige-worden/" replace />} />
+                <Route path="/zelfstandig-worden/" element={<Navigate to="/blog/zelfstandig-thuisverpleegkundige-worden/" replace />} />
                 <Route path="/opleidingen" element={<Opleidingen />} />
                 <Route path="/opleidingen/" element={<Opleidingen />} />
                 <Route path="/vacatures" element={<Vacatures />} />

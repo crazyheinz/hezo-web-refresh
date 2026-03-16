@@ -17,6 +17,15 @@ export interface BlogArticle {
 // Blog articles data - add new articles here
 export const blogArticles: BlogArticle[] = [
   {
+    id: "zelfstandig-thuisverpleegkundige-worden",
+    title: "Zelfstandig thuisverpleegkundige worden: stappenplan & ondersteuning",
+    excerpt: "Ontdek hoe je zelfstandig thuisverpleegkundige wordt in België. Stappenplan, voorwaarden, RIZIV-nummer en ondersteuning van Hezo bij elke stap.",
+    metaTitle: "Zelfstandig thuisverpleegkundige worden | Stappenplan",
+    date: "2026-03-01",
+    category: "Starten als zelfstandige",
+    readTime: "12 min"
+  },
+  {
     id: "hbo5-graduaat-basisverpleegkunde",
     title: "Van HBO5 naar graduaat Basisverpleegkunde: wat betekent de hervorming voor (thuis)verpleegkundigen?",
     excerpt: "Graduaat Basisverpleegkunde vervangt HBO5: ontdek de twee verpleegkundige opleidingen in Vlaanderen en hun impact op thuisverpleging.",

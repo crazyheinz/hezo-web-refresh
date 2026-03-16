@@ -7,31 +7,31 @@ const features = [
     icon: Users,
     title: "Toestroom van patiënten",
     description: "Vind sneller nieuwe patiënten via het brede netwerk van Welzijnsgroep Helan.",
-    section: "toestroom",
+    href: "/onze-diensten/#toestroom",
   },
   {
     icon: Heart,
     title: "Welzijn & werkplezier",
     description: "Minder administratie, meer ademruimte. Zorg voor anderen begint bij zorg voor jezelf.",
-    section: "welzijn",
+    href: "/onze-diensten/#welzijn",
   },
   {
     icon: Headphones,
     title: "Persoonlijke begeleiding",
     description: "Krijg advies op jouw maat. Zelfstandig, maar nooit alleen.",
-    section: "begeleiding",
+    href: "/onze-diensten/#begeleiding",
   },
   {
     icon: GraduationCap,
     title: "Opleiding & groei",
     description: "Versterk je vaardigheden en netwerk. Opleidingen op jouw tempo.",
-    section: "opleiding",
+    href: "/opleidingen/",
   },
   {
     icon: FileCheck,
     title: "Administratie & ondersteuning",
     description: "Ontdek hoe wij jou ontzorgen. Betrouwbare opvolging en digitaal overzicht.",
-    section: "administratie",
+    href: "/onze-diensten/#administratie",
   },
 ];
 
@@ -61,7 +61,7 @@ const USPSection = () => {
               const Icon = feature.icon;
               const colorScheme = colorSchemes[index % colorSchemes.length];
               return (
-                <Link key={index} to={`/onze-diensten/#${feature.section}`} className="block">
+                <Link key={index} to={feature.href} className="block">
                   <Card className={`border-2 border-transparent ${colorScheme.border} shadow-sm hover:shadow-md transition-all h-full cursor-pointer hover:scale-105`}>
                     <CardContent className="pt-6">
                       <div className="mb-4">
