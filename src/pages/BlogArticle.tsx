@@ -5,6 +5,105 @@ import { blogArticles } from "./Blog";
 
 // Full article content - add content for each article ID
 const articleContent: Record<string, { content: React.ReactNode }> = {
+  "zelfstandig-thuisverpleegkundige-worden": {
+    content: (
+      <>
+        <p className="lead">
+          Als zelfstandig thuisverpleegkundige combineer je zorg met ondernemerschap. Je bepaalt zelf je agenda en patiënten, maar krijgt ook te maken met administratie, regelgeving en instroom. Hezo ondersteunt je bij elke stap, van oriëntatie tot een duurzaam uitgebouwde praktijk.
+        </p>
+
+        <h2>Waarom kiezen voor zelfstandig werken als thuisverpleegkundige?</h2>
+        <ul>
+          <li>Meer autonomie over je agenda, regio en werkritme</li>
+          <li>Directe relatie met je patiënten</li>
+          <li>Hogere vergoeding per prestatie binnen de RIZIV-kaders</li>
+          <li>Flexibiliteit om werk en privé beter te combineren</li>
+          <li>Ruimte voor professionele en persoonlijke groei</li>
+        </ul>
+        <p><em>Zelfstandig werken biedt veel vrijheid, mits je goed voorbereid start.</em></p>
+
+        <h2>Zelfstandig thuisverpleegkundige worden in 4 duidelijke stappen</h2>
+
+        <h3>Stap 1: Check of je aan de voorwaarden voldoet</h3>
+        <p>Om als zelfstandig thuisverpleegkundige te starten in België heb je nodig:</p>
+        <ul>
+          <li>Een erkend verpleegkundig diploma</li>
+          <li>Erkenning door de FOD Volksgezondheid</li>
+          <li>Een RIZIV-nummer</li>
+          <li>Inschrijving bij een ondernemingsloket</li>
+          <li>Aansluiting bij een sociaal verzekeringsfonds</li>
+        </ul>
+
+        <div className="my-6 p-5 bg-light-blue/10 border-l-4 border-light-blue rounded-r-lg">
+          <p className="text-muted-foreground text-base mb-0">
+            <strong>Hezo helpt:</strong> Heb je vragen over erkenning, RIZIV of formaliteiten? Hezo helpt je begrijpen wat voor jou van toepassing is, nog vóór je effectief start.
+          </p>
+        </div>
+
+        <h4>Wat is een RIZIV-nummer en hoe vraag je dit aan?</h4>
+        <p>Om te werken als zelfstandig thuisverpleegkundige heb je een RIZIV-nummer nodig. Dit nummer laat je toe om verpleegkundige prestaties correct aan te rekenen binnen de ziekteverzekering.</p>
+        <p><strong>Stap 1 – Erkenning door de FOD Volksgezondheid (visum)</strong></p>
+        <p>Voor je een RIZIV-nummer kan aanvragen, moet je erkend zijn als verpleegkundige door de FOD Volksgezondheid. Ben je afgestudeerd aan een erkende Belgische of Europese opleiding? Dan wordt dit vaak automatisch toegekend. In andere gevallen moet je dit zelf aanvragen.</p>
+        <p><strong>Stap 2 – Inschrijving bij het RIZIV</strong></p>
+        <p>Na erkenning schrijf je je in bij het RIZIV via het officiële inschrijvingsformulier.</p>
+        <p><strong>Stap 3 – Ontvang je RIZIV-nummer</strong></p>
+        <p>Na goedkeuring ontvang je je persoonlijke RIZIV-nummer en kan je prestaties aanrekenen.</p>
+
+        <h3>Stap 2: Kies je ondernemingsvorm en ondersteuning</h3>
+        <p>Voor je effectief start, kies je een ondernemingsvorm. Dit bepaalt je aansprakelijkheid, fiscaliteit en administratie.</p>
+        <ul>
+          <li><strong>Eenmanszaak</strong> – meest gekozen bij opstart, eenvoudiger en sneller</li>
+          <li><strong>Vennootschap</strong> – interessant bij samenwerking of hogere omzet</li>
+        </ul>
+        <p>De juiste keuze hangt af van omzet, samenwerking en toekomstplannen. Hezo helpt je deze keuze begrijpen vóór je officieel start.</p>
+
+        <h4>Heb ik een boekhouder nodig?</h4>
+        <p>Als zelfstandig thuisverpleegkundige ben je niet verplicht om met een boekhouder te werken, maar in de praktijk kiezen veel starters daar wél voor. Een boekhouder kan helpen bij de keuze tussen eenmanszaak of vennootschap, correcte btw- en fiscale aangiftes, en inzicht in inkomsten en kosten.</p>
+
+        <h3>Stap 3: Regel je opstart als zelfstandige</h3>
+        <p>Ben je klaar om effectief te starten? Dan kan je je administratieve opstart officieel regelen.</p>
+        <div className="my-6 p-5 bg-coral/10 border-l-4 border-coral rounded-r-lg">
+          <p className="text-muted-foreground text-base mb-2"><strong>Start je eenmanszaak via onze partner Xerius</strong></p>
+          <a
+            href="https://www.xerius.be/viaxerius/nl/Opstart%20Eenmanszaak?utm_source=hezo&utm_medium=referral&utm_campaign=2026_hezo_helan"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-coral text-coral-foreground px-6 py-3 rounded-lg font-medium hover:bg-coral/90 transition-colors"
+          >
+            Start je eenmanszaak bij Xerius
+          </a>
+        </div>
+
+        <h3>Stap 4: Bouw je praktijk duurzaam uit</h3>
+        <p>Na de administratieve opstart begint het echte werk: je praktijk uitbouwen en duurzaam draaiende houden. Bij Hezo kies je zelf hoeveel ondersteuning je daarbij wenst.</p>
+        <ul>
+          <li><strong>Patiënteninstroom:</strong> gespreide instroom afgestemd op jouw beschikbaarheid en regio</li>
+          <li><strong>Planning, software en facturatie:</strong> ondersteuning bij agendabeheer en administratie</li>
+          <li><strong>Opleiding en professionele ontwikkeling:</strong> toegang tot bijscholing en een netwerk van collega's</li>
+          <li><strong>Praktische ondersteuning:</strong> advies over materialen, organisatie en praktische vragen</li>
+        </ul>
+
+        <div className="my-6 p-5 bg-green/10 border-l-4 border-green rounded-r-lg">
+          <p className="text-muted-foreground text-base mb-2"><strong>Ondernemen hoef je niet alleen te doen</strong></p>
+          <p className="text-muted-foreground text-base mb-0">
+            Bij Hezo behoud je je vrijheid en autonomie. Tegelijk sta je er nooit alleen voor.{" "}
+            <Link to="/onze-diensten/" className="text-secondary hover:underline">Ontdek alles wat we doen →</Link>
+          </p>
+        </div>
+
+        <h2>Veelgestelde vragen</h2>
+
+        <h3>Heb ik altijd een RIZIV-nummer nodig?</h3>
+        <p>Ja, als je prestaties wil aanrekenen in de thuisverpleging is een RIZIV-nummer verplicht.</p>
+
+        <h3>Wat als ik ziek word als zelfstandige?</h3>
+        <p>Als zelfstandige heb je bij ziekte recht op een uitkering via je sociaal verzekeringsfonds, op voorwaarde dat je in orde bent met je sociale bijdragen. De uitkering start vanaf de 8ste dag arbeidsongeschiktheid. Veel zelfstandige verpleegkundigen kiezen voor een aanvullende verzekering (gewaarborgd inkomen) voor betere bescherming.</p>
+
+        <h3>Heb ik een boekhouder nodig als zelfstandig thuisverpleegkundige?</h3>
+        <p>Je bent niet verplicht, maar in de praktijk kiezen veel starters daar wél voor — zeker in de eerste jaren. Een boekhouder kan helpen bij de keuze tussen eenmanszaak of vennootschap, correcte fiscale aangiftes en inzicht in kosten.</p>
+      </>
+    ),
+  },
   "hbo5-graduaat-basisverpleegkunde": {
     content: (
       <>
@@ -153,7 +252,7 @@ const articleContent: Record<string, { content: React.ReactNode }> = {
         </ul>
         <p>
           Zeker in de thuisverpleging biedt dit kansen: wie zijn rol goed kent en ondersteund wordt, 
-          kan zich duurzaam en met voldoening inzetten. Overweeg je om <Link to="/zelfstandig-worden/" className="text-secondary hover:underline" onClick={() => window.scrollTo(0, 0)}>zelfstandig thuisverpleegkundige te worden</Link>? 
+          kan zich duurzaam en met voldoening inzetten. Overweeg je om <Link to="/blog/zelfstandig-thuisverpleegkundige-worden/" className="text-secondary hover:underline" onClick={() => window.scrollTo(0, 0)}>zelfstandig thuisverpleegkundige te worden</Link>? 
           Dan is het essentieel om deze profielen goed te begrijpen.
         </p>
 
