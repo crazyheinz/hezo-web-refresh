@@ -43,8 +43,8 @@ const App = () => (
                 <Route path="/wat-we-doen/" element={<OnzeDiensten />} />
                 <Route path="/zo-sluit-je-aan" element={<ZoSluitJeAan />} />
                 <Route path="/zo-sluit-je-aan/" element={<ZoSluitJeAan />} />
-                <Route path="/zelfstandig-worden" element={<ZelfstandigWorden />} />
-                <Route path="/zelfstandig-worden/" element={<ZelfstandigWorden />} />
+                <Route path="/zelfstandig-worden" element={<Navigate to="/blog/zelfstandig-thuisverpleegkundige-worden/" replace />} />
+                <Route path="/zelfstandig-worden/" element={<Navigate to="/blog/zelfstandig-thuisverpleegkundige-worden/" replace />} />
                 <Route path="/opleidingen" element={<Opleidingen />} />
                 <Route path="/opleidingen/" element={<Opleidingen />} />
                 <Route path="/vacatures" element={<Vacatures />} />
