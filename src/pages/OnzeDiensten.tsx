@@ -13,7 +13,7 @@ const WatWeDoen = () => {
       <SEO 
         title="Onze Diensten | Hezo - Ondersteuning Thuisverpleging"
         description="Ontdek hoe Hezo zelfstandige thuisverpleegkundigen ondersteunt met patiënteninstroom, administratie, begeleiding en opleidingen."
-        path="/wat-we-doen"
+        path="/onze-diensten"
         structuredData={{
           "@context": "https://schema.org",
           "@graph": [
@@ -21,7 +21,7 @@ const WatWeDoen = () => {
               "@type": "WebPage",
               "name": "Onze Diensten - Hezo",
               "description": "Hezo ondersteunt zelfstandige thuisverpleegkundigen met patiënteninstroom, administratie, begeleiding en opleidingen.",
-              "url": "https://www.hezo.be/wat-we-doen/"
+              "url": "https://www.hezo.be/onze-diensten/"
             },
             {
               "@type": "Service",

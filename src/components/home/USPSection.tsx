@@ -61,7 +61,7 @@ const USPSection = () => {
               const Icon = feature.icon;
               const colorScheme = colorSchemes[index % colorSchemes.length];
               return (
-                <Link key={index} to={`/wat-we-doen/#${feature.section}`} className="block">
+                <Link key={index} to={`/onze-diensten/#${feature.section}`} className="block">
                   <Card className={`border-2 border-transparent ${colorScheme.border} shadow-sm hover:shadow-md transition-all h-full cursor-pointer hover:scale-105`}>
                     <CardContent className="pt-6">
                       <div className="mb-4">

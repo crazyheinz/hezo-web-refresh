@@ -8,7 +8,8 @@ import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
-import WatWeDoen from "./pages/WatWeDoen";
+import OnzeDiensten from "./pages/OnzeDiensten";
+import ZoSluitJeAan from "./pages/ZoSluitJeAan";
 import ZelfstandigWorden from "./pages/ZelfstandigWorden";
 import Opleidingen from "./pages/Opleidingen";
 import Vacatures from "./pages/Vacatures";
@@ -36,8 +37,12 @@ const App = () => (
             <main className="flex-grow">
               <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/wat-we-doen" element={<WatWeDoen />} />
-                <Route path="/wat-we-doen/" element={<WatWeDoen />} />
+                <Route path="/onze-diensten" element={<OnzeDiensten />} />
+                <Route path="/onze-diensten/" element={<OnzeDiensten />} />
+                <Route path="/wat-we-doen" element={<OnzeDiensten />} />
+                <Route path="/wat-we-doen/" element={<OnzeDiensten />} />
+                <Route path="/zo-sluit-je-aan" element={<ZoSluitJeAan />} />
+                <Route path="/zo-sluit-je-aan/" element={<ZoSluitJeAan />} />
                 <Route path="/zelfstandig-worden" element={<ZelfstandigWorden />} />
                 <Route path="/zelfstandig-worden/" element={<ZelfstandigWorden />} />
                 <Route path="/opleidingen" element={<Opleidingen />} />

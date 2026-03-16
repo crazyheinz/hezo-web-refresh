@@ -140,7 +140,7 @@ const articleContent: Record<string, { content: React.ReactNode }> = {
         <p>Voor verpleegkundigen in de thuiszorg betekent dit ook:</p>
         <ul>
           <li>meer nood aan duidelijke richtlijnen en kwaliteitskaders</li>
-          <li>ondersteuning bij <Link to="/wat-we-doen/" className="text-secondary hover:underline" onClick={() => window.scrollTo(0, 0)}>administratie, planning en organisatie</Link></li>
+          <li>ondersteuning bij <Link to="/onze-diensten/" className="text-secondary hover:underline" onClick={() => window.scrollTo(0, 0)}>administratie, planning en organisatie</Link></li>
           <li>ruimte om zich te focussen op zorg, niet op randtaken</li>
         </ul>
 
@@ -313,11 +313,11 @@ const BlogArticle = () => {
             </p>
             <div className="flex flex-wrap gap-4">
               <Link 
-                to="/wat-we-doen/"
+                to="/onze-diensten/"
                 onClick={() => window.scrollTo(0, 0)}
                 className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-6 py-3 rounded-lg font-medium hover:bg-secondary/90 transition-colors"
               >
-                Wat we doen
+                Ons aanbod
               </Link>
               <Link 
                 to="/contact/"

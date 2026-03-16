@@ -54,7 +54,7 @@ const Navigation = () => {
 
   const navItems: NavItem[] = [
     { label: "Home", href: "/" },
-    { label: "Wat we doen", href: "/wat-we-doen/" },
+    { label: "Ons aanbod", href: "/onze-diensten/" },
     { 
       label: "Voor verpleegkundigen",
       dropdown: [
@@ -89,6 +89,7 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8" ref={dropdownRef}>
+            {/* Nav items will render below, then CTA button after the map */}
             {navItems.map((item) => (
               item.dropdown ? (
                 <div key={item.label} className="relative">
@@ -130,6 +131,11 @@ const Navigation = () => {
                 </Link>
               )
             ))}
+            <Link to="/zo-sluit-je-aan/">
+              <Button size="sm" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-medium px-5">
+                Sluit aan
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -189,6 +195,15 @@ const Navigation = () => {
                 </Link>
               )
             ))}
+            <Link
+              to="/zo-sluit-je-aan/"
+              className="block py-3 mt-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <Button className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground font-medium">
+                Sluit aan
+              </Button>
+            </Link>
           </div>
         )}
       </div>
