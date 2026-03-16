@@ -140,7 +140,7 @@ const articleContent: Record<string, { content: React.ReactNode }> = {
         <p>Voor verpleegkundigen in de thuiszorg betekent dit ook:</p>
         <ul>
           <li>meer nood aan duidelijke richtlijnen en kwaliteitskaders</li>
-          <li>ondersteuning bij <Link to="/wat-we-doen/" className="text-secondary hover:underline" onClick={() => window.scrollTo(0, 0)}>administratie, planning en organisatie</Link></li>
+          <li>ondersteuning bij <Link to="/onze-diensten/" className="text-secondary hover:underline" onClick={() => window.scrollTo(0, 0)}>administratie, planning en organisatie</Link></li>
           <li>ruimte om zich te focussen op zorg, niet op randtaken</li>
         </ul>
 
