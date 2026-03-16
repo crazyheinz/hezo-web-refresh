@@ -117,6 +117,15 @@ const OpleidingSection = () => {
                 Dat zorgt voor gedeelde kennis en voor een sterker professioneel netwerk.
               </p>
             </motion.div>
+
+            {/* CTA naar opleidingen */}
+            <motion.div variants={fadeUp} className="mt-8 text-center">
+              <Link to="/opleidingen/">
+                <Button size="lg" className="bg-green text-green-foreground hover:bg-green/90">
+                  Bekijk ons opleidingsaanbod <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
       </div>
