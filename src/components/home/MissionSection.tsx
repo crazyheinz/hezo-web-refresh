@@ -10,6 +10,7 @@ const cards = [
       "Groeien of simpelweg je werkdruk verlagen? Wij ontzorgen jou en je praktijk.",
     color: "bg-secondary/10",
     iconColor: "text-secondary",
+    href: "/onze-diensten/",
   },
   {
     icon: Sprout,
@@ -18,6 +19,7 @@ const cards = [
       "Er komt veel op je af bij je opstart. Wij zetten je op het juiste spoor.",
     color: "bg-green/10",
     iconColor: "text-green",
+    href: "/blog/zelfstandig-thuisverpleegkundige-worden/",
   },
   {
     icon: Building2,
@@ -26,6 +28,7 @@ const cards = [
       "Een praktijk opzetten vraagt structuur. Wij bieden de juiste omkadering.",
     color: "bg-coral/10",
     iconColor: "text-coral",
+    href: "/zo-sluit-je-aan/",
   },
 ];
 
