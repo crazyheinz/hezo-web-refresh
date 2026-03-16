@@ -13,7 +13,7 @@ const WatWeDoen = () => {
       <SEO 
         title="Onze Diensten | Hezo - Ondersteuning Thuisverpleging"
         description="Ontdek hoe Hezo zelfstandige thuisverpleegkundigen ondersteunt met patiënteninstroom, administratie, begeleiding en opleidingen."
-        path="/wat-we-doen"
+        path="/onze-diensten"
         structuredData={{
           "@context": "https://schema.org",
           "@graph": [

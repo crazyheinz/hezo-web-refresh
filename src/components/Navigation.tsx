@@ -195,6 +195,15 @@ const Navigation = () => {
                 </Link>
               )
             ))}
+            <Link
+              to="/zo-sluit-je-aan/"
+              className="block py-3 mt-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <Button className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground font-medium">
+                Sluit aan
+              </Button>
+            </Link>
           </div>
         )}
       </div>
