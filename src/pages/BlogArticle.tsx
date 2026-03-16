@@ -313,11 +313,11 @@ const BlogArticle = () => {
             </p>
             <div className="flex flex-wrap gap-4">
               <Link 
-                to="/wat-we-doen/"
+                to="/onze-diensten/"
                 onClick={() => window.scrollTo(0, 0)}
                 className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-6 py-3 rounded-lg font-medium hover:bg-secondary/90 transition-colors"
               >
-                Wat we doen
+                Ons aanbod
               </Link>
               <Link 
                 to="/contact/"

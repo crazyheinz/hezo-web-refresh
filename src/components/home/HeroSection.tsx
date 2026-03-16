@@ -20,7 +20,7 @@ const HeroSection = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild size="lg" className="text-base bg-light-blue text-light-blue-foreground hover:bg-light-blue/90">
-                <Link to="/wat-we-doen/">
+                <Link to="/onze-diensten/">
                   Meer over Hezo <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
