@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 const features = [
   {
     icon: Users,
-    title: "Toestroom van patiënten",
+    title: "Instroom van patiënten",
     description: "Vind sneller nieuwe patiënten via het brede netwerk van Welzijnsgroep Helan.",
     href: "/onze-diensten/#toestroom",
   },
