@@ -28,7 +28,7 @@ const cards = [
       "Een praktijk opzetten vraagt structuur. Wij bieden de juiste omkadering.",
     color: "bg-coral/10",
     iconColor: "text-coral",
-    href: "/zo-sluit-je-aan/",
+    href: "/onze-diensten/#begeleiding",
   },
 ];
 

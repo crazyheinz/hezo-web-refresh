@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { FileText, Users, Headphones, GraduationCap } from "lucide-react";
 
 const navItems = [
-  { id: "administratie", icon: FileText, label: "Administratie & ondersteuning", color: "bg-light-blue/10 text-light-blue hover:bg-light-blue/20" },
-  { id: "instroom", icon: Users, label: "Instroom van patiënten", color: "bg-coral/10 text-coral hover:bg-coral/20" },
-  { id: "begeleiding", icon: Headphones, label: "Persoonlijke begeleiding", color: "bg-yellow/10 text-yellow hover:bg-yellow/20" },
-  { id: "opleiding", icon: GraduationCap, label: "Opleiding en groei", color: "bg-green/10 text-green hover:bg-green/20" },
+  { id: "administratie", icon: FileText, label: "Administratie & ondersteuning", color: "bg-primary/10 text-primary hover:bg-primary/20" },
+  { id: "instroom", icon: Users, label: "Instroom van patiënten", color: "bg-primary/10 text-primary hover:bg-primary/20" },
+  { id: "begeleiding", icon: Headphones, label: "Persoonlijke begeleiding", color: "bg-primary/10 text-primary hover:bg-primary/20" },
+  { id: "opleiding", icon: GraduationCap, label: "Opleiding en groei", color: "bg-primary/10 text-primary hover:bg-primary/20" },
 ];
 
 const NavBlock = () => {
