@@ -279,7 +279,66 @@ const Opleidingen = () => {
             </CardContent>
           </Card>
 
-          {/* Opleiding 4 */}
+          {/* Opleiding 4 - Palliatieve Zorg */}
+          <Card className="mb-8 border-secondary/20 shadow-lg overflow-hidden">
+            <CardHeader className="pb-4">
+              <div className="flex flex-wrap items-center gap-3 mb-2">
+                <Badge className="bg-secondary/10 text-secondary border-secondary/20 hover:bg-secondary/10">
+                  <Monitor className="h-3 w-3 mr-1" />
+                  Webinar
+                </Badge>
+                <Badge variant="outline" className="text-muted-foreground">
+                  Opname beschikbaar
+                </Badge>
+              </div>
+              <CardTitle className="text-2xl">
+                Palliatieve Zorg: Pijn- en symptoomcontrole
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
+                <div className="flex items-center gap-2">
+                  <Calendar className="h-4 w-4 text-secondary" />
+                  <span className="text-muted-foreground">20 mei 2026</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Clock className="h-4 w-4 text-secondary" />
+                  <span className="text-muted-foreground">13:00 – 16:00 (2u00)</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Users className="h-4 w-4 text-secondary" />
+                  <span className="text-muted-foreground">Max. 50 deelnemers</span>
+                </div>
+              </div>
+
+              <p className="text-muted-foreground leading-relaxed">
+                Comfortzorg in de thuisomgeving omvat onder meer gerichte pijn- en symptoomcontrole. In deze opleiding krijg je tips om pijn te herkennen en onder controle te houden.
+              </p>
+
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <GraduationCap className="h-4 w-4 text-secondary" />
+                <span>Lesgever: Palliatief netwerk Gent-Eeklo</span>
+              </div>
+
+              <div className="bg-muted p-5 rounded-lg space-y-3">
+                <div className="flex items-center gap-2 text-sm">
+                  <Euro className="h-4 w-4 text-secondary" />
+                  <span className="font-semibold text-foreground">Hezo-klanten:</span>
+                  <span className="font-semibold text-secondary text-lg">Gratis</span>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  Ben je geen klant bij Hezo, maar wil je toch graag deelnemen aan de opleiding? Neem dan contact met ons op via{" "}
+                  <a href="mailto:info@hezo.be" className="text-secondary hover:underline">info@hezo.be</a>.
+                </p>
+              </div>
+
+              <InschrijfDialog opleidingNaam="Palliatieve Zorg: Pijn- en symptoomcontrole" opleidingDatum="20 mei 2026">
+                <Button className="w-full sm:w-auto">Schrijf je in</Button>
+              </InschrijfDialog>
+            </CardContent>
+          </Card>
+
+          {/* Opleiding 5 - Toelichting verzekeringsinstellingen (21 mei) */}
           <Card className="mb-16 border-secondary/20 shadow-lg overflow-hidden">
             <CardHeader className="pb-4">
               <div className="flex flex-wrap items-center gap-3 mb-2">
@@ -292,7 +351,7 @@ const Opleidingen = () => {
                 </Badge>
               </div>
               <CardTitle className="text-2xl">
-                Toelichting: controle van de verzekeringssinstellingen
+                Toelichting: controle van de verzekeringsinstellingen
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
@@ -312,7 +371,7 @@ const Opleidingen = () => {
               </div>
 
               <p className="text-muted-foreground leading-relaxed">
-                In deze opleiding krijg je informatie over de controles die gebeuren door de verzekeringssinstellingen (mutualiteiten). Hoe verloopt een controle en waar wordt op gelet? Wat als een controle niet kan doorgaan? Wat als je een afscoring hebt? Wat kan je zelf doen?
+                In deze opleiding krijg je informatie over de controles die gebeuren door de verzekeringsinstellingen (mutualiteiten). Hoe verloopt een controle en waar wordt op gelet? Wat als een controle niet kan doorgaan? Wat als je een afscoring hebt? Wat kan je zelf doen?
               </p>
 
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -332,12 +391,11 @@ const Opleidingen = () => {
                 </p>
               </div>
 
-              <InschrijfDialog opleidingNaam="Toelichting: controle van de verzekeringssinstellingen" opleidingDatum="21 mei 2026">
+              <InschrijfDialog opleidingNaam="Toelichting: controle van de verzekeringsinstellingen" opleidingDatum="21 mei 2026">
                 <Button className="w-full sm:w-auto">Schrijf je in</Button>
               </InschrijfDialog>
             </CardContent>
           </Card>
-
         </div>
       </div>
     </div>

@@ -1,19 +1,19 @@
 import { Link } from "react-router-dom";
-import { Users, Heart, GraduationCap, FileCheck, Headphones } from "lucide-react";
+import { Users, GraduationCap, FileCheck, Headphones } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const features = [
+  {
+    icon: FileCheck,
+    title: "Administratie & ondersteuning",
+    description: "Ontdek hoe wij jou ontzorgen. Betrouwbare opvolging en digitaal overzicht.",
+    href: "/onze-diensten/#administratie",
+  },
   {
     icon: Users,
     title: "Instroom van patiënten",
     description: "Vind sneller nieuwe patiënten via het brede netwerk van Welzijnsgroep Helan.",
     href: "/onze-diensten/#toestroom",
-  },
-  {
-    icon: Heart,
-    title: "Welzijn & werkplezier",
-    description: "Minder administratie, meer ademruimte. Zorg voor anderen begint bij zorg voor jezelf.",
-    href: "/onze-diensten/#welzijn",
   },
   {
     icon: Headphones,
@@ -25,22 +25,15 @@ const features = [
     icon: GraduationCap,
     title: "Opleiding & groei",
     description: "Versterk je vaardigheden en netwerk. Opleidingen op jouw tempo.",
-    href: "/opleidingen/",
-  },
-  {
-    icon: FileCheck,
-    title: "Administratie & ondersteuning",
-    description: "Ontdek hoe wij jou ontzorgen. Betrouwbare opvolging en digitaal overzicht.",
-    href: "/onze-diensten/#administratie",
+    href: "/onze-diensten/#opleiding",
   },
 ];
 
 const colorSchemes = [
+  { iconBg: "bg-primary", iconColor: "text-primary-foreground", border: "hover:border-primary/50" },
   { iconBg: "bg-light-blue", iconColor: "text-light-blue-foreground", border: "hover:border-light-blue/50" },
-  { iconBg: "bg-coral", iconColor: "text-coral-foreground", border: "hover:border-coral/50" },
   { iconBg: "bg-yellow", iconColor: "text-yellow-foreground", border: "hover:border-yellow/50" },
   { iconBg: "bg-green", iconColor: "text-green-foreground", border: "hover:border-green/50" },
-  { iconBg: "bg-primary", iconColor: "text-primary-foreground", border: "hover:border-primary/50" },
 ];
 
 const USPSection = () => {
