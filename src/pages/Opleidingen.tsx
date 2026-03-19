@@ -339,7 +339,7 @@ const Opleidingen = () => {
           </Card>
 
           {/* Opleiding 5 - Toelichting verzekeringsinstellingen (21 mei) */}
-          <Card className="mb-8 border-secondary/20 shadow-lg overflow-hidden">
+          <Card className="mb-16 border-secondary/20 shadow-lg overflow-hidden">
             <CardHeader className="pb-4">
               <div className="flex flex-wrap items-center gap-3 mb-2">
                 <Badge className="bg-secondary/10 text-secondary border-secondary/20 hover:bg-secondary/10">
@@ -395,7 +395,7 @@ const Opleidingen = () => {
                 <Button className="w-full sm:w-auto">Schrijf je in</Button>
               </InschrijfDialog>
             </CardContent>
-
+          </Card>
         </div>
       </div>
     </div>
