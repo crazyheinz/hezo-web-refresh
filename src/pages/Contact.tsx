@@ -101,7 +101,7 @@ const Contact = () => {
           <div className="text-center mb-16">
             <Send className="h-16 w-16 text-secondary mx-auto mb-6" strokeWidth={1.5} />
             <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
-              Neem contact op
+              Stel je vraag of plan een gesprek
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
               Heb je interesse om deel uit te maken van het Hezo-netwerk of heb je een vraag over
