@@ -13,7 +13,7 @@ const features = [
     icon: Users,
     title: "Instroom van patiënten",
     description: "Vind sneller nieuwe patiënten via het brede netwerk van Welzijnsgroep Helan.",
-    href: "/onze-diensten/#toestroom",
+    href: "/onze-diensten/#instroom",
   },
   {
     icon: Headphones,
