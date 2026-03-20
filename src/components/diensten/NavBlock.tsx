@@ -19,7 +19,7 @@ const NavBlock = () => {
   };
 
   return (
-    <section className="py-8 sticky top-20 z-30 bg-background/80 backdrop-blur-md border-b border-border/50">
+    <section className="py-8 bg-background border-b border-border/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
