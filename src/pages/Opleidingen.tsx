@@ -9,8 +9,8 @@ const Opleidingen = () => {
   return (
     <div className="min-h-screen pt-32 pb-20">
       <SEO 
-        title="Opleidingen | Hezo - Vorming voor Thuisverpleegkundigen"
-        description="Groei in je vak met praktijkgerichte opleidingen van Hezo. Sessies over administratie, communicatie en zorgkwaliteit voor zelfstandige verpleegkundigen."
+        title="Opleidingen thuisverpleging | Gratis bijscholing"
+        description="Gratis praktijkgerichte opleidingen voor thuisverpleegkundigen: administratie, communicatie en zorgkwaliteit. Bekijk het aanbod en schrijf je in →"
         path="/opleidingen"
         structuredData={{
           "@context": "https://schema.org",

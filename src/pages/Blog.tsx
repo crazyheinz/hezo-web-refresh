@@ -49,8 +49,8 @@ const Blog = () => {
   return (
     <>
       <SEO
-        title="Blog"
-        description="Praktische kennis en inzichten voor zelfstandige thuisverpleegkundigen. Tips over ondernemen, facturatie, verzekeringen en professionele groei."
+        title="Blog | Tips voor zelfstandige thuisverpleegkundigen"
+        description="Praktische tips over facturatie, tarificatie, starten als zelfstandige en meer. Lees onze artikelen voor thuisverpleegkundigen →"
         path="/blog/"
         type="website"
         structuredData={{

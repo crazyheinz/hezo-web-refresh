@@ -79,8 +79,8 @@ const Contact = () => {
   return (
     <div className="min-h-screen pt-32 pb-20">
       <SEO 
-        title="Contact | Hezo - Neem Contact Op"
-        description="Neem contact op met Hezo voor vragen over ons netwerk voor zelfstandige thuisverpleegkundigen. Bel of mail ons."
+        title="Contact | Hezo – Stel je vraag of plan een gesprek"
+        description="Heb je vragen over aansluiten bij Hezo? Bel ons op 09 265 17 20 of stuur een bericht. We helpen je graag verder →"
         path="/contact"
         structuredData={{
           "@context": "https://schema.org",
