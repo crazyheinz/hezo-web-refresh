@@ -109,8 +109,8 @@ const ZoSluitJeAan = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Sluit aan bij Hezo | Zelfstandig Thuisverpleegkundige"
-        description="Sluit je aan bij Hezo en werk als zelfstandige thuisverpleegkundige met meer ondersteuning, patiënteninstroom en een sterk netwerk. Vraag een kennismakingsgesprek aan."
+        title="Aansluiten bij Hezo | In 4 stappen van start"
+        description="Sluit je aan bij Hezo en ontvang direct patiënten, administratieve ondersteuning en persoonlijke begeleiding. Vraag vandaag nog een gesprek aan →"
         path="/zo-sluit-je-aan"
         structuredData={{
           "@context": "https://schema.org",

@@ -8,8 +8,8 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Hezo | Ondersteuning voor Zelfstandige Thuisverpleegkundigen"
-        description="Hezo ondersteunt zelfstandige thuisverpleegkundigen met administratie, facturatie, patiëntenstroom en begeleiding. Minder administratie, meer zorg."
+        title="Hezo | Minder administratie, meer zorg"
+        description="Zelfstandig thuisverpleegkundige? Hezo regelt je administratie, facturatie en patiënteninstroom. Ontdek wat wij voor jou doen →"
         path="/"
         structuredData={{
           "@context": "https://schema.org",

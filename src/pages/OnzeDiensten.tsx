@@ -11,8 +11,8 @@ const WatWeDoen = () => {
   return (
     <div className="min-h-screen">
       <SEO 
-        title="Onze Diensten | Hezo - Ondersteuning Thuisverpleging"
-        description="Ontdek hoe Hezo zelfstandige thuisverpleegkundigen ondersteunt met patiënteninstroom, administratie, begeleiding en opleidingen."
+        title="Administratie & facturatie thuisverpleging | Hezo"
+        description="Van tarificatie tot patiënteninstroom: Hezo neemt de administratie over zodat jij je op je patiënten kunt richten. Bekijk ons volledig aanbod →"
         path="/onze-diensten"
         structuredData={{
           "@context": "https://schema.org",
