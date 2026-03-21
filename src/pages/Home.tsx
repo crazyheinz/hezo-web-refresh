@@ -21,7 +21,7 @@ const Home = () => {
               "url": "https://www.hezo.be",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://www.hezo.be/favicon.png?v=5"
+                "url": "https://www.hezo.be/favicon.png"
               },
               "description": "Hezo is een Belgisch netwerk dat zelfstandige thuisverpleegkundigen ondersteunt met administratie, facturatie, patiëntenstroom en begeleiding.",
               "foundingDate": "2025",

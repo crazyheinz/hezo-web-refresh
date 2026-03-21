@@ -226,7 +226,7 @@ const Vacatures = () => {
                 "@type": "Organization",
                 "name": "Hezo",
                 "sameAs": "https://www.hezo.be",
-                "logo": "https://www.hezo.be/favicon.png?v=5"
+                "logo": "https://www.hezo.be/favicon.png"
               },
               "jobLocation": {
                 "@type": "Place",
