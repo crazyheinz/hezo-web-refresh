@@ -1,14 +1,113 @@
+import { useState, useMemo } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { GraduationCap, Calendar, MapPin, Clock, Users, Monitor, Building2, Euro } from "lucide-react";
+import { GraduationCap, Calendar, MapPin, Clock, Users, Monitor, Building2, Euro, Search } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import SEO from "@/components/SEO";
 import InschrijfDialog from "@/components/opleidingen/InschrijfDialog";
 
+interface Opleiding {
+  titel: string;
+  datum: Date;
+  datumTekst: string;
+  tijd: string;
+  locatie?: string;
+  maxDeelnemers: number;
+  beschrijving: string;
+  lesgever: string;
+  type: "webinar" | "fysiek";
+  opnameBeschikbaar: boolean;
+}
+
+const opleidingen: Opleiding[] = [
+  {
+    titel: "Poortkatheters voor verpleegkundigen in de thuiszorg",
+    datum: new Date(2026, 2, 23),
+    datumTekst: "23 maart 2026",
+    tijd: "13:30 – 15:00 (1u30)",
+    maxDeelnemers: 50,
+    beschrijving: "De verschillende stappen van de procedure rond poortkatheters worden behandeld: aanprikken, bloedafname, afsluiten en spoelen. Tijdens deze sessie worden de belangrijkste aandachtspunten per stap duidelijk toegelicht door middel van foto's, uitleg, kennisclips. De webinar is te herbekijken tot 10 dagen na de datum.",
+    lesgever: "Artevelde Hogeschool",
+    type: "webinar",
+    opnameBeschikbaar: true,
+  },
+  {
+    titel: "BLS/AED – officieel certificaat",
+    datum: new Date(2026, 4, 11),
+    datumTekst: "11 mei 2026",
+    tijd: "13:30 – 17:30 (4u00)",
+    locatie: "Helan Hoofdkantoor – zaal Magnolia",
+    maxDeelnemers: 12,
+    beschrijving: "Wist je dat je elke 2 jaar een gecertificeerde opleiding BLS/AED moet volgen? Deze opleiding, onder begeleiding van Hogent, neemt je mee in alle principes van BLS en het gebruik van een AED.",
+    lesgever: "Hogent",
+    type: "fysiek",
+    opnameBeschikbaar: false,
+  },
+  {
+    titel: "Palliatieve Zorg: vroegtijdige zorgplanning en sociale voorzieningen",
+    datum: new Date(2026, 3, 21),
+    datumTekst: "21 april 2026",
+    tijd: "13:00 – 16:00 (3u00)",
+    maxDeelnemers: 50,
+    beschrijving: "In deze opleiding leer je alles over vroegtijdige zorgplanning, communicatie en beschikbare voorziening voor de patiënt.",
+    lesgever: "Palliatief netwerk Gent-Eeklo",
+    type: "webinar",
+    opnameBeschikbaar: true,
+  },
+  {
+    titel: "Katz schaal in de thuisverpleging",
+    datum: new Date(2026, 3, 27),
+    datumTekst: "27 april 2026",
+    tijd: "13:30 – 15:30 (2u00)",
+    maxDeelnemers: 50,
+    beschrijving: "De Katz schaal is een essentieel instrument in de thuisverpleging. In deze opleiding komen de richtlijnen uitgebreid aan bod en oefenen we de toepassing en gebruik ervan met casussen uit de praktijk.",
+    lesgever: "Onafhankelijk Ziekenfonds: Els Desmet en Debbie Goossens",
+    type: "webinar",
+    opnameBeschikbaar: true,
+  },
+  {
+    titel: "Palliatieve Zorg: Pijn- en symptoomcontrole",
+    datum: new Date(2026, 4, 20),
+    datumTekst: "20 mei 2026",
+    tijd: "13:00 – 16:00 (2u00)",
+    maxDeelnemers: 50,
+    beschrijving: "Comfortzorg in de thuisomgeving omvat onder meer gerichte pijn- en symptoomcontrole. In deze opleiding krijg je tips om pijn te herkennen en onder controle te houden.",
+    lesgever: "Palliatief netwerk Gent-Eeklo",
+    type: "webinar",
+    opnameBeschikbaar: true,
+  },
+  {
+    titel: "Toelichting: controle van de verzekeringsinstellingen",
+    datum: new Date(2026, 4, 21),
+    datumTekst: "21 mei 2026",
+    tijd: "13:30 – 15:30 (2u00)",
+    maxDeelnemers: 50,
+    beschrijving: "In deze opleiding krijg je informatie over de controles die gebeuren door de verzekeringsinstellingen (mutualiteiten). Hoe verloopt een controle en waar wordt op gelet? Wat als een controle niet kan doorgaan? Wat als je een afscoring hebt? Wat kan je zelf doen?",
+    lesgever: "Onafhankelijk Ziekenfonds: Els Desmet en Debbie Goossens",
+    type: "webinar",
+    opnameBeschikbaar: true,
+  },
+];
+
 const Opleidingen = () => {
+  const [zoekterm, setZoekterm] = useState("");
+
+  const gefilterdeOpleidingen = useMemo(() => {
+    const term = zoekterm.toLowerCase();
+    return opleidingen
+      .filter((o) =>
+        !term ||
+        o.titel.toLowerCase().includes(term) ||
+        o.beschrijving.toLowerCase().includes(term) ||
+        o.lesgever.toLowerCase().includes(term)
+      )
+      .sort((a, b) => a.datum.getTime() - b.datum.getTime());
+  }, [zoekterm]);
+
   return (
     <div className="min-h-screen pt-32 pb-20">
-      <SEO 
+      <SEO
         title="Opleidingen thuisverpleging | Gratis bijscholing"
         description="Gratis praktijkgerichte opleidingen voor thuisverpleegkundigen: administratie, communicatie en zorgkwaliteit. Bekijk het aanbod en schrijf je in →"
         path="/opleidingen"
@@ -18,7 +117,7 @@ const Opleidingen = () => {
             {
               "@type": "Course",
               "name": "Starten als zelfstandige thuisverpleegkundige",
-              "description": "Opleiding voor verpleegkundigen die zelfstandig willen starten of hun overstap voorbereiden. Leer over RIZIV- en verzekeringsadministratie, software en tools voor facturatie, tarificatie en remgeld, patiëntenwerving en communicatie met artsen.",
+              "description": "Opleiding voor verpleegkundigen die zelfstandig willen starten of hun overstap voorbereiden.",
               "provider": {
                 "@type": "Organization",
                 "name": "Hezo",
@@ -101,360 +200,93 @@ const Opleidingen = () => {
             </p>
           </div>
 
-          {/* Opleiding 1 */}
-          <Card className="mb-8 border-secondary/20 shadow-lg overflow-hidden">
-            <CardHeader className="pb-4">
-              <div className="flex flex-wrap items-center gap-3 mb-2">
-                <Badge className="bg-secondary/10 text-secondary border-secondary/20 hover:bg-secondary/10">
-                  <Monitor className="h-3 w-3 mr-1" />
-                  Webinar
-                </Badge>
-                <Badge variant="outline" className="text-muted-foreground">
-                  Opname beschikbaar
-                </Badge>
-              </div>
-              <CardTitle className="text-2xl">
-                Poortkatheters voor verpleegkundigen in de thuiszorg
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
-                <div className="flex items-center gap-2">
-                  <Calendar className="h-4 w-4 text-secondary" />
-                  <span className="text-muted-foreground">23 maart 2026</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Clock className="h-4 w-4 text-secondary" />
-                  <span className="text-muted-foreground">13:30 – 15:00 (1u30)</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Users className="h-4 w-4 text-secondary" />
-                  <span className="text-muted-foreground">Max. 50 deelnemers</span>
-                </div>
-              </div>
+          {/* Zoekbalk */}
+          <div className="relative mb-10">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+            <Input
+              type="text"
+              placeholder="Zoek op titel, onderwerp of lesgever..."
+              value={zoekterm}
+              onChange={(e) => setZoekterm(e.target.value)}
+              className="pl-11 h-12 text-base"
+            />
+          </div>
 
-              <p className="text-muted-foreground leading-relaxed">
-                De verschillende stappen van de procedure rond poortkatheters worden behandeld: aanprikken, bloedafname, afsluiten en spoelen. Tijdens deze sessie worden de belangrijkste aandachtspunten per stap duidelijk toegelicht door middel van foto's, uitleg, kennisclips. De webinar is te herbekijken tot 10 dagen na de datum.
-              </p>
+          {gefilterdeOpleidingen.length === 0 ? (
+            <div className="text-center py-16">
+              <p className="text-lg text-muted-foreground">Geen opleidingen gevonden voor "{zoekterm}"</p>
+            </div>
+          ) : (
+            gefilterdeOpleidingen.map((opleiding, index) => (
+              <Card
+                key={opleiding.titel}
+                className={`${index < gefilterdeOpleidingen.length - 1 ? "mb-8" : "mb-16"} border-secondary/20 shadow-lg overflow-hidden`}
+              >
+                <CardHeader className="pb-4">
+                  <div className="flex flex-wrap items-center gap-3 mb-2">
+                    <Badge className="bg-secondary/10 text-secondary border-secondary/20 hover:bg-secondary/10">
+                      {opleiding.type === "webinar" ? (
+                        <><Monitor className="h-3 w-3 mr-1" />Webinar</>
+                      ) : (
+                        <><Building2 className="h-3 w-3 mr-1" />Fysieke opleiding</>
+                      )}
+                    </Badge>
+                    {opleiding.opnameBeschikbaar && (
+                      <Badge variant="outline" className="text-muted-foreground">
+                        Opname beschikbaar
+                      </Badge>
+                    )}
+                  </div>
+                  <CardTitle className="text-2xl">{opleiding.titel}</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
+                    <div className="flex items-center gap-2">
+                      <Calendar className="h-4 w-4 text-secondary" />
+                      <span className="text-muted-foreground">{opleiding.datumTekst}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Clock className="h-4 w-4 text-secondary" />
+                      <span className="text-muted-foreground">{opleiding.tijd}</span>
+                    </div>
+                    {opleiding.locatie && (
+                      <div className="flex items-center gap-2">
+                        <MapPin className="h-4 w-4 text-secondary" />
+                        <span className="text-muted-foreground">{opleiding.locatie}</span>
+                      </div>
+                    )}
+                    <div className="flex items-center gap-2">
+                      <Users className="h-4 w-4 text-secondary" />
+                      <span className="text-muted-foreground">Max. {opleiding.maxDeelnemers} deelnemers</span>
+                    </div>
+                  </div>
 
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <GraduationCap className="h-4 w-4 text-secondary" />
-                <span>Lesgever: Artevelde Hogeschool</span>
-              </div>
+                  <p className="text-muted-foreground leading-relaxed">{opleiding.beschrijving}</p>
 
-              <div className="bg-muted p-5 rounded-lg space-y-3">
-                <div className="flex items-center gap-2 text-sm">
-                  <Euro className="h-4 w-4 text-secondary" />
-                  <span className="font-semibold text-foreground">Hezo-klanten:</span>
-                  <span className="font-semibold text-secondary text-lg">Gratis</span>
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  Ben je geen klant bij Hezo, maar wil je toch graag deelnemen aan de opleiding? Neem dan contact met ons op via{" "}
-                  <a href="mailto:info@hezo.be" className="text-secondary hover:underline">info@hezo.be</a>.
-                </p>
-              </div>
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <GraduationCap className="h-4 w-4 text-secondary" />
+                    <span>Lesgever: {opleiding.lesgever}</span>
+                  </div>
 
-              <InschrijfDialog opleidingNaam="Poortkatheters voor verpleegkundigen in de thuiszorg" opleidingDatum="23 maart 2026">
-                <Button className="w-full sm:w-auto">Schrijf je in</Button>
-              </InschrijfDialog>
-            </CardContent>
-          </Card>
+                  <div className="bg-muted p-5 rounded-lg space-y-3">
+                    <div className="flex items-center gap-2 text-sm">
+                      <Euro className="h-4 w-4 text-secondary" />
+                      <span className="font-semibold text-foreground">Hezo-klanten:</span>
+                      <span className="font-semibold text-secondary text-lg">Gratis</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      Ben je geen klant bij Hezo, maar wil je toch graag deelnemen aan de opleiding? Neem dan contact met ons op via{" "}
+                      <a href="mailto:info@hezo.be" className="text-secondary hover:underline">info@hezo.be</a>.
+                    </p>
+                  </div>
 
-          {/* Opleiding 2 */}
-          <Card className="mb-8 border-secondary/20 shadow-lg overflow-hidden">
-            <CardHeader className="pb-4">
-              <div className="flex flex-wrap items-center gap-3 mb-2">
-                <Badge className="bg-secondary/10 text-secondary border-secondary/20 hover:bg-secondary/10">
-                  <Building2 className="h-3 w-3 mr-1" />
-                  Fysieke opleiding
-                </Badge>
-              </div>
-              <CardTitle className="text-2xl">
-                BLS/AED – officieel certificaat
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
-                <div className="flex items-center gap-2">
-                  <Calendar className="h-4 w-4 text-secondary" />
-                  <span className="text-muted-foreground">11 mei 2026</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Clock className="h-4 w-4 text-secondary" />
-                  <span className="text-muted-foreground">13:30 – 17:30 (4u00)</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <MapPin className="h-4 w-4 text-secondary" />
-                  <span className="text-muted-foreground">Helan Hoofdkantoor – zaal Magnolia</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Users className="h-4 w-4 text-secondary" />
-                  <span className="text-muted-foreground">Max. 12 deelnemers</span>
-                </div>
-              </div>
-
-              <p className="text-muted-foreground leading-relaxed">
-                Wist je dat je elke 2 jaar een gecertificeerde opleiding BLS/AED moet volgen? Deze opleiding, onder begeleiding van Hogent, neemt je mee in alle principes van BLS en het gebruik van een AED.
-              </p>
-
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <GraduationCap className="h-4 w-4 text-secondary" />
-                <span>Lesgever: Hogent</span>
-              </div>
-
-              <div className="bg-muted p-5 rounded-lg space-y-3">
-                <div className="flex items-center gap-2 text-sm">
-                  <Euro className="h-4 w-4 text-secondary" />
-                  <span className="font-semibold text-foreground">Hezo-klanten:</span>
-                  <span className="font-semibold text-secondary text-lg">Gratis</span>
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  Ben je geen klant bij Hezo, maar wil je toch graag deelnemen aan de opleiding? Neem dan contact met ons op via{" "}
-                  <a href="mailto:info@hezo.be" className="text-secondary hover:underline">info@hezo.be</a>.
-                </p>
-              </div>
-
-              <InschrijfDialog opleidingNaam="BLS/AED – officieel certificaat" opleidingDatum="11 mei 2026">
-                <Button className="w-full sm:w-auto">Schrijf je in</Button>
-              </InschrijfDialog>
-            </CardContent>
-          </Card>
-
-          {/* Opleiding 3 - Palliatieve Zorg: vroegtijdige zorgplanning */}
-          <Card className="mb-8 border-secondary/20 shadow-lg overflow-hidden">
-            <CardHeader className="pb-4">
-              <div className="flex flex-wrap items-center gap-3 mb-2">
-                <Badge className="bg-secondary/10 text-secondary border-secondary/20 hover:bg-secondary/10">
-                  <Monitor className="h-3 w-3 mr-1" />
-                  Webinar
-                </Badge>
-                <Badge variant="outline" className="text-muted-foreground">
-                  Opname beschikbaar
-                </Badge>
-              </div>
-              <CardTitle className="text-2xl">
-                Palliatieve Zorg: vroegtijdige zorgplanning en sociale voorzieningen
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
-                <div className="flex items-center gap-2">
-                  <Calendar className="h-4 w-4 text-secondary" />
-                  <span className="text-muted-foreground">21 april 2026</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Clock className="h-4 w-4 text-secondary" />
-                  <span className="text-muted-foreground">13:00 – 16:00 (3u00)</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Users className="h-4 w-4 text-secondary" />
-                  <span className="text-muted-foreground">Max. 50 deelnemers</span>
-                </div>
-              </div>
-
-              <p className="text-muted-foreground leading-relaxed">
-                In deze opleiding leer je alles over vroegtijdige zorgplanning, communicatie en beschikbare voorziening voor de patiënt.
-              </p>
-
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <GraduationCap className="h-4 w-4 text-secondary" />
-                <span>Lesgever: Palliatief netwerk Gent-Eeklo</span>
-              </div>
-
-              <div className="bg-muted p-5 rounded-lg space-y-3">
-                <div className="flex items-center gap-2 text-sm">
-                  <Euro className="h-4 w-4 text-secondary" />
-                  <span className="font-semibold text-foreground">Hezo-klanten:</span>
-                  <span className="font-semibold text-secondary text-lg">Gratis</span>
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  Ben je geen klant bij Hezo, maar wil je toch graag deelnemen aan de opleiding? Neem dan contact met ons op via{" "}
-                  <a href="mailto:info@hezo.be" className="text-secondary hover:underline">info@hezo.be</a>.
-                </p>
-              </div>
-
-              <InschrijfDialog opleidingNaam="Palliatieve Zorg: vroegtijdige zorgplanning en sociale voorzieningen" opleidingDatum="21 april 2026">
-                <Button className="w-full sm:w-auto">Schrijf je in</Button>
-              </InschrijfDialog>
-            </CardContent>
-          </Card>
-
-          {/* Opleiding 4 */}
-          <Card className="mb-8 border-secondary/20 shadow-lg overflow-hidden">
-            <CardHeader className="pb-4">
-              <div className="flex flex-wrap items-center gap-3 mb-2">
-                <Badge className="bg-secondary/10 text-secondary border-secondary/20 hover:bg-secondary/10">
-                  <Monitor className="h-3 w-3 mr-1" />
-                  Webinar
-                </Badge>
-                <Badge variant="outline" className="text-muted-foreground">
-                  Opname beschikbaar
-                </Badge>
-              </div>
-              <CardTitle className="text-2xl">
-                Katz schaal in de thuisverpleging
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
-                <div className="flex items-center gap-2">
-                  <Calendar className="h-4 w-4 text-secondary" />
-                  <span className="text-muted-foreground">27 april 2026</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Clock className="h-4 w-4 text-secondary" />
-                  <span className="text-muted-foreground">13:30 – 15:30 (2u00)</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Users className="h-4 w-4 text-secondary" />
-                  <span className="text-muted-foreground">Max. 50 deelnemers</span>
-                </div>
-              </div>
-
-              <p className="text-muted-foreground leading-relaxed">
-                De Katz schaal is een essentieel instrument in de thuisverpleging. In deze opleiding komen de richtlijnen uitgebreid aan bod en oefenen we de toepassing en gebruik ervan met casussen uit de praktijk.
-              </p>
-
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <GraduationCap className="h-4 w-4 text-secondary" />
-                <span>Lesgever: Onafhankelijk Ziekenfonds: Els Desmet en Debbie Goossens</span>
-              </div>
-
-              <div className="bg-muted p-5 rounded-lg space-y-3">
-                <div className="flex items-center gap-2 text-sm">
-                  <Euro className="h-4 w-4 text-secondary" />
-                  <span className="font-semibold text-foreground">Hezo-klanten:</span>
-                  <span className="font-semibold text-secondary text-lg">Gratis</span>
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  Ben je geen klant bij Hezo, maar wil je toch graag deelnemen aan de opleiding? Neem dan contact met ons op via{" "}
-                  <a href="mailto:info@hezo.be" className="text-secondary hover:underline">info@hezo.be</a>.
-                </p>
-              </div>
-
-              <InschrijfDialog opleidingNaam="Katz schaal in de thuisverpleging" opleidingDatum="27 april 2026">
-                <Button className="w-full sm:w-auto">Schrijf je in</Button>
-              </InschrijfDialog>
-            </CardContent>
-          </Card>
-
-          {/* Opleiding 4 - Palliatieve Zorg */}
-          <Card className="mb-8 border-secondary/20 shadow-lg overflow-hidden">
-            <CardHeader className="pb-4">
-              <div className="flex flex-wrap items-center gap-3 mb-2">
-                <Badge className="bg-secondary/10 text-secondary border-secondary/20 hover:bg-secondary/10">
-                  <Monitor className="h-3 w-3 mr-1" />
-                  Webinar
-                </Badge>
-                <Badge variant="outline" className="text-muted-foreground">
-                  Opname beschikbaar
-                </Badge>
-              </div>
-              <CardTitle className="text-2xl">
-                Palliatieve Zorg: Pijn- en symptoomcontrole
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
-                <div className="flex items-center gap-2">
-                  <Calendar className="h-4 w-4 text-secondary" />
-                  <span className="text-muted-foreground">20 mei 2026</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Clock className="h-4 w-4 text-secondary" />
-                  <span className="text-muted-foreground">13:00 – 16:00 (2u00)</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Users className="h-4 w-4 text-secondary" />
-                  <span className="text-muted-foreground">Max. 50 deelnemers</span>
-                </div>
-              </div>
-
-              <p className="text-muted-foreground leading-relaxed">
-                Comfortzorg in de thuisomgeving omvat onder meer gerichte pijn- en symptoomcontrole. In deze opleiding krijg je tips om pijn te herkennen en onder controle te houden.
-              </p>
-
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <GraduationCap className="h-4 w-4 text-secondary" />
-                <span>Lesgever: Palliatief netwerk Gent-Eeklo</span>
-              </div>
-
-              <div className="bg-muted p-5 rounded-lg space-y-3">
-                <div className="flex items-center gap-2 text-sm">
-                  <Euro className="h-4 w-4 text-secondary" />
-                  <span className="font-semibold text-foreground">Hezo-klanten:</span>
-                  <span className="font-semibold text-secondary text-lg">Gratis</span>
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  Ben je geen klant bij Hezo, maar wil je toch graag deelnemen aan de opleiding? Neem dan contact met ons op via{" "}
-                  <a href="mailto:info@hezo.be" className="text-secondary hover:underline">info@hezo.be</a>.
-                </p>
-              </div>
-
-              <InschrijfDialog opleidingNaam="Palliatieve Zorg: Pijn- en symptoomcontrole" opleidingDatum="20 mei 2026">
-                <Button className="w-full sm:w-auto">Schrijf je in</Button>
-              </InschrijfDialog>
-            </CardContent>
-          </Card>
-
-          {/* Opleiding 5 - Toelichting verzekeringsinstellingen (21 mei) */}
-          <Card className="mb-16 border-secondary/20 shadow-lg overflow-hidden">
-            <CardHeader className="pb-4">
-              <div className="flex flex-wrap items-center gap-3 mb-2">
-                <Badge className="bg-secondary/10 text-secondary border-secondary/20 hover:bg-secondary/10">
-                  <Monitor className="h-3 w-3 mr-1" />
-                  Webinar
-                </Badge>
-                <Badge variant="outline" className="text-muted-foreground">
-                  Opname beschikbaar
-                </Badge>
-              </div>
-              <CardTitle className="text-2xl">
-                Toelichting: controle van de verzekeringsinstellingen
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
-                <div className="flex items-center gap-2">
-                  <Calendar className="h-4 w-4 text-secondary" />
-                  <span className="text-muted-foreground">21 mei 2026</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Clock className="h-4 w-4 text-secondary" />
-                  <span className="text-muted-foreground">13:30 – 15:30 (2u00)</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Users className="h-4 w-4 text-secondary" />
-                  <span className="text-muted-foreground">Max. 50 deelnemers</span>
-                </div>
-              </div>
-
-              <p className="text-muted-foreground leading-relaxed">
-                In deze opleiding krijg je informatie over de controles die gebeuren door de verzekeringsinstellingen (mutualiteiten). Hoe verloopt een controle en waar wordt op gelet? Wat als een controle niet kan doorgaan? Wat als je een afscoring hebt? Wat kan je zelf doen?
-              </p>
-
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <GraduationCap className="h-4 w-4 text-secondary" />
-                <span>Lesgever: Onafhankelijk Ziekenfonds: Els Desmet en Debbie Goossens</span>
-              </div>
-
-              <div className="bg-muted p-5 rounded-lg space-y-3">
-                <div className="flex items-center gap-2 text-sm">
-                  <Euro className="h-4 w-4 text-secondary" />
-                  <span className="font-semibold text-foreground">Hezo-klanten:</span>
-                  <span className="font-semibold text-secondary text-lg">Gratis</span>
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  Ben je geen klant bij Hezo, maar wil je toch graag deelnemen aan de opleiding? Neem dan contact met ons op via{" "}
-                  <a href="mailto:info@hezo.be" className="text-secondary hover:underline">info@hezo.be</a>.
-                </p>
-              </div>
-
-              <InschrijfDialog opleidingNaam="Toelichting: controle van de verzekeringsinstellingen" opleidingDatum="21 mei 2026">
-                <Button className="w-full sm:w-auto">Schrijf je in</Button>
-              </InschrijfDialog>
-            </CardContent>
-          </Card>
+                  <InschrijfDialog opleidingNaam={opleiding.titel} opleidingDatum={opleiding.datumTekst}>
+                    <Button className="w-full sm:w-auto">Schrijf je in</Button>
+                  </InschrijfDialog>
+                </CardContent>
+              </Card>
+            ))
+          )}
         </div>
       </div>
     </div>
