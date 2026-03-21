@@ -1,3 +1,16 @@
+// Polyfill localStorage for Node.js prerender environment
+if (typeof globalThis.localStorage === "undefined") {
+  const store: Record<string, string> = {};
+  (globalThis as any).localStorage = {
+    getItem: (k: string) => store[k] ?? null,
+    setItem: (k: string, v: string) => { store[k] = v; },
+    removeItem: (k: string) => { delete store[k]; },
+    clear: () => { Object.keys(store).forEach(k => delete store[k]); },
+    get length() { return Object.keys(store).length; },
+    key: (i: number) => Object.keys(store)[i] ?? null,
+  } as Storage;
+}
+
 import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom/server";
 import { HelmetProvider } from "react-helmet-async";
