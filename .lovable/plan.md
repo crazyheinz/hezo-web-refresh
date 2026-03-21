@@ -1,15 +1,19 @@
 
 
-## Hero-afbeelding vervangen op de homepage
+## Hero-sectie: overlap fixen + animatie
 
-De huidige foto (`src/assets/home-nursing.jpg`) wordt vervangen door de geüploade illustratie. De afbeelding krijgt een `max-width` zodat ze niet gigantisch wordt op brede schermen.
+Het probleem is dat op ~1100px breed de twee grid-kolommen te dicht op elkaar staan en de afbeelding over de tekst/knoppen valt. De fix is een combinatie van z-index layering en een vaste gap.
 
 ### Wijzigingen
 
-1. **Afbeelding kopiëren** naar `src/assets/home-hero-illustration.png`
+**`src/components/home/HeroSection.tsx`**
+- Tekstkolom: `relative z-10` toevoegen — tekst en knoppen staan altijd bovenop
+- Afbeeldingkolom: `relative z-0` — altijd achter de tekst
+- Grid gap vergroten: `lg:gap-10` → `lg:gap-16` voor vaste afstand tussen tekst en afbeelding
+- Afbeelding verkleinen: `max-w-xl` → `max-w-md` zodat er meer ademruimte is
+- `mb-12` → `mb-8` op beschrijvingstekst
+- Afbeelding wrappen in `motion.div` (framer-motion) met zwevende animatie: `y: [0, -10, 0]`, 4s loop, easeInOut
 
-2. **`src/components/home/HeroSection.tsx`** aanpassen:
-   - Import wijzigen naar de nieuwe afbeelding
-   - `max-w-lg` (of `max-w-xl`) toevoegen aan de `<img>` zodat de illustratie op ultrawide schermen niet uit proportie loopt
-   - Alt-tekst aanpassen naar iets passends bij de illustratie
+**`src/components/home/MissionSection.tsx`**
+- `py-20 sm:py-28` → `py-14 sm:py-20` voor minder witruimte tussen secties
 
