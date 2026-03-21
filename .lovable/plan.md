@@ -1,35 +1,15 @@
 
 
-## Twee problemen met de GitHub Actions build
+## Hero-afbeelding vervangen op de homepage
 
-### Probleem 1: `localStorage is not defined`
-De pre-render draait in Node.js, waar `localStorage` niet bestaat. Het Supabase client-bestand (`src/integrations/supabase/client.ts`) refereert direct naar `localStorage`, maar dat bestand mag niet bewerkt worden (auto-gegenereerd).
+De huidige foto (`src/assets/home-nursing.jpg`) wordt vervangen door de geüploade illustratie. De afbeelding krijgt een `max-width` zodat ze niet gigantisch wordt op brede schermen.
 
-**Oplossing:** In `src/prerender.tsx`, vóór alle imports, een `localStorage` polyfill toevoegen voor de Node-omgeving:
+### Wijzigingen
 
-```typescript
-// Polyfill for Node.js prerender environment
-if (typeof globalThis.localStorage === "undefined") {
-  const store: Record<string, string> = {};
-  globalThis.localStorage = {
-    getItem: (k: string) => store[k] ?? null,
-    setItem: (k: string, v: string) => { store[k] = v; },
-    removeItem: (k: string) => { delete store[k]; },
-    clear: () => { Object.keys(store).forEach(k => delete store[k]); },
-    get length() { return Object.keys(store).length; },
-    key: (i: number) => Object.keys(store)[i] ?? null,
-  } as Storage;
-}
-```
+1. **Afbeelding kopiëren** naar `src/assets/home-hero-illustration.png`
 
-### Probleem 2: `package-lock.json` out of sync
-De screenshot toont dat `npm ci` faalt omdat `package-lock.json` niet overeenkomt met `package.json` (de nieuwe dependencies zoals `vite-prerender-plugin` ontbreken in de lockfile).
-
-**Oplossing:** De `package-lock.json` moet geregenereerd worden. Dit gebeurt automatisch wanneer Lovable de dependencies installeert na de codewijziging.
-
-### Bestanden die wijzigen
-
-| Bestand | Wijziging |
-|---|---|
-| `src/prerender.tsx` | `localStorage` polyfill toevoegen bovenaan |
+2. **`src/components/home/HeroSection.tsx`** aanpassen:
+   - Import wijzigen naar de nieuwe afbeelding
+   - `max-w-lg` (of `max-w-xl`) toevoegen aan de `<img>` zodat de illustratie op ultrawide schermen niet uit proportie loopt
+   - Alt-tekst aanpassen naar iets passends bij de illustratie
 
