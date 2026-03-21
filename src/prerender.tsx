@@ -14,8 +14,6 @@ if (typeof globalThis.localStorage === "undefined") {
 import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom/server";
 import { HelmetProvider } from "react-helmet-async";
-import AppContent from "./AppContent";
-import { blogArticles } from "./data/blogArticles";
 
 // All indexable marketing routes
 const staticRoutes = [
@@ -30,11 +28,14 @@ const staticRoutes = [
   "/cookies/",
 ];
 
-// Auto-generate blog routes from data
-const blogRoutes = blogArticles.map((a) => `/blog/${a.id}/`);
-const allRoutes = [...staticRoutes, ...blogRoutes];
-
 export async function prerender(data: { url: string }) {
+  const [{ default: AppContent }, { blogArticles }] = await Promise.all([
+    import("./AppContent"),
+    import("./data/blogArticles"),
+  ]);
+
+  const blogRoutes = blogArticles.map((a) => `/blog/${a.id}/`);
+  const allRoutes = [...staticRoutes, ...blogRoutes];
   const helmetContext: { helmet?: any } = {};
 
   const html = renderToString(

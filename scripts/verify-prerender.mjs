@@ -52,14 +52,14 @@ for (const route of routes) {
   }
 
   // 3. Check canonical link
-  const canonical = html.match(/<link\s+rel=["']canonical["']/);
+  const canonical = html.match(/<link\b[^>]*\brel=["']canonical["'][^>]*>/i);
   if (!canonical) {
     issues.push("Missing canonical link");
   }
 
   // 4. Check structured data (JSON-LD)
   const jsonLd = html.match(
-    /<script\s+type=["']application\/ld\+json["'][^>]*>/
+    /<script\b[^>]*\btype=["']application\/ld\+json["'][^>]*>/i
   );
   if (!jsonLd) {
     issues.push("Missing structured data (JSON-LD)");
