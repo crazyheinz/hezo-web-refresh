@@ -31,11 +31,11 @@ const HeroSection = () => {
               </Button>
             </div>
           </div>
-          <div className="relative">
+          <div className="relative flex justify-center">
             <img
-              src={homeNursingImage}
-              alt="Thuisverpleging - professionele zorg aan huis"
-              className="rounded-lg shadow-2xl w-full h-auto object-contain"
+              src={homeHeroIllustration}
+              alt="Illustratie van een zelfstandig thuisverpleegkundige"
+              className="w-full h-auto object-contain max-w-xl"
             />
           </div>
         </div>
