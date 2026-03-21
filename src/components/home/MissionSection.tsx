@@ -62,7 +62,7 @@ const MissionSection = () => {
   return (
     <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <motion.div
-        className="container mx-auto max-w-5xl"
+        className="container mx-auto max-w-7xl"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"

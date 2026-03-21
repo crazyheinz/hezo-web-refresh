@@ -77,9 +77,9 @@ const Opleidingen = () => {
           ]
         }}
       />
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div>
+          <div className="text-center mb-16 max-w-3xl mx-auto">
             <GraduationCap className="h-16 w-16 text-secondary mx-auto mb-6" strokeWidth={1.5} />
             <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">Opleidingen</h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
@@ -87,7 +87,7 @@ const Opleidingen = () => {
             </p>
           </div>
 
-          <div className="space-y-8 mb-16">
+          <div className="space-y-8 mb-16 max-w-3xl">
             <p className="text-lg text-muted-foreground leading-relaxed">
               Bij Hezo zien we vorming als een manier om sterker te staan in je dagelijks werk, niet
               als een verplichting, maar als een kans om met meer rust en zekerheid te zorgen. Onze
