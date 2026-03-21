@@ -187,7 +187,7 @@ const ZoSluitJeAan = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
-            className="max-w-4xl mx-auto"
+            className="max-w-3xl mx-auto"
           >
             <motion.h2
               custom={0}
