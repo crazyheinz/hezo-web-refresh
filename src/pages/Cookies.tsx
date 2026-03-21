@@ -125,6 +125,7 @@ const Cookies = () => {
             </p>
           </section>
         </div>
+        </div>
       </section>
     </div>
   );

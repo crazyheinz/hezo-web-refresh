@@ -404,6 +404,7 @@ const BlogArticle = () => {
           </div>
 
           {/* CTA */}
+          {/* CTA */}
           <div className="mt-12 p-8 bg-muted rounded-2xl">
             <h3 className="text-xl font-semibold text-primary mb-2">
               Meer weten over Hezo?
@@ -426,6 +427,7 @@ const BlogArticle = () => {
                 Contact
               </Link>
             </div>
+          </div>
           </div>
         </article>
       </div>

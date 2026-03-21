@@ -467,8 +467,8 @@ const ZelfstandigWorden = () => {
 
       {/* FAQ Section */}
       <section className="py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
             <div className="flex items-center gap-4 mb-8">
               <HelpCircle className="h-8 w-8 text-secondary" />
               <h2 className="text-2xl md:text-3xl font-bold text-primary">
