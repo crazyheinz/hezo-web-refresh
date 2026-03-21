@@ -7,9 +7,9 @@ const HeroSection = () => {
   return (
     <section className="pt-32 pb-10 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-center max-w-7xl mx-auto">
-          <div className="lg:pr-4">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
+        <div className="grid lg:grid-cols-[1fr_auto] gap-8 lg:gap-10 items-center max-w-7xl mx-auto">
+          <div className="lg:pr-4 min-w-0">
+            <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] xl:text-5xl font-bold text-foreground mb-4 leading-tight">
               Ondersteuning voor zelfstandige thuisverpleegkundigen
             </h1>
             <p className="text-lg sm:text-xl font-semibold text-foreground mb-6">
