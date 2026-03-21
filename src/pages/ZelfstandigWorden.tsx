@@ -144,8 +144,8 @@ const ZelfstandigWorden = () => {
 
       {/* Why Choose Section */}
       <section className="py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-bold text-primary mb-8">
               Waarom kiezen voor zelfstandig werken als thuisverpleegkundige?
             </h2>
