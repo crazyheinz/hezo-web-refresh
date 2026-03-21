@@ -107,12 +107,8 @@ const articleContent: Record<string, { content: React.ReactNode }> = {
   "hbo5-graduaat-basisverpleegkunde": {
     content: (
       <>
-        <p className="lead italic text-muted-foreground mb-8">
-          Geüpdatet: januari 2026
-        </p>
-
         <p className="lead">
-          De opleiding tot verpleegkundige in Vlaanderen is de voorbije jaren grondig hervormd. 
+          De opleiding tot verpleegkundige in Vlaanderen is de voorbije jaren grondig hervormd.
           De vroegere HBO5-opleiding Verpleegkunde werd stapsgewijs omgevormd tot het graduaat Basisverpleegkunde. 
           Die hervorming is intussen geen toekomstmuziek meer: in 2026 zijn de gevolgen ervan duidelijk voelbaar in het werkveld, 
           en zeker ook binnen de thuisverpleging.
