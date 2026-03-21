@@ -80,7 +80,7 @@ const MissionSection = () => {
           className="max-w-2xl mx-auto text-center mb-6"
         >
           <p className="text-muted-foreground text-lg sm:text-xl leading-relaxed">
-            Hezo is er voor iedere zelfstandige verpleegkundige die zich elke dag
+            Hezo is er voor iedere zelfstandige verpleegkundige die zich
             met hart en ziel inzet voor patiënten. Maar administratie en
             facturatie nemen steeds meer tijd in beslag.
           </p>
