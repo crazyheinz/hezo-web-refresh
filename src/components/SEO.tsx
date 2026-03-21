@@ -29,7 +29,7 @@ const SEO = ({
     "@type": "Organization",
     "name": "Hezo",
     "url": siteUrl,
-    "logo": `${siteUrl}/favicon.png`,
+      "logo": `${siteUrl}/favicon.png?v=5`,
     "description": "Hezo ondersteunt zelfstandige thuisverpleegkundigen met administratie, facturatie, patiëntenstroom en begeleiding.",
     "address": {
       "@type": "PostalAddress",
