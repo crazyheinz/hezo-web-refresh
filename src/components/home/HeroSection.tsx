@@ -5,10 +5,10 @@ import homeHeroIllustration from "@/assets/home-hero-illustration.png";
 
 const HeroSection = () => {
   return (
-    <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+    <section className="pt-32 pb-10 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto">
-        <div className="grid xl:grid-cols-2 gap-8 xl:gap-10 items-start max-w-7xl mx-auto">
-          <div className="xl:pr-4">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-center max-w-7xl mx-auto">
+          <div className="lg:pr-4">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
               Ondersteuning voor zelfstandige thuisverpleegkundigen
             </h1>
