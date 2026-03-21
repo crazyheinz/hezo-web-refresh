@@ -130,8 +130,8 @@ const ZelfstandigWorden = () => {
 
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-gradient-to-b from-muted/50 to-background">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto text-center">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
               Zelfstandig thuisverpleegkundige worden: stappenplan & ondersteuning
             </h1>
@@ -144,8 +144,8 @@ const ZelfstandigWorden = () => {
 
       {/* Why Choose Section */}
       <section className="py-16">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-primary mb-8">
               Waarom kiezen voor zelfstandig werken als thuisverpleegkundige?
             </h2>
@@ -180,8 +180,8 @@ const ZelfstandigWorden = () => {
 
       {/* Steps Section */}
       <section className="py-16 bg-muted/30">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-primary mb-12">
               Zelfstandig thuisverpleegkundige worden in 4 duidelijke stappen
             </h2>
@@ -467,8 +467,8 @@ const ZelfstandigWorden = () => {
 
       {/* FAQ Section */}
       <section className="py-16">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
             <div className="flex items-center gap-4 mb-8">
               <HelpCircle className="h-8 w-8 text-secondary" />
               <h2 className="text-2xl md:text-3xl font-bold text-primary">

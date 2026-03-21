@@ -124,8 +124,8 @@ const ZoSluitJeAan = () => {
 
       {/* Hero */}
       <section className="pt-32 pb-20 bg-gradient-to-b from-secondary/5 to-background">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -182,12 +182,12 @@ const ZoSluitJeAan = () => {
 
       {/* Steps */}
       <section className="py-20 bg-background">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
-            className="max-w-3xl mx-auto"
+            className="max-w-4xl mx-auto"
           >
             <motion.h2
               custom={0}
@@ -241,7 +241,7 @@ const ZoSluitJeAan = () => {
 
       {/* Kosten */}
       <section className="py-20 bg-muted/30">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -292,7 +292,7 @@ const ZoSluitJeAan = () => {
 
       {/* FAQ */}
       <section className="py-20 bg-background">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -340,7 +340,7 @@ const ZoSluitJeAan = () => {
 
       {/* Bottom CTA */}
       <section className="py-20 bg-secondary/5">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
             whileInView="visible"

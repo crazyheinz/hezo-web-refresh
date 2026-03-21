@@ -27,9 +27,8 @@ const Privacy = () => {
         }
       `}</style>
 
-      <section className="pt-32 pb-20">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl privacy-content">
+      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto max-w-3xl privacy-content">
           <div className="mb-8 flex items-center justify-between">
             <img src={hezoLogo} alt="Hezo" className="h-16 w-auto hidden print:block" />
             <Button onClick={handlePrint} variant="outline" className="no-print gap-2 ml-auto">
@@ -317,7 +316,6 @@ const Privacy = () => {
               <a href="mailto:privacy@hezo.be" className="text-secondary hover:underline">privacy@hezo.be</a>
             </p>
           </section>
-        </div>
         </div>
       </section>
     </div>

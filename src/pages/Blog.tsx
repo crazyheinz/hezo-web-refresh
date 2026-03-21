@@ -70,7 +70,7 @@ const Blog = () => {
       <div className="pt-32 pb-16">
         {/* Hero Section */}
         <section className="pb-12">
-          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
               <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">Blog</h1>
               <p className="text-lg text-muted-foreground">
@@ -82,7 +82,7 @@ const Blog = () => {
 
         {/* Articles Grid */}
         <section className="py-16">
-          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {blogArticles.map((article) => (
                 <Card

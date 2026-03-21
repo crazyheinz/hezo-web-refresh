@@ -48,8 +48,8 @@ const usps = [
 const AdminSection = () => {
   return (
     <section id="administratie" className="scroll-mt-40 py-20">
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
           <motion.div
             initial="hidden"
             whileInView="visible"

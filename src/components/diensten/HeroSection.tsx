@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 const HeroSection = () => {
   return (
     <section className="pt-32 pb-16 bg-gradient-to-b from-secondary/5 to-background">
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}

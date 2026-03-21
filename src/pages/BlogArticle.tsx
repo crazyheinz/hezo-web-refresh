@@ -366,8 +366,7 @@ const BlogArticle = () => {
       />
 
       <div className="pt-24 pb-16">
-        <article className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
+        <article className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Back link */}
           <Link 
             to="/blog/"
@@ -404,7 +403,6 @@ const BlogArticle = () => {
           </div>
 
           {/* CTA */}
-          {/* CTA */}
           <div className="mt-12 p-8 bg-muted rounded-2xl">
             <h3 className="text-xl font-semibold text-primary mb-2">
               Meer weten over Hezo?
@@ -427,7 +425,6 @@ const BlogArticle = () => {
                 Contact
               </Link>
             </div>
-          </div>
           </div>
         </article>
       </div>

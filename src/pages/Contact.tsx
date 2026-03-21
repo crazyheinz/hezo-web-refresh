@@ -96,9 +96,9 @@ const Contact = () => {
           }
         }}
       />
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div>
-          <div className="text-center mb-16 max-w-3xl mx-auto">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
             <Send className="h-16 w-16 text-secondary mx-auto mb-6" strokeWidth={1.5} />
             <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
               Stel je vraag of plan een gesprek

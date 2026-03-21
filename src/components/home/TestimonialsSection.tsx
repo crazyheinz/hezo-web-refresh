@@ -22,8 +22,8 @@ const testimonials = [
 const TestimonialsSection = () => {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 max-w-3xl mx-auto">
+      <div className="container mx-auto max-w-6xl">
+        <div className="text-center mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
             Wat verpleegkundigen zeggen
           </h2>
