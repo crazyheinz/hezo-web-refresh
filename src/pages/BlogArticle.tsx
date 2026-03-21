@@ -331,7 +331,7 @@ const BlogArticle = () => {
                 "url": "https://www.hezo.be",
                 "logo": {
                   "@type": "ImageObject",
-                  "url": "https://www.hezo.be/favicon.png"
+                    "url": "https://www.hezo.be/favicon.png?v=5"
                 }
               },
               "mainEntityOfPage": {
