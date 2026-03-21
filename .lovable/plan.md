@@ -1,19 +1,36 @@
 
 
-## Hero-sectie: overlap fixen + animatie
+## Opleidingen: chronologisch sorteren + zoekbalk
 
-Het probleem is dat op ~1100px breed de twee grid-kolommen te dicht op elkaar staan en de afbeelding over de tekst/knoppen valt. De fix is een combinatie van z-index layering en een vaste gap.
+### Huidige situatie
+De 6 opleidingen staan hardcoded als losse `<Card>` componenten in `Opleidingen.tsx`. Ze zijn niet gesorteerd op datum en er is geen zoekfunctionaliteit.
 
-### Wijzigingen
+Opleidingen met datums:
+1. Poortkatheters — 23 maart 2026
+2. BLS/AED — 11 mei 2026
+3. Palliatieve Zorg: zorgplanning — 21 april 2026
+4. Katz schaal — 27 april 2026
+5. Palliatieve Zorg: pijn — 20 mei 2026
+6. Verzekeringsinstellingen — 21 mei 2026
 
-**`src/components/home/HeroSection.tsx`**
-- Tekstkolom: `relative z-10` toevoegen — tekst en knoppen staan altijd bovenop
-- Afbeeldingkolom: `relative z-0` — altijd achter de tekst
-- Grid gap vergroten: `lg:gap-10` → `lg:gap-16` voor vaste afstand tussen tekst en afbeelding
-- Afbeelding verkleinen: `max-w-xl` → `max-w-md` zodat er meer ademruimte is
-- `mb-12` → `mb-8` op beschrijvingstekst
-- Afbeelding wrappen in `motion.div` (framer-motion) met zwevende animatie: `y: [0, -10, 0]`, 4s loop, easeInOut
+Chronologische volgorde: 1 → 3 → 4 → 2 → 5 → 6
 
-**`src/components/home/MissionSection.tsx`**
-- `py-20 sm:py-28` → `py-14 sm:py-20` voor minder witruimte tussen secties
+### Plan
+
+**1. Opleidingsdata naar een array extraheren**
+- Maak een `opleidingen` array met objecten (titel, datum als `Date`, tijd, locatie, maxDeelnemers, beschrijving, lesgever, type, badges, etc.)
+- Sorteer op datum (vroegste eerst)
+
+**2. Zoekbalk toevoegen**
+- `useState` voor zoekterm
+- Input veld met zoek-icoon boven de lijst, zoekt op titel, beschrijving en lesgever
+- Filter de gesorteerde array op basis van de zoekterm
+- Toon "Geen opleidingen gevonden" als er geen resultaten zijn
+
+**3. Kaarten dynamisch renderen**
+- `.map()` over de gefilterde + gesorteerde array
+- Hergebruik exact dezelfde Card-structuur als nu
+
+### Bestanden die wijzigen
+- `src/pages/Opleidingen.tsx` — refactor naar data-driven + zoekbalk
 
