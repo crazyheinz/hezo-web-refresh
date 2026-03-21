@@ -180,8 +180,8 @@ const ZelfstandigWorden = () => {
 
       {/* Steps Section */}
       <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-bold text-primary mb-12">
               Zelfstandig thuisverpleegkundige worden in 4 duidelijke stappen
             </h2>
