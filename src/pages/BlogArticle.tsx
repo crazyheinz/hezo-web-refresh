@@ -366,7 +366,7 @@ const BlogArticle = () => {
       />
 
       <div className="pt-24 pb-16">
-        <article className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+        <article className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Back link */}
           <Link 
             to="/blog/"
@@ -392,7 +392,7 @@ const BlogArticle = () => {
               </span>
             </div>
             
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-tight">
               {article.title}
             </h1>
           </header>
