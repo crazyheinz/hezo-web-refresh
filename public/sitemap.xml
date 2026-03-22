@@ -55,6 +55,24 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.hezo.be/blog/software-thuisverpleging/</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.hezo.be/blog/patienten-thuisverpleegkundige/</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.hezo.be/blog/administratie-thuisverpleging/</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.hezo.be/privacy/</loc>
     <lastmod>2026-03-20</lastmod>
     <changefreq>yearly</changefreq>
