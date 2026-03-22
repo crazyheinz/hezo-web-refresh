@@ -90,7 +90,7 @@ const Vacatures = () => {
       tagline: "Wil jij mee een nieuw netwerk voor zelfstandige thuisverpleging uitbouwen én verantwoordelijke verpleegkundige worden van jouw eigen zorgregio?",
       active: true,
       description:
-        "Bij Hezo bouw je als Zelfstandig Verantawoordelijke Verpleegkundige aan een sterk lokaal netwerk van verpleegkundigen en zorgpartners. Je combineert organisatie en inhoudelijke zorgexpertise: je ondersteunt zelfstandige thuisverpleegkundigen, bewaakt de kwaliteit van zorg én helpt Hezo groeien in jouw regio. Hier ben je niet alleen een planner, maar ook een vertrouwenspersoon voor je team én een strategische partner in de verdere uitbouw van het Hezo-netwerk.",
+        "Bij Hezo bouw je als Zelfstandig Verantwoordelijke Verpleegkundige aan een sterk lokaal netwerk van verpleegkundigen en zorgpartners. Je combineert organisatie en inhoudelijke zorgexpertise: je ondersteunt zelfstandige thuisverpleegkundigen, bewaakt de kwaliteit van zorg én helpt Hezo groeien in jouw regio. Hier ben je niet alleen een planner, maar ook een vertrouwenspersoon voor je team én een strategische partner in de verdere uitbouw van het Hezo-netwerk.",
       responsibilities: [
         "Je bewaakt de continuïteit en kwaliteit van de zorg in jouw regio",
         "Je organiseert de planning en opvolging van zorgvragen binnen je team",
