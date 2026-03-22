@@ -90,7 +90,7 @@ const Vacatures = () => {
       tagline: "Wil jij mee een nieuw netwerk voor zelfstandige thuisverpleging uitbouwen én verantwoordelijke verpleegkundige worden van jouw eigen zorgregio?",
       active: true,
       description:
-        "Bij Hezo bouw je als Zelfstandig Verantawoordelijke Verpleegkundige aan een sterk lokaal netwerk van verpleegkundigen en zorgpartners. Je combineert organisatie en inhoudelijke zorgexpertise: je ondersteunt zelfstandige thuisverpleegkundigen, bewaakt de kwaliteit van zorg én helpt Hezo groeien in jouw regio. Hier ben je niet alleen een planner, maar ook een vertrouwenspersoon voor je team én een strategische partner in de verdere uitbouw van het Hezo-netwerk.",
+        "Bij Hezo bouw je als Zelfstandig Verantwoordelijke Verpleegkundige aan een sterk lokaal netwerk van verpleegkundigen en zorgpartners. Je combineert organisatie en inhoudelijke zorgexpertise: je ondersteunt zelfstandige thuisverpleegkundigen, bewaakt de kwaliteit van zorg én helpt Hezo groeien in jouw regio. Hier ben je niet alleen een planner, maar ook een vertrouwenspersoon voor je team én een strategische partner in de verdere uitbouw van het Hezo-netwerk.",
       responsibilities: [
         "Je bewaakt de continuïteit en kwaliteit van de zorg in jouw regio",
         "Je organiseert de planning en opvolging van zorgvragen binnen je team",
@@ -107,6 +107,92 @@ const Vacatures = () => {
       profile: [
         "Je beschikt over een diploma Verpleegkunde (HBO5, Bachelor of Master)",
         "Je bent woonachtig in of rond Gent of omgeving",
+        "Je beschikt over een rijbewijs en eigen vervoer, zodat je je flexibel binnen de regio kan verplaatsen",
+        "Je hebt ervaring in de thuisverpleging",
+        "Je benadert elke patiënt met authenticiteit en vertrouwen, en weet menselijke nabijheid te combineren met professionele zorg",
+        "Je bent leergierig en volgt regelmatig bijscholingen",
+        "Je communiceert vlot, bent inspirerend en oplossingsgericht",
+        "Je werkt zelfstandig en gestructureerd en durft beslissingen nemen",
+        "Je verbindt graag collega's en bewaakt kwaliteit binnen je team",
+        "Je wil het verschil maken voor zowel patiënten als zorgverleners en wil de zorg van de toekomst mee vorm geven",
+      ],
+      offer: [
+        "Een uitdagende, veelzijdige functie met impact op zorg en organisatie",
+        "Een rol met autonomie en impact",
+        "Een hecht, betrokken team en ondersteuning in administratie en operationele opvolging",
+        "Begeleiding bij het uitbouwen van rondes en patiëntenbestand",
+        "Ondersteuning bij het aantrekken van nieuwe teamleden en het opzetten van een duurzaam regiomodel",
+        "Coaching en opleiding op maat om te groeien op persoonlijk en professioneel vlak",
+        "Transparante en correcte uitbetaling",
+        "Een aantrekkelijk ereloon op basis van prestaties + een managementvergoeding",
+      ],
+    },
+    {
+      id: "verantwoordelijke-antwerpen",
+      title: "Zelfstandig Verantwoordelijke Thuisverpleging - Antwerpen",
+      tagline: "Wil jij mee een nieuw netwerk voor zelfstandige thuisverpleging uitbouwen én verantwoordelijke verpleegkundige worden van jouw eigen zorgregio?",
+      active: true,
+      description:
+        "Bij Hezo bouw je als Zelfstandig Verantwoordelijke Verpleegkundige aan een sterk lokaal netwerk van verpleegkundigen en zorgpartners. Je combineert organisatie en inhoudelijke zorgexpertise: je ondersteunt zelfstandige thuisverpleegkundigen, bewaakt de kwaliteit van zorg én helpt Hezo groeien in jouw regio. Hier ben je niet alleen een planner, maar ook een vertrouwenspersoon voor je team én een strategische partner in de verdere uitbouw van het Hezo-netwerk.",
+      responsibilities: [
+        "Je bewaakt de continuïteit en kwaliteit van de zorg in jouw regio",
+        "Je organiseert de planning en opvolging van zorgvragen binnen je team",
+        "Je zorgt voor overleg tussen teamleden en andere betrokkenen",
+        "Je bouwt het team verder uit: je zoekt en selecteert nieuwe collega's die passen binnen het Hezo-verhaal en begeleidt starters in hun eerste stappen als zelfstandige",
+        "Je blijft dicht bij de patiënt staan, voert waar nodig de noodzakelijke zorgen uit en maakt afspraken met hen over de zorg",
+        "Je bouwt mee aan de zorg van de toekomst door mee te innoveren en kritisch te kijken naar de huidige processen",
+        "Je bouwt een sterk regionaal netwerk uit met andere zorgverstrekkers en zorgt ervoor dat het team een betrouwbare zorgpartner wordt in jouw regio",
+        "Je capteert signalen uit het werkveld en vertaalt die naar concrete verbetervoorstellen",
+        "Je koppelt terug aan het bestuursteam van Hezo, deelt je visie en helpt mee de strategische koers en groei te bepalen",
+        "Je denkt mee over nieuwe diensten, samenwerkingen en digitale oplossingen die de organisatie sterker maken",
+        "Je bouwt mee aan een cultuur van samenwerking, vertrouwen en open communicatie",
+      ],
+      profile: [
+        "Je beschikt over een diploma Verpleegkunde (HBO5, Bachelor of Master)",
+        "Je bent woonachtig in of rond Antwerpen of omgeving",
+        "Je beschikt over een rijbewijs en eigen vervoer, zodat je je flexibel binnen de regio kan verplaatsen",
+        "Je hebt ervaring in de thuisverpleging",
+        "Je benadert elke patiënt met authenticiteit en vertrouwen, en weet menselijke nabijheid te combineren met professionele zorg",
+        "Je bent leergierig en volgt regelmatig bijscholingen",
+        "Je communiceert vlot, bent inspirerend en oplossingsgericht",
+        "Je werkt zelfstandig en gestructureerd en durft beslissingen nemen",
+        "Je verbindt graag collega's en bewaakt kwaliteit binnen je team",
+        "Je wil het verschil maken voor zowel patiënten als zorgverleners en wil de zorg van de toekomst mee vorm geven",
+      ],
+      offer: [
+        "Een uitdagende, veelzijdige functie met impact op zorg en organisatie",
+        "Een rol met autonomie en impact",
+        "Een hecht, betrokken team en ondersteuning in administratie en operationele opvolging",
+        "Begeleiding bij het uitbouwen van rondes en patiëntenbestand",
+        "Ondersteuning bij het aantrekken van nieuwe teamleden en het opzetten van een duurzaam regiomodel",
+        "Coaching en opleiding op maat om te groeien op persoonlijk en professioneel vlak",
+        "Transparante en correcte uitbetaling",
+        "Een aantrekkelijk ereloon op basis van prestaties + een managementvergoeding",
+      ],
+    },
+    {
+      id: "verantwoordelijke-west-vlaanderen",
+      title: "Zelfstandig Verantwoordelijke Thuisverpleging - Regio West-Vlaanderen",
+      tagline: "Wil jij mee een nieuw netwerk voor zelfstandige thuisverpleging uitbouwen én verantwoordelijke verpleegkundige worden van jouw eigen zorgregio?",
+      active: true,
+      description:
+        "Bij Hezo bouw je als Zelfstandig Verantwoordelijke Verpleegkundige aan een sterk lokaal netwerk van verpleegkundigen en zorgpartners. Je combineert organisatie en inhoudelijke zorgexpertise: je ondersteunt zelfstandige thuisverpleegkundigen, bewaakt de kwaliteit van zorg én helpt Hezo groeien in jouw regio. Hier ben je niet alleen een planner, maar ook een vertrouwenspersoon voor je team én een strategische partner in de verdere uitbouw van het Hezo-netwerk.",
+      responsibilities: [
+        "Je bewaakt de continuïteit en kwaliteit van de zorg in jouw regio",
+        "Je organiseert de planning en opvolging van zorgvragen binnen je team",
+        "Je zorgt voor overleg tussen teamleden en andere betrokkenen",
+        "Je bouwt het team verder uit: je zoekt en selecteert nieuwe collega's die passen binnen het Hezo-verhaal en begeleidt starters in hun eerste stappen als zelfstandige",
+        "Je blijft dicht bij de patiënt staan, voert waar nodig de noodzakelijke zorgen uit en maakt afspraken met hen over de zorg",
+        "Je bouwt mee aan de zorg van de toekomst door mee te innoveren en kritisch te kijken naar de huidige processen",
+        "Je bouwt een sterk regionaal netwerk uit met andere zorgverstrekkers en zorgt ervoor dat het team een betrouwbare zorgpartner wordt in jouw regio",
+        "Je capteert signalen uit het werkveld en vertaalt die naar concrete verbetervoorstellen",
+        "Je koppelt terug aan het bestuursteam van Hezo, deelt je visie en helpt mee de strategische koers en groei te bepalen",
+        "Je denkt mee over nieuwe diensten, samenwerkingen en digitale oplossingen die de organisatie sterker maken",
+        "Je bouwt mee aan een cultuur van samenwerking, vertrouwen en open communicatie",
+      ],
+      profile: [
+        "Je beschikt over een diploma Verpleegkunde (HBO5, Bachelor of Master)",
+        "Je bent woonachtig in West-Vlaanderen",
         "Je beschikt over een rijbewijs en eigen vervoer, zodat je je flexibel binnen de regio kan verplaatsen",
         "Je hebt ervaring in de thuisverpleging",
         "Je benadert elke patiënt met authenticiteit en vertrouwen, en weet menselijke nabijheid te combineren met professionele zorg",
@@ -204,7 +290,7 @@ const Vacatures = () => {
     <div className="min-h-screen pt-32 pb-20">
       <SEO 
         title="Vacatures thuisverpleging | Werken bij Hezo"
-        description="Wil jij het verschil maken in de thuiszorg? Bekijk onze openstaande vacatures als praktijkcoach of zelfstandig verantawoordelijke verpleegkundige. Solliciteer direct →"
+        description="Wil jij het verschil maken in de thuiszorg? Bekijk onze openstaande vacatures als praktijkcoach of zelfstandig verantwoordelijke verpleegkundige. Solliciteer direct →"
         path="/vacatures"
         structuredData={{
           "@context": "https://schema.org",
@@ -212,7 +298,7 @@ const Vacatures = () => {
             {
               "@type": "WebPage",
               "name": "Vacatures bij Hezo",
-              "description": "Bekijk openstaande vacatures bij Hezo. Werk als praktijkcoach, zelfstandig verantawoordelijke verpleegkundige in de thuisverpleging.",
+              "description": "Bekijk openstaande vacatures bij Hezo. Werk als praktijkcoach, zelfstandig verantwoordelijke verpleegkundige in de thuisverpleging.",
               "url": "https://www.hezo.be/vacatures/"
             },
             ...jobs.map(job => ({
@@ -232,7 +318,7 @@ const Vacatures = () => {
                 "@type": "Place",
                 "address": {
                   "@type": "PostalAddress",
-                  "addressLocality": job.id === "regiomanager" ? "Gent" : "België",
+                  "addressLocality": job.id === "regiomanager" ? "Gent" : job.id === "verantwoordelijke-antwerpen" ? "Antwerpen" : job.id === "verantwoordelijke-west-vlaanderen" ? "West-Vlaanderen" : "België",
                   "addressRegion": "Vlaanderen",
                   "addressCountry": "BE"
                 }
@@ -248,15 +334,15 @@ const Vacatures = () => {
                   "name": "Welke vacatures zijn er bij Hezo?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Hezo zoekt regelmatig nieuwe mensen: praktijkcoaches en zelfstandig verantawoordelijke verpleegkundige met een hart voor zorg. Bekijk de actuele vacatures op hezo.be/vacatures."
+                    "text": "Hezo zoekt regelmatig nieuwe mensen: praktijkcoaches en zelfstandig verantwoordelijke verpleegkundigen met een hart voor zorg. Bekijk de actuele vacatures op hezo.be/vacatures."
                   }
                 },
                 {
                   "@type": "Question",
-                  "name": "Wat doet een regiomanager bij Hezo?",
+                  "name": "Wat doet een verantwoordelijke verpleegkundige bij Hezo?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Als zelfstandig verantawoordelijke verpleegkundige bouw je aan een sterk lokaal netwerk van verpleegkundigen en zorgpartners. Je combineert organisatie en inhoudelijke zorgexpertise, ondersteunt zelfstandige thuisverpleegkundigen en bewaakt de kwaliteit van zorg."
+                    "text": "Als zelfstandig verantwoordelijke verpleegkundige bouw je aan een sterk lokaal netwerk van verpleegkundigen en zorgpartners. Je combineert organisatie en inhoudelijke zorgexpertise, ondersteunt zelfstandige thuisverpleegkundigen en bewaakt de kwaliteit van zorg."
                   }
                 },
                 {
