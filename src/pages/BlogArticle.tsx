@@ -39,7 +39,7 @@ const articleContent: Record<string, {
         </ul>
         <p>Zonder correcte registratie en verwerking kan zorg niet correct gefactureerd worden.</p>
 
-        <h2>Welke software bestaat er?</h2>
+        <h2 id="welke-software">Welke software bestaat er?</h2>
         <p>Er bestaan verschillende softwarepakketten voor thuisverpleegkundigen. Deze moeten voldoen aan bepaalde normen en gehomologeerd zijn om correct te kunnen werken binnen het systeem van de thuisverpleging.</p>
         <p>De verschillen zitten vaak in:</p>
         <ul>
