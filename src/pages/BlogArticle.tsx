@@ -5,6 +5,110 @@ import { blogArticles } from "./Blog";
 
 // Full article content - add content for each article ID
 const articleContent: Record<string, { content: React.ReactNode; cta?: React.ReactNode }> = {
+  "patienten-thuisverpleegkundige": {
+    content: (
+      <>
+        <p className="lead">
+          Als zelfstandige thuisverpleegkundige is het niet alleen belangrijk om goede zorg te leveren, maar ook om voldoende patiënten te hebben.
+        </p>
+        <p>
+          Zeker bij de opstart, of wanneer je je praktijk wil uitbreiden, komt vaak dezelfde vraag naar boven: hoe kom je aan patiënten?
+        </p>
+        <p>
+          Zorgvragen ontstaan niet vanzelf. Ze komen via verschillende kanalen, en het vraagt tijd en opvolging om een stabiele instroom op te bouwen.
+        </p>
+
+        <h2>Hoe komen patiënten bij een thuisverpleegkundige terecht?</h2>
+        <p>In de praktijk ontstaan zorgvragen via verschillende wegen.</p>
+        <p>De meest voorkomende zijn:</p>
+        <ul>
+          <li>doorverwijzingen van huisartsen</li>
+          <li>ontslag uit het ziekenhuis</li>
+          <li>contacten met andere zorgverleners</li>
+          <li>bestaande patiënten die anderen doorverwijzen</li>
+          <li>lokale netwerken en samenwerkingen</li>
+        </ul>
+        <p>Als zelfstandige verpleegkundige bouw je dit netwerk meestal zelf op, stap voor stap.</p>
+
+        <h2>Waarom patiënten vinden niet vanzelf gaat</h2>
+        <p>Veel zelfstandige verpleegkundigen merken dat patiënteninstroom minder evident is dan verwacht.</p>
+        <p>Je moet:</p>
+        <ul>
+          <li>contacten onderhouden met huisartsen en ziekenhuizen</li>
+          <li>bereikbaar en beschikbaar zijn voor nieuwe zorgvragen</li>
+          <li>snel reageren op aanvragen</li>
+          <li>zelf actief opvolgen</li>
+        </ul>
+        <p>Dat vraagt tijd en energie, bovenop je dagelijkse zorg en <Link to="/blog/administratie-thuisverpleging/" className="text-secondary hover:underline">administratie</Link>.</p>
+
+        <h2>De impact op je praktijk</h2>
+        <p>Wanneer patiënteninstroom niet stabiel is, heeft dat directe gevolgen:</p>
+        <ul>
+          <li>je planning is moeilijk te vullen</li>
+          <li>je inkomsten zijn minder voorspelbaar</li>
+          <li>groei van je praktijk blijft beperkt</li>
+          <li>je ervaart onzekerheid</li>
+        </ul>
+        <p>Zeker bij de opstart of uitbreiding van je activiteit kan dit zwaar doorwegen.</p>
+
+        <h2>Hoe bouw je een stabiele patiënteninstroom op?</h2>
+        <p>Een stabiele instroom van patiënten ontstaat meestal niet door één actie, maar door een combinatie van factoren:</p>
+        <ul>
+          <li>een sterk lokaal netwerk</li>
+          <li>goede samenwerking met huisartsen</li>
+          <li>duidelijke communicatie</li>
+          <li>snelle opvolging van zorgvragen</li>
+          <li>zichtbaarheid in je regio</li>
+        </ul>
+        <p>Dit opbouwen vraagt tijd en consistentie.</p>
+
+        <h2>Hoe Hezo je helpt bij patiënteninstroom</h2>
+        <p>Hezo ondersteunt zelfstandige thuisverpleegkundigen bij het opbouwen van een stabiele instroom van patiënten.</p>
+        <p>Of je nu alleen werkt of deel uitmaakt van een samenwerking, we helpen je om:</p>
+        <ul>
+          <li>toegang te krijgen tot nieuwe zorgvragen</li>
+          <li>minder afhankelijk te zijn van je eigen netwerk</li>
+          <li>sneller je planning te vullen</li>
+          <li>je praktijk verder uit te bouwen</li>
+        </ul>
+        <p>Daarnaast zorgen we voor ondersteuning in de praktische opvolging van zorgvragen, zodat je minder tijd verliest aan organisatie.</p>
+
+        <h2>Combinatie van instroom en ondersteuning</h2>
+        <p>Wat voor veel verpleegkundigen het verschil maakt, is de combinatie van:</p>
+        <ul>
+          <li>ondersteuning bij <Link to="/blog/administratie-thuisverpleging/" className="text-secondary hover:underline">administratie en organisatie</Link></li>
+          <li>én hulp bij patiënteninstroom</li>
+        </ul>
+        <p>Zo ontstaat er meer rust in je werk en meer stabiliteit in je praktijk.</p>
+      </>
+    ),
+    cta: (
+      <div className="mt-12 p-8 bg-muted rounded-2xl">
+        <h3 className="text-xl font-semibold text-primary mb-2">
+          Op zoek naar meer patiënten en ondersteuning?
+        </h3>
+        <p className="text-muted-foreground mb-4">
+          Ontdek hoe Hezo je kan helpen om je praktijk verder uit te bouwen en je werk overzichtelijk te houden.
+        </p>
+        <div className="flex flex-wrap gap-4">
+          <Link
+            to="/onze-diensten/"
+            onClick={() => window.scrollTo(0, 0)}
+            className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-6 py-3 rounded-lg font-medium hover:bg-secondary/90 transition-colors"
+          >
+            Bekijk onze diensten
+          </Link>
+          <Link
+            to="/zo-sluit-je-aan/"
+            onClick={() => window.scrollTo(0, 0)}
+            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors"
+          >
+            Sluit je aan bij Hezo
+          </Link>
+        </div>
+      </div>
+    ),
+  },
   "administratie-thuisverpleging": {
     content: (
       <>
