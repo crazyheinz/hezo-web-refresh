@@ -1,25 +1,36 @@
 
 
-## Sitemap, SEO & verify-script bijwerken voor alle nieuwe pagina's
+## Blog-artikelen breder, dynamischer en met inhoudsopgave
 
-### Wat ontbreekt
-
-De 3 nieuwste blogartikelen staan niet in de sitemap en niet in het verify-script:
-- `/blog/software-thuisverpleging/`
-- `/blog/patienten-thuisverpleegkundige/`
-- `/blog/administratie-thuisverpleging/`
+### Probleem
+- Blogartikelen gebruiken `max-w-3xl` (~768px) terwijl Home en Ons Aanbod `max-w-5xl`/`max-w-7xl` gebruiken — te smal
+- Artikelen zijn lange tekstvlakken zonder visuele afwisseling
+- Geen "Op deze pagina"-blok (inhoudsopgave) zoals Helan dat doet voor lange artikelen
 
 ### Plan
 
-**1. `public/sitemap.xml`** — 3 URL's toevoegen (lastmod 2026-03-22, priority 0.7)
+#### 1. Breedte vergroten
+Verander de article container van `max-w-3xl` naar `max-w-4xl` zodat het beter aansluit bij de rest van de site, maar nog steeds leesbaar blijft voor lange tekst.
 
-**2. `scripts/verify-prerender.mjs`** — dezelfde 3 routes toevoegen aan de `routes`-array
+#### 2. Inhoudsopgave ("Op deze pagina") toevoegen
+Per artikel automatisch een inhoudsopgave genereren op basis van de h2-koppen. Dit wordt een gestileerd blok (lichtgrijze achtergrond, afgeronde hoeken) bovenaan het artikel, na de header, met anchor-links naar elke sectie. Vergelijkbaar met het Helan-voorbeeld.
 
-**3. Automatiseren voor de toekomst** — een build-script (`scripts/generate-sitemap.mjs`) maken dat:
-- De statische routes hardcoded bevat
-- Alle blogartikelen uit `src/data/blogArticles.ts` dynamisch inleest
-- `public/sitemap.xml` automatisch genereert met correcte lastmod-datums
-- Wordt aangeroepen als `prebuild`-stap in `package.json`
+Technisch:
+- Aan `articleContent` een `headings: string[]`-array toevoegen per artikel
+- Een `TableOfContents`-component renderen die anchor-links toont
+- De h2's in de content voorzien van id-attributen
 
-Zo hoef je nooit meer handmatig de sitemap bij te werken wanneer er een nieuw artikel of pagina wordt toegevoegd.
+#### 3. Illustraties toevoegen per sectie
+Per artikel op strategische plekken illustraties of decoratieve elementen invoegen om de wand van tekst te doorbreken:
+- Een hero-achtige illustratie bovenaan elk artikel (in de stijl van de home-hero met floating animatie)
+- Tussendoor gekleurde highlight-blokken (bijv. tips, kernpunten) met een accent-achtergrond en icoon
+
+Technisch:
+- `articleContent` uitbreiden met een optioneel `heroImage`-veld
+- Highlight-blokken als apart component met een icoon + gekleurde achtergrond
+- Hergebruik van de bestaande brand-kleuren (secondary/10, green/10, coral/10)
+
+#### 4. Bestanden die wijzigen
+- `src/pages/BlogArticle.tsx` — layout breder, inhoudsopgave-component, hero-afbeelding, id's op h2-koppen
+- Eventueel nieuwe illustraties toevoegen aan `src/assets/` (of bestaande hergebruiken)
 
