@@ -159,7 +159,7 @@ const articleContent: Record<string, {
           Nieuwe zorgvragen komen niet vanzelf binnen. Ze komen via verschillende kanalen, en het vraagt tijd en opvolging om een stabiele instroom op te bouwen.
         </p>
 
-        <h2>Hoe komen patiënten bij een thuisverpleegkundige terecht?</h2>
+        <h2 id="hoe-komen-patienten">Hoe komen patiënten bij een thuisverpleegkundige terecht?</h2>
         <p>In de praktijk ontstaan zorgvragen via verschillende wegen.</p>
         <p>De meest voorkomende zijn:</p>
         <ul>
