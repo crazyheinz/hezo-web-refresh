@@ -749,7 +749,7 @@ const BlogArticle = () => {
       />
 
       <div className="pt-24 pb-16">
-        <article className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+        <article className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
           {/* Back link */}
           <Link 
             to="/blog/"
@@ -760,7 +760,7 @@ const BlogArticle = () => {
           </Link>
 
           {/* Article header */}
-          <header className="mb-8">
+          <header className="mb-4">
             <div className="flex items-center gap-3 text-sm text-muted-foreground mb-4">
               <span className="bg-secondary/10 text-secondary px-3 py-1 rounded-full font-medium">
                 {article.category}
@@ -780,8 +780,18 @@ const BlogArticle = () => {
             </h1>
           </header>
 
+          {/* Hero image */}
+          {content.heroImage && (
+            <BlogHeroImage src={content.heroImage} alt={article.title} />
+          )}
+
+          {/* Table of Contents */}
+          {content.headings.length > 0 && (
+            <TableOfContents headings={content.headings} />
+          )}
+
           {/* Article content */}
-          <div className="prose prose-lg max-w-none prose-headings:text-primary prose-headings:font-semibold prose-p:text-muted-foreground prose-li:text-muted-foreground prose-a:text-secondary">
+          <div className="prose prose-lg max-w-none prose-headings:text-primary prose-headings:font-semibold prose-headings:scroll-mt-24 prose-p:text-muted-foreground prose-li:text-muted-foreground prose-a:text-secondary">
             {content.content}
           </div>
 
