@@ -50,7 +50,7 @@ const articleContent: Record<string, {
         </ul>
         <p>Wat voor de ene verpleegkundige goed werkt, is niet altijd ideaal voor een andere situatie.</p>
 
-        <h2>Waar loopt het vaak moeilijk?</h2>
+         <h2 id="waar-loopt-het-moeilijk">Waar loopt het vaak moeilijk?</h2>
         <p>Veel zelfstandige verpleegkundigen botsen op gelijkaardige problemen:</p>
         <ul>
           <li>software is niet altijd intuïtief</li>
