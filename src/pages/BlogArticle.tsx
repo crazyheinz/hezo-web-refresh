@@ -42,7 +42,7 @@ const articleContent: Record<string, { content: React.ReactNode; cta?: React.Rea
           <li>snel reageren op aanvragen</li>
           <li>zelf actief opvolgen</li>
         </ul>
-        <p>Dat vraagt tijd en energie, bovenop je dagelijkse zorg en <Link to="/blog/administratie-thuisverpleging/" className="text-secondary hover:underline">administratie</Link>.</p>
+        <p>Dat vraagt tijd en energie, bovenop je zorg, <Link to="/blog/administratie-thuisverpleging/" className="text-secondary hover:underline">administratie</Link> en planning.</p>
 
         <h2>De impact op je praktijk</h2>
         <p>Wanneer patiënteninstroom niet stabiel is, heeft dat directe gevolgen:</p>
