@@ -5,9 +5,9 @@ import { Sprout, HeartHandshake, Building2 } from "lucide-react";
 const cards = [
   {
     icon: HeartHandshake,
-    title: "Zoek je extra ondersteuning?",
+    title: "Zoek je extra ondersteuning of patiënten?",
     description:
-      "Groeien of simpelweg je werkdruk verlagen? Wij ontzorgen jou en je praktijk.",
+      "Wij ontzorgen je én helpen je praktijk groeien met een stabiele instroom.",
     color: "bg-secondary/10",
     iconColor: "text-secondary",
     href: "/onze-diensten/",
