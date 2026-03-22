@@ -62,7 +62,7 @@ const articleContent: Record<string, {
         </ul>
         <p>Daardoor gaat er veel tijd verloren aan uitzoeken en corrigeren, in plaats van zorg.</p>
 
-        <h2>Waarom software meer is dan een tool</h2>
+        <h2 id="meer-dan-tool">Waarom software meer is dan een tool</h2>
         <p>Software in de thuisverpleging is geen losstaand element. Het hangt samen met:</p>
         <ul>
           <li>administratie</li>
