@@ -82,7 +82,7 @@ const articleContent: Record<string, {
         </ul>
         <p>Veel verpleegkundigen starten met een pakket, maar merken later dat het niet optimaal aansluit bij hun noden.</p>
 
-        <h2>Hoe Hezo je ondersteunt</h2>
+         <h2 id="hezo-ondersteuning">Hoe Hezo je ondersteunt</h2>
         <p>Hezo ondersteunt zelfstandige thuisverpleegkundigen bij het kiezen, opzetten en gebruiken van software.</p>
         <p>Of je nu alleen werkt of in een praktijk, we zorgen ervoor dat:</p>
         <ul>
