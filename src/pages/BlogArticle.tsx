@@ -12,10 +12,13 @@ const articleContent: Record<string, { content: React.ReactNode; cta?: React.Rea
           Als zelfstandige thuisverpleegkundige is het niet alleen belangrijk om goede zorg te leveren, maar ook om voldoende patiënten te hebben.
         </p>
         <p>
+          Zeker als zelfstandige thuisverpleegkundige is patiënten vinden een belangrijk onderdeel van je praktijk.
+        </p>
+        <p>
           Zeker bij de opstart, of wanneer je je praktijk wil uitbreiden, komt vaak dezelfde vraag naar boven: hoe kom je aan patiënten?
         </p>
         <p>
-          Zorgvragen ontstaan niet vanzelf. Ze komen via verschillende kanalen, en het vraagt tijd en opvolging om een stabiele instroom op te bouwen.
+          Nieuwe zorgvragen komen niet vanzelf binnen. Ze komen via verschillende kanalen, en het vraagt tijd en opvolging om een stabiele instroom op te bouwen.
         </p>
 
         <h2>Hoe komen patiënten bij een thuisverpleegkundige terecht?</h2>
