@@ -134,6 +134,16 @@ const articleContent: Record<string, {
     ),
   },
   "patienten-thuisverpleegkundige": {
+    heroImage: blogHeroPatienten,
+    headings: [
+      { id: "hoe-komen-patienten", label: "Hoe komen patiënten bij een thuisverpleegkundige?" },
+      { id: "niet-vanzelf", label: "Waarom patiënten vinden niet vanzelf gaat" },
+      { id: "impact-praktijk", label: "De impact op je praktijk" },
+      { id: "stabiele-instroom", label: "Hoe bouw je een stabiele patiënteninstroom op?" },
+      { id: "waar-moeilijk", label: "Waar loopt het vaak moeilijk?" },
+      { id: "combineren-administratie", label: "Waarom combineren met administratie moeilijk is" },
+      { id: "hezo-ondersteuning-patienten", label: "Hoe Hezo je hierin ondersteunt" },
+    ],
     content: (
       <>
         <p className="lead">
