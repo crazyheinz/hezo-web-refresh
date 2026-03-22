@@ -14,6 +14,7 @@ import { supabase } from "@/integrations/supabase/client";
 const Vacatures = () => {
   const { toast } = useToast();
   const [selectedJob, setSelectedJob] = useState<string | null>(null);
+  const [expandedJob, setExpandedJob] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
