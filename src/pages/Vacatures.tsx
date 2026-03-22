@@ -339,10 +339,10 @@ const Vacatures = () => {
                 },
                 {
                   "@type": "Question",
-                  "name": "Wat doet een regiomanager bij Hezo?",
+                  "name": "Wat doet een verantwoordelijke verpleegkundige bij Hezo?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Als zelfstandig verantawoordelijke verpleegkundige bouw je aan een sterk lokaal netwerk van verpleegkundigen en zorgpartners. Je combineert organisatie en inhoudelijke zorgexpertise, ondersteunt zelfstandige thuisverpleegkundigen en bewaakt de kwaliteit van zorg."
+                    "text": "Als zelfstandig verantwoordelijke verpleegkundige bouw je aan een sterk lokaal netwerk van verpleegkundigen en zorgpartners. Je combineert organisatie en inhoudelijke zorgexpertise, ondersteunt zelfstandige thuisverpleegkundigen en bewaakt de kwaliteit van zorg."
                   }
                 },
                 {
