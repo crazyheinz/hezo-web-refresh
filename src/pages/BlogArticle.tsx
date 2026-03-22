@@ -500,29 +500,31 @@ const BlogArticle = () => {
           </div>
 
           {/* CTA */}
-          <div className="mt-12 p-8 bg-muted rounded-2xl">
-            <h3 className="text-xl font-semibold text-primary mb-2">
-              Meer weten over Hezo?
-            </h3>
-            <p className="text-muted-foreground mb-4">
-              Ontdek hoe wij zelfstandige verpleegkundigen ondersteunen of neem contact met ons op.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link 
-                to="/onze-diensten/"
-                onClick={() => window.scrollTo(0, 0)}
-                className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-6 py-3 rounded-lg font-medium hover:bg-secondary/90 transition-colors"
-              >
-                Ons aanbod
-              </Link>
-              <Link 
-                to="/contact/"
-                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors"
-              >
-                Contact
-              </Link>
+          {content.cta || (
+            <div className="mt-12 p-8 bg-muted rounded-2xl">
+              <h3 className="text-xl font-semibold text-primary mb-2">
+                Meer weten over Hezo?
+              </h3>
+              <p className="text-muted-foreground mb-4">
+                Ontdek hoe wij zelfstandige verpleegkundigen ondersteunen of neem contact met ons op.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Link 
+                  to="/onze-diensten/"
+                  onClick={() => window.scrollTo(0, 0)}
+                  className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-6 py-3 rounded-lg font-medium hover:bg-secondary/90 transition-colors"
+                >
+                  Ons aanbod
+                </Link>
+                <Link 
+                  to="/contact/"
+                  className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors"
+                >
+                  Contact
+                </Link>
+              </div>
             </div>
-          </div>
+          )}
         </article>
       </div>
     </>
