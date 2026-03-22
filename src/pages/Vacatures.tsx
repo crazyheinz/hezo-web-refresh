@@ -334,7 +334,7 @@ const Vacatures = () => {
                   "name": "Welke vacatures zijn er bij Hezo?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Hezo zoekt regelmatig nieuwe mensen: praktijkcoaches en zelfstandig verantawoordelijke verpleegkundige met een hart voor zorg. Bekijk de actuele vacatures op hezo.be/vacatures."
+                    "text": "Hezo zoekt regelmatig nieuwe mensen: praktijkcoaches en zelfstandig verantwoordelijke verpleegkundigen met een hart voor zorg. Bekijk de actuele vacatures op hezo.be/vacatures."
                   }
                 },
                 {
