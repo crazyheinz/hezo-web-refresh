@@ -381,8 +381,8 @@ const Vacatures = () => {
               return (
                 <Card 
                   key={job.id} 
-                  className="border-secondary/20 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
-                  onClick={() => setExpandedJob(isExpanded ? null : job.id)}
+                  className={`border-secondary/20 shadow-sm hover:shadow-md transition-shadow ${!isExpanded ? "cursor-pointer" : ""}`}
+                  onClick={() => { if (!isExpanded) setExpandedJob(job.id); }}
                 >
                   <CardHeader className="pb-3">
                     <CardTitle className="text-xl">{job.title}</CardTitle>
