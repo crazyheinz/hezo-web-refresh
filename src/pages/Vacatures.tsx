@@ -290,7 +290,7 @@ const Vacatures = () => {
     <div className="min-h-screen pt-32 pb-20">
       <SEO 
         title="Vacatures thuisverpleging | Werken bij Hezo"
-        description="Wil jij het verschil maken in de thuiszorg? Bekijk onze openstaande vacatures als praktijkcoach of zelfstandig verantawoordelijke verpleegkundige. Solliciteer direct →"
+        description="Wil jij het verschil maken in de thuiszorg? Bekijk onze openstaande vacatures als praktijkcoach of zelfstandig verantwoordelijke verpleegkundige. Solliciteer direct →"
         path="/vacatures"
         structuredData={{
           "@context": "https://schema.org",
