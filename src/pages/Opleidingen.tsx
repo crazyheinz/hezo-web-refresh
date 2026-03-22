@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { GraduationCap, Calendar, MapPin, Clock, Users, Monitor, Building2, Euro, Search } from "lucide-react";
+import { GraduationCap, Calendar, MapPin, Clock, Users, Monitor, Building2, Euro, Search, ChevronDown } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -92,6 +92,7 @@ const opleidingen: Opleiding[] = [
 
 const Opleidingen = () => {
   const [zoekterm, setZoekterm] = useState("");
+  const [expandedOpleiding, setExpandedOpleiding] = useState<string | null>(null);
 
   const gefilterdeOpleidingen = useMemo(() => {
     const term = zoekterm.toLowerCase();
@@ -201,7 +202,7 @@ const Opleidingen = () => {
           </div>
 
           {/* Zoekbalk */}
-          <div className="relative mb-10">
+          <div className="relative mb-8">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
             <Input
               type="text"
@@ -217,75 +218,92 @@ const Opleidingen = () => {
               <p className="text-lg text-muted-foreground">Geen opleidingen gevonden voor "{zoekterm}"</p>
             </div>
           ) : (
-            gefilterdeOpleidingen.map((opleiding, index) => (
-              <Card
-                key={opleiding.titel}
-                className={`${index < gefilterdeOpleidingen.length - 1 ? "mb-8" : "mb-16"} border-secondary/20 shadow-lg overflow-hidden`}
-              >
-                <CardHeader className="pb-4">
-                  <div className="flex flex-wrap items-center gap-3 mb-2">
-                    <Badge className="bg-secondary/10 text-secondary border-secondary/20 hover:bg-secondary/10">
-                      {opleiding.type === "webinar" ? (
-                        <><Monitor className="h-3 w-3 mr-1" />Webinar</>
-                      ) : (
-                        <><Building2 className="h-3 w-3 mr-1" />Fysieke opleiding</>
-                      )}
-                    </Badge>
-                    {opleiding.opnameBeschikbaar && (
-                      <Badge variant="outline" className="text-muted-foreground">
-                        Opname beschikbaar
-                      </Badge>
-                    )}
-                  </div>
-                  <CardTitle className="text-2xl">{opleiding.titel}</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
-                    <div className="flex items-center gap-2">
-                      <Calendar className="h-4 w-4 text-secondary" />
-                      <span className="text-muted-foreground">{opleiding.datumTekst}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Clock className="h-4 w-4 text-secondary" />
-                      <span className="text-muted-foreground">{opleiding.tijd}</span>
-                    </div>
-                    {opleiding.locatie && (
-                      <div className="flex items-center gap-2">
-                        <MapPin className="h-4 w-4 text-secondary" />
-                        <span className="text-muted-foreground">{opleiding.locatie}</span>
+            <div className="space-y-4 mb-16">
+              {gefilterdeOpleidingen.map((opleiding) => {
+                const isExpanded = expandedOpleiding === opleiding.titel;
+                return (
+                  <Card
+                    key={opleiding.titel}
+                    className={`border-secondary/20 shadow-sm hover:shadow-md transition-shadow ${!isExpanded ? "cursor-pointer" : ""}`}
+                    onClick={() => { if (!isExpanded) setExpandedOpleiding(opleiding.titel); }}
+                  >
+                    <CardHeader className="pb-3">
+                      <div className="flex flex-wrap items-center gap-2 mb-1">
+                        <Badge className="bg-secondary/10 text-secondary border-secondary/20 hover:bg-secondary/10">
+                          {opleiding.type === "webinar" ? (
+                            <><Monitor className="h-3 w-3 mr-1" />Webinar</>
+                          ) : (
+                            <><Building2 className="h-3 w-3 mr-1" />Fysieke opleiding</>
+                          )}
+                        </Badge>
+                        {opleiding.opnameBeschikbaar && (
+                          <Badge variant="outline" className="text-muted-foreground">
+                            Opname beschikbaar
+                          </Badge>
+                        )}
                       </div>
+                      <CardTitle className="text-xl">{opleiding.titel}</CardTitle>
+                      <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mt-1">
+                        <span className="flex items-center gap-1">
+                          <Calendar className="h-4 w-4 text-secondary" />
+                          {opleiding.datumTekst}
+                        </span>
+                        <span className="flex items-center gap-1">
+                          <Clock className="h-4 w-4 text-secondary" />
+                          {opleiding.tijd}
+                        </span>
+                        {opleiding.locatie && (
+                          <span className="flex items-center gap-1">
+                            <MapPin className="h-4 w-4 text-secondary" />
+                            {opleiding.locatie}
+                          </span>
+                        )}
+                      </div>
+                      <button
+                        className="text-secondary font-medium text-sm mt-2 hover:underline inline-flex items-center gap-1 w-fit"
+                        onClick={(e) => { e.stopPropagation(); setExpandedOpleiding(isExpanded ? null : opleiding.titel); }}
+                      >
+                        {isExpanded ? "Minder tonen" : "Bekijk opleiding"}
+                        <ChevronDown className={`h-4 w-4 transition-transform ${isExpanded ? "rotate-180" : ""}`} />
+                      </button>
+                    </CardHeader>
+
+                    {isExpanded && (
+                      <CardContent className="space-y-6 pt-0" onClick={(e) => e.stopPropagation()}>
+                        <p className="text-muted-foreground leading-relaxed">{opleiding.beschrijving}</p>
+
+                        <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm text-muted-foreground">
+                          <div className="flex items-center gap-2">
+                            <GraduationCap className="h-4 w-4 text-secondary" />
+                            <span>Lesgever: {opleiding.lesgever}</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <Users className="h-4 w-4 text-secondary" />
+                            <span>Max. {opleiding.maxDeelnemers} deelnemers</span>
+                          </div>
+                        </div>
+
+                        <div className="bg-muted p-5 rounded-lg space-y-3">
+                          <div className="flex items-center gap-2 text-sm">
+                            <Euro className="h-4 w-4 text-secondary" />
+                            <span className="font-semibold text-foreground">Hezo-klanten:</span>
+                            <span className="font-semibold text-secondary text-lg">Gratis</span>
+                          </div>
+                          <p className="text-sm text-muted-foreground">
+                            Ben je geen klant bij Hezo, maar wil je toch graag deelnemen aan de opleiding? Neem dan contact met ons op via{" "}
+                            <a href="mailto:info@hezo.be" className="text-secondary hover:underline">info@hezo.be</a>.
+                          </p>
+                        </div>
+
+                        <InschrijfDialog opleidingNaam={opleiding.titel} opleidingDatum={opleiding.datumTekst}>
+                          <Button className="w-full sm:w-auto">Schrijf je in</Button>
+                        </InschrijfDialog>
+                      </CardContent>
                     )}
-                    <div className="flex items-center gap-2">
-                      <Users className="h-4 w-4 text-secondary" />
-                      <span className="text-muted-foreground">Max. {opleiding.maxDeelnemers} deelnemers</span>
-                    </div>
-                  </div>
-
-                  <p className="text-muted-foreground leading-relaxed">{opleiding.beschrijving}</p>
-
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <GraduationCap className="h-4 w-4 text-secondary" />
-                    <span>Lesgever: {opleiding.lesgever}</span>
-                  </div>
-
-                  <div className="bg-muted p-5 rounded-lg space-y-3">
-                    <div className="flex items-center gap-2 text-sm">
-                      <Euro className="h-4 w-4 text-secondary" />
-                      <span className="font-semibold text-foreground">Hezo-klanten:</span>
-                      <span className="font-semibold text-secondary text-lg">Gratis</span>
-                    </div>
-                    <p className="text-sm text-muted-foreground">
-                      Ben je geen klant bij Hezo, maar wil je toch graag deelnemen aan de opleiding? Neem dan contact met ons op via{" "}
-                      <a href="mailto:info@hezo.be" className="text-secondary hover:underline">info@hezo.be</a>.
-                    </p>
-                  </div>
-
-                  <InschrijfDialog opleidingNaam={opleiding.titel} opleidingDatum={opleiding.datumTekst}>
-                    <Button className="w-full sm:w-auto">Schrijf je in</Button>
-                  </InschrijfDialog>
-                </CardContent>
-              </Card>
-            ))
+                  </Card>
+                );
+              })}
+            </div>
           )}
         </div>
       </div>
