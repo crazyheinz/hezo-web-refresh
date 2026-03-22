@@ -268,6 +268,14 @@ const articleContent: Record<string, {
     ),
   },
   "administratie-thuisverpleging": {
+    heroImage: blogHeroAdministratie,
+    headings: [
+      { id: "wat-omvat-administratie", label: "Wat omvat administratie in de thuisverpleging?" },
+      { id: "waarom-zoveel-tijd", label: "Waarom administratie zoveel tijd vraagt" },
+      { id: "impact-werk", label: "De impact op je werk als verpleegkundige" },
+      { id: "efficienter-organiseren", label: "Hoe organiseer je administratie efficiënter?" },
+      { id: "hezo-ondersteuning-admin", label: "Hoe Hezo je ondersteunt" },
+    ],
     content: (
       <>
         <p className="lead">
