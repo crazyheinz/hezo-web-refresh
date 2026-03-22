@@ -482,6 +482,16 @@ const articleContent: Record<string, {
     ),
   },
   "hbo5-graduaat-basisverpleegkunde": {
+    heroImage: blogHeroHbo5,
+    headings: [
+      { id: "waarom-hervormd", label: "Waarom werd de HBO5-opleiding hervormd?" },
+      { id: "welke-opleidingen", label: "Welke opleidingen bestaan er in Vlaanderen?" },
+      { id: "verschil-graduaat-bachelor", label: "Verschil tussen graduaat en bachelor" },
+      { id: "overgangsmaatregelen", label: "Overgangsmaatregelen in 2026" },
+      { id: "impact-thuisverpleging", label: "Wat betekent dit voor de thuisverpleging?" },
+      { id: "toekomstige-verpleegkundigen", label: "Voor (toekomstige) verpleegkundigen" },
+      { id: "conclusie", label: "Conclusie" },
+    ],
     content: (
       <>
         <p className="lead">
