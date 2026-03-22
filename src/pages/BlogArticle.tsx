@@ -2,10 +2,31 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import SEO from "@/components/SEO";
 import { Calendar, ArrowLeft, Clock } from "lucide-react";
 import { blogArticles } from "./Blog";
+import TableOfContents from "@/components/blog/TableOfContents";
+import BlogHeroImage from "@/components/blog/BlogHeroImage";
+import blogHeroSoftware from "@/assets/blog-hero-software.png";
+import blogHeroPatienten from "@/assets/blog-hero-patienten.png";
+import blogHeroAdministratie from "@/assets/blog-hero-administratie.png";
+import blogHeroZelfstandig from "@/assets/blog-hero-zelfstandig.png";
+import blogHeroHbo5 from "@/assets/blog-hero-hbo5.png";
 
 // Full article content - add content for each article ID
-const articleContent: Record<string, { content: React.ReactNode; cta?: React.ReactNode }> = {
+const articleContent: Record<string, {
+  content: React.ReactNode;
+  cta?: React.ReactNode;
+  heroImage?: string;
+  headings: { id: string; label: string }[];
+}> = {
   "software-thuisverpleging": {
+    heroImage: blogHeroSoftware,
+    headings: [
+      { id: "waarvoor-software", label: "Waarvoor gebruik je software?" },
+      { id: "welke-software", label: "Welke software bestaat er?" },
+      { id: "waar-loopt-het-moeilijk", label: "Waar loopt het vaak moeilijk?" },
+      { id: "meer-dan-tool", label: "Waarom software meer is dan een tool" },
+      { id: "juiste-software-kiezen", label: "Hoe kies je de juiste software?" },
+      { id: "hezo-ondersteuning", label: "Hoe Hezo je ondersteunt" },
+    ],
     content: (
       <>
         <p className="lead">
@@ -15,7 +36,7 @@ const articleContent: Record<string, { content: React.ReactNode; cta?: React.Rea
           De juiste software maakt je werk efficiënter. Maar in de praktijk merken veel verpleegkundigen dat het kiezen en correct gebruiken ervan niet zo eenvoudig is.
         </p>
 
-        <h2>Waarvoor gebruik je software in de thuisverpleging?</h2>
+        <h2 id="waarvoor-software">Waarvoor gebruik je software in de thuisverpleging?</h2>
         <p>Software speelt een centrale rol in je dagelijkse werking als zelfstandige verpleegkundige.</p>
         <p>Je gebruikt het onder andere voor:</p>
         <ul>
@@ -27,7 +48,7 @@ const articleContent: Record<string, { content: React.ReactNode; cta?: React.Rea
         </ul>
         <p>Zonder correcte registratie en verwerking kan zorg niet correct gefactureerd worden.</p>
 
-        <h2>Welke software bestaat er?</h2>
+        <h2 id="welke-software">Welke software bestaat er?</h2>
         <p>Er bestaan verschillende softwarepakketten voor thuisverpleegkundigen. Deze moeten voldoen aan bepaalde normen en gehomologeerd zijn om correct te kunnen werken binnen het systeem van de thuisverpleging.</p>
         <p>De verschillen zitten vaak in:</p>
         <ul>
@@ -38,7 +59,7 @@ const articleContent: Record<string, { content: React.ReactNode; cta?: React.Rea
         </ul>
         <p>Wat voor de ene verpleegkundige goed werkt, is niet altijd ideaal voor een andere situatie.</p>
 
-        <h2>Waar loopt het vaak moeilijk?</h2>
+         <h2 id="waar-loopt-het-moeilijk">Waar loopt het vaak moeilijk?</h2>
         <p>Veel zelfstandige verpleegkundigen botsen op gelijkaardige problemen:</p>
         <ul>
           <li>software is niet altijd intuïtief</li>
@@ -50,7 +71,7 @@ const articleContent: Record<string, { content: React.ReactNode; cta?: React.Rea
         </ul>
         <p>Daardoor gaat er veel tijd verloren aan uitzoeken en corrigeren, in plaats van zorg.</p>
 
-        <h2>Waarom software meer is dan een tool</h2>
+        <h2 id="meer-dan-tool">Waarom software meer is dan een tool</h2>
         <p>Software in de thuisverpleging is geen losstaand element. Het hangt samen met:</p>
         <ul>
           <li>administratie</li>
@@ -60,7 +81,7 @@ const articleContent: Record<string, { content: React.ReactNode; cta?: React.Rea
         </ul>
         <p>Een kleine fout in software kan impact hebben op je facturatie of opvolging. Daarom is het belangrijk dat alles correct ingesteld en gebruikt wordt.</p>
 
-        <h2>Hoe kies je de juiste software?</h2>
+        <h2 id="juiste-software-kiezen">Hoe kies je de juiste software?</h2>
         <p>Bij het kiezen van software is het belangrijk om niet alleen naar functies te kijken, maar ook naar:</p>
         <ul>
           <li>hoe goed het aansluit bij jouw manier van werken</li>
@@ -70,7 +91,7 @@ const articleContent: Record<string, { content: React.ReactNode; cta?: React.Rea
         </ul>
         <p>Veel verpleegkundigen starten met een pakket, maar merken later dat het niet optimaal aansluit bij hun noden.</p>
 
-        <h2>Hoe Hezo je ondersteunt</h2>
+         <h2 id="hezo-ondersteuning">Hoe Hezo je ondersteunt</h2>
         <p>Hezo ondersteunt zelfstandige thuisverpleegkundigen bij het kiezen, opzetten en gebruiken van software.</p>
         <p>Of je nu alleen werkt of in een praktijk, we zorgen ervoor dat:</p>
         <ul>
@@ -113,6 +134,16 @@ const articleContent: Record<string, { content: React.ReactNode; cta?: React.Rea
     ),
   },
   "patienten-thuisverpleegkundige": {
+    heroImage: blogHeroPatienten,
+    headings: [
+      { id: "hoe-komen-patienten", label: "Hoe komen patiënten bij een thuisverpleegkundige?" },
+      { id: "niet-vanzelf", label: "Waarom patiënten vinden niet vanzelf gaat" },
+      { id: "impact-praktijk", label: "De impact op je praktijk" },
+      { id: "stabiele-instroom", label: "Hoe bouw je een stabiele patiënteninstroom op?" },
+      { id: "waar-moeilijk", label: "Waar loopt het vaak moeilijk?" },
+      { id: "combineren-administratie", label: "Waarom combineren met administratie moeilijk is" },
+      { id: "hezo-ondersteuning-patienten", label: "Hoe Hezo je hierin ondersteunt" },
+    ],
     content: (
       <>
         <p className="lead">
@@ -128,7 +159,7 @@ const articleContent: Record<string, { content: React.ReactNode; cta?: React.Rea
           Nieuwe zorgvragen komen niet vanzelf binnen. Ze komen via verschillende kanalen, en het vraagt tijd en opvolging om een stabiele instroom op te bouwen.
         </p>
 
-        <h2>Hoe komen patiënten bij een thuisverpleegkundige terecht?</h2>
+        <h2 id="hoe-komen-patienten">Hoe komen patiënten bij een thuisverpleegkundige terecht?</h2>
         <p>In de praktijk ontstaan zorgvragen via verschillende wegen.</p>
         <p>De meest voorkomende zijn:</p>
         <ul>
@@ -140,7 +171,7 @@ const articleContent: Record<string, { content: React.ReactNode; cta?: React.Rea
         </ul>
         <p>Als zelfstandige verpleegkundige bouw je dit netwerk meestal zelf op, stap voor stap.</p>
 
-        <h2>Waarom patiënten vinden niet vanzelf gaat</h2>
+        <h2 id="niet-vanzelf">Waarom patiënten vinden niet vanzelf gaat</h2>
         <p>Veel zelfstandige verpleegkundigen merken dat patiënteninstroom minder evident is dan verwacht.</p>
         <p>Je moet:</p>
         <ul>
@@ -151,7 +182,7 @@ const articleContent: Record<string, { content: React.ReactNode; cta?: React.Rea
         </ul>
         <p>Dat vraagt tijd en energie, bovenop je zorg, <Link to="/blog/administratie-thuisverpleging/" className="text-secondary hover:underline">administratie</Link> en planning.</p>
 
-        <h2>De impact op je praktijk</h2>
+        <h2 id="impact-praktijk">De impact op je praktijk</h2>
         <p>Wanneer patiënteninstroom niet stabiel is, heeft dat directe gevolgen:</p>
         <ul>
           <li>je planning is moeilijk te vullen</li>
@@ -161,7 +192,7 @@ const articleContent: Record<string, { content: React.ReactNode; cta?: React.Rea
         </ul>
         <p>Zeker bij de opstart of uitbreiding van je activiteit kan dit zwaar doorwegen.</p>
 
-        <h2>Hoe bouw je een stabiele patiënteninstroom op?</h2>
+        <h2 id="stabiele-instroom">Hoe bouw je een stabiele patiënteninstroom op?</h2>
         <p>Een stabiele instroom van patiënten ontstaat meestal niet vanzelf. Het is het resultaat van een aantal concrete acties die je consequent uitvoert.</p>
         <p>In de praktijk betekent dat vaak:</p>
         <ul>
@@ -173,7 +204,7 @@ const articleContent: Record<string, { content: React.ReactNode; cta?: React.Rea
         </ul>
         <p>Veel verpleegkundigen starten bijvoorbeeld met een aantal huisartsenpraktijken, maar merken dat het onderhouden van die contacten tijd vraagt. Als je dat niet actief doet, vallen zorgvragen snel stil.</p>
 
-        <h2>Waar loopt het vaak moeilijk?</h2>
+        <h2 id="waar-moeilijk">Waar loopt het vaak moeilijk?</h2>
         <p>In de praktijk merken veel zelfstandige verpleegkundigen dat patiënteninstroom moeilijk te sturen is.</p>
         <p>Typische situaties:</p>
         <ul>
@@ -185,7 +216,7 @@ const articleContent: Record<string, { content: React.ReactNode; cta?: React.Rea
         </ul>
         <p>Dat maakt je planning onvoorspelbaar en zorgt voor onzekerheid.</p>
 
-        <h2>Waarom het combineren met administratie moeilijk is</h2>
+        <h2 id="combineren-administratie">Waarom het combineren met administratie moeilijk is</h2>
         <p>Wat het extra lastig maakt, is dat patiënteninstroom nooit op zichzelf staat.</p>
         <p>Je moet dit combineren met:</p>
         <ul>
@@ -196,7 +227,7 @@ const articleContent: Record<string, { content: React.ReactNode; cta?: React.Rea
         </ul>
         <p>Daardoor komt het onderhouden van je netwerk of opvolgen van nieuwe zorgvragen vaak op de tweede plaats.</p>
 
-        <h2>Hoe Hezo je hierin ondersteunt</h2>
+        <h2 id="hezo-ondersteuning-patienten">Hoe Hezo je hierin ondersteunt</h2>
         <p>Hezo helpt zelfstandige thuisverpleegkundigen om <Link to="/onze-diensten/#instroom" className="text-secondary hover:underline">patiënteninstroom</Link> minder afhankelijk te maken van toevallige contacten.</p>
         <p>In plaats van zelf continu op zoek te moeten gaan naar nieuwe patiënten, krijg je toegang tot zorgvragen en ondersteuning in de opvolging ervan.</p>
         <p>Concreet betekent dat:</p>
@@ -237,6 +268,14 @@ const articleContent: Record<string, { content: React.ReactNode; cta?: React.Rea
     ),
   },
   "administratie-thuisverpleging": {
+    heroImage: blogHeroAdministratie,
+    headings: [
+      { id: "wat-omvat-administratie", label: "Wat omvat administratie in de thuisverpleging?" },
+      { id: "waarom-zoveel-tijd", label: "Waarom administratie zoveel tijd vraagt" },
+      { id: "impact-werk", label: "De impact op je werk als verpleegkundige" },
+      { id: "efficienter-organiseren", label: "Hoe organiseer je administratie efficiënter?" },
+      { id: "hezo-ondersteuning-admin", label: "Hoe Hezo je ondersteunt" },
+    ],
     content: (
       <>
         <p className="lead">
@@ -249,7 +288,7 @@ const articleContent: Record<string, { content: React.ReactNode; cta?: React.Rea
           Of je nu alleen werkt of in een samenwerking: de administratieve kant van thuisverpleging is voor iedereen herkenbaar.
         </p>
 
-        <h2>Wat omvat administratie in de thuisverpleging?</h2>
+        <h2 id="wat-omvat-administratie">Wat omvat administratie in de thuisverpleging?</h2>
         <p>
           Administratie in de thuisverpleging is meer dan enkel papierwerk. Het gaat om alles wat nodig is om je zorg correct te registreren, op te volgen en te factureren.
         </p>
@@ -266,7 +305,7 @@ const articleContent: Record<string, { content: React.ReactNode; cta?: React.Rea
         </ul>
         <p>Voor veel verpleegkundigen is dit een dagelijkse realiteit naast hun zorgactiviteiten.</p>
 
-        <h2>Waarom administratie zoveel tijd vraagt</h2>
+        <h2 id="waarom-zoveel-tijd">Waarom administratie zoveel tijd vraagt</h2>
         <p>Veel zelfstandige thuisverpleegkundigen onderschatten hoeveel tijd administratie effectief inneemt.</p>
         <p>Je merkt bijvoorbeeld dat:</p>
         <ul>
@@ -277,7 +316,7 @@ const articleContent: Record<string, { content: React.ReactNode; cta?: React.Rea
         </ul>
         <p>Het is geen éénmalige taak, maar een constante stroom van opvolging en verwerking.</p>
 
-        <h2>De impact op je werk als verpleegkundige</h2>
+        <h2 id="impact-werk">De impact op je werk als verpleegkundige</h2>
         <p>Wanneer administratie te veel tijd vraagt, heeft dat gevolgen voor je dagelijkse werking.</p>
         <ul>
           <li>je hebt minder tijd voor patiënten</li>
@@ -287,7 +326,7 @@ const articleContent: Record<string, { content: React.ReactNode; cta?: React.Rea
         </ul>
         <p>Dat zorgt voor druk, terwijl je net gekozen hebt voor zelfstandigheid om meer autonomie te hebben in je werk.</p>
 
-        <h2>Hoe organiseer je administratie efficiënter?</h2>
+        <h2 id="efficienter-organiseren">Hoe organiseer je administratie efficiënter?</h2>
         <p>Administratie volledig vermijden is niet mogelijk, maar je kan wel efficiënter werken.</p>
         <p>Veel zelfstandige thuisverpleegkundigen kiezen ervoor om hun administratie anders te organiseren of zich te laten ondersteunen, zodat:</p>
         <ul>
@@ -297,7 +336,7 @@ const articleContent: Record<string, { content: React.ReactNode; cta?: React.Rea
           <li>er meer structuur komt in hun werk</li>
         </ul>
 
-        <h2>Hoe Hezo je ondersteunt</h2>
+        <h2 id="hezo-ondersteuning-admin">Hoe Hezo je ondersteunt</h2>
         <p>Hezo ondersteunt zelfstandige thuisverpleegkundigen bij <Link to="/onze-diensten/" className="text-secondary hover:underline">administratie, facturatie en praktijkvoering</Link>.</p>
         <p>Of je nu alleen werkt of in een samenwerking, we helpen je om:</p>
         <ul>
@@ -338,13 +377,19 @@ const articleContent: Record<string, { content: React.ReactNode; cta?: React.Rea
     ),
   },
   "zelfstandig-thuisverpleegkundige-worden": {
+    heroImage: blogHeroZelfstandig,
+    headings: [
+      { id: "waarom-zelfstandig", label: "Waarom kiezen voor zelfstandig werken?" },
+      { id: "stappenplan", label: "Zelfstandig worden in 4 stappen" },
+      { id: "veelgestelde-vragen", label: "Veelgestelde vragen" },
+    ],
     content: (
       <>
         <p className="lead">
           Als zelfstandig thuisverpleegkundige combineer je zorg met ondernemerschap. Je bepaalt zelf je agenda en patiënten, maar krijgt ook te maken met administratie, regelgeving en instroom. Hezo ondersteunt je bij elke stap, van oriëntatie tot een duurzaam uitgebouwde praktijk.
         </p>
 
-        <h2>Waarom kiezen voor zelfstandig werken als thuisverpleegkundige?</h2>
+        <h2 id="waarom-zelfstandig">Waarom kiezen voor zelfstandig werken als thuisverpleegkundige?</h2>
         <ul>
           <li>Meer autonomie over je agenda, regio en werkritme</li>
           <li>Directe relatie met je patiënten</li>
@@ -354,7 +399,7 @@ const articleContent: Record<string, { content: React.ReactNode; cta?: React.Rea
         </ul>
         <p><em>Zelfstandig werken biedt veel vrijheid, mits je goed voorbereid start.</em></p>
 
-        <h2>Zelfstandig thuisverpleegkundige worden in 4 duidelijke stappen</h2>
+        <h2 id="stappenplan">Zelfstandig thuisverpleegkundige worden in 4 duidelijke stappen</h2>
 
         <h3>Stap 1: Check of je aan de voorwaarden voldoet</h3>
         <p>Om als zelfstandig thuisverpleegkundige te starten in België heb je nodig:</p>
@@ -423,7 +468,7 @@ const articleContent: Record<string, { content: React.ReactNode; cta?: React.Rea
           </p>
         </div>
 
-        <h2>Veelgestelde vragen</h2>
+        <h2 id="veelgestelde-vragen">Veelgestelde vragen</h2>
 
         <h3>Heb ik altijd een RIZIV-nummer nodig?</h3>
         <p>Ja, als je prestaties wil aanrekenen in de thuisverpleging is een RIZIV-nummer verplicht.</p>
@@ -437,6 +482,16 @@ const articleContent: Record<string, { content: React.ReactNode; cta?: React.Rea
     ),
   },
   "hbo5-graduaat-basisverpleegkunde": {
+    heroImage: blogHeroHbo5,
+    headings: [
+      { id: "waarom-hervormd", label: "Waarom werd de HBO5-opleiding hervormd?" },
+      { id: "welke-opleidingen", label: "Welke opleidingen bestaan er in Vlaanderen?" },
+      { id: "verschil-graduaat-bachelor", label: "Verschil tussen graduaat en bachelor" },
+      { id: "overgangsmaatregelen", label: "Overgangsmaatregelen in 2026" },
+      { id: "impact-thuisverpleging", label: "Wat betekent dit voor de thuisverpleging?" },
+      { id: "toekomstige-verpleegkundigen", label: "Voor (toekomstige) verpleegkundigen" },
+      { id: "conclusie", label: "Conclusie" },
+    ],
     content: (
       <>
         <p className="lead">
@@ -451,7 +506,7 @@ const articleContent: Record<string, { content: React.ReactNode; cta?: React.Rea
           En wat betekent dit concreet voor verpleegkundigen die (willen) werken in de thuiszorg?
         </p>
 
-        <h2>Waarom werd de HBO5-opleiding hervormd?</h2>
+        <h2 id="waarom-hervormd">Waarom werd de HBO5-opleiding hervormd?</h2>
         <p>
           De hervorming van HBO5 naar het graduaat Basisverpleegkunde was geen louter Vlaamse keuze. 
           Ze was noodzakelijk om te voldoen aan de Europese richtlijnen voor verpleegkundige opleidingen, 
@@ -476,7 +531,7 @@ const articleContent: Record<string, { content: React.ReactNode; cta?: React.Rea
           <li>het beroep toekomstbestendiger en aantrekkelijker maken</li>
         </ul>
 
-        <h2>Welke verpleegkundige opleidingen bestaan er in Vlaanderen?</h2>
+        <h2 id="welke-opleidingen">Welke verpleegkundige opleidingen bestaan er in Vlaanderen?</h2>
         <p>Anno 2026 zijn er twee hoofdopleidingen voor wie verpleegkundige wil worden.</p>
 
         <div className="my-6 p-5 bg-light-blue/10 border-l-4 border-light-blue rounded-r-lg">
@@ -506,7 +561,7 @@ const articleContent: Record<string, { content: React.ReactNode; cta?: React.Rea
           </p>
         </div>
 
-        <h2>Wat is het concrete verschil tussen graduaat en bachelor?</h2>
+        <h2 id="verschil-graduaat-bachelor">Wat is het concrete verschil tussen graduaat en bachelor?</h2>
         <p>
           Hoewel beide opleidingen opleiden tot verpleegkundige functies, zijn er duidelijke verschillen.
         </p>
@@ -528,7 +583,7 @@ const articleContent: Record<string, { content: React.ReactNode; cta?: React.Rea
           Gegradueerde basisverpleegkundigen kunnen via brug- of vervolgtrajecten alsnog doorgroeien naar het bachelorniveau.
         </p>
 
-        <h2>Overgangsmaatregelen: wat geldt er in 2026?</h2>
+        <h2 id="overgangsmaatregelen">Overgangsmaatregelen: wat geldt er in 2026?</h2>
         <p>
           Voor studenten die gestart zijn in de schooljaren 2023-2024 of 2024-2025 gelden overgangsmaatregelen. 
           Zij volgen een aangepast programma dat nog gebaseerd is op de vroegere HBO5-structuur, 
@@ -543,7 +598,7 @@ const articleContent: Record<string, { content: React.ReactNode; cta?: React.Rea
           </p>
         </div>
 
-        <h2>Wat betekent dit specifiek voor de thuisverpleging?</h2>
+        <h2 id="impact-thuisverpleging">Wat betekent dit specifiek voor de thuisverpleging?</h2>
         <p>De hervorming heeft een directe impact op de organisatie van thuiszorg.</p>
 
         <h3>Twee duidelijke verpleegkundige profielen</h3>
@@ -571,7 +626,7 @@ const articleContent: Record<string, { content: React.ReactNode; cta?: React.Rea
           <li>ruimte om zich te focussen op zorg, niet op randtaken</li>
         </ul>
 
-        <h2>Wat betekent dit voor (toekomstige) verpleegkundigen?</h2>
+        <h2 id="toekomstige-verpleegkundigen">Wat betekent dit voor (toekomstige) verpleegkundigen?</h2>
         <p>Voor wie studeert of al actief is als verpleegkundige, is het belangrijk om:</p>
         <ul>
           <li>goed te begrijpen welk profiel je hebt en welke bevoegdheden daarbij horen</li>
@@ -584,7 +639,7 @@ const articleContent: Record<string, { content: React.ReactNode; cta?: React.Rea
           Dan is het essentieel om deze profielen goed te begrijpen.
         </p>
 
-        <h2>Conclusie</h2>
+        <h2 id="conclusie">Conclusie</h2>
         <p>
           De hervorming van HBO5 naar het graduaat Basisverpleegkunde is in 2026 geen overgangsfase meer, 
           maar een nieuwe realiteit. Vlaanderen telt duidelijk onderscheiden verpleegkundige profielen, 
@@ -694,7 +749,7 @@ const BlogArticle = () => {
       />
 
       <div className="pt-24 pb-16">
-        <article className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+        <article className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
           {/* Back link */}
           <Link 
             to="/blog/"
@@ -705,7 +760,7 @@ const BlogArticle = () => {
           </Link>
 
           {/* Article header */}
-          <header className="mb-8">
+          <header className="mb-4">
             <div className="flex items-center gap-3 text-sm text-muted-foreground mb-4">
               <span className="bg-secondary/10 text-secondary px-3 py-1 rounded-full font-medium">
                 {article.category}
@@ -725,8 +780,18 @@ const BlogArticle = () => {
             </h1>
           </header>
 
+          {/* Hero image */}
+          {content.heroImage && (
+            <BlogHeroImage src={content.heroImage} alt={article.title} />
+          )}
+
+          {/* Table of Contents */}
+          {content.headings.length > 0 && (
+            <TableOfContents headings={content.headings} />
+          )}
+
           {/* Article content */}
-          <div className="prose prose-lg max-w-none prose-headings:text-primary prose-headings:font-semibold prose-p:text-muted-foreground prose-li:text-muted-foreground prose-a:text-secondary">
+          <div className="prose prose-lg max-w-none prose-headings:text-primary prose-headings:font-semibold prose-headings:scroll-mt-24 prose-p:text-muted-foreground prose-li:text-muted-foreground prose-a:text-secondary">
             {content.content}
           </div>
 
