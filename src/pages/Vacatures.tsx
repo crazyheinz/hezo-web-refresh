@@ -298,7 +298,7 @@ const Vacatures = () => {
             {
               "@type": "WebPage",
               "name": "Vacatures bij Hezo",
-              "description": "Bekijk openstaande vacatures bij Hezo. Werk als praktijkcoach, zelfstandig verantawoordelijke verpleegkundige in de thuisverpleging.",
+              "description": "Bekijk openstaande vacatures bij Hezo. Werk als praktijkcoach, zelfstandig verantwoordelijke verpleegkundige in de thuisverpleging.",
               "url": "https://www.hezo.be/vacatures/"
             },
             ...jobs.map(job => ({
