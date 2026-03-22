@@ -27,7 +27,7 @@ const articleContent: Record<string, {
           De juiste software maakt je werk efficiënter. Maar in de praktijk merken veel verpleegkundigen dat het kiezen en correct gebruiken ervan niet zo eenvoudig is.
         </p>
 
-        <h2>Waarvoor gebruik je software in de thuisverpleging?</h2>
+        <h2 id="waarvoor-software">Waarvoor gebruik je software in de thuisverpleging?</h2>
         <p>Software speelt een centrale rol in je dagelijkse werking als zelfstandige verpleegkundige.</p>
         <p>Je gebruikt het onder andere voor:</p>
         <ul>
