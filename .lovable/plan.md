@@ -1,36 +1,27 @@
 
 
-## Blog-artikelen breder, dynamischer en met inhoudsopgave
+## Generate 4 blog hero illustrations with Nano Banana 2
 
-### Probleem
-- Blogartikelen gebruiken `max-w-3xl` (~768px) terwijl Home en Ons Aanbod `max-w-5xl`/`max-w-7xl` gebruiken — te smal
-- Artikelen zijn lange tekstvlakken zonder visuele afwisseling
-- Geen "Op deze pagina"-blok (inhoudsopgave) zoals Helan dat doet voor lange artikelen
+### What
+Use the `lovable_ai.py` script with `--image --model google/gemini-3.1-flash-image-preview` to generate 4 blog hero illustrations matching the style of the existing software illustration.
 
-### Plan
+### How
+1. Copy `lovable_ai.py` to `/tmp/`
+2. Run 4 image generation commands, each with the user's exact style prompt + topic-specific scene description
+3. QA each generated image
+4. Copy to `src/assets/` replacing existing files
 
-#### 1. Breedte vergroten
-Verander de article container van `max-w-3xl` naar `max-w-4xl` zodat het beter aansluit bij de rest van de site, maar nog steeds leesbaar blijft voor lange tekst.
+### Prompts
+Base prompt (user-provided) + topic suffix:
 
-#### 2. Inhoudsopgave ("Op deze pagina") toevoegen
-Per artikel automatisch een inhoudsopgave genereren op basis van de h2-koppen. Dit wordt een gestileerd blok (lichtgrijze achtergrond, afgeronde hoeken) bovenaan het artikel, na de header, met anchor-links naar elke sectie. Vergelijkbaar met het Helan-voorbeeld.
+- **blog-hero-patienten.png**: "...A nurse with a medical bag visiting an elderly patient at their home, standing near an open front door."
+- **blog-hero-administratie.png**: "...A nurse sitting at a desk with a laptop, folders, and paperwork, doing administrative tasks."
+- **blog-hero-zelfstandig.png**: "...A confident nurse stepping forward independently, holding a briefcase, with a lightbulb and checklist floating nearby."
+- **blog-hero-hbo5.png**: "...A nursing student holding books and a diploma, with a graduation cap and classroom elements nearby."
 
-Technisch:
-- Aan `articleContent` een `headings: string[]`-array toevoegen per artikel
-- Een `TableOfContents`-component renderen die anchor-links toont
-- De h2's in de content voorzien van id-attributen
-
-#### 3. Illustraties toevoegen per sectie
-Per artikel op strategische plekken illustraties of decoratieve elementen invoegen om de wand van tekst te doorbreken:
-- Een hero-achtige illustratie bovenaan elk artikel (in de stijl van de home-hero met floating animatie)
-- Tussendoor gekleurde highlight-blokken (bijv. tips, kernpunten) met een accent-achtergrond en icoon
-
-Technisch:
-- `articleContent` uitbreiden met een optioneel `heroImage`-veld
-- Highlight-blokken als apart component met een icoon + gekleurde achtergrond
-- Hergebruik van de bestaande brand-kleuren (secondary/10, green/10, coral/10)
-
-#### 4. Bestanden die wijzigen
-- `src/pages/BlogArticle.tsx` — layout breder, inhoudsopgave-component, hero-afbeelding, id's op h2-koppen
-- Eventueel nieuwe illustraties toevoegen aan `src/assets/` (of bestaande hergebruiken)
+### Files changed
+- `src/assets/blog-hero-patienten.png`
+- `src/assets/blog-hero-administratie.png`
+- `src/assets/blog-hero-zelfstandig.png`
+- `src/assets/blog-hero-hbo5.png`
 
