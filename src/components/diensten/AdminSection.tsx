@@ -41,7 +41,13 @@ const usps = [
     icon: HeadphonesIcon,
     title: "Ondersteuning bij software en vragen",
     text: "We werken met erkende softwarepaketten voor planning en tarificatie in de thuisverpleging.",
-    detail: "Heb je vragen over facturatie, nomenclatuur of instellingen? Dan helpt onze helpdesk je verder. We nemen de tijd om mee te kijken en samen een oplossing te vinden.",
+    detail: null,
+    detailNode: (
+      <>
+        <p className="text-muted-foreground leading-relaxed mb-2">Heb je vragen over facturatie, nomenclatuur of instellingen? Dan helpt onze helpdesk je verder. We nemen de tijd om mee te kijken en samen een oplossing te vinden.</p>
+        <Link to="/blog/software-thuisverpleging/" className="text-secondary hover:underline font-medium">Lees meer over software in de thuisverpleging →</Link>
+      </>
+    ),
   },
 ];
 
