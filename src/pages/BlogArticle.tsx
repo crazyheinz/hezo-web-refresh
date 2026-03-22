@@ -5,6 +5,113 @@ import { blogArticles } from "./Blog";
 
 // Full article content - add content for each article ID
 const articleContent: Record<string, { content: React.ReactNode; cta?: React.ReactNode }> = {
+  "software-thuisverpleging": {
+    content: (
+      <>
+        <p className="lead">
+          Als zelfstandige thuisverpleegkundige werk je dagelijks met software. Niet alleen voor <Link to="/blog/administratie-thuisverpleging/" className="text-secondary hover:underline">administratie en facturatie</Link>, maar ook voor registratie, planning en opvolging van zorg.
+        </p>
+        <p>
+          De juiste software maakt je werk efficiënter. Maar in de praktijk merken veel verpleegkundigen dat het kiezen en correct gebruiken ervan niet zo eenvoudig is.
+        </p>
+
+        <h2>Waarvoor gebruik je software in de thuisverpleging?</h2>
+        <p>Software speelt een centrale rol in je dagelijkse werking als zelfstandige verpleegkundige.</p>
+        <p>Je gebruikt het onder andere voor:</p>
+        <ul>
+          <li>registratie van prestaties</li>
+          <li>facturatie en opvolging</li>
+          <li>bijhouden van patiëntendossiers</li>
+          <li>communicatie en administratie</li>
+          <li>planning en organisatie van zorgmomenten</li>
+        </ul>
+        <p>Zonder correcte registratie en verwerking kan zorg niet correct gefactureerd worden.</p>
+
+        <h2>Welke software bestaat er?</h2>
+        <p>Er bestaan verschillende softwarepakketten voor thuisverpleegkundigen. Deze moeten voldoen aan bepaalde normen en gehomologeerd zijn om correct te kunnen werken binnen het systeem van de thuisverpleging.</p>
+        <p>De verschillen zitten vaak in:</p>
+        <ul>
+          <li>gebruiksgemak</li>
+          <li>snelheid en stabiliteit</li>
+          <li>ondersteuning en helpdesk</li>
+          <li>mogelijkheden rond rapportering en opvolging</li>
+        </ul>
+        <p>Wat voor de ene verpleegkundige goed werkt, is niet altijd ideaal voor een andere situatie.</p>
+
+        <h2>Waar loopt het vaak moeilijk?</h2>
+        <p>Veel zelfstandige verpleegkundigen botsen op gelijkaardige problemen:</p>
+        <ul>
+          <li>software is niet altijd intuïtief</li>
+          <li>fouten in registratie zijn moeilijk op te sporen</li>
+          <li>facturatie verloopt niet altijd vlot</li>
+          <li>je weet niet altijd waar een probleem zit</li>
+          <li>contact met helpdesks kost tijd</li>
+          <li>je moet zelf uitzoeken hoe alles werkt</li>
+        </ul>
+        <p>Daardoor gaat er veel tijd verloren aan uitzoeken en corrigeren, in plaats van zorg.</p>
+
+        <h2>Waarom software meer is dan een tool</h2>
+        <p>Software in de thuisverpleging is geen losstaand element. Het hangt samen met:</p>
+        <ul>
+          <li>administratie</li>
+          <li>facturatie</li>
+          <li>regelgeving</li>
+          <li>correcte registratie</li>
+        </ul>
+        <p>Een kleine fout in software kan impact hebben op je facturatie of opvolging. Daarom is het belangrijk dat alles correct ingesteld en gebruikt wordt.</p>
+
+        <h2>Hoe kies je de juiste software?</h2>
+        <p>Bij het kiezen van software is het belangrijk om niet alleen naar functies te kijken, maar ook naar:</p>
+        <ul>
+          <li>hoe goed het aansluit bij jouw manier van werken</li>
+          <li>hoe vlot je ermee kan werken in de praktijk</li>
+          <li>welke ondersteuning beschikbaar is</li>
+          <li>hoe eenvoudig problemen opgelost kunnen worden</li>
+        </ul>
+        <p>Veel verpleegkundigen starten met een pakket, maar merken later dat het niet optimaal aansluit bij hun noden.</p>
+
+        <h2>Hoe Hezo je ondersteunt</h2>
+        <p>Hezo ondersteunt zelfstandige thuisverpleegkundigen bij het kiezen, opzetten en gebruiken van software.</p>
+        <p>Of je nu alleen werkt of in een praktijk, we zorgen ervoor dat:</p>
+        <ul>
+          <li>je software correct ingesteld staat</li>
+          <li>alles werkt zoals het moet voor registratie en facturatie</li>
+          <li>je minder tijd verliest aan uitzoeken en fouten</li>
+          <li>je ondersteuning krijgt wanneer er vragen of problemen zijn</li>
+        </ul>
+        <p>We vertrekken niet vanuit één specifieke software, maar kijken wat het best past bij jouw situatie.</p>
+        <p>
+          Bekijk ook <Link to="/onze-diensten/" className="text-secondary hover:underline">ons volledige aanbod</Link> en ontdek hoe we je ondersteunen bij <Link to="/blog/patienten-thuisverpleegkundige/" className="text-secondary hover:underline">patiënteninstroom</Link>.
+        </p>
+      </>
+    ),
+    cta: (
+      <div className="mt-12 p-8 bg-muted rounded-2xl">
+        <h3 className="text-xl font-semibold text-primary mb-2">
+          Minder tijd verliezen aan software?
+        </h3>
+        <p className="text-muted-foreground mb-4">
+          Ontdek hoe Hezo je helpt om software, administratie en praktijkvoering beter op elkaar af te stemmen.
+        </p>
+        <div className="flex flex-wrap gap-4">
+          <Link
+            to="/onze-diensten/"
+            onClick={() => window.scrollTo(0, 0)}
+            className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-6 py-3 rounded-lg font-medium hover:bg-secondary/90 transition-colors"
+          >
+            Bekijk onze diensten
+          </Link>
+          <Link
+            to="/zo-sluit-je-aan/"
+            onClick={() => window.scrollTo(0, 0)}
+            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors"
+          >
+            Sluit je aan bij Hezo
+          </Link>
+        </div>
+      </div>
+    ),
+  },
   "patienten-thuisverpleegkundige": {
     content: (
       <>
