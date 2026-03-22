@@ -11,6 +11,15 @@ export interface BlogArticleData {
 
 export const blogArticles: BlogArticleData[] = [
   {
+    id: "software-thuisverpleging",
+    title: "Software in de thuisverpleging: wat heb je nodig als zelfstandige verpleegkundige?",
+    excerpt: "Welke software heb je nodig in de thuisverpleging? Ontdek hoe registratie, facturatie en tools werken en waar je op moet letten.",
+    metaTitle: "Software thuisverpleging: wat heb je nodig? | Hezo",
+    date: "2026-03-22",
+    category: "Software",
+    readTime: "7 min"
+  },
+  {
     id: "patienten-thuisverpleegkundige",
     title: "Patiënten vinden als thuisverpleegkundige: hoe werkt het?",
     excerpt: "Hoe kom je als zelfstandige thuisverpleegkundige aan patiënten? Ontdek hoe zorgvragen ontstaan en hoe je een stabiele instroom opbouwt.",
