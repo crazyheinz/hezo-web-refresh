@@ -108,7 +108,8 @@ const AdminSection = () => {
                             ))}
                           </ul>
                         )}
-                        <p className="text-muted-foreground leading-relaxed">{usp.detail}</p>
+                        {usp.detail && <p className="text-muted-foreground leading-relaxed">{usp.detail}</p>}
+                        {usp.detailNode && usp.detailNode}
                       </div>
                     </div>
                   </motion.div>
