@@ -300,7 +300,7 @@ const Vacatures = () => {
                   <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="responsibilities">
                       <AccordionTrigger className="text-lg font-semibold">
-                        Wat doe je als {job.title.toLowerCase()}?
+                        Wat doe je als {job.title}?
                       </AccordionTrigger>
                       <AccordionContent>
                         <ul className="space-y-2">
