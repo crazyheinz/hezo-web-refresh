@@ -12,10 +12,13 @@ const articleContent: Record<string, { content: React.ReactNode; cta?: React.Rea
           Als zelfstandige thuisverpleegkundige is het niet alleen belangrijk om goede zorg te leveren, maar ook om voldoende patiënten te hebben.
         </p>
         <p>
+          Zeker als zelfstandige thuisverpleegkundige is patiënten vinden een belangrijk onderdeel van je praktijk.
+        </p>
+        <p>
           Zeker bij de opstart, of wanneer je je praktijk wil uitbreiden, komt vaak dezelfde vraag naar boven: hoe kom je aan patiënten?
         </p>
         <p>
-          Zorgvragen ontstaan niet vanzelf. Ze komen via verschillende kanalen, en het vraagt tijd en opvolging om een stabiele instroom op te bouwen.
+          Nieuwe zorgvragen komen niet vanzelf binnen. Ze komen via verschillende kanalen, en het vraagt tijd en opvolging om een stabiele instroom op te bouwen.
         </p>
 
         <h2>Hoe komen patiënten bij een thuisverpleegkundige terecht?</h2>
@@ -39,7 +42,7 @@ const articleContent: Record<string, { content: React.ReactNode; cta?: React.Rea
           <li>snel reageren op aanvragen</li>
           <li>zelf actief opvolgen</li>
         </ul>
-        <p>Dat vraagt tijd en energie, bovenop je dagelijkse zorg en <Link to="/blog/administratie-thuisverpleging/" className="text-secondary hover:underline">administratie</Link>.</p>
+        <p>Dat vraagt tijd en energie, bovenop je zorg, <Link to="/blog/administratie-thuisverpleging/" className="text-secondary hover:underline">administratie</Link> en planning.</p>
 
         <h2>De impact op je praktijk</h2>
         <p>Wanneer patiënteninstroom niet stabiel is, heeft dat directe gevolgen:</p>
@@ -52,34 +55,51 @@ const articleContent: Record<string, { content: React.ReactNode; cta?: React.Rea
         <p>Zeker bij de opstart of uitbreiding van je activiteit kan dit zwaar doorwegen.</p>
 
         <h2>Hoe bouw je een stabiele patiënteninstroom op?</h2>
-        <p>Een stabiele instroom van patiënten ontstaat meestal niet door één actie, maar door een combinatie van factoren:</p>
+        <p>Een stabiele instroom van patiënten ontstaat meestal niet vanzelf. Het is het resultaat van een aantal concrete acties die je consequent uitvoert.</p>
+        <p>In de praktijk betekent dat vaak:</p>
         <ul>
-          <li>een sterk lokaal netwerk</li>
-          <li>goede samenwerking met huisartsen</li>
-          <li>duidelijke communicatie</li>
-          <li>snelle opvolging van zorgvragen</li>
-          <li>zichtbaarheid in je regio</li>
+          <li>regelmatig contact houden met huisartsen in je regio</li>
+          <li>je beschikbaarheid duidelijk communiceren</li>
+          <li>snel reageren op nieuwe zorgvragen</li>
+          <li>afspraken correct opvolgen</li>
+          <li>zichtbaar blijven binnen je lokale netwerk</li>
         </ul>
-        <p>Dit opbouwen vraagt tijd en consistentie.</p>
+        <p>Veel verpleegkundigen starten bijvoorbeeld met een aantal huisartsenpraktijken, maar merken dat het onderhouden van die contacten tijd vraagt. Als je dat niet actief doet, vallen zorgvragen snel stil.</p>
 
-        <h2>Hoe Hezo je helpt bij patiënteninstroom</h2>
-        <p>Hezo ondersteunt zelfstandige thuisverpleegkundigen bij het opbouwen van een stabiele instroom van patiënten.</p>
-        <p>Of je nu alleen werkt of deel uitmaakt van een samenwerking, we helpen je om:</p>
+        <h2>Waar loopt het vaak moeilijk?</h2>
+        <p>In de praktijk merken veel zelfstandige verpleegkundigen dat patiënteninstroom moeilijk te sturen is.</p>
+        <p>Typische situaties:</p>
         <ul>
-          <li>toegang te krijgen tot nieuwe zorgvragen</li>
-          <li>minder afhankelijk te zijn van je eigen netwerk</li>
-          <li>sneller je planning te vullen</li>
-          <li>je praktijk verder uit te bouwen</li>
+          <li>je krijgt plots veel aanvragen, maar daarna een rustige periode</li>
+          <li>je weet niet goed waar nieuwe patiënten vandaan komen</li>
+          <li>contacten met huisartsen verwateren</li>
+          <li>je hebt weinig tijd om actief netwerk op te bouwen</li>
+          <li>je reageert te laat op nieuwe zorgvragen</li>
         </ul>
-        <p>Daarnaast zorgen we voor ondersteuning in de praktische opvolging van zorgvragen, zodat je minder tijd verliest aan organisatie.</p>
+        <p>Dat maakt je planning onvoorspelbaar en zorgt voor onzekerheid.</p>
 
-        <h2>Combinatie van instroom en ondersteuning</h2>
-        <p>Wat voor veel verpleegkundigen het verschil maakt, is de combinatie van:</p>
+        <h2>Waarom het combineren met administratie moeilijk is</h2>
+        <p>Wat het extra lastig maakt, is dat patiënteninstroom nooit op zichzelf staat.</p>
+        <p>Je moet dit combineren met:</p>
         <ul>
-          <li>ondersteuning bij <Link to="/blog/administratie-thuisverpleging/" className="text-secondary hover:underline">administratie en organisatie</Link></li>
-          <li>én hulp bij patiënteninstroom</li>
+          <li>zorgmomenten</li>
+          <li><Link to="/blog/administratie-thuisverpleging/" className="text-secondary hover:underline">administratie en facturatie</Link></li>
+          <li>software en registratie</li>
+          <li>planning</li>
         </ul>
-        <p>Zo ontstaat er meer rust in je werk en meer stabiliteit in je praktijk.</p>
+        <p>Daardoor komt het onderhouden van je netwerk of opvolgen van nieuwe zorgvragen vaak op de tweede plaats.</p>
+
+        <h2>Hoe Hezo je hierin ondersteunt</h2>
+        <p>Hezo helpt zelfstandige thuisverpleegkundigen om <Link to="/onze-diensten/#instroom" className="text-secondary hover:underline">patiënteninstroom</Link> minder afhankelijk te maken van toevallige contacten.</p>
+        <p>In plaats van zelf continu op zoek te moeten gaan naar nieuwe patiënten, krijg je toegang tot zorgvragen en ondersteuning in de opvolging ervan.</p>
+        <p>Concreet betekent dat:</p>
+        <ul>
+          <li>toegang tot nieuwe zorgvragen</li>
+          <li>snellere en duidelijkere opvolging</li>
+          <li>minder tijdverlies aan organisatie</li>
+          <li>een stabielere instroom van patiënten</li>
+        </ul>
+        <p>Daardoor wordt je planning voorspelbaarder en hoef je minder zelf te investeren in netwerk en opvolging.</p>
       </>
     ),
     cta: (
