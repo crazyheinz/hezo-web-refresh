@@ -18,6 +18,15 @@ const articleContent: Record<string, {
   headings: { id: string; label: string }[];
 }> = {
   "software-thuisverpleging": {
+    heroImage: blogHeroSoftware,
+    headings: [
+      { id: "waarvoor-software", label: "Waarvoor gebruik je software?" },
+      { id: "welke-software", label: "Welke software bestaat er?" },
+      { id: "waar-loopt-het-moeilijk", label: "Waar loopt het vaak moeilijk?" },
+      { id: "meer-dan-tool", label: "Waarom software meer is dan een tool" },
+      { id: "juiste-software-kiezen", label: "Hoe kies je de juiste software?" },
+      { id: "hezo-ondersteuning", label: "Hoe Hezo je ondersteunt" },
+    ],
     content: (
       <>
         <p className="lead">
