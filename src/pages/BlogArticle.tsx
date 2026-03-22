@@ -2,9 +2,21 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import SEO from "@/components/SEO";
 import { Calendar, ArrowLeft, Clock } from "lucide-react";
 import { blogArticles } from "./Blog";
+import TableOfContents from "@/components/blog/TableOfContents";
+import BlogHeroImage from "@/components/blog/BlogHeroImage";
+import blogHeroSoftware from "@/assets/blog-hero-software.png";
+import blogHeroPatienten from "@/assets/blog-hero-patienten.png";
+import blogHeroAdministratie from "@/assets/blog-hero-administratie.png";
+import blogHeroZelfstandig from "@/assets/blog-hero-zelfstandig.png";
+import blogHeroHbo5 from "@/assets/blog-hero-hbo5.png";
 
 // Full article content - add content for each article ID
-const articleContent: Record<string, { content: React.ReactNode; cta?: React.ReactNode }> = {
+const articleContent: Record<string, {
+  content: React.ReactNode;
+  cta?: React.ReactNode;
+  heroImage?: string;
+  headings: { id: string; label: string }[];
+}> = {
   "software-thuisverpleging": {
     content: (
       <>
