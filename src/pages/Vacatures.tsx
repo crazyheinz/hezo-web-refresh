@@ -407,7 +407,7 @@ const Vacatures = () => {
                   </CardHeader>
 
                   {isExpanded && (
-                    <CardContent className="space-y-6 pt-0">
+                    <CardContent className="space-y-6 pt-0" onClick={(e) => e.stopPropagation()}>
                       <p className="text-muted-foreground leading-relaxed">{job.description}</p>
                       
                       <Accordion type="single" collapsible className="w-full">
