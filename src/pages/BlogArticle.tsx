@@ -4,7 +4,108 @@ import { Calendar, ArrowLeft, Clock } from "lucide-react";
 import { blogArticles } from "./Blog";
 
 // Full article content - add content for each article ID
-const articleContent: Record<string, { content: React.ReactNode }> = {
+const articleContent: Record<string, { content: React.ReactNode; cta?: React.ReactNode }> = {
+  "administratie-thuisverpleging": {
+    content: (
+      <>
+        <p className="lead">
+          Als zelfstandige thuisverpleegkundige ben je vooral bezig met zorg. Toch neemt administratie in de thuisverpleging vaak een groot deel van je werk in.
+        </p>
+        <p>
+          Prestaties registreren, factureren, dossiers bijhouden, software gebruiken, vragen uitzoeken… het hoort er allemaal bij. Maar het vraagt tijd en energie, bovenop je zorgmomenten.
+        </p>
+        <p>
+          Of je nu alleen werkt of in een samenwerking: de administratieve kant van thuisverpleging is voor iedereen herkenbaar.
+        </p>
+
+        <h2>Wat omvat administratie in de thuisverpleging?</h2>
+        <p>
+          Administratie in de thuisverpleging is meer dan enkel papierwerk. Het gaat om alles wat nodig is om je zorg correct te registreren, op te volgen en te factureren.
+        </p>
+        <p>In de praktijk betekent dat:</p>
+        <ul>
+          <li>prestaties registreren volgens de juiste codes</li>
+          <li>facturatie opstellen en opvolgen</li>
+          <li>communicatie met mutualiteiten</li>
+          <li>opvolging van betalingen</li>
+          <li>planning en organisatie van zorgmomenten</li>
+          <li>werken met software voor registratie en facturatie</li>
+          <li>fouten of onduidelijkheden uitzoeken in dossiers</li>
+          <li>contact opnemen met softwareleveranciers of helpdesks</li>
+        </ul>
+        <p>Voor veel verpleegkundigen is dit een dagelijkse realiteit naast hun zorgactiviteiten.</p>
+
+        <h2>Waarom administratie zoveel tijd vraagt</h2>
+        <p>Veel zelfstandige thuisverpleegkundigen onderschatten hoeveel tijd administratie effectief inneemt.</p>
+        <p>Je merkt bijvoorbeeld dat:</p>
+        <ul>
+          <li>administratie zich opstapelt doorheen de dag</li>
+          <li>je &apos;s avonds nog dossiers of facturatie afwerkt</li>
+          <li>software en systemen niet altijd intuïtief werken</li>
+          <li>je regelmatig moet uitzoeken hoe iets precies zit</li>
+        </ul>
+        <p>Het is geen éénmalige taak, maar een constante stroom van opvolging en verwerking.</p>
+
+        <h2>De impact op je werk als verpleegkundige</h2>
+        <p>Wanneer administratie te veel tijd vraagt, heeft dat gevolgen voor je dagelijkse werking.</p>
+        <ul>
+          <li>je hebt minder tijd voor patiënten</li>
+          <li>je werkdag wordt langer</li>
+          <li>je verliest overzicht</li>
+          <li>je hebt minder ruimte om je praktijk verder uit te bouwen</li>
+        </ul>
+        <p>Dat zorgt voor druk, terwijl je net gekozen hebt voor zelfstandigheid om meer autonomie te hebben in je werk.</p>
+
+        <h2>Hoe organiseer je administratie efficiënter?</h2>
+        <p>Administratie volledig vermijden is niet mogelijk, maar je kan wel efficiënter werken.</p>
+        <p>Veel zelfstandige thuisverpleegkundigen kiezen ervoor om hun administratie anders te organiseren of zich te laten ondersteunen, zodat:</p>
+        <ul>
+          <li>taken minder tijd in beslag nemen</li>
+          <li>processen duidelijker worden</li>
+          <li>software vlotter gebruikt wordt</li>
+          <li>er meer structuur komt in hun werk</li>
+        </ul>
+
+        <h2>Hoe Hezo je ondersteunt</h2>
+        <p>Hezo ondersteunt zelfstandige thuisverpleegkundigen bij <Link to="/onze-diensten/" className="text-secondary hover:underline">administratie, facturatie en praktijkvoering</Link>.</p>
+        <p>Of je nu alleen werkt of in een samenwerking, we helpen je om:</p>
+        <ul>
+          <li>je administratie beter te organiseren</li>
+          <li>facturatie correct en efficiënter te laten verlopen</li>
+          <li>meer structuur te brengen in je dagelijkse werking</li>
+          <li>vlotter om te gaan met software en registratie</li>
+          <li>minder tijd te verliezen aan praktische opvolging</li>
+        </ul>
+        <p>Daarnaast ondersteunen we ook de verdere uitbouw van je praktijk, onder andere via een stabiele instroom van zorgvragen.</p>
+      </>
+    ),
+    cta: (
+      <div className="mt-12 p-8 bg-muted rounded-2xl">
+        <h3 className="text-xl font-semibold text-primary mb-2">
+          Meer grip op je administratie?
+        </h3>
+        <p className="text-muted-foreground mb-4">
+          Ontdek hoe Hezo je kan ondersteunen in je dagelijkse werking als zelfstandige thuisverpleegkundige.
+        </p>
+        <div className="flex flex-wrap gap-4">
+          <Link
+            to="/onze-diensten/"
+            onClick={() => window.scrollTo(0, 0)}
+            className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-6 py-3 rounded-lg font-medium hover:bg-secondary/90 transition-colors"
+          >
+            Bekijk onze diensten
+          </Link>
+          <Link
+            to="/zo-sluit-je-aan/"
+            onClick={() => window.scrollTo(0, 0)}
+            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors"
+          >
+            Sluit je aan bij Hezo
+          </Link>
+        </div>
+      </div>
+    ),
+  },
   "zelfstandig-thuisverpleegkundige-worden": {
     content: (
       <>
@@ -399,29 +500,31 @@ const BlogArticle = () => {
           </div>
 
           {/* CTA */}
-          <div className="mt-12 p-8 bg-muted rounded-2xl">
-            <h3 className="text-xl font-semibold text-primary mb-2">
-              Meer weten over Hezo?
-            </h3>
-            <p className="text-muted-foreground mb-4">
-              Ontdek hoe wij zelfstandige verpleegkundigen ondersteunen of neem contact met ons op.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link 
-                to="/onze-diensten/"
-                onClick={() => window.scrollTo(0, 0)}
-                className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-6 py-3 rounded-lg font-medium hover:bg-secondary/90 transition-colors"
-              >
-                Ons aanbod
-              </Link>
-              <Link 
-                to="/contact/"
-                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors"
-              >
-                Contact
-              </Link>
+          {content.cta || (
+            <div className="mt-12 p-8 bg-muted rounded-2xl">
+              <h3 className="text-xl font-semibold text-primary mb-2">
+                Meer weten over Hezo?
+              </h3>
+              <p className="text-muted-foreground mb-4">
+                Ontdek hoe wij zelfstandige verpleegkundigen ondersteunen of neem contact met ons op.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Link 
+                  to="/onze-diensten/"
+                  onClick={() => window.scrollTo(0, 0)}
+                  className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-6 py-3 rounded-lg font-medium hover:bg-secondary/90 transition-colors"
+                >
+                  Ons aanbod
+                </Link>
+                <Link 
+                  to="/contact/"
+                  className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors"
+                >
+                  Contact
+                </Link>
+              </div>
             </div>
-          </div>
+          )}
         </article>
       </div>
     </>

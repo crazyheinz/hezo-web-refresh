@@ -11,6 +11,15 @@ export interface BlogArticleData {
 
 export const blogArticles: BlogArticleData[] = [
   {
+    id: "administratie-thuisverpleging",
+    title: "Administratie in de thuisverpleging: wat komt erbij kijken?",
+    excerpt: "Administratie in de thuisverpleging kost tijd. Ontdek wat erbij komt kijken en hoe je als zelfstandige verpleegkundige efficiënter werkt.",
+    metaTitle: "Administratie thuisverpleging: wat komt erbij kijken? | Hezo",
+    date: "2026-03-22",
+    category: "Administratie",
+    readTime: "7 min"
+  },
+  {
     id: "zelfstandig-thuisverpleegkundige-worden",
     title: "Zelfstandig thuisverpleegkundige worden: stappenplan & ondersteuning",
     excerpt: "Ontdek hoe je zelfstandig thuisverpleegkundige wordt in België. Stappenplan, voorwaarden, RIZIV-nummer en ondersteuning van Hezo bij elke stap.",
