@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useToast } from "@/hooks/use-toast";
-import { Briefcase, CheckCircle2 } from "lucide-react";
+import { Briefcase, CheckCircle2, MapPin, ChevronDown } from "lucide-react";
 import SEO from "@/components/SEO";
 
 import { supabase } from "@/integrations/supabase/client";
@@ -14,6 +14,7 @@ import { supabase } from "@/integrations/supabase/client";
 const Vacatures = () => {
   const { toast } = useToast();
   const [selectedJob, setSelectedJob] = useState<string | null>(null);
+  const [expandedJob, setExpandedJob] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -374,80 +375,109 @@ const Vacatures = () => {
             </p>
           </div>
 
-          <div className="space-y-6 mb-16">
-            {jobs.map((job) => (
-              <Card key={job.id} className="border-secondary/20 shadow-lg">
-                <CardHeader>
-                  <CardTitle className="text-2xl">{job.title}</CardTitle>
-                  <p className="text-lg text-muted-foreground mt-2">{job.tagline}</p>
-                  <p className="text-muted-foreground leading-relaxed mt-4">{job.description}</p>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <Accordion type="single" collapsible className="w-full">
-                    <AccordionItem value="responsibilities">
-                      <AccordionTrigger className="text-lg font-semibold">
-                        Wat doe je als {job.title}?
-                      </AccordionTrigger>
-                      <AccordionContent>
-                        <ul className="space-y-2">
-                          {job.responsibilities.map((item, idx) => (
-                            <li key={idx} className="flex items-start text-muted-foreground">
-                              <CheckCircle2 className="h-5 w-5 text-secondary mr-2 mt-0.5 flex-shrink-0" />
-                              <span>{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </AccordionContent>
-                    </AccordionItem>
+          <div className="space-y-4 mb-16">
+            {jobs.map((job) => {
+              const isExpanded = expandedJob === job.id;
+              return (
+                <Card 
+                  key={job.id} 
+                  className="border-secondary/20 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+                  onClick={() => setExpandedJob(isExpanded ? null : job.id)}
+                >
+                  <CardHeader className="pb-3">
+                    <CardTitle className="text-xl">{job.title}</CardTitle>
+                    <div className="flex items-center gap-4 text-sm text-muted-foreground mt-1">
+                      <span className="flex items-center gap-1">
+                        <Briefcase className="h-4 w-4" />
+                        Zelfstandig
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <MapPin className="h-4 w-4" />
+                        {job.title.split(" - ")[1] || "België"}
+                      </span>
+                    </div>
+                    <p className="text-muted-foreground text-sm mt-2 line-clamp-2">{job.tagline}</p>
+                    <button 
+                      className="text-secondary font-medium text-sm mt-2 hover:underline inline-flex items-center gap-1 w-fit"
+                      onClick={(e) => { e.stopPropagation(); setExpandedJob(isExpanded ? null : job.id); }}
+                    >
+                      {isExpanded ? "Minder tonen" : "Bekijk vacature"}
+                      <ChevronDown className={`h-4 w-4 transition-transform ${isExpanded ? "rotate-180" : ""}`} />
+                    </button>
+                  </CardHeader>
 
-                    <AccordionItem value="profile">
-                      <AccordionTrigger className="text-lg font-semibold">
-                        Wie ben jij?
-                      </AccordionTrigger>
-                      <AccordionContent>
-                        <ul className="space-y-2">
-                          {job.profile.map((item, idx) => (
-                            <li key={idx} className="flex items-start text-muted-foreground">
-                              <CheckCircle2 className="h-5 w-5 text-secondary mr-2 mt-0.5 flex-shrink-0" />
-                              <span>{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </AccordionContent>
-                    </AccordionItem>
+                  {isExpanded && (
+                    <CardContent className="space-y-6 pt-0">
+                      <p className="text-muted-foreground leading-relaxed">{job.description}</p>
+                      
+                      <Accordion type="single" collapsible className="w-full">
+                        <AccordionItem value="responsibilities">
+                          <AccordionTrigger className="text-lg font-semibold">
+                            Wat doe je als {job.title}?
+                          </AccordionTrigger>
+                          <AccordionContent>
+                            <ul className="space-y-2">
+                              {job.responsibilities.map((item, idx) => (
+                                <li key={idx} className="flex items-start text-muted-foreground">
+                                  <CheckCircle2 className="h-5 w-5 text-secondary mr-2 mt-0.5 flex-shrink-0" />
+                                  <span>{item}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </AccordionContent>
+                        </AccordionItem>
 
-                    <AccordionItem value="offer">
-                      <AccordionTrigger className="text-lg font-semibold">
-                        Wat mag je verwachten?
-                      </AccordionTrigger>
-                      <AccordionContent>
-                        <ul className="space-y-2">
-                          {job.offer.map((item, idx) => (
-                            <li key={idx} className="flex items-start text-muted-foreground">
-                              <CheckCircle2 className="h-5 w-5 text-secondary mr-2 mt-0.5 flex-shrink-0" />
-                              <span>{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </AccordionContent>
-                    </AccordionItem>
-                  </Accordion>
+                        <AccordionItem value="profile">
+                          <AccordionTrigger className="text-lg font-semibold">
+                            Wie ben jij?
+                          </AccordionTrigger>
+                          <AccordionContent>
+                            <ul className="space-y-2">
+                              {job.profile.map((item, idx) => (
+                                <li key={idx} className="flex items-start text-muted-foreground">
+                                  <CheckCircle2 className="h-5 w-5 text-secondary mr-2 mt-0.5 flex-shrink-0" />
+                                  <span>{item}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </AccordionContent>
+                        </AccordionItem>
 
-                  <Button
-                    size="lg"
-                    onClick={() => {
-                      setSelectedJob(job.id);
-                      setTimeout(() => {
-                        document.getElementById('sollicitatie')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                      }, 100);
-                    }}
-                    className="w-full sm:w-auto mt-4"
-                  >
-                    Solliciteer voor deze functie
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
+                        <AccordionItem value="offer">
+                          <AccordionTrigger className="text-lg font-semibold">
+                            Wat mag je verwachten?
+                          </AccordionTrigger>
+                          <AccordionContent>
+                            <ul className="space-y-2">
+                              {job.offer.map((item, idx) => (
+                                <li key={idx} className="flex items-start text-muted-foreground">
+                                  <CheckCircle2 className="h-5 w-5 text-secondary mr-2 mt-0.5 flex-shrink-0" />
+                                  <span>{item}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </AccordionContent>
+                        </AccordionItem>
+                      </Accordion>
+
+                      <Button
+                        size="lg"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedJob(job.id);
+                          setTimeout(() => {
+                            document.getElementById('sollicitatie')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                          }, 100);
+                        }}
+                        className="w-full sm:w-auto mt-4"
+                      >
+                        Solliciteer voor deze functie
+                      </Button>
+                    </CardContent>
+                  )}
+                </Card>
+              );
+            })}
           </div>
 
           {/* Application Form */}
