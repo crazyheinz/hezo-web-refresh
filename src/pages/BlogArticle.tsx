@@ -171,7 +171,7 @@ const articleContent: Record<string, {
         </ul>
         <p>Als zelfstandige verpleegkundige bouw je dit netwerk meestal zelf op, stap voor stap.</p>
 
-        <h2>Waarom patiënten vinden niet vanzelf gaat</h2>
+        <h2 id="niet-vanzelf">Waarom patiënten vinden niet vanzelf gaat</h2>
         <p>Veel zelfstandige verpleegkundigen merken dat patiënteninstroom minder evident is dan verwacht.</p>
         <p>Je moet:</p>
         <ul>
@@ -182,7 +182,7 @@ const articleContent: Record<string, {
         </ul>
         <p>Dat vraagt tijd en energie, bovenop je zorg, <Link to="/blog/administratie-thuisverpleging/" className="text-secondary hover:underline">administratie</Link> en planning.</p>
 
-        <h2>De impact op je praktijk</h2>
+        <h2 id="impact-praktijk">De impact op je praktijk</h2>
         <p>Wanneer patiënteninstroom niet stabiel is, heeft dat directe gevolgen:</p>
         <ul>
           <li>je planning is moeilijk te vullen</li>
@@ -192,7 +192,7 @@ const articleContent: Record<string, {
         </ul>
         <p>Zeker bij de opstart of uitbreiding van je activiteit kan dit zwaar doorwegen.</p>
 
-        <h2>Hoe bouw je een stabiele patiënteninstroom op?</h2>
+        <h2 id="stabiele-instroom">Hoe bouw je een stabiele patiënteninstroom op?</h2>
         <p>Een stabiele instroom van patiënten ontstaat meestal niet vanzelf. Het is het resultaat van een aantal concrete acties die je consequent uitvoert.</p>
         <p>In de praktijk betekent dat vaak:</p>
         <ul>
@@ -204,7 +204,7 @@ const articleContent: Record<string, {
         </ul>
         <p>Veel verpleegkundigen starten bijvoorbeeld met een aantal huisartsenpraktijken, maar merken dat het onderhouden van die contacten tijd vraagt. Als je dat niet actief doet, vallen zorgvragen snel stil.</p>
 
-        <h2>Waar loopt het vaak moeilijk?</h2>
+        <h2 id="waar-moeilijk">Waar loopt het vaak moeilijk?</h2>
         <p>In de praktijk merken veel zelfstandige verpleegkundigen dat patiënteninstroom moeilijk te sturen is.</p>
         <p>Typische situaties:</p>
         <ul>
@@ -216,7 +216,7 @@ const articleContent: Record<string, {
         </ul>
         <p>Dat maakt je planning onvoorspelbaar en zorgt voor onzekerheid.</p>
 
-        <h2>Waarom het combineren met administratie moeilijk is</h2>
+        <h2 id="combineren-administratie">Waarom het combineren met administratie moeilijk is</h2>
         <p>Wat het extra lastig maakt, is dat patiënteninstroom nooit op zichzelf staat.</p>
         <p>Je moet dit combineren met:</p>
         <ul>
@@ -227,7 +227,7 @@ const articleContent: Record<string, {
         </ul>
         <p>Daardoor komt het onderhouden van je netwerk of opvolgen van nieuwe zorgvragen vaak op de tweede plaats.</p>
 
-        <h2>Hoe Hezo je hierin ondersteunt</h2>
+        <h2 id="hezo-ondersteuning-patienten">Hoe Hezo je hierin ondersteunt</h2>
         <p>Hezo helpt zelfstandige thuisverpleegkundigen om <Link to="/onze-diensten/#instroom" className="text-secondary hover:underline">patiënteninstroom</Link> minder afhankelijk te maken van toevallige contacten.</p>
         <p>In plaats van zelf continu op zoek te moeten gaan naar nieuwe patiënten, krijg je toegang tot zorgvragen en ondersteuning in de opvolging ervan.</p>
         <p>Concreet betekent dat:</p>
@@ -288,7 +288,7 @@ const articleContent: Record<string, {
           Of je nu alleen werkt of in een samenwerking: de administratieve kant van thuisverpleging is voor iedereen herkenbaar.
         </p>
 
-        <h2>Wat omvat administratie in de thuisverpleging?</h2>
+        <h2 id="wat-omvat-administratie">Wat omvat administratie in de thuisverpleging?</h2>
         <p>
           Administratie in de thuisverpleging is meer dan enkel papierwerk. Het gaat om alles wat nodig is om je zorg correct te registreren, op te volgen en te factureren.
         </p>
@@ -305,7 +305,7 @@ const articleContent: Record<string, {
         </ul>
         <p>Voor veel verpleegkundigen is dit een dagelijkse realiteit naast hun zorgactiviteiten.</p>
 
-        <h2>Waarom administratie zoveel tijd vraagt</h2>
+        <h2 id="waarom-zoveel-tijd">Waarom administratie zoveel tijd vraagt</h2>
         <p>Veel zelfstandige thuisverpleegkundigen onderschatten hoeveel tijd administratie effectief inneemt.</p>
         <p>Je merkt bijvoorbeeld dat:</p>
         <ul>
@@ -316,7 +316,7 @@ const articleContent: Record<string, {
         </ul>
         <p>Het is geen éénmalige taak, maar een constante stroom van opvolging en verwerking.</p>
 
-        <h2>De impact op je werk als verpleegkundige</h2>
+        <h2 id="impact-werk">De impact op je werk als verpleegkundige</h2>
         <p>Wanneer administratie te veel tijd vraagt, heeft dat gevolgen voor je dagelijkse werking.</p>
         <ul>
           <li>je hebt minder tijd voor patiënten</li>
@@ -326,7 +326,7 @@ const articleContent: Record<string, {
         </ul>
         <p>Dat zorgt voor druk, terwijl je net gekozen hebt voor zelfstandigheid om meer autonomie te hebben in je werk.</p>
 
-        <h2>Hoe organiseer je administratie efficiënter?</h2>
+        <h2 id="efficienter-organiseren">Hoe organiseer je administratie efficiënter?</h2>
         <p>Administratie volledig vermijden is niet mogelijk, maar je kan wel efficiënter werken.</p>
         <p>Veel zelfstandige thuisverpleegkundigen kiezen ervoor om hun administratie anders te organiseren of zich te laten ondersteunen, zodat:</p>
         <ul>
@@ -336,7 +336,7 @@ const articleContent: Record<string, {
           <li>er meer structuur komt in hun werk</li>
         </ul>
 
-        <h2>Hoe Hezo je ondersteunt</h2>
+        <h2 id="hezo-ondersteuning-admin">Hoe Hezo je ondersteunt</h2>
         <p>Hezo ondersteunt zelfstandige thuisverpleegkundigen bij <Link to="/onze-diensten/" className="text-secondary hover:underline">administratie, facturatie en praktijkvoering</Link>.</p>
         <p>Of je nu alleen werkt of in een samenwerking, we helpen je om:</p>
         <ul>
@@ -389,7 +389,7 @@ const articleContent: Record<string, {
           Als zelfstandig thuisverpleegkundige combineer je zorg met ondernemerschap. Je bepaalt zelf je agenda en patiënten, maar krijgt ook te maken met administratie, regelgeving en instroom. Hezo ondersteunt je bij elke stap, van oriëntatie tot een duurzaam uitgebouwde praktijk.
         </p>
 
-        <h2>Waarom kiezen voor zelfstandig werken als thuisverpleegkundige?</h2>
+        <h2 id="waarom-zelfstandig">Waarom kiezen voor zelfstandig werken als thuisverpleegkundige?</h2>
         <ul>
           <li>Meer autonomie over je agenda, regio en werkritme</li>
           <li>Directe relatie met je patiënten</li>
@@ -399,7 +399,7 @@ const articleContent: Record<string, {
         </ul>
         <p><em>Zelfstandig werken biedt veel vrijheid, mits je goed voorbereid start.</em></p>
 
-        <h2>Zelfstandig thuisverpleegkundige worden in 4 duidelijke stappen</h2>
+        <h2 id="stappenplan">Zelfstandig thuisverpleegkundige worden in 4 duidelijke stappen</h2>
 
         <h3>Stap 1: Check of je aan de voorwaarden voldoet</h3>
         <p>Om als zelfstandig thuisverpleegkundige te starten in België heb je nodig:</p>
@@ -468,7 +468,7 @@ const articleContent: Record<string, {
           </p>
         </div>
 
-        <h2>Veelgestelde vragen</h2>
+        <h2 id="veelgestelde-vragen">Veelgestelde vragen</h2>
 
         <h3>Heb ik altijd een RIZIV-nummer nodig?</h3>
         <p>Ja, als je prestaties wil aanrekenen in de thuisverpleging is een RIZIV-nummer verplicht.</p>
@@ -506,7 +506,7 @@ const articleContent: Record<string, {
           En wat betekent dit concreet voor verpleegkundigen die (willen) werken in de thuiszorg?
         </p>
 
-        <h2>Waarom werd de HBO5-opleiding hervormd?</h2>
+        <h2 id="waarom-hervormd">Waarom werd de HBO5-opleiding hervormd?</h2>
         <p>
           De hervorming van HBO5 naar het graduaat Basisverpleegkunde was geen louter Vlaamse keuze. 
           Ze was noodzakelijk om te voldoen aan de Europese richtlijnen voor verpleegkundige opleidingen, 
@@ -531,7 +531,7 @@ const articleContent: Record<string, {
           <li>het beroep toekomstbestendiger en aantrekkelijker maken</li>
         </ul>
 
-        <h2>Welke verpleegkundige opleidingen bestaan er in Vlaanderen?</h2>
+        <h2 id="welke-opleidingen">Welke verpleegkundige opleidingen bestaan er in Vlaanderen?</h2>
         <p>Anno 2026 zijn er twee hoofdopleidingen voor wie verpleegkundige wil worden.</p>
 
         <div className="my-6 p-5 bg-light-blue/10 border-l-4 border-light-blue rounded-r-lg">
@@ -561,7 +561,7 @@ const articleContent: Record<string, {
           </p>
         </div>
 
-        <h2>Wat is het concrete verschil tussen graduaat en bachelor?</h2>
+        <h2 id="verschil-graduaat-bachelor">Wat is het concrete verschil tussen graduaat en bachelor?</h2>
         <p>
           Hoewel beide opleidingen opleiden tot verpleegkundige functies, zijn er duidelijke verschillen.
         </p>
@@ -583,7 +583,7 @@ const articleContent: Record<string, {
           Gegradueerde basisverpleegkundigen kunnen via brug- of vervolgtrajecten alsnog doorgroeien naar het bachelorniveau.
         </p>
 
-        <h2>Overgangsmaatregelen: wat geldt er in 2026?</h2>
+        <h2 id="overgangsmaatregelen">Overgangsmaatregelen: wat geldt er in 2026?</h2>
         <p>
           Voor studenten die gestart zijn in de schooljaren 2023-2024 of 2024-2025 gelden overgangsmaatregelen. 
           Zij volgen een aangepast programma dat nog gebaseerd is op de vroegere HBO5-structuur, 
@@ -598,7 +598,7 @@ const articleContent: Record<string, {
           </p>
         </div>
 
-        <h2>Wat betekent dit specifiek voor de thuisverpleging?</h2>
+        <h2 id="impact-thuisverpleging">Wat betekent dit specifiek voor de thuisverpleging?</h2>
         <p>De hervorming heeft een directe impact op de organisatie van thuiszorg.</p>
 
         <h3>Twee duidelijke verpleegkundige profielen</h3>
@@ -626,7 +626,7 @@ const articleContent: Record<string, {
           <li>ruimte om zich te focussen op zorg, niet op randtaken</li>
         </ul>
 
-        <h2>Wat betekent dit voor (toekomstige) verpleegkundigen?</h2>
+        <h2 id="toekomstige-verpleegkundigen">Wat betekent dit voor (toekomstige) verpleegkundigen?</h2>
         <p>Voor wie studeert of al actief is als verpleegkundige, is het belangrijk om:</p>
         <ul>
           <li>goed te begrijpen welk profiel je hebt en welke bevoegdheden daarbij horen</li>
@@ -639,7 +639,7 @@ const articleContent: Record<string, {
           Dan is het essentieel om deze profielen goed te begrijpen.
         </p>
 
-        <h2>Conclusie</h2>
+        <h2 id="conclusie">Conclusie</h2>
         <p>
           De hervorming van HBO5 naar het graduaat Basisverpleegkunde is in 2026 geen overgangsfase meer, 
           maar een nieuwe realiteit. Vlaanderen telt duidelijk onderscheiden verpleegkundige profielen, 
