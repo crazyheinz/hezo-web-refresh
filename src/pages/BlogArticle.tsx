@@ -81,7 +81,7 @@ const articleContent: Record<string, { content: React.ReactNode; cta?: React.Rea
         </ul>
         <p>We vertrekken niet vanuit één specifieke software, maar kijken wat het best past bij jouw situatie.</p>
         <p>
-          Bekijk ook <Link to="/onze-diensten/" className="text-secondary hover:underline">ons volledige aanbod</Link> en ontdek hoe we je ondersteunen bij <Link to="/blog/patienten-thuisverpleegkundige/" className="text-secondary hover:underline">patiënteninstroom</Link>.
+          Bekijk ook <Link to="/onze-diensten/#administratie" className="text-secondary hover:underline">hoe Hezo je ondersteunt bij software en administratie</Link> en ontdek hoe we je helpen bij <Link to="/blog/patienten-thuisverpleegkundige/" className="text-secondary hover:underline">patiënteninstroom</Link>.
         </p>
       </>
     ),
