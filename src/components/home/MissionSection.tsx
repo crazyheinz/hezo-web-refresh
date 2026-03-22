@@ -5,9 +5,9 @@ import { Sprout, HeartHandshake, Building2 } from "lucide-react";
 const cards = [
   {
     icon: HeartHandshake,
-    title: "Zoek je extra ondersteuning of patiënten?",
+    title: "Meer patiënten of minder administratie?",
     description:
-      "Wij ontzorgen je én helpen je praktijk groeien met een stabiele instroom.",
+      "Wij helpen je groeien met een stabiele instroom van patiënten en ondersteunen je bij je administratie.",
     color: "bg-secondary/10",
     iconColor: "text-secondary",
     href: "/onze-diensten/",
@@ -81,8 +81,8 @@ const MissionSection = () => {
         >
           <p className="text-muted-foreground text-lg sm:text-xl leading-relaxed">
             Hezo is er voor zelfstandige verpleegkundigen die zich
-            met hart en ziel inzetten voor hun patiënten, maar merken dat administratie
-            en facturatie steeds meer tijd vragen.
+            met hart en ziel inzetten voor hun patiënten, maar merken dat administratie,
+            facturatie en het vinden van patiënten steeds meer tijd vragen.
           </p>
         </motion.div>
 
