@@ -377,6 +377,12 @@ const articleContent: Record<string, {
     ),
   },
   "zelfstandig-thuisverpleegkundige-worden": {
+    heroImage: blogHeroZelfstandig,
+    headings: [
+      { id: "waarom-zelfstandig", label: "Waarom kiezen voor zelfstandig werken?" },
+      { id: "stappenplan", label: "Zelfstandig worden in 4 stappen" },
+      { id: "veelgestelde-vragen", label: "Veelgestelde vragen" },
+    ],
     content: (
       <>
         <p className="lead">
