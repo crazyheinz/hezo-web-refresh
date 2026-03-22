@@ -86,11 +86,11 @@ const Vacatures = () => {
   const allJobs = [
     {
       id: "regiomanager",
-      title: "Zelfstandig Regiomanager Thuisverpleging - Gent",
-      tagline: "Wil jij mee een nieuw netwerk voor zelfstandige thuisverpleging uitbouwen én regiomanager worden van jouw eigen zorgregio?",
+      title: "Zelfstandig Verantwoordelijke Thuisverpleging - Gent",
+      tagline: "Wil jij mee een nieuw netwerk voor zelfstandige thuisverpleging uitbouwen én verantwoordelijke verpleegkundige worden van jouw eigen zorgregio?",
       active: true,
       description:
-        "Bij Hezo bouw je als zelfstandig regiomanager aan een sterk lokaal netwerk van verpleegkundigen en zorgpartners. Je combineert organisatie en inhoudelijke zorgexpertise: je ondersteunt zelfstandige thuisverpleegkundigen, bewaakt de kwaliteit van zorg én helpt Hezo groeien in jouw regio. Hier ben je niet alleen een planner, maar ook een vertrouwenspersoon voor je team én een strategische partner in de verdere uitbouw van het Hezo-netwerk.",
+        "Bij Hezo bouw je als Zelfstandig Verantawoordelijke Verpleegkundige aan een sterk lokaal netwerk van verpleegkundigen en zorgpartners. Je combineert organisatie en inhoudelijke zorgexpertise: je ondersteunt zelfstandige thuisverpleegkundigen, bewaakt de kwaliteit van zorg én helpt Hezo groeien in jouw regio. Hier ben je niet alleen een planner, maar ook een vertrouwenspersoon voor je team én een strategische partner in de verdere uitbouw van het Hezo-netwerk.",
       responsibilities: [
         "Je bewaakt de continuïteit en kwaliteit van de zorg in jouw regio",
         "Je organiseert de planning en opvolging van zorgvragen binnen je team",
@@ -106,7 +106,7 @@ const Vacatures = () => {
       ],
       profile: [
         "Je beschikt over een diploma Verpleegkunde (HBO5, Bachelor of Master)",
-        "Je bent woonachtig in of rond Gent of Antwerpen",
+        "Je bent woonachtig in of rond Gent of omgeving",
         "Je beschikt over een rijbewijs en eigen vervoer, zodat je je flexibel binnen de regio kan verplaatsen",
         "Je hebt ervaring in de thuisverpleging",
         "Je benadert elke patiënt met authenticiteit en vertrouwen, en weet menselijke nabijheid te combineren met professionele zorg",
@@ -204,7 +204,7 @@ const Vacatures = () => {
     <div className="min-h-screen pt-32 pb-20">
       <SEO 
         title="Vacatures thuisverpleging | Werken bij Hezo"
-        description="Wil jij het verschil maken in de thuiszorg? Bekijk onze openstaande vacatures als praktijkcoach of regiomanager. Solliciteer direct →"
+        description="Wil jij het verschil maken in de thuiszorg? Bekijk onze openstaande vacatures als praktijkcoach of zelfstandig verantawoordelijke verpleegkundige. Solliciteer direct →"
         path="/vacatures"
         structuredData={{
           "@context": "https://schema.org",
@@ -212,7 +212,7 @@ const Vacatures = () => {
             {
               "@type": "WebPage",
               "name": "Vacatures bij Hezo",
-              "description": "Bekijk openstaande vacatures bij Hezo. Werk als praktijkcoach, regiomanager of administratief coördinator in de thuisverpleging.",
+              "description": "Bekijk openstaande vacatures bij Hezo. Werk als praktijkcoach, zelfstandig verantawoordelijke verpleegkundige in de thuisverpleging.",
               "url": "https://www.hezo.be/vacatures/"
             },
             ...jobs.map(job => ({
@@ -248,7 +248,7 @@ const Vacatures = () => {
                   "name": "Welke vacatures zijn er bij Hezo?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Hezo zoekt regelmatig nieuwe mensen: praktijkcoaches, regiomanagers en administratieve medewerkers met een hart voor zorg. Bekijk de actuele vacatures op hezo.be/vacatures."
+                    "text": "Hezo zoekt regelmatig nieuwe mensen: praktijkcoaches en zelfstandig verantawoordelijke verpleegkundige met een hart voor zorg. Bekijk de actuele vacatures op hezo.be/vacatures."
                   }
                 },
                 {
@@ -256,7 +256,7 @@ const Vacatures = () => {
                   "name": "Wat doet een regiomanager bij Hezo?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Als zelfstandig regiomanager bouw je aan een sterk lokaal netwerk van verpleegkundigen en zorgpartners. Je combineert organisatie en inhoudelijke zorgexpertise, ondersteunt zelfstandige thuisverpleegkundigen en bewaakt de kwaliteit van zorg."
+                    "text": "Als zelfstandig verantawoordelijke verpleegkundige bouw je aan een sterk lokaal netwerk van verpleegkundigen en zorgpartners. Je combineert organisatie en inhoudelijke zorgexpertise, ondersteunt zelfstandige thuisverpleegkundigen en bewaakt de kwaliteit van zorg."
                   }
                 },
                 {
