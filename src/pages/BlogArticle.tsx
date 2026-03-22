@@ -72,7 +72,7 @@ const articleContent: Record<string, {
         </ul>
         <p>Een kleine fout in software kan impact hebben op je facturatie of opvolging. Daarom is het belangrijk dat alles correct ingesteld en gebruikt wordt.</p>
 
-        <h2>Hoe kies je de juiste software?</h2>
+        <h2 id="juiste-software-kiezen">Hoe kies je de juiste software?</h2>
         <p>Bij het kiezen van software is het belangrijk om niet alleen naar functies te kijken, maar ook naar:</p>
         <ul>
           <li>hoe goed het aansluit bij jouw manier van werken</li>
