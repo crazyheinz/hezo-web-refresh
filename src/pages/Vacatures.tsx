@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useToast } from "@/hooks/use-toast";
-import { Briefcase, CheckCircle2 } from "lucide-react";
+import { Briefcase, CheckCircle2, MapPin, ChevronDown } from "lucide-react";
 import SEO from "@/components/SEO";
 
 import { supabase } from "@/integrations/supabase/client";
