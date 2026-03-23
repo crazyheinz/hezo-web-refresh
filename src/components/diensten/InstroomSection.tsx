@@ -1,5 +1,6 @@
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Users, Handshake } from "lucide-react";
+import { Users, Handshake, ArrowRight } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -57,6 +58,12 @@ const InstroomSection = () => {
                 Door die samenwerking vinden zorgvragen sneller hun weg naar de juiste zorgverlener. We verbinden mensen en organisaties rond één doel: toegankelijke en kwalitatieve zorg in de eigen omgeving van de patiënt.
               </p>
             </motion.div>
+
+            <motion.p variants={fadeUp} className="mt-8 text-center">
+              <Link to="/blog/patienten-thuisverpleegkundige/" className="inline-flex items-center text-coral hover:underline font-medium">
+                Lees meer over patiënten vinden als thuisverpleegkundige <ArrowRight className="ml-1 h-4 w-4" />
+              </Link>
+            </motion.p>
           </motion.div>
         </div>
       </div>

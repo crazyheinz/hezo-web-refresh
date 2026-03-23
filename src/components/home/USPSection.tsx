@@ -8,24 +8,32 @@ const features = [
     title: "Administratie & ondersteuning",
     description: "Ontdek hoe wij jou ontzorgen. Betrouwbare opvolging en digitaal overzicht.",
     href: "/onze-diensten/#administratie",
+    blogHref: "/blog/administratie-thuisverpleging/",
+    blogLabel: "Lees meer over administratie",
   },
   {
     icon: Users,
     title: "Instroom van patiënten",
     description: "Vind sneller nieuwe patiënten via het brede netwerk van Welzijnsgroep Helan.",
     href: "/onze-diensten/#instroom",
+    blogHref: "/blog/patienten-thuisverpleegkundige/",
+    blogLabel: "Lees meer over patiënten vinden",
   },
   {
     icon: Headphones,
     title: "Persoonlijke begeleiding",
     description: "Krijg advies op jouw maat. Zelfstandig, maar nooit alleen.",
     href: "/onze-diensten/#begeleiding",
+    blogHref: "/blog/zelfstandig-thuisverpleegkundige-worden/",
+    blogLabel: "Lees het stappenplan",
   },
   {
     icon: GraduationCap,
     title: "Opleiding & groei",
     description: "Versterk je vaardigheden en netwerk. Opleidingen op jouw tempo.",
     href: "/onze-diensten/#opleiding",
+    blogHref: "/blog/hbo5-graduaat-basisverpleegkunde/",
+    blogLabel: "Lees meer over HBO5 → graduaat",
   },
 ];
 
@@ -65,9 +73,12 @@ const USPSection = () => {
                       <h3 className="text-xl font-semibold mb-3 text-foreground">
                         {feature.title}
                       </h3>
-                      <p className="text-muted-foreground leading-relaxed">
+                      <p className="text-muted-foreground leading-relaxed mb-3">
                         {feature.description}
                       </p>
+                      <Link to={feature.blogHref} className="text-sm font-medium text-primary hover:underline" onClick={(e) => e.stopPropagation()}>
+                        {feature.blogLabel} →
+                      </Link>
                     </CardContent>
                   </Card>
                 </Link>

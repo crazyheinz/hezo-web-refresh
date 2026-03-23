@@ -72,9 +72,12 @@ const AdminSection = () => {
                 Administratie & ondersteuning
               </h2>
             </div>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl">
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-3">
               Zelfstandige thuisverpleegkundigen kunnen bij Hezo rekenen op betrouwbare administratieve ondersteuning. We volgen je prestaties op, verwerken je facturatie en zorgen voor duidelijke uitbetalingen. Zo hoef jij je niet bezig te houden met wat tijd en energie wegneemt van je zorg.
             </p>
+            <Link to="/blog/administratie-thuisverpleging/" className="inline-flex items-center text-light-blue hover:underline font-medium">
+              Lees meer over administratie in de thuisverpleging →
+            </Link>
           </motion.div>
 
           <div className="grid lg:grid-cols-[1fr_320px] gap-8 items-start">
