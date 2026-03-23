@@ -46,7 +46,7 @@ const CookieConsent = () => {
     <div className="fixed bottom-0 left-0 right-0 z-50 p-4 sm:p-6 bg-card border-t border-border shadow-lg">
       <div className="container mx-auto max-w-4xl flex flex-col sm:flex-row items-start sm:items-center gap-4">
         <p className="text-sm text-muted-foreground flex-1">
-          Wij gebruiken analytische cookies (Google Analytics) om onze website te
+          Wij gebruiken analytische cookies om onze website te
           verbeteren. Functionele cookies zijn altijd actief.{" "}
           <Link to="/cookies/" className="text-secondary underline hover:no-underline">
             Lees ons cookiebeleid
