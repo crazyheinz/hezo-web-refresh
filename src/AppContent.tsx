@@ -65,6 +65,7 @@ const AppContent = () => (
         </main>
         <Footer />
       </div>
+      <CookieConsent />
     </TooltipProvider>
   </QueryClientProvider>
 );
