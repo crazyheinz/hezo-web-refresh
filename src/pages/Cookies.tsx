@@ -137,10 +137,13 @@ const Cookies = () => {
           <section className="mb-8">
             <h2 className="text-xl font-semibold text-foreground mb-3">4. Cookies beheren</h2>
             <p className="text-muted-foreground leading-relaxed mb-3">
-              U kunt cookies steeds beheren of verwijderen via de instellingen van uw browser. Houd er wel rekening mee dat het blokkeren van functionele cookies de werking van de website kan beïnvloeden.
+              Bij uw eerste bezoek aan onze website krijgt u een cookiebanner te zien. U kunt analytische cookies accepteren of weigeren. Uw keuze wordt bewaard zodat u niet telkens opnieuw wordt gevraagd.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-3">
+              U kunt uw keuze op elk moment herzien door uw browsergegevens (localStorage) te wissen voor deze website, waarna de banner opnieuw verschijnt.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Meer informatie over het beheren van cookies vindt u op{" "}
+              Daarnaast kunt u cookies beheren of verwijderen via de instellingen van uw browser. Meer informatie vindt u op{" "}
               <a href="https://www.allaboutcookies.org" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">
                 www.allaboutcookies.org
               </a>.
