@@ -99,9 +99,12 @@ const BegeleidingSection = () => {
                 <li>advies bij keuze en koppeling van software</li>
                 <li>praktische checklists zodat je niets over het hoofd ziet</li>
               </ul>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed mb-3">
                 Zo kan je met vertrouwen starten als zelfstandige thuisverpleegkundige, zonder dat papierwerk of onzekerheid je afremt.
               </p>
+              <Link to="/blog/zelfstandig-thuisverpleegkundige-worden/" className="inline-flex items-center text-yellow hover:underline font-medium">
+                Lees ons stappenplan: zelfstandig thuisverpleegkundige worden →
+              </Link>
             </motion.div>
 
             {/* 3. Praktijk block (nieuw) */}

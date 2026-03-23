@@ -73,9 +73,12 @@ const USPSection = () => {
                       <h3 className="text-xl font-semibold mb-3 text-foreground">
                         {feature.title}
                       </h3>
-                      <p className="text-muted-foreground leading-relaxed">
+                      <p className="text-muted-foreground leading-relaxed mb-3">
                         {feature.description}
                       </p>
+                      <Link to={feature.blogHref} className="text-sm font-medium text-primary hover:underline" onClick={(e) => e.stopPropagation()}>
+                        {feature.blogLabel} →
+                      </Link>
                     </CardContent>
                   </Card>
                 </Link>
