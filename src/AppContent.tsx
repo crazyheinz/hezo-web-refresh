@@ -19,6 +19,8 @@ import WebinarView from "./pages/WebinarView";
 import Privacy from "./pages/Privacy";
 import Cookies from "./pages/Cookies";
 import NotFound from "./pages/NotFound";
+import CookieConsent from "./components/CookieConsent";
+import GoogleAnalytics from "./components/GoogleAnalytics";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +30,7 @@ const AppContent = () => (
       <Toaster />
       <Sonner />
       <ScrollToTop />
+      <GoogleAnalytics />
       <div className="flex flex-col min-h-screen">
         <Navigation />
         <main className="flex-grow">
@@ -62,6 +65,7 @@ const AppContent = () => (
         </main>
         <Footer />
       </div>
+      <CookieConsent />
     </TooltipProvider>
   </QueryClientProvider>
 );
