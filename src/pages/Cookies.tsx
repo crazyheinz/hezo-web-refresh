@@ -57,16 +57,22 @@ const Cookies = () => {
           <section className="mb-8">
             <h2 className="text-xl font-semibold text-foreground mb-3">2. Welke cookies gebruiken wij?</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Hezo vzw maakt op haar website <span className="font-medium text-foreground">uitsluitend gebruik van strikt noodzakelijke (functionele) cookies</span>. Deze cookies zijn essentieel voor de goede werking van de website en kunnen niet worden uitgeschakeld.
+              Hezo vzw maakt op haar website gebruik van twee soorten cookies:
             </p>
+            <ul className="list-disc list-inside text-muted-foreground leading-relaxed space-y-1 mb-4">
+              <li><span className="font-medium text-foreground">Strikt noodzakelijke (functionele) cookies</span> – essentieel voor de goede werking van de website. Deze kunnen niet worden uitgeschakeld.</li>
+              <li><span className="font-medium text-foreground">Analytische cookies</span> – worden pas geplaatst na uw uitdrukkelijke toestemming via de cookiebanner. Wij gebruiken hiervoor Google Analytics.</li>
+            </ul>
           </section>
 
           <Separator className="mb-8" />
 
-          {/* 3. Overzicht functionele cookies */}
+          {/* 3. Overzicht cookies */}
           <section className="mb-8">
-            <h2 className="text-xl font-semibold text-foreground mb-3">3. Overzicht van onze functionele cookies</h2>
-            <div className="overflow-x-auto">
+            <h2 className="text-xl font-semibold text-foreground mb-3">3. Overzicht van onze cookies</h2>
+
+            <h3 className="text-lg font-medium text-foreground mt-4 mb-2">Functionele cookies</h3>
+            <div className="overflow-x-auto mb-6">
               <table className="w-full text-sm border border-border rounded-lg">
                 <thead>
                   <tr className="bg-muted">
@@ -81,9 +87,48 @@ const Cookies = () => {
                     <td className="p-3 text-muted-foreground border-b border-border">Noodzakelijk voor de technische werking van de website (bv. sessiebeheer)</td>
                     <td className="p-3 text-muted-foreground border-b border-border">Duur van de sessie</td>
                   </tr>
+                  <tr>
+                    <td className="p-3 text-muted-foreground border-b border-border">hezo_cookie_consent</td>
+                    <td className="p-3 text-muted-foreground border-b border-border">Onthoudt uw cookievoorkeuren</td>
+                    <td className="p-3 text-muted-foreground border-b border-border">Onbeperkt (localStorage)</td>
+                  </tr>
                 </tbody>
               </table>
             </div>
+
+            <h3 className="text-lg font-medium text-foreground mt-4 mb-2">Analytische cookies (na toestemming)</h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border border-border rounded-lg">
+                <thead>
+                  <tr className="bg-muted">
+                    <th className="text-left p-3 font-semibold text-foreground border-b border-border">Cookie</th>
+                    <th className="text-left p-3 font-semibold text-foreground border-b border-border">Doel</th>
+                    <th className="text-left p-3 font-semibold text-foreground border-b border-border">Bewaartermijn</th>
+                    <th className="text-left p-3 font-semibold text-foreground border-b border-border">Aanbieder</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="p-3 text-muted-foreground border-b border-border">_ga</td>
+                    <td className="p-3 text-muted-foreground border-b border-border">Onderscheidt unieke bezoekers</td>
+                    <td className="p-3 text-muted-foreground border-b border-border">2 jaar</td>
+                    <td className="p-3 text-muted-foreground border-b border-border">Google</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 text-muted-foreground border-b border-border">_ga_*</td>
+                    <td className="p-3 text-muted-foreground border-b border-border">Bewaart sessiestatus voor Google Analytics</td>
+                    <td className="p-3 text-muted-foreground border-b border-border">2 jaar</td>
+                    <td className="p-3 text-muted-foreground border-b border-border">Google</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-muted-foreground text-sm mt-3">
+              IP-adressen worden geanonimiseerd. Meer informatie over hoe Google gegevens verwerkt vindt u in het{" "}
+              <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">
+                privacybeleid van Google
+              </a>.
+            </p>
           </section>
 
           <Separator className="mb-8" />
