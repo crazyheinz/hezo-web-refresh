@@ -1,5 +1,6 @@
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Users, Handshake } from "lucide-react";
+import { Users, Handshake, ArrowRight } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
