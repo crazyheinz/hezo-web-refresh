@@ -11,6 +11,15 @@ export interface BlogArticleData {
 
 export const blogArticles: BlogArticleData[] = [
   {
+    id: "werk-privebalans-thuisverpleegkundige",
+    title: "Werk-privébalans als zelfstandige thuisverpleegkundige: waarom het vaak misloopt (en hoe het anders kan)",
+    excerpt: "Werk-privébalans in de thuisverpleging is niet evident. Ontdek waarom het vaak misloopt en hoe je als zelfstandige verpleegkundige meer rust en structuur creëert.",
+    metaTitle: "Werk-privébalans thuisverpleegkundige: tips & ondersteuning | Hezo",
+    date: "2026-03-24",
+    category: "Welzijn",
+    readTime: "9 min"
+  },
+  {
     id: "software-thuisverpleging",
     title: "Software in de thuisverpleging: wat heb je nodig als zelfstandige verpleegkundige?",
     excerpt: "Welke software heb je nodig in de thuisverpleging? Ontdek hoe registratie, facturatie en tools werken en waar je op moet letten.",
