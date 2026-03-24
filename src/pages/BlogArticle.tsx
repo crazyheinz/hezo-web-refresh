@@ -50,7 +50,7 @@ const articleContent: Record<string, {
           <li>zelf instaan voor <Link to="/blog/patienten-thuisverpleegkundige/" className="text-secondary hover:underline">patiënteninstroom</Link></li>
           <li>weinig structurele ondersteuning</li>
         </ul>
-        <p>👉 Het resultaat: werk stopt niet wanneer je werkdag eindigt.</p>
+        <p>Het resultaat: werk stopt niet wanneer je werkdag eindigt.</p>
 
         <h2 id="echte-probleem">Het echte probleem: niet de zorg, maar alles errond</h2>
         <p>Wat vaak over het hoofd wordt gezien: de grootste belasting zit niet in de zorg zelf, maar in alles wat erbij komt kijken.</p>
