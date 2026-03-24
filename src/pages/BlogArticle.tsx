@@ -62,7 +62,7 @@ const articleContent: Record<string, {
           <li>financiële opvolging</li>
           <li>organisatie van je praktijk</li>
         </ul>
-        <p>👉 Dit zorgt voor mentale belasting en versnippering, waardoor werk en privé door elkaar beginnen te lopen.</p>
+        <p>Dit zorgt voor mentale belasting en versnippering, waardoor werk en privé door elkaar beginnen te lopen.</p>
 
         <h2 id="wat-gebeurt">Wat er gebeurt als die balans ontbreekt</h2>
         <p>Een slechte werk-privébalans heeft impact op meerdere niveaus:</p>
