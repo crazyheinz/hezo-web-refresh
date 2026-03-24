@@ -749,7 +749,7 @@ const BlogArticle = () => {
       />
 
       <div className="pt-24 pb-16">
-        <article className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+        <article className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           {/* Back link */}
           <Link 
             to="/blog/"
@@ -759,68 +759,89 @@ const BlogArticle = () => {
             Terug naar Blog
           </Link>
 
-          {/* Article header */}
-          <header className="mb-4">
-            <div className="flex items-center gap-3 text-sm text-muted-foreground mb-4">
-              <span className="bg-secondary/10 text-secondary px-3 py-1 rounded-full font-medium">
-                {article.category}
-              </span>
-              <span className="flex items-center gap-1">
-                <Calendar className="h-4 w-4" />
-                {formatDate(article.date)}
-              </span>
-              <span className="flex items-center gap-1">
-                <Clock className="h-4 w-4" />
-                {article.readTime}
-              </span>
+          {/* Two-column header: meta+title left, hero image right */}
+          <header className="mb-12">
+            <div className={`grid ${content.heroImage ? 'lg:grid-cols-2' : ''} gap-12 lg:gap-16 items-center`}>
+              <div>
+                <div className="flex items-center gap-3 text-sm text-muted-foreground mb-4">
+                  <span className="bg-secondary/10 text-secondary px-3 py-1 rounded-full font-medium">
+                    {article.category}
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <Calendar className="h-4 w-4" />
+                    {formatDate(article.date)}
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <Clock className="h-4 w-4" />
+                    {article.readTime}
+                  </span>
+                </div>
+                
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary leading-tight">
+                  {article.title}
+                </h1>
+              </div>
+
+              {content.heroImage && (
+                <div className="flex justify-center">
+                  <BlogHeroImage src={content.heroImage} alt={article.title} />
+                </div>
+              )}
             </div>
-            
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary leading-tight">
-              {article.title}
-            </h1>
           </header>
 
-          {/* Hero image */}
-          {content.heroImage && (
-            <BlogHeroImage src={content.heroImage} alt={article.title} />
-          )}
-
-          {/* Table of Contents */}
+          {/* Mobile TOC (shown above content on small screens) */}
           {content.headings.length > 0 && (
-            <TableOfContents headings={content.headings} />
-          )}
-
-          {/* Article content */}
-          <div className="prose prose-lg max-w-none prose-headings:text-primary prose-headings:font-semibold prose-headings:scroll-mt-24 prose-p:text-muted-foreground prose-li:text-muted-foreground prose-a:text-secondary">
-            {content.content}
-          </div>
-
-          {/* CTA */}
-          {content.cta || (
-            <div className="mt-12 p-8 bg-muted rounded-2xl">
-              <h3 className="text-xl font-semibold text-primary mb-2">
-                Meer weten over Hezo?
-              </h3>
-              <p className="text-muted-foreground mb-4">
-                Ontdek hoe wij zelfstandige verpleegkundigen ondersteunen of neem contact met ons op.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Link 
-                  to="/onze-diensten/"
-                  onClick={() => window.scrollTo(0, 0)}
-                  className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-6 py-3 rounded-lg font-medium hover:bg-secondary/90 transition-colors"
-                >
-                  Ons aanbod
-                </Link>
-                <Link 
-                  to="/contact/"
-                  className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors"
-                >
-                  Contact
-                </Link>
-              </div>
+            <div className="lg:hidden mb-8">
+              <TableOfContents headings={content.headings} />
             </div>
           )}
+
+          {/* Two-column content: article left, sticky TOC right */}
+          <div className="grid lg:grid-cols-[1fr_280px] gap-12 items-start">
+            <div>
+              {/* Article content */}
+              <div className="prose prose-lg max-w-none prose-headings:text-primary prose-headings:font-semibold prose-headings:scroll-mt-24 prose-p:text-muted-foreground prose-li:text-muted-foreground prose-a:text-secondary">
+                {content.content}
+              </div>
+
+              {/* CTA */}
+              {content.cta || (
+                <div className="mt-12 p-8 bg-muted rounded-2xl">
+                  <h3 className="text-xl font-semibold text-primary mb-2">
+                    Meer weten over Hezo?
+                  </h3>
+                  <p className="text-muted-foreground mb-4">
+                    Ontdek hoe wij zelfstandige verpleegkundigen ondersteunen of neem contact met ons op.
+                  </p>
+                  <div className="flex flex-wrap gap-4">
+                    <Link 
+                      to="/onze-diensten/"
+                      onClick={() => window.scrollTo(0, 0)}
+                      className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-6 py-3 rounded-lg font-medium hover:bg-secondary/90 transition-colors"
+                    >
+                      Ons aanbod
+                    </Link>
+                    <Link 
+                      to="/contact/"
+                      className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors"
+                    >
+                      Contact
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Sticky TOC sidebar */}
+            {content.headings.length > 0 && (
+              <aside className="hidden lg:block">
+                <div className="lg:sticky lg:top-28">
+                  <TableOfContents headings={content.headings} />
+                </div>
+              </aside>
+            )}
+          </div>
         </article>
       </div>
     </>
