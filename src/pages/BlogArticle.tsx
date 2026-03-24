@@ -9,6 +9,7 @@ import blogHeroPatienten from "@/assets/blog-hero-patienten.png";
 import blogHeroAdministratie from "@/assets/blog-hero-administratie.png";
 import blogHeroZelfstandig from "@/assets/blog-hero-zelfstandig.png";
 import blogHeroHbo5 from "@/assets/blog-hero-hbo5.png";
+import blogHeroBalans from "@/assets/blog-hero-balans.png";
 
 // Full article content - add content for each article ID
 const articleContent: Record<string, {
