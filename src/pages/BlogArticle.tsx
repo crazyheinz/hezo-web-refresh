@@ -798,7 +798,7 @@ const BlogArticle = () => {
           )}
 
           {/* Two-column content: article left, sticky TOC right */}
-          <div className="grid lg:grid-cols-[1fr_280px] gap-12 items-start">
+          <div className="grid lg:grid-cols-[1fr_320px] gap-8 items-start">
             <div>
               {/* Article content */}
               <div className="prose prose-lg max-w-none prose-headings:text-primary prose-headings:font-semibold prose-headings:scroll-mt-24 prose-p:text-muted-foreground prose-li:text-muted-foreground prose-a:text-secondary">
