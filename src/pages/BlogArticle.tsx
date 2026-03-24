@@ -92,9 +92,11 @@ const articleContent: Record<string, {
 
         <h2 id="welzijn-gevolg">Welzijn is geen extra, maar een gevolg van hoe je werkt</h2>
         <p>Werk-privébalans wordt vaak gezien als iets dat je "erbij moet doen". In werkelijkheid is het een rechtstreeks gevolg van hoe je je werk organiseert.</p>
-        <p>👉 Minder ruis = meer focus</p>
-        <p>👉 Meer structuur = meer rust</p>
-        <p>👉 Betere ondersteuning = meer ruimte voor jezelf</p>
+        <ul>
+          <li>Minder ruis = meer focus</li>
+          <li>Meer structuur = meer rust</li>
+          <li>Betere ondersteuning = meer ruimte voor jezelf</li>
+        </ul>
 
         <h2 id="hezo-ondersteuning-balans">Hoe Hezo hierbij ondersteunt</h2>
         <p>Bij Hezo vertrekken we vanuit één principe: zorgverleners moeten zich kunnen focussen op zorg, niet op alles errond.</p>
