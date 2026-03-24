@@ -8,14 +8,14 @@ interface BlogHeroImageProps {
 const BlogHeroImage = ({ src, alt }: BlogHeroImageProps) => {
   return (
     <motion.div
-      className="flex justify-center my-8"
+      className="flex justify-center"
       animate={{ y: [0, -8, 0] }}
-      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+      transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
     >
       <img
         src={src}
         alt={alt}
-        className="w-full h-auto object-contain max-w-sm"
+        className="w-full max-w-md h-auto object-contain rounded-2xl"
         loading="lazy"
       />
     </motion.div>
