@@ -50,7 +50,7 @@ const articleContent: Record<string, {
           <li>zelf instaan voor <Link to="/blog/patienten-thuisverpleegkundige/" className="text-secondary hover:underline">patiënteninstroom</Link></li>
           <li>weinig structurele ondersteuning</li>
         </ul>
-        <p>👉 Het resultaat: werk stopt niet wanneer je werkdag eindigt.</p>
+        <p>Het resultaat: werk stopt niet wanneer je werkdag eindigt.</p>
 
         <h2 id="echte-probleem">Het echte probleem: niet de zorg, maar alles errond</h2>
         <p>Wat vaak over het hoofd wordt gezien: de grootste belasting zit niet in de zorg zelf, maar in alles wat erbij komt kijken.</p>
@@ -62,7 +62,7 @@ const articleContent: Record<string, {
           <li>financiële opvolging</li>
           <li>organisatie van je praktijk</li>
         </ul>
-        <p>👉 Dit zorgt voor mentale belasting en versnippering, waardoor werk en privé door elkaar beginnen te lopen.</p>
+        <p>Dit zorgt voor mentale belasting en versnippering, waardoor werk en privé door elkaar beginnen te lopen.</p>
 
         <h2 id="wat-gebeurt">Wat er gebeurt als die balans ontbreekt</h2>
         <p>Een slechte werk-privébalans heeft impact op meerdere niveaus:</p>
@@ -92,9 +92,11 @@ const articleContent: Record<string, {
 
         <h2 id="welzijn-gevolg">Welzijn is geen extra, maar een gevolg van hoe je werkt</h2>
         <p>Werk-privébalans wordt vaak gezien als iets dat je "erbij moet doen". In werkelijkheid is het een rechtstreeks gevolg van hoe je je werk organiseert.</p>
-        <p>👉 Minder ruis = meer focus</p>
-        <p>👉 Meer structuur = meer rust</p>
-        <p>👉 Betere ondersteuning = meer ruimte voor jezelf</p>
+        <ul>
+          <li>Minder ruis = meer focus</li>
+          <li>Meer structuur = meer rust</li>
+          <li>Betere ondersteuning = meer ruimte voor jezelf</li>
+        </ul>
 
         <h2 id="hezo-ondersteuning-balans">Hoe Hezo hierbij ondersteunt</h2>
         <p>Bij Hezo vertrekken we vanuit één principe: zorgverleners moeten zich kunnen focussen op zorg, niet op alles errond.</p>
