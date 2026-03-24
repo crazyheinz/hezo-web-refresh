@@ -99,7 +99,7 @@ const articleContent: Record<string, {
         </ul>
 
         <h2 id="hezo-ondersteuning-balans">Hoe Hezo hierbij ondersteunt</h2>
-        <p>Bij Hezo vertrekken we vanuit één principe: zorgverleners moeten zich kunnen focussen op zorg, niet op alles errond.</p>
+        <p>Bij Hezo vertrekken we vanuit één principe: thuisverpleegkundigen moeten zich maximaal kunnen focussen op zorg.</p>
         <p>Daarom ondersteunen we zelfstandige thuisverpleegkundigen met:</p>
         <ul>
           <li>ondersteuning bij <Link to="/onze-diensten/#instroom" className="text-secondary hover:underline">patiënteninstroom</Link></li>
