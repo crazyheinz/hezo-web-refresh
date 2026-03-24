@@ -790,6 +790,13 @@ const BlogArticle = () => {
             </div>
           </header>
 
+          {/* Mobile TOC (shown above content on small screens) */}
+          {content.headings.length > 0 && (
+            <div className="lg:hidden mb-8">
+              <TableOfContents headings={content.headings} />
+            </div>
+          )}
+
           {/* Two-column content: article left, sticky TOC right */}
           <div className="grid lg:grid-cols-[1fr_280px] gap-12 items-start">
             <div>
@@ -835,13 +842,6 @@ const BlogArticle = () => {
               </aside>
             )}
           </div>
-
-          {/* Mobile TOC (shown above content on small screens) */}
-          {content.headings.length > 0 && (
-            <div className="lg:hidden -mt-8 mb-8">
-              <TableOfContents headings={content.headings} />
-            </div>
-          )}
         </article>
       </div>
     </>
