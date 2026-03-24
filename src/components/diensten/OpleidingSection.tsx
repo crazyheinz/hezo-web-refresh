@@ -115,12 +115,9 @@ const OpleidingSection = () => {
                       Leren in verbinding
                     </h3>
                   </div>
-                  <p className="text-muted-foreground leading-relaxed mb-3">
+                  <p className="text-muted-foreground leading-relaxed">
                     Binnen het netwerk van Hezo ontmoet je andere zelfstandige thuisverpleegkundigen. Je wisselt ervaringen uit, bespreekt praktijksituaties en leert van elkaar.
                   </p>
-                  <Link to="/blog/hbo5-graduaat-basisverpleegkunde/" className="inline-flex items-center text-green hover:underline font-medium">
-                    Lees meer over de hervorming van HBO5 naar graduaat Basisverpleegkunde →
-                  </Link>
                 </motion.div>
               </div>
             </div>
