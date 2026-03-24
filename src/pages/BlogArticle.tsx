@@ -18,6 +18,128 @@ const articleContent: Record<string, {
   heroImage?: string;
   headings: { id: string; label: string }[];
 }> = {
+  "werk-privebalans-thuisverpleegkundige": {
+    heroImage: blogHeroBalans,
+    headings: [
+      { id: "waarom-moeilijk", label: "Waarom werk-privébalans zo moeilijk is" },
+      { id: "echte-probleem", label: "Het echte probleem: alles errond" },
+      { id: "wat-gebeurt", label: "Wat er gebeurt als die balans ontbreekt" },
+      { id: "structuur-ontzorging", label: "Structuur en ontzorging" },
+      { id: "welzijn-gevolg", label: "Welzijn is een gevolg van hoe je werkt" },
+      { id: "hezo-ondersteuning-balans", label: "Hoe Hezo hierbij ondersteunt" },
+    ],
+    content: (
+      <>
+        <p className="lead">
+          De werkdruk in de thuisverpleging neemt toe. Patiënten worden sneller ontslagen uit het ziekenhuis, zorg wordt complexer en de administratieve lasten blijven groeien.
+        </p>
+        <p>
+          Voor zelfstandige thuisverpleegkundigen betekent dit vaak lange dagen, weinig voorspelbaarheid en een moeilijke balans tussen werk en privé.
+        </p>
+        <p>
+          Toch ligt de oplossing niet in minder werken, maar in anders organiseren.
+        </p>
+
+        <h2 id="waarom-moeilijk">Waarom werk-privébalans zo moeilijk is in de thuisverpleging</h2>
+        <p>Veel verpleegkundigen starten zelfstandig met de verwachting meer vrijheid te hebben. In de praktijk ervaren velen het tegenovergestelde.</p>
+        <p>Typische uitdagingen:</p>
+        <ul>
+          <li>onregelmatige en lange werkdagen</li>
+          <li>last-minute wijzigingen in de planning</li>
+          <li><Link to="/blog/administratie-thuisverpleging/" className="text-secondary hover:underline">administratie en facturatie</Link> die blijven liggen</li>
+          <li>zelf instaan voor <Link to="/blog/patienten-thuisverpleegkundige/" className="text-secondary hover:underline">patiënteninstroom</Link></li>
+          <li>weinig structurele ondersteuning</li>
+        </ul>
+        <p>👉 Het resultaat: werk stopt niet wanneer je werkdag eindigt.</p>
+
+        <h2 id="echte-probleem">Het echte probleem: niet de zorg, maar alles errond</h2>
+        <p>Wat vaak over het hoofd wordt gezien: de grootste belasting zit niet in de zorg zelf, maar in alles wat erbij komt kijken.</p>
+        <p>Denk aan:</p>
+        <ul>
+          <li><Link to="/blog/administratie-thuisverpleging/" className="text-secondary hover:underline">administratie</Link> en RIZIV-verplichtingen</li>
+          <li>planning en routebeheer</li>
+          <li>communicatie met patiënten en partners</li>
+          <li>financiële opvolging</li>
+          <li>organisatie van je praktijk</li>
+        </ul>
+        <p>👉 Dit zorgt voor mentale belasting en versnippering, waardoor werk en privé door elkaar beginnen te lopen.</p>
+
+        <h2 id="wat-gebeurt">Wat er gebeurt als die balans ontbreekt</h2>
+        <p>Een slechte werk-privébalans heeft impact op meerdere niveaus:</p>
+        <ul>
+          <li>minder energie tijdens zorgmomenten</li>
+          <li>verhoogde stress en mentale vermoeidheid</li>
+          <li>minder tijd voor gezin en ontspanning</li>
+          <li>risico op langdurige overbelasting</li>
+        </ul>
+        <p>Op lange termijn maakt dit het moeilijk om je job vol te houden — zelfs als je ze graag doet.</p>
+
+        <h2 id="structuur-ontzorging">Werk-privébalans begint bij structuur en ontzorging</h2>
+        <p>Meer balans creëren betekent niet dat je minder betrokken bent bij je werk. Het betekent dat je de juiste dingen zelf doet, en de rest structureel organiseert of uit handen geeft.</p>
+        <p>Enkele belangrijke hefbomen:</p>
+
+        <h3>1. Minder administratieve belasting</h3>
+        <p>Zorg dat <Link to="/blog/administratie-thuisverpleging/" className="text-secondary hover:underline">administratie, facturatie en opvolging</Link> niet telkens opnieuw energie vragen.</p>
+
+        <h3>2. Een stabiele patiënteninstroom</h3>
+        <p>Niet voortdurend zelf op zoek moeten gaan naar <Link to="/blog/patienten-thuisverpleegkundige/" className="text-secondary hover:underline">patiënten</Link> geeft rust en voorspelbaarheid.</p>
+
+        <h3>3. Duidelijke planning en organisatie</h3>
+        <p>Een gestructureerde agenda vermindert last-minute stress en versnippering.</p>
+
+        <h3>4. Samenwerking met andere verpleegkundigen</h3>
+        <p>Niet alles alleen moeten oplossen zorgt voor ondersteuning en continuïteit.</p>
+
+        <h2 id="welzijn-gevolg">Welzijn is geen extra, maar een gevolg van hoe je werkt</h2>
+        <p>Werk-privébalans wordt vaak gezien als iets dat je "erbij moet doen". In werkelijkheid is het een rechtstreeks gevolg van hoe je je werk organiseert.</p>
+        <p>👉 Minder ruis = meer focus</p>
+        <p>👉 Meer structuur = meer rust</p>
+        <p>👉 Betere ondersteuning = meer ruimte voor jezelf</p>
+
+        <h2 id="hezo-ondersteuning-balans">Hoe Hezo hierbij ondersteunt</h2>
+        <p>Bij Hezo vertrekken we vanuit één principe: zorgverleners moeten zich kunnen focussen op zorg, niet op alles errond.</p>
+        <p>Daarom ondersteunen we zelfstandige thuisverpleegkundigen met:</p>
+        <ul>
+          <li>ondersteuning bij <Link to="/onze-diensten/#instroom" className="text-secondary hover:underline">patiënteninstroom</Link></li>
+          <li>hulp bij <Link to="/onze-diensten/#administratie" className="text-secondary hover:underline">administratie en organisatie</Link></li>
+          <li><Link to="/onze-diensten/#begeleiding" className="text-secondary hover:underline">begeleiding</Link> bij het opstarten of uitbouwen van een praktijk</li>
+          <li>een netwerk van collega-verpleegkundigen</li>
+        </ul>
+        <p>Zo ontstaat er meer rust, meer overzicht en uiteindelijk ook een betere werk-privébalans.</p>
+
+        <div className="my-8 p-6 bg-green/10 border-l-4 border-green rounded-r-lg">
+          <p className="text-primary text-lg font-medium mb-0">
+            Werk-privébalans in de thuisverpleging is geen evidentie. Maar het is ook geen toeval. Het is het resultaat van hoe je je werk organiseert.
+          </p>
+        </div>
+      </>
+    ),
+    cta: (
+      <div className="mt-12 p-8 bg-muted rounded-2xl">
+        <h3 className="text-xl font-semibold text-primary mb-2">
+          Meer ruimte voor evenwicht?
+        </h3>
+        <p className="text-muted-foreground mb-4">
+          Ontdek hoe Hezo jou kan ondersteunen zodat je meer tijd overhoudt voor wat echt telt.
+        </p>
+        <div className="flex flex-wrap gap-4">
+          <Link
+            to="/onze-diensten/"
+            onClick={() => window.scrollTo(0, 0)}
+            className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-6 py-3 rounded-lg font-medium hover:bg-secondary/90 transition-colors"
+          >
+            Ontdek onze diensten
+          </Link>
+          <Link
+            to="/contact/"
+            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors"
+          >
+            Neem contact op
+          </Link>
+        </div>
+      </div>
+    ),
+  },
   "software-thuisverpleging": {
     heroImage: blogHeroSoftware,
     headings: [
