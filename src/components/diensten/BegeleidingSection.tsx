@@ -146,6 +146,9 @@ const BegeleidingSection = () => {
                 <li>samenwerking met andere verpleegkundigen</li>
                 <li>praktische vragen rond planning, software en werking</li>
               </ul>
+              <Link to="/blog/werk-privebalans-thuisverpleegkundige/" className="inline-flex items-center text-yellow hover:underline font-medium mt-4">
+                Ontdek hoe je meer werk-privébalans creëert →
+              </Link>
             </motion.div>
           </motion.div>
         </div>
