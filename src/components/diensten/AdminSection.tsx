@@ -133,9 +133,12 @@ const AdminSection = () => {
                 <h3 className="text-xl font-bold text-foreground mb-4">
                   Meer ruimte voor evenwicht
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed mb-4">
                   Wanneer administratie helder en correct verloopt, ontstaat er ruimte. Ruimte om je te focussen op je patiënten. En ruimte om je werk en privé beter in balans te houden.
                 </p>
+                <Link to="/blog/werk-privebalans-thuisverpleegkundige/" className="inline-flex items-center text-light-blue hover:underline font-medium">
+                  Ontdek hoe je meer werk-privébalans creëert →
+                </Link>
               </div>
             </motion.div>
           </div>
