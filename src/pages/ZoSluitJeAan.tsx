@@ -287,6 +287,12 @@ const ZoSluitJeAan = () => {
                   </li>
                 ))}
               </ul>
+              <div className="bg-secondary/5 border border-secondary/15 rounded-xl p-5 mb-6">
+                <p className="text-foreground font-semibold mb-2">Elke praktijk is anders</p>
+                <p className="text-muted-foreground leading-relaxed">
+                  We maken een simulatie op maat, gebaseerd op jouw omzet en situatie. Zo zie je meteen je netto-impact, in duidelijke cijfers zonder verrassingen.
+                </p>
+              </div>
               <p className="text-foreground font-medium">
                 Zo weet je vooraf precies waar je aan toe bent.
               </p>
