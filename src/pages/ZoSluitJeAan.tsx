@@ -99,11 +99,6 @@ const faqData = [
       "Tijdens het kennismakingsgesprek leggen we transparant uit hoe de samenwerking werkt en welke abonnementformules er zijn. We maken ook een simulatie op maat, gebaseerd op jouw omzet en situatie, zodat je meteen ziet wat de netto-impact is. Zo weet je vooraf precies waar je aan toe bent, in duidelijke cijfers zonder verrassingen.",
   },
   {
-    question: "Elke praktijk is anders. Hoe houdt Hezo daar rekening mee?",
-    answer:
-      "Benieuwd wat Hezo concreet voor jouw praktijk betekent? Tijdens het kennismakingsgesprek maken we een simulatie op maat, gebaseerd op jouw omzet en situatie. Zo zie je meteen je netto-impact, in duidelijke cijfers zonder verrassingen.",
-  },
-  {
     question: "Hoe verloopt de samenwerking concreet?",
     answer:
       "Tijdens het kennismakingsgesprek leggen we duidelijk uit hoe de samenwerking verloopt en welke ondersteuning je kan verwachten. Zo weet je precies waar je aan toe bent.",
