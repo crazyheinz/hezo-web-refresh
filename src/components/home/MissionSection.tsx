@@ -94,14 +94,27 @@ const MissionSection = () => {
           wat er echt toe doet: zorgen voor patiënten.
         </motion.p>
 
-        <motion.p
+        <motion.div
           variants={fadeUp}
-          className="text-sm sm:text-base text-foreground/70 italic text-center max-w-xl mx-auto mb-16 border-l-2 border-secondary/40 pl-4"
+          className="max-w-2xl mx-auto mb-16 bg-gradient-to-br from-secondary/5 via-light-blue/5 to-transparent border border-secondary/15 rounded-2xl p-6 sm:p-8"
         >
-          Je blijft volledig zelfstandig werken: je organiseert je eigen
-          praktijk, behoudt je patiëntenbestand en kiest zelf met wie je
-          samenwerkt.
-        </motion.p>
+          <h3 className="text-lg sm:text-xl font-semibold text-foreground text-center mb-5">
+            Je blijft volledig zelfstandig
+          </h3>
+          <div className="grid sm:grid-cols-2 gap-3">
+            {[
+              "Je behoudt je eigen identiteit",
+              "Je behoudt je patiëntenbestand",
+              "Je organiseert je eigen werking",
+              "Je kiest zelf met wie je samenwerkt",
+            ].map((item, i) => (
+              <div key={i} className="flex items-center gap-3 bg-card/60 rounded-xl px-4 py-3 border border-border/40">
+                <div className="w-2 h-2 rounded-full bg-secondary shrink-0" />
+                <span className="text-sm sm:text-base text-foreground/80">{item}</span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
 
         <motion.div
           className="grid md:grid-cols-3 gap-6 lg:gap-8"
