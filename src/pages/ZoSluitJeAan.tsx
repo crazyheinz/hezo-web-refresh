@@ -32,7 +32,7 @@ const stepsData = [
     number: "2",
     title: "Kennismakingsgesprek",
     description:
-      "Tijdens een persoonlijk gesprek bekijken we hoe Hezo jou het best kan ondersteunen en beantwoorden we al je vragen.",
+      "Tijdens een persoonlijk gesprek bekijken we hoe Hezo jou het best kan ondersteunen. We maken een simulatie op maat, gebaseerd op jouw omzet en situatie. Zo zie je meteen je netto-impact, in duidelijke cijfers zonder verrassingen.",
     icon: Users,
     color: "bg-coral/10 text-coral border-coral/20",
   },
@@ -96,7 +96,12 @@ const faqData = [
   {
     question: "Wat kost aansluiten bij Hezo?",
     answer:
-      "Tijdens het kennismakingsgesprek leggen we transparant uit hoe de samenwerking werkt en welke abonnementformules er zijn. Zo weet je vooraf precies waar je aan toe bent.",
+      "Tijdens het kennismakingsgesprek leggen we transparant uit hoe de samenwerking werkt en welke abonnementformules er zijn. We maken ook een simulatie op maat, gebaseerd op jouw omzet en situatie, zodat je meteen ziet wat de netto-impact is. Zo weet je vooraf precies waar je aan toe bent, in duidelijke cijfers zonder verrassingen.",
+  },
+  {
+    question: "Elke praktijk is anders. Hoe houdt Hezo daar rekening mee?",
+    answer:
+      "Benieuwd wat Hezo concreet voor jouw praktijk betekent? Tijdens het kennismakingsgesprek maken we een simulatie op maat, gebaseerd op jouw omzet en situatie. Zo zie je meteen je netto-impact, in duidelijke cijfers zonder verrassingen.",
   },
   {
     question: "Hoe verloopt de samenwerking concreet?",
@@ -282,6 +287,12 @@ const ZoSluitJeAan = () => {
                   </li>
                 ))}
               </ul>
+              <div className="bg-secondary/5 border border-secondary/15 rounded-xl p-5 mb-6">
+                <p className="text-foreground font-semibold mb-2">Elke praktijk is anders</p>
+                <p className="text-muted-foreground leading-relaxed">
+                  We maken een simulatie op maat, gebaseerd op jouw omzet en situatie. Zo zie je meteen je netto-impact, in duidelijke cijfers zonder verrassingen.
+                </p>
+              </div>
               <p className="text-foreground font-medium">
                 Zo weet je vooraf precies waar je aan toe bent.
               </p>
