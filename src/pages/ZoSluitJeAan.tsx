@@ -97,6 +97,7 @@ const faqData = [
     question: "Wat kost aansluiten bij Hezo?",
     answer:
       "Tijdens het kennismakingsgesprek leggen we transparant uit hoe de samenwerking werkt en welke abonnementformules er zijn. We maken ook een simulatie op maat, gebaseerd op jouw omzet en situatie, zodat je meteen ziet wat de netto-impact is. Zo weet je vooraf precies waar je aan toe bent, in duidelijke cijfers zonder verrassingen.",
+  },
   {
     question: "Hoe verloopt de samenwerking concreet?",
     answer:
