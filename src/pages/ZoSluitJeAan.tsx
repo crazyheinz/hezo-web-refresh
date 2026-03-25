@@ -32,7 +32,7 @@ const stepsData = [
     number: "2",
     title: "Kennismakingsgesprek",
     description:
-      "Tijdens een persoonlijk gesprek bekijken we hoe Hezo jou het best kan ondersteunen en beantwoorden we al je vragen.",
+      "Tijdens een persoonlijk gesprek bekijken we hoe Hezo jou het best kan ondersteunen. We maken een simulatie op maat, gebaseerd op jouw omzet en situatie. Zo zie je meteen je netto-impact, in duidelijke cijfers zonder verrassingen.",
     icon: Users,
     color: "bg-coral/10 text-coral border-coral/20",
   },
