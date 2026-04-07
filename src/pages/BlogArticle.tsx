@@ -613,7 +613,7 @@ const articleContent: Record<string, {
         <p>Als zelfstandige heb je bij ziekte recht op een uitkering via je sociaal verzekeringsfonds, op voorwaarde dat je in orde bent met je sociale bijdragen. De uitkering start vanaf de 8ste dag arbeidsongeschiktheid. Veel zelfstandige verpleegkundigen kiezen voor een aanvullende verzekering (gewaarborgd inkomen) voor betere bescherming.</p>
 
         <h3>Heb ik een boekhouder nodig als zelfstandig thuisverpleegkundige?</h3>
-        <p>Je bent niet verplicht, maar in de praktijk kiezen veel starters daar wél voor — zeker in de eerste jaren. Een boekhouder kan helpen bij de keuze tussen eenmanszaak of vennootschap, correcte fiscale aangiftes en inzicht in kosten.</p>
+        <p>Je bent niet verplicht, maar in de praktijk kiezen veel starters daar wél voor, zeker in de eerste jaren. Een boekhouder kan helpen bij de keuze tussen eenmanszaak of vennootschap, correcte fiscale aangiftes en inzicht in kosten.</p>
       </>
     ),
   },
