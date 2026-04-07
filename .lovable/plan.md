@@ -1,51 +1,23 @@
 
 
-## Cross-linking audit: Home & Ons Aanbod naar Blog
+## Plan: Fix duplicate article keys and correct software names
 
-### Huidige situatie
+### Problem
+1. **Build errors**: The `articleContent` object has duplicate keys for `software-thuisverpleging`, `patienten-thuisverpleegkundige`, and `administratie-thuisverpleging` (old versions at lines ~156-511, new versions at lines ~513-762). JavaScript objects can't have duplicate keys.
+2. **Incorrect software names**: The old article block mentions "Babelway", "Nona", "Soft4Care", "KiMo" — these are not real package names. Should be **Softn** and **CareForNurse** (van Corilus).
 
-| Pagina/Sectie | Blog-link aanwezig? | Ontbrekende koppeling |
-|---|---|---|
-| **Home — MissionSection** | Ja: "zelfstandig worden" artikel | — |
-| **Home — USPSection** | Nee | Geen enkele blog-link |
-| **Home — HeroSection** | Nee | — (is ok, CTA-focus) |
-| **Ons Aanbod — AdminSection** | Ja: "software" artikel | Mist link naar "administratie" artikel |
-| **Ons Aanbod — InstroomSection** | Nee | Mist link naar "patienten" artikel |
-| **Ons Aanbod — BegeleidingSection** | Nee | Mist link naar "zelfstandig worden" artikel |
-| **Ons Aanbod — OpleidingSection** | Nee | Mist link naar "HBO5/graduaat" artikel |
+### Solution
 
-### 5 blog-artikelen vs huidige links
+**Step 1: Remove old duplicate article blocks**
+- Delete the old `software-thuisverpleging` block (lines ~156-278)
+- Delete the old `patienten-thuisverpleegkundige` block (lines ~279-395)
+- Delete the old `administratie-thuisverpleging` block (lines ~396-511)
+- Keep only the new versions (lines 513+)
 
-1. `software-thuisverpleging` — gelinkt vanuit AdminSection ✅
-2. `patienten-thuisverpleegkundige` — **nergens gelinkt** vanuit diensten/home
-3. `administratie-thuisverpleging` — **nergens gelinkt** vanuit diensten/home
-4. `zelfstandig-thuisverpleegkundige-worden` — gelinkt vanuit MissionSection ✅, maar niet vanuit BegeleidingSection
-5. `hbo5-graduaat-basisverpleegkunde` — **nergens gelinkt** vanuit diensten/home
+**Step 2: Fix software names in the new software article**
+- The new software article (starting line ~513) is generic and doesn't mention specific package names — good.
+- In the section "Welke software bestaat er?" (line ~544), add mention of real packages: **Softn** and **CareForNurse van Corilus** as examples of gehomologeerde pakketten, without making it an exhaustive list.
 
-### Plan: maximale cross-linking
-
-**1. InstroomSection** — Voeg onderaan een link toe naar het patienten-artikel:
-> "Lees meer over patiënten vinden als thuisverpleegkundige →"
-
-**2. AdminSection** — Voeg een extra link toe naar het administratie-artikel (naast de bestaande software-link):
-> "Lees meer over administratie in de thuisverpleging →"
-
-**3. BegeleidingSection** — Voeg in het "starter" blok een link toe naar het zelfstandig-worden-artikel:
-> "Lees ons stappenplan: zelfstandig thuisverpleegkundige worden →"
-
-**4. OpleidingSection** — Voeg in een van de blokken een link toe naar het HBO5-artikel:
-> "Lees meer over de hervorming van HBO5 naar graduaat Basisverpleegkunde →"
-
-**5. USPSection (homepage)** — Voeg aan elke kaart een subtiele "Lees meer"-link toe naar het meest relevante blogartikel:
-- Administratie → `/blog/administratie-thuisverpleging/`
-- Instroom → `/blog/patienten-thuisverpleegkundige/`
-- Begeleiding → `/blog/zelfstandig-thuisverpleegkundige-worden/`
-- Opleiding → `/blog/hbo5-graduaat-basisverpleegkunde/`
-
-### Bestanden die wijzigen
-- `src/components/diensten/InstroomSection.tsx`
-- `src/components/diensten/AdminSection.tsx`
-- `src/components/diensten/BegeleidingSection.tsx`
-- `src/components/diensten/OpleidingSection.tsx`
-- `src/components/home/USPSection.tsx`
+### Files changed
+- `src/pages/BlogArticle.tsx` — remove duplicate blocks, add correct software names
 
