@@ -44,7 +44,7 @@ const articleContent: Record<string, {
           <li><strong>Vroege ochtenden, onregelmatige uren:</strong> insuline-rondes starten vaak om 7u, avondrondes eindigen laat. Weekends zijn zelden volledig vrij.</li>
           <li><strong>Onvoorspelbare zorgvragen:</strong> een patiënt die valt, een wondzorg die verslechtert, een ontslag uit het ziekenhuis op vrijdagavond. Je agenda wordt voortdurend verstoord.</li>
           <li><strong>Geen duidelijk "einde" van de werkdag:</strong> na je laatste patiënt volgen er nog <Link to="/blog/administratie-thuisverpleging/" className="text-secondary hover:underline">registraties, facturatie en administratie</Link>.</li>
-          <li><strong>Emotionele belasting:</strong> palliatieve zorg, eenzame ouderen, moeilijke familiesituaties — dat neem je mee naar huis, ook als je dat niet wil.</li>
+          <li><strong>Emotionele belasting:</strong> palliatieve zorg, eenzame ouderen, moeilijke familiesituaties. Dat neem je mee naar huis, ook als je dat niet wil.</li>
         </ul>
 
         <h2 id="niet-de-zorg">Het probleem zit vaak niet in de zorg zelf</h2>
@@ -62,10 +62,10 @@ const articleContent: Record<string, {
         <h2 id="herkenbare-patronen">Herkenbare patronen bij zelfstandige thuisverpleegkundigen</h2>
         <p>Bepaalde patronen komen opvallend vaak terug:</p>
         <ul>
-          <li><strong>"Ik doe het vanavond wel"</strong> — administratie uitstellen tot &apos;s avonds zorgt voor een structureel slaaptekort.</li>
-          <li><strong>"Ik kan die patiënt niet weigeren"</strong> — steeds meer zorgvragen aannemen zonder je ronde aan te passen leidt tot overbelasting.</li>
-          <li><strong>"Ik regel het zelf wel"</strong> — alles alleen willen doen (administratie, planning, vervanging, materiaal) maakt het onhoudbaar op lange termijn.</li>
-          <li><strong>"Ik neem volgende maand wel vakantie"</strong> — uitstelgedrag rond rust, omdat er altijd wel een reden is om door te gaan.</li>
+          <li><strong>"Ik doe het vanavond wel"</strong>, administratie uitstellen tot &apos;s avonds zorgt voor een structureel slaaptekort.</li>
+          <li><strong>"Ik kan die patiënt niet weigeren"</strong>, steeds meer zorgvragen aannemen zonder je ronde aan te passen leidt tot overbelasting.</li>
+          <li><strong>"Ik regel het zelf wel"</strong>, alles alleen willen doen (administratie, planning, vervanging, materiaal) maakt het onhoudbaar op lange termijn.</li>
+          <li><strong>"Ik neem volgende maand wel vakantie"</strong>, uitstelgedrag rond rust, omdat er altijd wel een reden is om door te gaan.</li>
         </ul>
         <p>
           Deze patronen zijn begrijpelijk. Thuisverpleegkundigen zijn betrokken mensen die moeilijk nee zeggen. Maar ze zijn niet houdbaar.
@@ -75,7 +75,7 @@ const articleContent: Record<string, {
 
         <h3>1. Scheid registratie van vrije tijd</h3>
         <p>
-          Registreer je prestaties onmiddellijk na elk zorgmoment — niet &apos;s avonds. Dat kost 2 minuten per patiënt, maar bespaart je een uur facturatiewerk aan het einde van de dag. De meeste <Link to="/blog/software-thuisverpleging/" className="text-secondary hover:underline">softwarepakketten</Link> hebben een mobiele app waarmee je dit onderweg kan doen.
+          Registreer je prestaties onmiddellijk na elk zorgmoment, niet &apos;s avonds. Dat kost 2 minuten per patiënt, maar bespaart je een uur facturatiewerk aan het einde van de dag. De meeste <Link to="/blog/software-thuisverpleging/" className="text-secondary hover:underline">softwarepakketten</Link> hebben een mobiele app waarmee je dit onderweg kan doen.
         </p>
 
         <h3>2. Plan vaste blokken voor administratie</h3>
@@ -85,7 +85,7 @@ const articleContent: Record<string, {
 
         <h3>3. Stel grenzen rond bereikbaarheid</h3>
         <p>
-          Gebruik een apart werknummer of zet je telefoon op "niet storen" buiten werkuren. Communiceer aan patiënten en hun familie wanneer je bereikbaar bent — de meeste mensen respecteren dat als je het duidelijk maakt.
+          Gebruik een apart werknummer of zet je telefoon op "niet storen" buiten werkuren. Communiceer aan patiënten en hun familie wanneer je bereikbaar bent, de meeste mensen respecteren dat als je het duidelijk maakt.
         </p>
 
         <h3>4. Organiseer vervanging structureel</h3>
@@ -100,7 +100,7 @@ const articleContent: Record<string, {
 
         <h2 id="samenwerking-continuiteit">Samenwerking als sleutel tot continuïteit</h2>
         <p>
-          Alleen werken als zelfstandige thuisverpleegkundige is perfect mogelijk, maar het brengt risico's mee voor je balans. Wie samenwerkt — in welke vorm dan ook — kan:
+          Alleen werken als zelfstandige thuisverpleegkundige is perfect mogelijk, maar het brengt risico's mee voor je balans. Wie samenwerkt, in welke vorm dan ook, kan:
         </p>
         <ul>
           <li>Weekends en feestdagen verdelen</li>
@@ -117,12 +117,12 @@ const articleContent: Record<string, {
           Veel thuisverpleegkundigen voelen schuld wanneer ze grenzen stellen. "Mijn patiënt heeft me nodig" is een gedachte die weinig ruimte laat voor eigen noden.
         </p>
         <p>
-          Maar de realiteit is: een verpleegkundige die uitgeput is, levert slechtere zorg. Grenzen stellen is geen gebrek aan betrokkenheid — het is een voorwaarde om goede zorg vol te houden.
+          Maar de realiteit is: een verpleegkundige die uitgeput is, levert slechtere zorg. Grenzen stellen is geen gebrek aan betrokkenheid, het is een voorwaarde om goede zorg vol te houden.
         </p>
 
         <div className="my-8 p-6 bg-green/10 border-l-4 border-green rounded-r-lg">
           <p className="text-primary text-lg font-medium mb-0">
-            Werk-privébalans in de thuisverpleging is geen evidentie. Maar het is ook geen toeval. Het is het resultaat van hoe je je werk organiseert — en welke keuzes je durft maken.
+            Werk-privébalans in de thuisverpleging is geen evidentie. Maar het is ook geen toeval. Het is het resultaat van hoe je je werk organiseert, en welke keuzes je durft maken.
           </p>
         </div>
       </>
