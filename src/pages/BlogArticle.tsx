@@ -185,7 +185,7 @@ const articleContent: Record<string, {
         <p>Zonder correcte registratie en verwerking kan zorg niet correct gefactureerd worden.</p>
 
         <h2 id="welke-software">Welke software bestaat er?</h2>
-        <p>Er bestaan verschillende softwarepakketten voor thuisverpleegkundigen. Deze moeten voldoen aan bepaalde normen en gehomologeerd zijn om correct te kunnen werken binnen het systeem van de thuisverpleging.</p>
+        <p>Er bestaan verschillende softwarepakketten voor thuisverpleegkundigen. Deze moeten voldoen aan bepaalde normen en gehomologeerd zijn om correct te kunnen werken binnen het systeem van de thuisverpleging. Bekende voorbeelden zijn <strong>Softn</strong> en <strong>CareForNurse van Corilus</strong>, maar er bestaan nog andere gehomologeerde pakketten.</p>
         <p>De verschillen zitten vaak in:</p>
         <ul>
           <li>gebruiksgemak</li>
