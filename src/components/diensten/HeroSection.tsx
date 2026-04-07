@@ -20,7 +20,7 @@ const HeroSection = () => {
             className="text-lg sm:text-xl text-muted-foreground leading-relaxed"
           >
             Een duurzame praktijk uitbouwen vraagt structuur, ondersteuning en een betrouwbaar netwerk.
-            Hezo helpt zelfstandige thuisverpleegkundigen met patiënteninstroom, administratie, begeleiding en opleidingen. Zo kan je efficiënter kunnen werken en je praktijk verder kunnen uitbouwen.
+            Hezo helpt zelfstandige thuisverpleegkundigen met patiënteninstroom, administratie, begeleiding en opleidingen, zodat jij je kan focussen op wat écht telt: de zorg voor je patiënten.
           </motion.p>
         </div>
       </div>

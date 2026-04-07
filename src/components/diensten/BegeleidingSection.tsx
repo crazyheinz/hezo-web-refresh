@@ -40,7 +40,7 @@ const BegeleidingSection = () => {
                     <Headphones className="h-8 w-8 text-yellow" strokeWidth={1.5} />
                   </div>
                   <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
-                    Persoonlijke begeleiding
+                    Begeleiding bij je start als zelfstandig verpleegkundige
                   </h2>
                 </motion.div>
 

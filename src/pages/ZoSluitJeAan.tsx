@@ -24,7 +24,7 @@ const stepsData = [
     number: "1",
     title: "Laat je gegevens achter",
     description:
-      "Vul het contactformulier in. We nemen snel contact met je op om kennis te maken en jouw situatie te bespreken.",
+      "Vul het contactformulier in. We nemen snel contact met je op voor een vrijblijvend gesprek om kennis te maken en jouw situatie te bespreken.",
     icon: MessageCircle,
     color: "bg-light-blue/10 text-light-blue border-light-blue/20",
   },
@@ -32,7 +32,7 @@ const stepsData = [
     number: "2",
     title: "Kennismakingsgesprek",
     description:
-      "Tijdens een persoonlijk gesprek bekijken we hoe Hezo jou het best kan ondersteunen. We maken een simulatie op maat, gebaseerd op jouw omzet en situatie. Zo zie je meteen je netto-impact, in duidelijke cijfers zonder verrassingen.",
+      "Tijdens een vrijblijvend persoonlijk gesprek bekijken we hoe Hezo jou het best kan ondersteunen. We maken een simulatie op maat, gebaseerd op jouw omzet en situatie. Zo zie je meteen je netto-impact, in duidelijke cijfers zonder verrassingen.",
     icon: Users,
     color: "bg-coral/10 text-coral border-coral/20",
   },
@@ -40,7 +40,7 @@ const stepsData = [
     number: "3",
     title: "Aansluiten bij Hezo",
     description:
-      "Beslis je om aan te sluiten? Dan begeleiden we je bij de administratieve stappen en zorgen we dat de aansluiting vlot verloopt.",
+      "Beslis je om aan te sluiten? Dan begeleiden we je bij de administratieve stappen en zorgen we dat de aansluiting vlot verloopt. Geen druk, geen verplichtingen.",
     icon: CheckCircle,
     color: "bg-green/10 text-green border-green/20",
   },
@@ -91,17 +91,17 @@ const faqData = [
   {
     question: "Hoe snel kan ik aansluiten bij Hezo?",
     answer:
-      "Na je aanvraag nemen we contact met je op voor een kennismakingsgesprek. Daarna bekijken we samen welke stappen nodig zijn om de aansluiting in orde te brengen en begeleiden we je bij de administratieve stappen.",
+      "Na je aanvraag nemen we contact met je op voor een vrijblijvend kennismakingsgesprek. Daarna bekijken we samen welke stappen nodig zijn om de aansluiting in orde te brengen en begeleiden we je bij de administratieve stappen.",
   },
   {
     question: "Wat kost aansluiten bij Hezo?",
     answer:
-      "Tijdens het kennismakingsgesprek leggen we transparant uit hoe de samenwerking werkt en welke abonnementformules er zijn. We maken ook een simulatie op maat, gebaseerd op jouw omzet en situatie, zodat je meteen ziet wat de netto-impact is. Zo weet je vooraf precies waar je aan toe bent, in duidelijke cijfers zonder verrassingen.",
+      "Tijdens het vrijblijvend kennismakingsgesprek leggen we transparant uit hoe de samenwerking werkt en welke abonnementformules er zijn. We maken ook een simulatie op maat, gebaseerd op jouw omzet en situatie, zodat je meteen ziet wat de netto-impact is. Zo weet je vooraf precies waar je aan toe bent, in duidelijke cijfers zonder verrassingen.",
   },
   {
     question: "Hoe verloopt de samenwerking concreet?",
     answer:
-      "Tijdens het kennismakingsgesprek leggen we duidelijk uit hoe de samenwerking verloopt en welke ondersteuning je kan verwachten. Zo weet je precies waar je aan toe bent.",
+      "Tijdens het vrijblijvend kennismakingsgesprek leggen we duidelijk uit hoe de samenwerking verloopt en welke ondersteuning je kan verwachten. Zo weet je precies waar je aan toe bent.",
   },
 ];
 
@@ -268,7 +268,7 @@ const ZoSluitJeAan = () => {
               className="bg-card rounded-2xl border border-border p-8 sm:p-10 text-left"
             >
               <p className="text-muted-foreground mb-6">
-                Tijdens het kennismakingsgesprek leggen we helder uit:
+                Tijdens het vrijblijvend kennismakingsgesprek leggen we helder uit:
               </p>
               <ul className="space-y-3 mb-8">
                 {[
