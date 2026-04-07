@@ -22,15 +22,15 @@ interface Opleiding {
 
 const opleidingen: Opleiding[] = [
   {
-    titel: "Poortkatheters voor verpleegkundigen in de thuiszorg",
-    datum: new Date(2026, 2, 23),
-    datumTekst: "23 maart 2026",
-    tijd: "13:30 – 15:00 (1u30)",
+    titel: "Medische akkoorden: Wat doet het ziekenfonds?",
+    datum: new Date(2026, 4, 28),
+    datumTekst: "28 mei 2026",
+    tijd: "13:30 – 15:30 (2u00)",
     maxDeelnemers: 50,
-    beschrijving: "De verschillende stappen van de procedure rond poortkatheters worden behandeld: aanprikken, bloedafname, afsluiten en spoelen. Tijdens deze sessie worden de belangrijkste aandachtspunten per stap duidelijk toegelicht door middel van foto's, uitleg, kennisclips. De webinar is te herbekijken tot 10 dagen na de datum.",
-    lesgever: "Artevelde Hogeschool",
+    beschrijving: "Iris, het aanspreekpunt voor verpleegkundige zorgen bij Helan Ziekenfonds neemt je mee achter de schermen van MyCareNet. Een toelichting over het proces na indienen van je prestaties, toelichting van medische akkoorden en verschillende aandachtspunten komen aan bod.",
+    lesgever: "Helan Ziekenfonds",
     type: "webinar",
-    opnameBeschikbaar: true,
+    opnameBeschikbaar: false,
   },
   {
     titel: "BLS/AED – officieel certificaat",
