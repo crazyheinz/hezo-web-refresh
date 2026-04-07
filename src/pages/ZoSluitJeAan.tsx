@@ -91,17 +91,17 @@ const faqData = [
   {
     question: "Hoe snel kan ik aansluiten bij Hezo?",
     answer:
-      "Na je aanvraag nemen we contact met je op voor een kennismakingsgesprek. Daarna bekijken we samen welke stappen nodig zijn om de aansluiting in orde te brengen en begeleiden we je bij de administratieve stappen.",
+      "Na je aanvraag nemen we contact met je op voor een vrijblijvend kennismakingsgesprek. Daarna bekijken we samen welke stappen nodig zijn om de aansluiting in orde te brengen en begeleiden we je bij de administratieve stappen.",
   },
   {
     question: "Wat kost aansluiten bij Hezo?",
     answer:
-      "Tijdens het kennismakingsgesprek leggen we transparant uit hoe de samenwerking werkt en welke abonnementformules er zijn. We maken ook een simulatie op maat, gebaseerd op jouw omzet en situatie, zodat je meteen ziet wat de netto-impact is. Zo weet je vooraf precies waar je aan toe bent, in duidelijke cijfers zonder verrassingen.",
+      "Tijdens het vrijblijvend kennismakingsgesprek leggen we transparant uit hoe de samenwerking werkt en welke abonnementformules er zijn. We maken ook een simulatie op maat, gebaseerd op jouw omzet en situatie, zodat je meteen ziet wat de netto-impact is. Zo weet je vooraf precies waar je aan toe bent, in duidelijke cijfers zonder verrassingen.",
   },
   {
     question: "Hoe verloopt de samenwerking concreet?",
     answer:
-      "Tijdens het kennismakingsgesprek leggen we duidelijk uit hoe de samenwerking verloopt en welke ondersteuning je kan verwachten. Zo weet je precies waar je aan toe bent.",
+      "Tijdens het vrijblijvend kennismakingsgesprek leggen we duidelijk uit hoe de samenwerking verloopt en welke ondersteuning je kan verwachten. Zo weet je precies waar je aan toe bent.",
   },
 ];
 
