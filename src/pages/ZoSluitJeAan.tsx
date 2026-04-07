@@ -32,7 +32,7 @@ const stepsData = [
     number: "2",
     title: "Kennismakingsgesprek",
     description:
-      "Tijdens een persoonlijk gesprek bekijken we hoe Hezo jou het best kan ondersteunen. We maken een simulatie op maat, gebaseerd op jouw omzet en situatie. Zo zie je meteen je netto-impact, in duidelijke cijfers zonder verrassingen.",
+      "Tijdens een vrijblijvend persoonlijk gesprek bekijken we hoe Hezo jou het best kan ondersteunen. We maken een simulatie op maat, gebaseerd op jouw omzet en situatie. Zo zie je meteen je netto-impact, in duidelijke cijfers zonder verrassingen.",
     icon: Users,
     color: "bg-coral/10 text-coral border-coral/20",
   },
@@ -40,7 +40,7 @@ const stepsData = [
     number: "3",
     title: "Aansluiten bij Hezo",
     description:
-      "Beslis je om aan te sluiten? Dan begeleiden we je bij de administratieve stappen en zorgen we dat de aansluiting vlot verloopt.",
+      "Beslis je om aan te sluiten? Dan begeleiden we je bij de administratieve stappen en zorgen we dat de aansluiting vlot verloopt. Geen druk, geen verplichtingen.",
     icon: CheckCircle,
     color: "bg-green/10 text-green border-green/20",
   },
@@ -268,7 +268,7 @@ const ZoSluitJeAan = () => {
               className="bg-card rounded-2xl border border-border p-8 sm:p-10 text-left"
             >
               <p className="text-muted-foreground mb-6">
-                Tijdens het kennismakingsgesprek leggen we helder uit:
+                Tijdens het vrijblijvend kennismakingsgesprek leggen we helder uit:
               </p>
               <ul className="space-y-3 mb-8">
                 {[
