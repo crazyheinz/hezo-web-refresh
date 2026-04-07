@@ -42,7 +42,7 @@ const articleContent: Record<string, {
         <p>De oorzaken zijn specifiek voor het beroep:</p>
         <ul>
           <li><strong>Vroege ochtenden, onregelmatige uren:</strong> insuline-rondes starten vaak om 7u, avondrondes eindigen laat. Weekends zijn zelden volledig vrij.</li>
-          <li><strong>Onvoorspelbare zorgvragen:</strong> een patiënt die valt, een wondzorg die verslechtert, een ontslag uit het ziekenhuis op vrijdagavond — je agenda wordt voortdurend verstoord.</li>
+          <li><strong>Onvoorspelbare zorgvragen:</strong> een patiënt die valt, een wondzorg die verslechtert, een ontslag uit het ziekenhuis op vrijdagavond. Je agenda wordt voortdurend verstoord.</li>
           <li><strong>Geen duidelijk "einde" van de werkdag:</strong> na je laatste patiënt volgen er nog <Link to="/blog/administratie-thuisverpleging/" className="text-secondary hover:underline">registraties, facturatie en administratie</Link>.</li>
           <li><strong>Emotionele belasting:</strong> palliatieve zorg, eenzame ouderen, moeilijke familiesituaties — dat neem je mee naar huis, ook als je dat niet wil.</li>
         </ul>
