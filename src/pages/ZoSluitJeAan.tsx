@@ -24,7 +24,7 @@ const stepsData = [
     number: "1",
     title: "Laat je gegevens achter",
     description:
-      "Vul het contactformulier in. We nemen snel contact met je op om kennis te maken en jouw situatie te bespreken.",
+      "Vul het contactformulier in. We nemen snel contact met je op voor een vrijblijvend gesprek om kennis te maken en jouw situatie te bespreken.",
     icon: MessageCircle,
     color: "bg-light-blue/10 text-light-blue border-light-blue/20",
   },

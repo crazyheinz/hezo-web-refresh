@@ -32,7 +32,7 @@ const InstroomSection = () => {
                 </motion.div>
 
                 <motion.p variants={fadeUp} className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  Als zelfstandige thuisverpleegkundige wil je kunnen rekenen op continuïteit: een stabiele instroom van patiënten en zorgvragen die bij jou passen.
+                  Ondanks een grote zorgbehoefte in de maatschappij blijft het als zelfstandig thuisverpleegkundige een uitdaging om voldoende patiënten te vinden. Bij Hezo hoef je daar niet alleen voor te zorgen.
                 </motion.p>
 
                 <motion.p variants={fadeUp} className="text-muted-foreground leading-relaxed mb-6">
