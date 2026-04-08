@@ -80,7 +80,7 @@ const USPSection = () => {
           </motion.h2>
 
           <motion.p variants={fadeUp} className="text-lg text-muted-foreground leading-relaxed mb-4">
-            Als zelfstandig thuisverpleegkundige wil je je in de eerste plaats kunnen focussen op zorg. In de praktijk gaat er vaak veel tijd naar administratie, facturatie en het organiseren van je werking.
+            Als zelfstandig thuisverpleegkundige wil je je in de eerste plaats kunnen focussen op zorg. In de praktijk gaat er vaak veel tijd naar administratie, facturatie en het organiseren van je werking, en is het niet altijd evident om een stabiele instroom van patiënten op te bouwen.
           </motion.p>
 
           <motion.p variants={fadeUp} className="text-lg text-muted-foreground leading-relaxed mb-4">
