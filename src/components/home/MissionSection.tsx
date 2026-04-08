@@ -14,7 +14,7 @@ const cards = [
     icon: Stethoscope,
     title: "Werk je als zelfstandig thuisverpleegkundige?",
     description:
-      "Je combineert dagelijks zorg met administratie, planning en facturatie. Dat vraagt veel energie. Hezo neemt een deel van die last weg zodat jij je kan concentreren op wat je het beste doet: zorgen voor je patiënten.",
+      "Je combineert zorg met administratie, planning en facturatie. Hezo helpt je om die last te verlichten en meer overzicht te creëren.",
     color: "bg-secondary/10",
     iconColor: "text-secondary",
     href: "/onze-diensten/",
@@ -23,7 +23,7 @@ const cards = [
     icon: Clock,
     title: "Werk je in bijberoep?",
     description:
-      "Als je verpleegkunde combineert met een andere job, heb je nog minder tijd voor opvolging en organisatie. Hezo helpt je om je activiteit overzichtelijk en haalbaar te houden.",
+      "Je hebt minder tijd om je activiteit op te volgen en uit te bouwen. Hezo helpt je om je werking haalbaar te houden én zorgt voor patiënten wanneer jij beschikbaar bent.",
     color: "bg-light-blue/10",
     iconColor: "text-light-blue",
     href: "/onze-diensten/",
@@ -32,7 +32,7 @@ const cards = [
     icon: Sprout,
     title: "Start je als zelfstandig thuisverpleegkundige?",
     description:
-      "Er komt veel op je af bij de opstart. Wij helpen je stap voor stap zodat je een duidelijke basis hebt en niets over het hoofd ziet.",
+      "Je wil goed starten zonder fouten of onduidelijkheden. Hezo begeleidt je stap voor stap en helpt je een sterke basis op te bouwen.",
     color: "bg-green/10",
     iconColor: "text-green",
     href: "/blog/zelfstandig-thuisverpleegkundige-worden/",
@@ -41,7 +41,7 @@ const cards = [
     icon: Building2,
     title: "Heb je al een praktijk of wil je uitbreiden?",
     description:
-      "Dan wil je vooral structuur, efficiëntie en stabiliteit. Hezo helpt je om je praktijk verder te optimaliseren en gericht te laten groeien.",
+      "Je wil groeien, maar zoekt meer stabiliteit en structuur. Hezo helpt je met instroom van patiënten en een efficiëntere werking.",
     color: "bg-coral/10",
     iconColor: "text-coral",
     href: "/zo-sluit-je-aan/",
