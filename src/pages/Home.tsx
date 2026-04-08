@@ -1,7 +1,7 @@
 import SEO from "@/components/SEO";
 import HeroSection from "@/components/home/HeroSection";
-import MissionSection from "@/components/home/MissionSection";
 import USPSection from "@/components/home/USPSection";
+import MissionSection from "@/components/home/MissionSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 
 const Home = () => {
@@ -91,8 +91,8 @@ const Home = () => {
         }}
       />
       <HeroSection />
-      <MissionSection />
       <USPSection />
+      <MissionSection />
       <TestimonialsSection />
     </div>
   );

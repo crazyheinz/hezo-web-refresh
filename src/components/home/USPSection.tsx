@@ -1,68 +1,28 @@
 import { Link } from "react-router-dom";
-import { Users, GraduationCap, FileCheck, Headphones } from "lucide-react";
+import { Check } from "lucide-react";
 import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
-const features = [
-  {
-    icon: FileCheck,
-    title: "Administratie & ondersteuning",
-    description: "Ontdek hoe wij jou ontzorgen. Betrouwbare opvolging en digitaal overzicht.",
-    href: "/onze-diensten/#administratie",
-    blogHref: "/blog/administratie-thuisverpleging/",
-    blogLabel: "Lees meer over administratie",
-  },
-  {
-    icon: Users,
-    title: "Instroom van patiënten",
-    description: "Vind sneller nieuwe patiënten via het brede netwerk van Welzijnsgroep Helan.",
-    href: "/onze-diensten/#instroom",
-    blogHref: "/blog/patienten-thuisverpleegkundige/",
-    blogLabel: "Lees meer over patiënten vinden",
-  },
-  {
-    icon: Headphones,
-    title: "Persoonlijke begeleiding",
-    description: "Krijg advies op jouw maat. Zelfstandig, maar nooit alleen.",
-    href: "/onze-diensten/#begeleiding",
-    blogHref: "/blog/zelfstandig-thuisverpleegkundige-worden/",
-    blogLabel: "Lees het stappenplan",
-  },
-  {
-    icon: GraduationCap,
-    title: "Opleiding & groei",
-    description: "Versterk je vaardigheden en netwerk. Opleidingen op jouw tempo.",
-    href: "/onze-diensten/#opleiding",
-    blogHref: "/blog/hbo5-graduaat-basisverpleegkunde/",
-    blogLabel: "Lees meer over HBO5 → graduaat",
-  },
-];
-
-const colorSchemes = [
-  { iconBg: "bg-primary", iconColor: "text-primary-foreground", border: "hover:border-primary/50" },
-  { iconBg: "bg-light-blue", iconColor: "text-light-blue-foreground", border: "hover:border-light-blue/50" },
-  { iconBg: "bg-yellow", iconColor: "text-yellow-foreground", border: "hover:border-yellow/50" },
-  { iconBg: "bg-green", iconColor: "text-green-foreground", border: "hover:border-green/50" },
+const benefits = [
+  "Minder tijd kwijt aan administratie en facturatie",
+  "Correcte verwerking van je prestaties en attesten",
+  "Een stabiele instroom van patiënten via het netwerk van Helan",
+  "Meer overzicht en rust in je dagelijkse werking",
+  "Persoonlijke ondersteuning, afgestemd op jouw situatie",
 ];
 
 const containerVariants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.12 } },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 40, scale: 0.95 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] as const },
-  },
+  visible: { transition: { staggerChildren: 0.1 } },
 };
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
+  },
 };
 
 const USPSection = () => {
@@ -70,58 +30,57 @@ const USPSection = () => {
     <section className="py-20 bg-muted">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="max-w-6xl mx-auto"
+          className="max-w-3xl mx-auto"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={containerVariants}
         >
-          <div className="text-center mb-12">
-            <motion.h2
-              variants={fadeUp}
-              className="text-2xl sm:text-3xl font-bold text-foreground mb-4"
-            >
-              Wat Hezo voor jou kan betekenen
-            </motion.h2>
-            <motion.p variants={fadeUp} className="text-lg text-muted-foreground">
-              Met Hezo blijft je focus waar die hoort: bij je patiënten.
-            </motion.p>
-          </div>
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-            variants={containerVariants}
+          <motion.h2
+            variants={fadeUp}
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-8 text-center tracking-tight"
           >
-            {features.map((feature, index) => {
-              const Icon = feature.icon;
-              const colorScheme = colorSchemes[index % colorSchemes.length];
-              return (
-                <Link key={index} to={feature.href} className="block">
-                  <motion.div variants={cardVariants} whileHover={{ y: -6, transition: { duration: 0.25 } }}>
-                    <Card className={`border-2 border-transparent ${colorScheme.border} shadow-sm hover:shadow-md transition-all h-full cursor-pointer`}>
-                      <CardContent className="pt-6">
-                        <motion.div
-                          className="mb-4"
-                          whileHover={{ rotate: [0, -8, 8, 0], transition: { duration: 0.4 } }}
-                        >
-                          <div className={`inline-flex p-3 rounded-lg ${colorScheme.iconBg}`}>
-                            <Icon className={`h-8 w-8 ${colorScheme.iconColor}`} strokeWidth={1.5} />
-                          </div>
-                        </motion.div>
-                        <h3 className="text-xl font-semibold mb-3 text-foreground">
-                          {feature.title}
-                        </h3>
-                        <p className="text-muted-foreground leading-relaxed mb-3">
-                          {feature.description}
-                        </p>
-                        <Link to={feature.blogHref} className="text-sm font-medium text-primary hover:underline" onClick={(e) => e.stopPropagation()}>
-                          {feature.blogLabel} →
-                        </Link>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                </Link>
-              );
-            })}
+            Wat Hezo voor jou kan betekenen
+          </motion.h2>
+
+          <motion.p variants={fadeUp} className="text-lg text-muted-foreground leading-relaxed mb-4">
+            Als zelfstandig thuisverpleegkundige wil je je in de eerste plaats kunnen focussen op zorg. In de praktijk gaat er vaak veel tijd naar administratie, facturatie en het organiseren van je werking.
+          </motion.p>
+
+          <motion.p variants={fadeUp} className="text-lg text-muted-foreground leading-relaxed mb-4">
+            Je merkt misschien dat dit steeds meer begint door te wegen, terwijl je net meer ruimte wil voor je patiënten.
+          </motion.p>
+
+          <motion.p variants={fadeUp} className="text-lg text-foreground font-medium leading-relaxed mb-10">
+            Hezo helpt je om dat anders aan te pakken, zonder dat je je zelfstandigheid verliest.
+          </motion.p>
+
+          <motion.div variants={fadeUp} className="mb-10">
+            <h3 className="text-xl font-semibold text-foreground mb-5">
+              Met Hezo kan je rekenen op:
+            </h3>
+            <ul className="space-y-4">
+              {benefits.map((benefit, i) => (
+                <motion.li
+                  key={i}
+                  variants={fadeUp}
+                  className="flex items-start gap-3"
+                >
+                  <div className="mt-1 shrink-0 w-5 h-5 rounded-full bg-secondary flex items-center justify-center">
+                    <Check className="w-3 h-3 text-secondary-foreground" strokeWidth={3} />
+                  </div>
+                  <span className="text-base sm:text-lg text-foreground/80 leading-relaxed">
+                    {benefit}
+                  </span>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
+
+          <motion.div variants={fadeUp} className="text-center">
+            <Button asChild size="lg" className="text-base px-8">
+              <Link to="/contact/">Plan een kennismakingsgesprek</Link>
+            </Button>
           </motion.div>
         </motion.div>
       </div>
