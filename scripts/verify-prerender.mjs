@@ -15,6 +15,7 @@ const routes = [
   "/opleidingen/",
   "/vacatures/",
   "/blog/",
+  "/blog/thuisverpleging-meer-dan-spuitje/",
   "/blog/zelfstandig-thuisverpleegkundige-worden/",
   "/blog/hbo5-graduaat-basisverpleegkunde/",
   "/blog/software-thuisverpleging/",
