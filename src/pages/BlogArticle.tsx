@@ -10,6 +10,7 @@ import blogHeroAdministratie from "@/assets/blog-hero-administratie.png";
 import blogHeroZelfstandig from "@/assets/blog-hero-zelfstandig.png";
 import blogHeroHbo5 from "@/assets/blog-hero-hbo5.png";
 import blogHeroBalans from "@/assets/blog-hero-balans.png";
+import blogHeroMeerDanSpuitje from "@/assets/blog-hero-meer-dan-spuitje.png";
 
 // Full article content - add content for each article ID
 const articleContent: Record<string, {
@@ -18,6 +19,134 @@ const articleContent: Record<string, {
   heroImage?: string;
   headings: { id: string; label: string }[];
 }> = {
+  "thuisverpleging-meer-dan-spuitje": {
+    heroImage: blogHeroMeerDanSpuitje,
+    headings: [
+      { id: "te-beperkt-beeld", label: "Het probleem: een te beperkt beeld" },
+      { id: "wat-echt-inhoudt", label: "Wat thuisverpleging écht inhoudt" },
+      { id: "scheef-beeld", label: "Waarom dat beeld zo scheef zit" },
+      { id: "wat-moet-veranderen", label: "Wat er moet veranderen" },
+      { id: "ruimte-voor-zorg", label: "Ruimte voor zorg, daar draait het om" },
+      { id: "ander-verhaal", label: "Een ander verhaal over thuisverpleging" },
+    ],
+    content: (
+      <>
+        <p className="lead">
+          Als mensen aan thuisverpleging denken, denken ze vaak aan één ding: een verpleegkundige die even langskomt voor een medische handeling en daarna weer vertrekt.
+        </p>
+        <p>Een spuitje, een wondzorg, een korte controle.</p>
+        <p>Maar dat beeld klopt niet.</p>
+        <p>
+          En dat is niet onschuldig. Want hoe we naar thuisverpleging kijken, bepaalt ook hoe we het waarderen, organiseren en ondersteunen.
+        </p>
+
+        <h2 id="te-beperkt-beeld">Het probleem: een te beperkt beeld van thuisverpleging</h2>
+        <p>
+          In het publieke debat wordt thuisverpleging nog te vaak herleid tot technische zorg. Het gaat dan over handelingen: inspuitingen, wondzorg, opvolging van parameters.
+        </p>
+        <p>Wat daarbij ontbreekt, is het bredere plaatje.</p>
+        <p>
+          Thuisverpleegkundigen zijn vaak een vast aanspreekpunt voor patiënten. Ze volgen evoluties op, signaleren problemen, stemmen af met artsen en ondersteunen mantelzorgers. Ze zien wat er écht gebeurt achter de voordeur.
+        </p>
+        <p>
+          Door die realiteit te reduceren tot een lijstje handelingen, verdwijnt een groot deel van de waarde van het beroep uit beeld.
+        </p>
+
+        <h2 id="wat-echt-inhoudt">Wat thuisverpleging écht inhoudt</h2>
+        <p>
+          Thuisverpleging speelt zich af in de leefwereld van de patiënt. Dat maakt het fundamenteel anders dan zorg in een ziekenhuis.
+        </p>
+        <p>Het gaat niet alleen over medische opvolging, maar ook over:</p>
+        <ul>
+          <li>het opbouwen van vertrouwen</li>
+          <li>het herkennen van veranderingen in gedrag of gezondheid</li>
+          <li>het ondersteunen van familieleden die mee zorg dragen</li>
+          <li>het coördineren met andere zorgverleners</li>
+        </ul>
+        <p>
+          Een thuisverpleegkundige komt niet alleen "iets doen". Die komt kijken, inschatten, bijsturen en ondersteunen.
+        </p>
+        <p>
+          Voor veel patiënten is die regelmaat en aanwezigheid een vorm van houvast. Zeker in kwetsbare situaties maakt dat een groot verschil.
+        </p>
+
+        <h2 id="scheef-beeld">Waarom dat beeld zo scheef zit</h2>
+        <p>Het is niet toevallig dat het publieke beeld beperkt blijft.</p>
+        <p>
+          Media en beleid focussen vaak op de uitdagingen in de zorg: personeelstekorten, werkdruk, vergrijzing. Die zijn reëel, maar ze tonen maar een deel van het verhaal.
+        </p>
+        <p>Wat minder zichtbaar is:</p>
+        <ul>
+          <li>de dagelijkse impact op patiënten</li>
+          <li>de complexiteit van zorg aan huis</li>
+          <li>de rol van verpleegkundigen in het geheel van zorg en welzijn</li>
+        </ul>
+        <p>
+          Daarnaast vertelt de sector zelf nog te weinig wat er écht gebeurt. Veel van het werk blijft onzichtbaar, omdat het zich afspeelt achter gesloten deuren.
+        </p>
+
+        <h2 id="wat-moet-veranderen">Wat er moet veranderen</h2>
+        <p>
+          Als we willen dat thuisverpleging correct wordt begrepen en gewaardeerd, dan moet het verhaal vollediger worden.
+        </p>
+        <p>Dat betekent:</p>
+        <ul>
+          <li>meer aandacht voor de realiteit van het werk</li>
+          <li>meer ruimte voor concrete verhalen uit de praktijk</li>
+          <li>meer transparantie over wat thuiszorg precies inhoudt</li>
+        </ul>
+        <p>
+          Ook de manier waarop zorg georganiseerd wordt, speelt een rol. Wanneer verpleegkundigen veel tijd verliezen aan <Link to="/blog/administratie-thuisverpleging/" className="text-secondary hover:underline">administratie</Link> of versnipperde systemen, gaat dat ten koste van wat echt telt: zorg voor de patiënt.
+        </p>
+
+        <h2 id="ruimte-voor-zorg">Ruimte voor zorg, daar draait het om</h2>
+        <p>
+          Initiatieven die zorgverleners ondersteunen in hun dagelijkse werking, kunnen helpen om die balans te herstellen.
+        </p>
+        <p>
+          Door administratieve lasten te verminderen en processen te vereenvoudigen, ontstaat er opnieuw ruimte voor wat de kern van het beroep is: kwalitatieve zorg en aandacht voor de patiënt.
+        </p>
+        <p>Niet door meer te doen, maar door beter te ondersteunen.</p>
+
+        <h2 id="ander-verhaal">Een ander verhaal over thuisverpleging</h2>
+        <p>Thuisverpleging is geen optelsom van handelingen.</p>
+        <p>
+          Het is een combinatie van medische expertise, menselijke betrokkenheid en voortdurende afstemming op wat iemand nodig heeft in zijn of haar eigen omgeving.
+        </p>
+        <p>
+          Zolang we dat blijven herleiden tot "een spuitje zetten", doen we het beroep tekort.
+        </p>
+        <p>
+          En misschien nog belangrijker: dan begrijpen we ook niet wat goede zorg aan huis echt betekent.
+        </p>
+      </>
+    ),
+    cta: (
+      <div className="mt-12 p-8 bg-muted rounded-2xl">
+        <h3 className="text-xl font-semibold text-primary mb-2">
+          Meer ruimte voor échte zorg?
+        </h3>
+        <p className="text-muted-foreground mb-4">
+          Hezo ondersteunt zelfstandige thuisverpleegkundigen, zodat er meer tijd overblijft voor wat het beroep écht inhoudt.
+        </p>
+        <div className="flex flex-wrap gap-4">
+          <Link
+            to="/onze-diensten/"
+            onClick={() => window.scrollTo(0, 0)}
+            className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-6 py-3 rounded-lg font-medium hover:bg-secondary/90 transition-colors"
+          >
+            Ontdek onze diensten
+          </Link>
+          <Link
+            to="/contact/"
+            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors"
+          >
+            Vrijblijvend contact opnemen
+          </Link>
+        </div>
+      </div>
+    ),
+  },
   "werk-privebalans-thuisverpleegkundige": {
     heroImage: blogHeroBalans,
     headings: [
