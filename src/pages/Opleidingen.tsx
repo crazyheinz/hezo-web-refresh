@@ -1,13 +1,15 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { GraduationCap, Calendar, MapPin, Clock, Users, Monitor, Building2, Euro, Search, ChevronDown } from "lucide-react";
+import { GraduationCap, Calendar, MapPin, Clock, Users, Monitor, Building2, Euro, Search, ChevronDown, Loader2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import SEO from "@/components/SEO";
 import InschrijfDialog from "@/components/opleidingen/InschrijfDialog";
+import { supabase } from "@/integrations/supabase/client";
 
 interface Opleiding {
+  id: string;
   titel: string;
   datum: Date;
   datumTekst: string;
@@ -20,79 +22,51 @@ interface Opleiding {
   opnameBeschikbaar: boolean;
 }
 
-const opleidingen: Opleiding[] = [
-  {
-    titel: "Medische akkoorden: Wat doet het ziekenfonds?",
-    datum: new Date(2026, 4, 28),
-    datumTekst: "28 mei 2026",
-    tijd: "13:30 – 15:30 (2u00)",
-    maxDeelnemers: 50,
-    beschrijving: "Iris, het aanspreekpunt voor verpleegkundige zorgen bij Helan Ziekenfonds neemt je mee achter de schermen van MyCareNet. Een toelichting over het proces na indienen van je prestaties, toelichting van medische akkoorden en verschillende aandachtspunten komen aan bod.",
-    lesgever: "Helan Ziekenfonds",
-    type: "webinar",
-    opnameBeschikbaar: false,
-  },
-  {
-    titel: "BLS/AED – officieel certificaat",
-    datum: new Date(2026, 4, 11),
-    datumTekst: "11 mei 2026",
-    tijd: "13:30 – 17:30 (4u00)",
-    locatie: "Helan Hoofdkantoor – zaal Magnolia",
-    maxDeelnemers: 12,
-    beschrijving: "Wist je dat je elke 2 jaar een gecertificeerde opleiding BLS/AED moet volgen? Deze opleiding, onder begeleiding van Hogent, neemt je mee in alle principes van BLS en het gebruik van een AED.",
-    lesgever: "Hogent",
-    type: "fysiek",
-    opnameBeschikbaar: false,
-  },
-  {
-    titel: "Palliatieve Zorg: vroegtijdige zorgplanning en sociale voorzieningen",
-    datum: new Date(2026, 3, 21),
-    datumTekst: "21 april 2026",
-    tijd: "13:00 – 16:00 (3u00)",
-    maxDeelnemers: 50,
-    beschrijving: "In deze opleiding leer je alles over vroegtijdige zorgplanning, communicatie en beschikbare voorziening voor de patiënt.",
-    lesgever: "Palliatief netwerk Gent-Eeklo",
-    type: "webinar",
-    opnameBeschikbaar: true,
-  },
-  {
-    titel: "Katz schaal in de thuisverpleging",
-    datum: new Date(2026, 3, 27),
-    datumTekst: "27 april 2026",
-    tijd: "13:30 – 15:30 (2u00)",
-    maxDeelnemers: 50,
-    beschrijving: "De Katz schaal is een essentieel instrument in de thuisverpleging. In deze opleiding komen de richtlijnen uitgebreid aan bod en oefenen we de toepassing en gebruik ervan met casussen uit de praktijk.",
-    lesgever: "Onafhankelijk Ziekenfonds: Els Desmet en Debbie Goossens",
-    type: "webinar",
-    opnameBeschikbaar: true,
-  },
-  {
-    titel: "Palliatieve Zorg: Pijn- en symptoomcontrole",
-    datum: new Date(2026, 4, 20),
-    datumTekst: "20 mei 2026",
-    tijd: "13:00 – 16:00 (2u00)",
-    maxDeelnemers: 50,
-    beschrijving: "Comfortzorg in de thuisomgeving omvat onder meer gerichte pijn- en symptoomcontrole. In deze opleiding krijg je tips om pijn te herkennen en onder controle te houden.",
-    lesgever: "Palliatief netwerk Gent-Eeklo",
-    type: "webinar",
-    opnameBeschikbaar: true,
-  },
-  {
-    titel: "Toelichting: controle van de verzekeringsinstellingen",
-    datum: new Date(2026, 4, 21),
-    datumTekst: "21 mei 2026",
-    tijd: "13:30 – 15:30 (2u00)",
-    maxDeelnemers: 50,
-    beschrijving: "In deze opleiding krijg je informatie over de controles die gebeuren door de verzekeringsinstellingen (mutualiteiten). Hoe verloopt een controle en waar wordt op gelet? Wat als een controle niet kan doorgaan? Wat als je een afscoring hebt? Wat kan je zelf doen?",
-    lesgever: "Onafhankelijk Ziekenfonds: Els Desmet en Debbie Goossens",
-    type: "webinar",
-    opnameBeschikbaar: true,
-  },
-];
+const MAANDEN = ["januari", "februari", "maart", "april", "mei", "juni", "juli", "augustus", "september", "oktober", "november", "december"];
+
+function formatDatum(iso: string): { date: Date; tekst: string } {
+  const [y, m, d] = iso.split("-").map(Number);
+  const date = new Date(y, m - 1, d);
+  return { date, tekst: `${d} ${MAANDEN[m - 1]} ${y}` };
+}
 
 const Opleidingen = () => {
   const [zoekterm, setZoekterm] = useState("");
   const [expandedOpleiding, setExpandedOpleiding] = useState<string | null>(null);
+  const [opleidingen, setOpleidingen] = useState<Opleiding[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const load = async () => {
+      const { data, error } = await supabase
+        .from("trainings")
+        .select("*")
+        .eq("is_active", true)
+        .order("datum", { ascending: true });
+      if (!error && data) {
+        setOpleidingen(
+          data.map((t) => {
+            const { date, tekst } = formatDatum(t.datum);
+            return {
+              id: t.id,
+              titel: t.titel,
+              datum: date,
+              datumTekst: tekst,
+              tijd: t.tijd,
+              locatie: t.locatie || undefined,
+              maxDeelnemers: t.max_deelnemers,
+              beschrijving: t.beschrijving,
+              lesgever: t.lesgever,
+              type: t.type as "webinar" | "fysiek",
+              opnameBeschikbaar: t.opname_beschikbaar,
+            };
+          })
+        );
+      }
+      setLoading(false);
+    };
+    load();
+  }, []);
 
   const gefilterdeOpleidingen = useMemo(() => {
     const term = zoekterm.toLowerCase();
@@ -104,7 +78,7 @@ const Opleidingen = () => {
         o.lesgever.toLowerCase().includes(term)
       )
       .sort((a, b) => a.datum.getTime() - b.datum.getTime());
-  }, [zoekterm]);
+  }, [zoekterm, opleidingen]);
 
   return (
     <div className="min-h-screen pt-32 pb-20">
@@ -213,19 +187,25 @@ const Opleidingen = () => {
             />
           </div>
 
-          {gefilterdeOpleidingen.length === 0 ? (
+          {loading ? (
+            <div className="flex justify-center py-16">
+              <Loader2 className="h-8 w-8 animate-spin text-secondary" />
+            </div>
+          ) : gefilterdeOpleidingen.length === 0 ? (
             <div className="text-center py-16">
-              <p className="text-lg text-muted-foreground">Geen opleidingen gevonden voor "{zoekterm}"</p>
+              <p className="text-lg text-muted-foreground">
+                {zoekterm ? `Geen opleidingen gevonden voor "${zoekterm}"` : "Geen opleidingen beschikbaar."}
+              </p>
             </div>
           ) : (
             <div className="space-y-4 mb-16">
               {gefilterdeOpleidingen.map((opleiding) => {
-                const isExpanded = expandedOpleiding === opleiding.titel;
+                const isExpanded = expandedOpleiding === opleiding.id;
                 return (
                   <Card
-                    key={opleiding.titel}
+                    key={opleiding.id}
                     className={`border-secondary/20 shadow-sm hover:shadow-md transition-shadow ${!isExpanded ? "cursor-pointer" : ""}`}
-                    onClick={() => { if (!isExpanded) setExpandedOpleiding(opleiding.titel); }}
+                    onClick={() => { if (!isExpanded) setExpandedOpleiding(opleiding.id); }}
                   >
                     <CardHeader className="pb-3">
                       <div className="flex flex-wrap items-center gap-2 mb-1">
@@ -261,7 +241,7 @@ const Opleidingen = () => {
                       </div>
                       <button
                         className="text-secondary font-medium text-sm mt-2 hover:underline inline-flex items-center gap-1 w-fit"
-                        onClick={(e) => { e.stopPropagation(); setExpandedOpleiding(isExpanded ? null : opleiding.titel); }}
+                        onClick={(e) => { e.stopPropagation(); setExpandedOpleiding(isExpanded ? null : opleiding.id); }}
                       >
                         {isExpanded ? "Minder tonen" : "Bekijk opleiding"}
                         <ChevronDown className={`h-4 w-4 transition-transform ${isExpanded ? "rotate-180" : ""}`} />

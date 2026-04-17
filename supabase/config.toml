@@ -8,3 +8,6 @@ verify_jwt = false
 
 [functions.webinar-admin]
 verify_jwt = false
+
+[functions.trainings-admin]
+verify_jwt = false
