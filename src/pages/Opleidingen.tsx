@@ -187,19 +187,25 @@ const Opleidingen = () => {
             />
           </div>
 
-          {gefilterdeOpleidingen.length === 0 ? (
+          {loading ? (
+            <div className="flex justify-center py-16">
+              <Loader2 className="h-8 w-8 animate-spin text-secondary" />
+            </div>
+          ) : gefilterdeOpleidingen.length === 0 ? (
             <div className="text-center py-16">
-              <p className="text-lg text-muted-foreground">Geen opleidingen gevonden voor "{zoekterm}"</p>
+              <p className="text-lg text-muted-foreground">
+                {zoekterm ? `Geen opleidingen gevonden voor "${zoekterm}"` : "Geen opleidingen beschikbaar."}
+              </p>
             </div>
           ) : (
             <div className="space-y-4 mb-16">
               {gefilterdeOpleidingen.map((opleiding) => {
-                const isExpanded = expandedOpleiding === opleiding.titel;
+                const isExpanded = expandedOpleiding === opleiding.id;
                 return (
                   <Card
-                    key={opleiding.titel}
+                    key={opleiding.id}
                     className={`border-secondary/20 shadow-sm hover:shadow-md transition-shadow ${!isExpanded ? "cursor-pointer" : ""}`}
-                    onClick={() => { if (!isExpanded) setExpandedOpleiding(opleiding.titel); }}
+                    onClick={() => { if (!isExpanded) setExpandedOpleiding(opleiding.id); }}
                   >
                     <CardHeader className="pb-3">
                       <div className="flex flex-wrap items-center gap-2 mb-1">
