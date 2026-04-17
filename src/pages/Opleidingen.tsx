@@ -241,7 +241,7 @@ const Opleidingen = () => {
                       </div>
                       <button
                         className="text-secondary font-medium text-sm mt-2 hover:underline inline-flex items-center gap-1 w-fit"
-                        onClick={(e) => { e.stopPropagation(); setExpandedOpleiding(isExpanded ? null : opleiding.titel); }}
+                        onClick={(e) => { e.stopPropagation(); setExpandedOpleiding(isExpanded ? null : opleiding.id); }}
                       >
                         {isExpanded ? "Minder tonen" : "Bekijk opleiding"}
                         <ChevronDown className={`h-4 w-4 transition-transform ${isExpanded ? "rotate-180" : ""}`} />
