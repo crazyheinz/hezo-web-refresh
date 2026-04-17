@@ -40,7 +40,7 @@ const stepsData = [
     number: "3",
     title: "Starten met Hezo",
     description:
-      "Beslis je om te starten? Dan begeleiden we je bij de administratieve stappen en zorgen we dat de aansluiting vlot verloopt. Geen druk, geen verplichtingen.",
+      "Beslis je om te starten? Dan begeleiden we je bij de administratieve stappen en zorgen we dat de aansluiting vlot verloopt.",
     icon: CheckCircle,
     color: "bg-green/10 text-green border-green/20",
   },
@@ -232,7 +232,7 @@ const ZoSluitJeAan = () => {
                   },
                   {
                     title: "Software inbegrepen",
-                    desc: "alle software die je nodig hebt voor je verpleegkundige activiteiten zit in het pakket. Wij dragen de kosten.",
+                    desc: "alle software die je nodig hebt voor je verpleegkundige activiteiten zit in het pakket. De software is inbegrepen in de samenwerking.",
                   },
                   {
                     title: "Je premies blijven volledig van jou",
@@ -240,7 +240,7 @@ const ZoSluitJeAan = () => {
                   },
                   {
                     title: "Patiënten via Hezo",
-                    desc: "je praktijk groeit elke maand met nieuwe patiënten uit jouw regio, zonder dat je daar zelf moeite voor moet doen.",
+                    desc: "je praktijk groeit elke maand met nieuwe patiënten uit jouw regio, zonder dat je zelf actief op zoek moet gaan naar patiënten.",
                   },
                 ].map((item) => (
                   <li key={item.title} className="flex items-start gap-3">
