@@ -47,6 +47,54 @@ export type Database = {
         }
         Relationships: []
       }
+      trainings: {
+        Row: {
+          beschrijving: string
+          created_at: string
+          datum: string
+          id: string
+          is_active: boolean
+          lesgever: string
+          locatie: string | null
+          max_deelnemers: number
+          opname_beschikbaar: boolean
+          tijd: string
+          titel: string
+          type: string
+          updated_at: string
+        }
+        Insert: {
+          beschrijving: string
+          created_at?: string
+          datum: string
+          id?: string
+          is_active?: boolean
+          lesgever: string
+          locatie?: string | null
+          max_deelnemers?: number
+          opname_beschikbaar?: boolean
+          tijd: string
+          titel: string
+          type: string
+          updated_at?: string
+        }
+        Update: {
+          beschrijving?: string
+          created_at?: string
+          datum?: string
+          id?: string
+          is_active?: boolean
+          lesgever?: string
+          locatie?: string | null
+          max_deelnemers?: number
+          opname_beschikbaar?: boolean
+          tijd?: string
+          titel?: string
+          type?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       webinar_invites: {
         Row: {
           created_at: string
