@@ -105,7 +105,7 @@ const BegeleidingSection = () => {
                     <Rocket className="h-6 w-6 text-yellow" strokeWidth={1.5} />
                   </div>
                   <h3 className="text-xl font-semibold text-foreground">
-                    Begeleiding bij de start
+                    Praktische opstart als zelfstandige
                   </h3>
                 </div>
                 <p className="text-muted-foreground leading-relaxed mb-3">
