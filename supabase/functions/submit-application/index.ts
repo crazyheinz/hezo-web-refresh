@@ -308,13 +308,23 @@ serve(async (req) => {
       body: JSON.stringify(emailPayload),
     });
 
+    let emailSent = false;
+    let emailErrorMsg: string | null = null;
+
     if (!emailResponse.ok) {
       const emailError = await emailResponse.text();
       console.error("Email error to HR:", emailError);
-      // Don't throw - application is saved, email is secondary
+      emailErrorMsg = emailError.slice(0, 500);
     } else {
+      emailSent = true;
       console.log("Email notification sent to HR");
     }
+
+    // Update DB with email status
+    await supabase
+      .from("job_applications")
+      .update({ email_sent: emailSent, email_error: emailErrorMsg })
+      .eq("id", application.id);
 
     // Send confirmation email to applicant
     const confirmationEmailResponse = await fetch("https://api.resend.com/emails", {
