@@ -99,6 +99,11 @@ const faqData = [
       "Tijdens het vrijblijvend kennismakingsgesprek leggen we transparant uit hoe de samenwerking werkt en welke abonnementformules er zijn. We maken ook een simulatie op maat, gebaseerd op jouw omzet en situatie, zodat je meteen ziet wat de netto-impact is. Zo weet je vooraf precies waar je aan toe bent, in duidelijke cijfers zonder verrassingen.",
   },
   {
+    question: "Wat verdien en betaal ik bij Hezo?",
+    answer:
+      "Je betaalt een transparante fee, afgestemd op de grootte van je praktijk. Daarbovenop krijg je gratis software die je nodig hebt voor je verpleegkundige activiteiten (de kosten nemen wij voor onze rekening), behoud je al je premies (waaronder de volledige telematicapremie van € 800 per verpleegkundige en opleidingspremies), en kan je praktijk elke maand groeien met extra patiënten zonder extra inspanning. Zo blijft de financiële impact beperkt. Bij sommige praktijken kan dit zelfs nagenoeg break-even zijn.",
+  },
+  {
     question: "Hoe verloopt de samenwerking concreet?",
     answer:
       "Tijdens het vrijblijvend kennismakingsgesprek leggen we duidelijk uit hoe de samenwerking verloopt en welke ondersteuning je kan verwachten. Zo weet je precies waar je aan toe bent.",
@@ -253,7 +258,7 @@ const ZoSluitJeAan = () => {
               variants={fadeUp}
               className="text-3xl sm:text-4xl font-bold text-foreground mb-6"
             >
-              Kosten en lidmaatschap
+              Wat je verdient en betaalt
             </motion.h2>
             <motion.p
               custom={1}
@@ -267,29 +272,42 @@ const ZoSluitJeAan = () => {
               variants={fadeUp}
               className="bg-card rounded-2xl border border-border p-8 sm:p-10 text-left"
             >
-              <p className="text-muted-foreground mb-6">
-                Tijdens het vrijblijvend kennismakingsgesprek leggen we helder uit:
-              </p>
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-4 mb-8">
                 {[
-                  "hoe de samenwerking praktisch verloopt",
-                  "welke ondersteuning je kan verwachten",
-                  "welke abonnementformules en fees er zijn",
+                  {
+                    title: "Een transparante fee",
+                    desc: "afgestemd op de grootte van je praktijk.",
+                  },
+                  {
+                    title: "Gratis software",
+                    desc: "gebruik de software die je nodig hebt voor je verpleegkundige activiteiten. De kosten nemen wij voor onze rekening.",
+                  },
+                  {
+                    title: "Behoud van al je premies",
+                    desc: "je behoudt je volledige telematicapremie van € 800 per verpleegkundige, en andere premies waarop je recht hebt, zoals opleidingspremies.",
+                  },
+                  {
+                    title: "Extra patiënten",
+                    desc: "je praktijk kan groeien elke maand, zonder extra inspanning.",
+                  },
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green mt-0.5 shrink-0" />
-                    <span className="text-foreground">{item}</span>
+                  <li key={item.title} className="flex items-start gap-3">
+                    <CheckCircle className="h-5 w-5 text-green mt-1 shrink-0" />
+                    <span className="text-foreground">
+                      <span className="font-semibold">{item.title}:</span>{" "}
+                      <span className="text-muted-foreground">{item.desc}</span>
+                    </span>
                   </li>
                 ))}
               </ul>
               <div className="bg-secondary/5 border border-secondary/15 rounded-xl p-5 mb-6">
-                <p className="text-foreground font-semibold mb-2">Elke praktijk is anders</p>
+                <p className="text-foreground font-semibold mb-2">Beperkte financiële impact</p>
                 <p className="text-muted-foreground leading-relaxed">
-                  We maken een simulatie op maat, gebaseerd op jouw omzet en situatie. Zo zie je meteen je netto-impact, in duidelijke cijfers zonder verrassingen.
+                  Zo blijft de financiële impact beperkt. Bij sommige praktijken kan dit zelfs nagenoeg break-even zijn.
                 </p>
               </div>
-              <p className="text-foreground font-medium">
-                Zo weet je vooraf precies waar je aan toe bent.
+              <p className="text-muted-foreground leading-relaxed">
+                Tijdens het vrijblijvend kennismakingsgesprek maken we een simulatie op maat, gebaseerd op jouw omzet en situatie. Zo zie je meteen je netto-impact, in duidelijke cijfers zonder verrassingen.
               </p>
             </motion.div>
           </motion.div>
