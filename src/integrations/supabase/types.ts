@@ -14,6 +14,48 @@ export type Database = {
   }
   public: {
     Tables: {
+      form_submissions: {
+        Row: {
+          created_at: string
+          email: string
+          email_error: string | null
+          email_sent: boolean
+          id: string
+          message: string | null
+          name: string
+          opleiding_datum: string | null
+          opleiding_naam: string | null
+          phone: string | null
+          type: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          email_error?: string | null
+          email_sent?: boolean
+          id?: string
+          message?: string | null
+          name: string
+          opleiding_datum?: string | null
+          opleiding_naam?: string | null
+          phone?: string | null
+          type: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          email_error?: string | null
+          email_sent?: boolean
+          id?: string
+          message?: string | null
+          name?: string
+          opleiding_datum?: string | null
+          opleiding_naam?: string | null
+          phone?: string | null
+          type?: string
+        }
+        Relationships: []
+      }
       job_applications: {
         Row: {
           created_at: string
