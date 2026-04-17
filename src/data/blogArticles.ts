@@ -11,6 +11,15 @@ export interface BlogArticleData {
 
 export const blogArticles: BlogArticleData[] = [
   {
+    id: "thuisverpleging-meer-dan-spuitje",
+    title: "Waarom thuisverpleging veel meer is dan \"een spuitje zetten\"",
+    excerpt: "Thuisverpleging is veel meer dan technische handelingen. Ontdek wat het beroep écht inhoudt en waarom het bredere beeld zo belangrijk is.",
+    metaTitle: "Thuisverpleging: meer dan een spuitje zetten | Hezo",
+    date: "2026-04-17",
+    category: "Visie",
+    readTime: "6 min"
+  },
+  {
     id: "werk-privebalans-thuisverpleegkundige",
     title: "Werk-privébalans als zelfstandige thuisverpleegkundige: waarom het vaak misloopt (en hoe het anders kan)",
     excerpt: "Werk-privébalans in de thuisverpleging is niet evident. Ontdek waarom het vaak misloopt en hoe je als zelfstandige verpleegkundige meer rust en structuur creëert.",
