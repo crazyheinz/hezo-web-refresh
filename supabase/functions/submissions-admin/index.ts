@@ -49,14 +49,29 @@ serve(async (req) => {
 
   try {
     const url = new URL(req.url);
+    const pathParts = url.pathname.split("/").filter(Boolean);
+    const lastPart = pathParts[pathParts.length - 1];
+    const isApplicationsList = lastPart === "applications";
+    const isApplicationDelete = pathParts.includes("applications") && lastPart !== "applications";
 
     if (req.method === "GET") {
+      if (isApplicationsList) {
+        const { data, error } = await supabase
+          .from("job_applications")
+          .select("*")
+          .order("created_at", { ascending: false })
+          .limit(1000);
+        if (error) throw error;
+        return new Response(JSON.stringify(data), {
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
+      }
+
       const { data, error } = await supabase
         .from("form_submissions")
         .select("*")
         .order("created_at", { ascending: false })
         .limit(1000);
-
       if (error) throw error;
       return new Response(JSON.stringify(data), {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
@@ -64,14 +79,15 @@ serve(async (req) => {
     }
 
     if (req.method === "DELETE") {
-      const id = url.pathname.split("/").pop();
+      const id = lastPart;
       if (!id) {
         return new Response(JSON.stringify({ error: "id required" }), {
           status: 400,
           headers: { ...corsHeaders, "Content-Type": "application/json" },
         });
       }
-      const { error } = await supabase.from("form_submissions").delete().eq("id", id);
+      const table = isApplicationDelete ? "job_applications" : "form_submissions";
+      const { error } = await supabase.from(table).delete().eq("id", id);
       if (error) throw error;
       return new Response(JSON.stringify({ success: true }), {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
