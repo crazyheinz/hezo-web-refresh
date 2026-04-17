@@ -11,3 +11,6 @@ verify_jwt = false
 
 [functions.trainings-admin]
 verify_jwt = false
+
+[functions.submissions-admin]
+verify_jwt = false
