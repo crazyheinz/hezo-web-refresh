@@ -17,6 +17,7 @@ import Contact from "./pages/Contact";
 import WebinarAdmin from "./pages/WebinarAdmin";
 import WebinarView from "./pages/WebinarView";
 import OpleidingenAdmin from "./pages/OpleidingenAdmin";
+import SubmissionsAdmin from "./pages/SubmissionsAdmin";
 import Privacy from "./pages/Privacy";
 import Cookies from "./pages/Cookies";
 import NotFound from "./pages/NotFound";
@@ -61,6 +62,7 @@ const AppContent = () => (
             <Route path="/webinar-admin" element={<WebinarAdmin />} />
             <Route path="/webinar/:token" element={<WebinarView />} />
             <Route path="/opleidingen-admin" element={<OpleidingenAdmin />} />
+            <Route path="/inzendingen-admin" element={<SubmissionsAdmin />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
