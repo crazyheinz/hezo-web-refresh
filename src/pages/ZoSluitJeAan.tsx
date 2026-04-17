@@ -258,7 +258,7 @@ const ZoSluitJeAan = () => {
               variants={fadeUp}
               className="text-3xl sm:text-4xl font-bold text-foreground mb-6"
             >
-              Wat je verdient en betaalt
+              Wat kost het en wat levert het op?
             </motion.h2>
             <motion.p
               custom={1}
@@ -308,6 +308,13 @@ const ZoSluitJeAan = () => {
               </div>
               <p className="text-muted-foreground leading-relaxed">
                 Tijdens het vrijblijvend kennismakingsgesprek maken we een simulatie op maat, gebaseerd op jouw omzet en situatie. Zo zie je meteen je netto-impact, in duidelijke cijfers zonder verrassingen.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mt-4">
+                Daarnaast krijg je ook persoonlijke begeleiding, gratis opleidingen en volledige administratieve ondersteuning.{" "}
+                <Link to="/wat-we-doen/" className="text-secondary font-medium hover:underline inline-flex items-center gap-1">
+                  Bekijk ons volledig aanbod
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
               </p>
             </motion.div>
           </motion.div>
