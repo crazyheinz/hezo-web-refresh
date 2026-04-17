@@ -121,7 +121,7 @@ const articleContent: Record<string, {
         </p>
 
         <div className="my-8 p-6 bg-muted/50 border-l-4 border-secondary rounded-r-lg">
-          <p className="text-sm text-muted-foreground mb-0">
+          <p className="text-muted-foreground mb-0">
             Ook in de bredere zorgsector klinkt deze oproep. In een recent expertpanel in <em>Knack</em> pleitten vertegenwoordigers van onder meer Zorgnet-Icuro, Helan en de Vlaamse Beroepsvereniging voor Zelfstandige Verpleegkundigen voor een vollediger verhaal over zorgarbeid: minder focus op tekorten en technische handelingen, meer aandacht voor de relationele en maatschappelijke waarde van zorg.
           </p>
         </div>
