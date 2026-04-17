@@ -162,8 +162,8 @@ const ZoSluitJeAan = () => {
                 schermen, terwijl jij de volledige autonomie behoudt over je werk en je patiënten.
               </p>
               <p>
-                Of je nu start als zelfstandige, je patiëntenbestand wil uitbreiden of al langer
-                actief bent: het aansluitproces is eenvoudig en afgestemd op jouw situatie. Elk gesprek is volledig vrijblijvend.
+                Of je nu start als zelfstandige of al langer actief bent: het
+                aansluitproces is eenvoudig en afgestemd op jouw situatie. Elk gesprek is volledig vrijblijvend.
               </p>
             </motion.div>
             <motion.div
