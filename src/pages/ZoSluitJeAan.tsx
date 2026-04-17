@@ -163,7 +163,7 @@ const ZoSluitJeAan = () => {
               </p>
               <p>
                 Of je nu start als zelfstandige, je patiëntenbestand wil uitbreiden of al langer
-                actief bent: het aansluitproces is eenvoudig en afgestemd op jouw situatie.
+                actief bent: het aansluitproces is eenvoudig en afgestemd op jouw situatie. Elk gesprek is volledig vrijblijvend.
               </p>
             </motion.div>
             <motion.div
@@ -176,7 +176,7 @@ const ZoSluitJeAan = () => {
                   size="lg"
                   className="bg-secondary hover:bg-secondary/90 text-secondary-foreground text-lg px-8 py-6 rounded-xl shadow-lg hover:shadow-xl transition-all"
                 >
-                  Vraag een kennismakingsgesprek aan
+                  Vraag een vrijblijvend kennismakingsgesprek aan
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
@@ -399,7 +399,7 @@ const ZoSluitJeAan = () => {
                   size="lg"
                   className="bg-secondary hover:bg-secondary/90 text-secondary-foreground text-lg px-8 py-6 rounded-xl shadow-lg hover:shadow-xl transition-all"
                 >
-                  Vraag een kennismakingsgesprek aan
+                  Vraag een vrijblijvend kennismakingsgesprek aan
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>

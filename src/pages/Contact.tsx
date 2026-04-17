@@ -106,7 +106,7 @@ const Contact = () => {
             <p className="text-xl text-muted-foreground leading-relaxed">
               Heb je interesse om deel uit te maken van het Hezo-netwerk of heb je een vraag over
               onze werking? Laat hieronder je gegevens achter. We nemen zo snel mogelijk contact met
-              je op.
+              je op voor een vrijblijvend gesprek, zonder enige verplichting.
             </p>
           </div>
 
