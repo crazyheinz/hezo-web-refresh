@@ -61,6 +61,8 @@ export type Database = {
           created_at: string
           cv_url: string | null
           email: string
+          email_error: string | null
+          email_sent: boolean
           id: string
           motivation: string
           name: string
@@ -71,6 +73,8 @@ export type Database = {
           created_at?: string
           cv_url?: string | null
           email: string
+          email_error?: string | null
+          email_sent?: boolean
           id?: string
           motivation: string
           name: string
@@ -81,6 +85,8 @@ export type Database = {
           created_at?: string
           cv_url?: string | null
           email?: string
+          email_error?: string | null
+          email_sent?: boolean
           id?: string
           motivation?: string
           name?: string

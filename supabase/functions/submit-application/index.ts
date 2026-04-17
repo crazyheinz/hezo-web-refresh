@@ -246,8 +246,8 @@ serve(async (req) => {
       }
     }
 
-    // Save application to database
-    const { error: dbError } = await supabase
+    // Save application to database FIRST (before email)
+    const { data: application, error: dbError } = await supabase
       .from("job_applications")
       .insert({
         name,
@@ -256,14 +256,17 @@ serve(async (req) => {
         motivation,
         position,
         cv_url: cvUrl,
-      });
+        email_sent: false,
+      })
+      .select()
+      .single();
 
     if (dbError) {
       console.error("Database error:", dbError);
       throw new Error("Failed to save application");
     }
 
-    console.log("Application saved to database");
+    console.log("Application saved to database:", application.id);
 
     // HTML escape all user input for email templates
     const safeName = escapeHtml(name);
@@ -305,13 +308,23 @@ serve(async (req) => {
       body: JSON.stringify(emailPayload),
     });
 
+    let emailSent = false;
+    let emailErrorMsg: string | null = null;
+
     if (!emailResponse.ok) {
       const emailError = await emailResponse.text();
       console.error("Email error to HR:", emailError);
-      // Don't throw - application is saved, email is secondary
+      emailErrorMsg = emailError.slice(0, 500);
     } else {
+      emailSent = true;
       console.log("Email notification sent to HR");
     }
+
+    // Update DB with email status
+    await supabase
+      .from("job_applications")
+      .update({ email_sent: emailSent, email_error: emailErrorMsg })
+      .eq("id", application.id);
 
     // Send confirmation email to applicant
     const confirmationEmailResponse = await fetch("https://api.resend.com/emails", {
