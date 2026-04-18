@@ -106,10 +106,10 @@ const Blog = () => {
           <section className="pb-12">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <Card className="group overflow-hidden border-border/50 hover:border-secondary/30 hover:shadow-lg transition-all duration-300">
-                <div className="grid md:grid-cols-2 gap-0">
+                <div className="grid md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-0">
                   <Link
                     to={`/blog/${featured.id}/`}
-                    className="block bg-light-blue/5 overflow-hidden aspect-[4/3] md:aspect-auto"
+                    className="block bg-light-blue/5 overflow-hidden aspect-[4/3] md:aspect-auto md:max-h-[340px]"
                   >
                     {heroImages[featured.id] && (
                       <img
@@ -120,18 +120,20 @@ const Blog = () => {
                       />
                     )}
                   </Link>
-                  <CardContent className="p-8 md:p-10 flex flex-col justify-center">
+                  <CardContent className="p-6 md:p-8 flex flex-col justify-center">
                     <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
                       <span className="bg-secondary/10 text-secondary px-2 py-1 rounded-full text-xs font-medium">
-                        {featured.category}
+                        Uitgelicht
                       </span>
+                      <span>•</span>
+                      <span>{featured.category}</span>
                       <span>•</span>
                       <span>{featured.readTime}</span>
                     </div>
-                    <h2 className="text-2xl md:text-3xl font-semibold text-primary mb-4 group-hover:text-secondary transition-colors">
+                    <h2 className="text-xl md:text-2xl font-semibold text-primary mb-3 group-hover:text-secondary transition-colors">
                       <Link to={`/blog/${featured.id}/`}>{featured.title}</Link>
                     </h2>
-                    <p className="text-muted-foreground mb-6">{featured.excerpt}</p>
+                    <p className="text-muted-foreground mb-4 line-clamp-2">{featured.excerpt}</p>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
                         <Calendar className="h-4 w-4" />
