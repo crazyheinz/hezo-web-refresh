@@ -83,6 +83,11 @@ const faqData = [
       "Ja. Ook praktijken met meerdere zelfstandige verpleegkundigen sluiten aan bij Hezo. Tijdens het kennismakingsgesprek bekijken we samen hoe de samenwerking het best wordt georganiseerd voor jullie praktijk.",
   },
   {
+    question: "Kan ik ook aansluiten in bijberoep?",
+    answer:
+      "Ja. Je kan ook aansluiten als zelfstandige in bijberoep. We ondersteunen je zowel als je in bijberoep wil blijven werken, als wanneer je wil doorgroeien naar een fulltime zelfstandige activiteit. Samen bekijken we wat het best past bij jouw situatie en tempo.",
+  },
+  {
     question: "Welke ondersteuning krijg ik van Hezo?",
     answer:
       'Hezo ondersteunt zelfstandige verpleegkundigen met patiënteninstroom, administratieve ondersteuning, opleidingen en een netwerk van collega\'s. Meer info vind je op onze pagina "Ons aanbod".',
