@@ -50,7 +50,7 @@ const faqData = [
   {
     question: "Kan ik mijn autonomie als zelfstandige behouden?",
     answer:
-      "Ja. Bij Hezo blijf je volledig zelfstandig. Je behoudt de regie over je planning, je patiënten en je manier van werken.",
+      "Ja. Bij Hezo blijf je volledig zelfstandig en werk je onder je eigen naam en identiteit. Je behoudt de regie over je planning, je patiënten en je manier van werken.",
   },
   {
     question: "Moet ik zelf patiënten aanbrengen om aan te sluiten?",
