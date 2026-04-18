@@ -1205,41 +1205,6 @@ const BlogArticle = () => {
                 </div>
               )}
 
-              {/* Prev / Next navigation */}
-              {(prevArticle || nextArticle) && (
-                <nav className="mt-12 grid sm:grid-cols-2 gap-4" aria-label="Andere artikelen">
-                  {prevArticle ? (
-                    <Link
-                      to={`/blog/${prevArticle.id}/`}
-                      onClick={() => window.scrollTo(0, 0)}
-                      className="group flex flex-col p-5 rounded-xl border border-border/50 hover:border-secondary/40 hover:shadow-md transition-all"
-                    >
-                      <span className="inline-flex items-center gap-1 text-xs font-medium text-muted-foreground mb-2">
-                        <ArrowLeft className="h-3 w-3" />
-                        Vorig artikel
-                      </span>
-                      <span className="font-semibold text-primary group-hover:text-secondary transition-colors line-clamp-2">
-                        {prevArticle.title}
-                      </span>
-                    </Link>
-                  ) : <div className="hidden sm:block" />}
-                  {nextArticle ? (
-                    <Link
-                      to={`/blog/${nextArticle.id}/`}
-                      onClick={() => window.scrollTo(0, 0)}
-                      className="group flex flex-col p-5 rounded-xl border border-border/50 hover:border-secondary/40 hover:shadow-md transition-all sm:text-right sm:items-end"
-                    >
-                      <span className="inline-flex items-center gap-1 text-xs font-medium text-muted-foreground mb-2">
-                        Volgend artikel
-                        <ArrowRight className="h-3 w-3" />
-                      </span>
-                      <span className="font-semibold text-primary group-hover:text-secondary transition-colors line-clamp-2">
-                        {nextArticle.title}
-                      </span>
-                    </Link>
-                  ) : <div className="hidden sm:block" />}
-                </nav>
-              )}
 
               {/* More articles */}
               {otherArticles.length > 0 && (
