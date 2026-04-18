@@ -110,33 +110,12 @@ const articleContent: Record<string, {
         <p>
           Daarnaast kiezen sommige verpleegkundigen ervoor om samen te werken, bijvoorbeeld om ondersteuning te krijgen bij <Link to="/blog/patienten-thuisverpleegkundige/" className="text-secondary hover:underline">patiënteninstroom</Link>, <Link to="/blog/administratie-thuisverpleging/" className="text-secondary hover:underline">administratie</Link> of software, zodat ze efficiënter kunnen werken en zich meer kunnen focussen op zorg.
         </p>
+        <p>
+          Ontdek hoe dat concreet kan werken via <Link to="/wat-we-doen/" className="text-secondary hover:underline">Hezo</Link>.
+        </p>
       </>
     ),
-    cta: (
-      <div className="mt-12 p-8 bg-muted rounded-2xl">
-        <h3 className="text-xl font-semibold text-primary mb-2">
-          Benieuwd wat jij concreet kan verdienen?
-        </h3>
-        <p className="text-muted-foreground mb-4">
-          Ontdek hoe een samenwerking met Hezo concreet kan werken en laat een simulatie op maat maken.
-        </p>
-        <div className="flex flex-wrap gap-4">
-          <Link
-            to="/zo-sluit-je-aan/"
-            onClick={() => window.scrollTo(0, 0)}
-            className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-6 py-3 rounded-lg font-medium hover:bg-secondary/90 transition-colors"
-          >
-            Vraag een simulatie aan
-          </Link>
-          <Link
-            to="/contact/"
-            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors"
-          >
-            Neem contact op
-          </Link>
-        </div>
-      </div>
-    ),
+    cta: null,
   },
   "thuisverpleging-meer-dan-spuitje": {
     heroImage: blogHeroMeerDanSpuitje,
@@ -1196,7 +1175,7 @@ const BlogArticle = () => {
               </div>
 
               {/* CTA */}
-              {content.cta || (
+              {content.cta === null ? null : content.cta || (
                 <div className="mt-12 p-8 bg-muted rounded-2xl">
                   <h3 className="text-xl font-semibold text-primary mb-2">
                     Meer weten over Hezo?
