@@ -359,15 +359,6 @@ const ZoSluitJeAan = () => {
                 );
               })}
             </div>
-
-            {/* Trust line */}
-            <motion.p
-              custom={5}
-              variants={fadeUp}
-              className="text-center text-muted-foreground mt-12 italic"
-            >
-              Praktijken die met Hezo werken, winnen tijd en krijgen meer structuur.
-            </motion.p>
           </motion.div>
         </div>
       </section>
