@@ -12,12 +12,14 @@ const BlogHeroImage = ({ src, alt }: BlogHeroImageProps) => {
       animate={{ y: [0, -8, 0] }}
       transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
     >
-      <img
-        src={src}
-        alt={alt}
-        className="w-full max-w-md h-auto object-contain rounded-2xl"
-        loading="lazy"
-      />
+      <div className="w-full max-w-md aspect-[4/3] rounded-2xl overflow-hidden">
+        <img
+          src={src}
+          alt={alt}
+          className="w-full h-full object-contain"
+          loading="lazy"
+        />
+      </div>
     </motion.div>
   );
 };
