@@ -1046,9 +1046,6 @@ const BlogArticle = () => {
 
   const article = blogArticles.find((a) => a.id === articleId);
   const content = articleId ? articleContent[articleId] : null;
-  const currentIndex = blogArticles.findIndex((a) => a.id === articleId);
-  const prevArticle = currentIndex > 0 ? blogArticles[currentIndex - 1] : null;
-  const nextArticle = currentIndex >= 0 && currentIndex < blogArticles.length - 1 ? blogArticles[currentIndex + 1] : null;
   const otherArticles = blogArticles.filter((a) => a.id !== articleId).slice(0, 3);
 
   if (!article || !content) {
