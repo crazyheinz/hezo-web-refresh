@@ -101,7 +101,7 @@ const faqData = [
   {
     question: "Wat kost het om met Hezo te werken?",
     answer:
-      "We werken niet met vaste formules. De fee is afgestemd op de grootte en werking van je activiteit. In die samenwerking zit alle software die je nodig hebt inbegrepen, en je behoudt je volledige premies, zoals de telematicapremie en opleidingspremies. Daarnaast zorgen we voor een continue instroom van patiënten, zodat je praktijk kan groeien zonder dat je zelf actief op zoek moet gaan. Tijdens een vrijblijvend gesprek maken we een simulatie op maat, zodat je een duidelijk beeld krijgt van de kost en wat je ervoor terugkrijgt.",
+      "We werken niet met vaste formules. De fee is afgestemd op de grootte en werking van je activiteit. Tijdens een vrijblijvend gesprek maken we een simulatie op maat, zodat je een duidelijk beeld krijgt van de kost. In die samenwerking is alle software inbegrepen, behoud je je premies en krijg je ondersteuning en patiënten via Hezo.",
   },
 ];
 
