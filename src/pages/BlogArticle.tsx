@@ -11,6 +11,7 @@ import blogHeroZelfstandig from "@/assets/blog-hero-zelfstandig.png";
 import blogHeroHbo5 from "@/assets/blog-hero-hbo5.png";
 import blogHeroBalans from "@/assets/blog-hero-balans.png";
 import blogHeroMeerDanSpuitje from "@/assets/blog-hero-meer-dan-spuitje.png";
+import blogHeroInkomen from "@/assets/blog-hero-inkomen.png";
 
 // Full article content - add content for each article ID
 const articleContent: Record<string, {
@@ -19,6 +20,166 @@ const articleContent: Record<string, {
   heroImage?: string;
   headings: { id: string; label: string }[];
 }> = {
+  "inkomen-zelfstandige-thuisverpleegkundige": {
+    heroImage: blogHeroInkomen,
+    headings: [
+      { id: "bruto-omzet", label: "Bruto omzet: wat mag je verwachten?" },
+      { id: "inkomen-opbouw", label: "Hoe wordt je inkomen opgebouwd?" },
+      { id: "kosten", label: "Welke kosten heb je als zelfstandige?" },
+      { id: "netto", label: "Wat hou je netto over?" },
+      { id: "bepaalt-inkomen", label: "Wat bepaalt je inkomen?" },
+      { id: "meer-dan-inkomen", label: "Meer dan inkomen alleen" },
+      { id: "conclusie", label: "Conclusie" },
+      { id: "wat-betekent", label: "Wat betekent dit voor jou?" },
+    ],
+    content: (
+      <>
+        <p className="lead">
+          De vraag "wat verdien ik als zelfstandige thuisverpleegkundige?" wordt vaak gesteld door verpleegkundigen die de stap naar zelfstandigheid overwegen.
+        </p>
+        <p>
+          Het korte antwoord: je kan een degelijk tot sterk inkomen opbouwen, maar er is geen vast loon. Als zelfstandige werk je met bruto omzet, waar nog kosten, sociale bijdragen en belastingen van afgaan.
+        </p>
+        <p>Het exacte bedrag hangt sterk af van hoe je je activiteit organiseert.</p>
+
+        <h2 id="bruto-omzet">Bruto omzet: wat mag je verwachten?</h2>
+        <p>
+          Als zelfstandige thuisverpleegkundige werk je met prestaties die terugbetaald worden via het RIZIV.
+        </p>
+        <p>Bij een voltijdse activiteit ligt de bruto omzet vaak in een bandbreedte van ongeveer:</p>
+        <p>€4.000 tot €8.000 per maand, met uitschieters afhankelijk van je werking.</p>
+        <p>Belangrijk:</p>
+        <ul>
+          <li>dit is bruto omzet, geen nettoloon</li>
+          <li>kosten en belastingen moeten hier nog af</li>
+        </ul>
+        <p>De hoogte hangt onder meer af van:</p>
+        <ul>
+          <li>aantal patiënten</li>
+          <li>type zorg</li>
+          <li>efficiëntie van je planning</li>
+          <li>verplaatsingen</li>
+          <li>samenwerken of solo werken</li>
+        </ul>
+
+        <h2 id="inkomen-opbouw">Hoe wordt je inkomen opgebouwd?</h2>
+        <h3>Vergoedingen per prestatie</h3>
+        <p>Elke zorgverstrekking heeft een vast tarief binnen de RIZIV-nomenclatuur.</p>
+        <p>Je inkomen groeit met:</p>
+        <ul>
+          <li>het aantal prestaties</li>
+          <li>het type prestaties</li>
+        </ul>
+
+        <h3>Premies en voordelen</h3>
+        <p>Naast je prestaties kan je rekenen op:</p>
+        <ul>
+          <li>Telematicapremie (± €800/jaar)</li>
+          <li>Opleidingspremies</li>
+          <li>RIZIV sociaal statuut (± €600–€700/jaar)</li>
+        </ul>
+        <p>
+          Deze premies helpen om je totale inkomen te versterken. De voorwaarden kunnen variëren afhankelijk van je activiteit.
+        </p>
+
+        <h2 id="kosten">Welke kosten heb je als zelfstandige?</h2>
+        <p>Als zelfstandige draag je zelf je kosten.</p>
+
+        <h3>Verplaatsingen en wagen</h3>
+        <p>Brandstof, onderhoud en verzekering vormen vaak een belangrijke kost.</p>
+
+        <h3>Materiaal</h3>
+        <p>Handschoenen, ontsmetting en klein materiaal lijken beperkt, maar lopen op.</p>
+
+        <h3>Software en administratie</h3>
+        <p>
+          Je hebt systemen nodig voor patiëntendossiers, registratie en facturatie. Meer hierover lees je in ons artikel over <Link to="/blog/software-thuisverpleging/" className="text-secondary hover:underline">software in de thuisverpleging</Link>.
+        </p>
+
+        <h3>Verzekeringen en bijdragen</h3>
+        <p>Beroepsaansprakelijkheid en sociale bijdragen (ongeveer 20%).</p>
+
+        <h2 id="netto">Wat hou je netto over?</h2>
+        <p>Je bruto omzet is niet je uiteindelijke inkomen.</p>
+        <p>Na kosten, sociale bijdragen en belastingen blijft een deel over.</p>
+        <p>Een vaak gebruikte vuistregel: ongeveer 40% tot 60% netto overhouden.</p>
+        <div className="my-8 p-6 bg-secondary/5 border-l-4 border-secondary rounded-r-lg">
+          <p className="text-primary text-lg font-medium mb-0">
+            Voorbeeld: €6.000 bruto → €2.500 – €3.500 netto (indicatief)
+          </p>
+        </div>
+
+        <h2 id="bepaalt-inkomen">Wat bepaalt je inkomen?</h2>
+        <p>De verschillen zitten vooral in organisatie.</p>
+        <p>Belangrijke factoren:</p>
+        <ul>
+          <li>planning en routes</li>
+          <li>aantal patiënten</li>
+          <li>verplaatsingstijd</li>
+          <li>type zorg</li>
+          <li>ondersteuning</li>
+        </ul>
+        <p>
+          De manier waarop je je werk organiseert en de ondersteuning die je hebt, maakt een groot verschil.
+        </p>
+
+        <h2 id="meer-dan-inkomen">Meer dan inkomen alleen</h2>
+        <p>Zelfstandig werken draait niet alleen om geld.</p>
+        <p>Veel verpleegkundigen kiezen hiervoor om:</p>
+        <ul>
+          <li>autonoom te werken</li>
+          <li>hun werk zelf te organiseren</li>
+          <li>kwalitatieve zorg te bieden</li>
+        </ul>
+
+        <h2 id="conclusie">Conclusie</h2>
+        <p>Je kan als zelfstandige thuisverpleegkundige een sterk inkomen opbouwen, maar:</p>
+        <ul>
+          <li>het is geen vast loon</li>
+          <li>het hangt af van je werking</li>
+          <li>kosten en belastingen hebben grote impact</li>
+        </ul>
+        <p>Het verschil zit vooral in hoe je je werk organiseert.</p>
+
+        <h2 id="wat-betekent">Wat betekent dit voor jou?</h2>
+        <p>Wil je weten wat dit concreet betekent voor jouw situatie?</p>
+        <p>
+          Dan volstaat een algemene richtlijn niet. Je inkomen hangt af van je regio, je type zorg en hoe je je werk organiseert.
+        </p>
+        <p>
+          Heb je vragen over de stap naar zelfstandigheid — bijvoorbeeld rond opstart, administratie of sociale bijdragen — dan kan je je laten begeleiden door gespecialiseerde partners zoals <a href="https://www.xerius.be" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Xerius</a>.
+        </p>
+        <p>
+          Daarnaast kiezen sommige verpleegkundigen ervoor om samen te werken, bijvoorbeeld om ondersteuning te krijgen bij <Link to="/blog/patienten-thuisverpleegkundige/" className="text-secondary hover:underline">patiënteninstroom</Link>, <Link to="/blog/administratie-thuisverpleging/" className="text-secondary hover:underline">administratie</Link> of software, zodat ze efficiënter kunnen werken en zich meer kunnen focussen op zorg.
+        </p>
+      </>
+    ),
+    cta: (
+      <div className="mt-12 p-8 bg-muted rounded-2xl">
+        <h3 className="text-xl font-semibold text-primary mb-2">
+          Benieuwd wat jij concreet kan verdienen?
+        </h3>
+        <p className="text-muted-foreground mb-4">
+          Ontdek hoe een samenwerking met Hezo concreet kan werken en laat een simulatie op maat maken.
+        </p>
+        <div className="flex flex-wrap gap-4">
+          <Link
+            to="/zo-sluit-je-aan/"
+            onClick={() => window.scrollTo(0, 0)}
+            className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-6 py-3 rounded-lg font-medium hover:bg-secondary/90 transition-colors"
+          >
+            Vraag een simulatie aan
+          </Link>
+          <Link
+            to="/contact/"
+            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors"
+          >
+            Neem contact op
+          </Link>
+        </div>
+      </div>
+    ),
+  },
   "thuisverpleging-meer-dan-spuitje": {
     heroImage: blogHeroMeerDanSpuitje,
     headings: [
