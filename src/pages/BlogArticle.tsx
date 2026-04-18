@@ -1175,7 +1175,7 @@ const BlogArticle = () => {
               </div>
 
               {/* CTA */}
-              {content.cta || (
+              {content.cta === null ? null : content.cta || (
                 <div className="mt-12 p-8 bg-muted rounded-2xl">
                   <h3 className="text-xl font-semibold text-primary mb-2">
                     Meer weten over Hezo?
