@@ -11,6 +11,15 @@ export interface BlogArticleData {
 
 export const blogArticles: BlogArticleData[] = [
   {
+    id: "inkomen-zelfstandige-thuisverpleegkundige",
+    title: "Wat verdien je als zelfstandige thuisverpleegkundige in België?",
+    excerpt: "Hoeveel verdien je als zelfstandige thuisverpleegkundige in België? Ontdek je bruto omzet, kosten en netto inkomen helder uitgelegd.",
+    metaTitle: "Wat verdien je als zelfstandige thuisverpleegkundige in België? | Inkomen & kosten uitgelegd",
+    date: "2026-04-18",
+    category: "Inkomen",
+    readTime: "8 min"
+  },
+  {
     id: "thuisverpleging-meer-dan-spuitje",
     title: "Waarom thuisverpleging veel meer is dan \"een spuitje zetten\"",
     excerpt: "Thuisverpleging is veel meer dan technische handelingen. Ontdek wat het beroep écht inhoudt en waarom het bredere beeld zo belangrijk is.",

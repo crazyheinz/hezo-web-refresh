@@ -11,6 +11,7 @@ import blogHeroZelfstandig from "@/assets/blog-hero-zelfstandig.png";
 import blogHeroHbo5 from "@/assets/blog-hero-hbo5.png";
 import blogHeroBalans from "@/assets/blog-hero-balans.png";
 import blogHeroMeerDanSpuitje from "@/assets/blog-hero-meer-dan-spuitje.png";
+import blogHeroInkomen from "@/assets/blog-hero-inkomen.png";
 
 // Full article content - add content for each article ID
 const articleContent: Record<string, {
