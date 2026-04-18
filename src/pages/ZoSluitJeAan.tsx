@@ -99,19 +99,9 @@ const faqData = [
       "Na je aanvraag plannen we een vrijblijvend kennismakingsgesprek. Daarna bekijken we welke stappen nodig zijn en begeleiden we je bij de administratie.",
   },
   {
-    question: "Wat kost aansluiten bij Hezo?",
+    question: "Wat kost het om met Hezo te werken?",
     answer:
-      "Tijdens het vrijblijvend kennismakingsgesprek leggen we transparant uit hoe de samenwerking werkt en welke abonnementsformules er zijn. We maken ook een simulatie op maat, gebaseerd op jouw omzet en situatie. Zo weet je vooraf precies wat de financiële impact is, in duidelijke cijfers en zonder verrassingen achteraf.",
-  },
-  {
-    question: "Wat verdien en betaal ik bij Hezo?",
-    answer:
-      "Je betaalt een transparante fee, afgestemd op de grootte van je praktijk. Daarbovenop krijg je gratis software voor je verpleegkundige activiteiten (de kosten nemen wij voor onze rekening), behoud je al je premies (waaronder de volledige telematicapremie van € 800 per verpleegkundige en opleidingspremies), en groeit je praktijk elke maand met extra patiënten zonder extra inspanning.",
-  },
-  {
-    question: "Hoe verloopt de samenwerking concreet?",
-    answer:
-      "Tijdens het vrijblijvend kennismakingsgesprek leggen we duidelijk uit hoe de samenwerking verloopt en welke ondersteuning je krijgt. Zo weet je precies waar je aan toe bent.",
+      "We werken niet met vaste formules. De fee is afgestemd op de grootte en werking van je activiteit. In die samenwerking zit alle software die je nodig hebt inbegrepen, en je behoudt je volledige premies, zoals de telematicapremie en opleidingspremies. Daarnaast zorgen we voor een continue instroom van patiënten, zodat je praktijk kan groeien zonder dat je zelf actief op zoek moet gaan. Tijdens een vrijblijvend gesprek maken we een simulatie op maat, zodat je een duidelijk beeld krijgt van de kost en wat je ervoor terugkrijgt.",
   },
 ];
 
