@@ -1,6 +1,6 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import SEO from "@/components/SEO";
-import { Calendar, ArrowLeft, Clock } from "lucide-react";
+import { Calendar, ArrowLeft, ArrowRight, Clock } from "lucide-react";
 import { blogArticles } from "./Blog";
 import TableOfContents from "@/components/blog/TableOfContents";
 import BlogHeroImage from "@/components/blog/BlogHeroImage";
