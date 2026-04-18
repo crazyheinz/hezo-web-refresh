@@ -35,24 +35,13 @@ const articleContent: Record<string, {
     content: (
       <>
         <p className="lead">
-          De vraag "wat verdien ik als zelfstandige thuisverpleegkundige?" wordt vaak gesteld door verpleegkundigen die de stap naar zelfstandigheid overwegen.
+          De vraag "wat verdien ik als zelfstandige thuisverpleegkundige?" wordt vaak gesteld door verpleegkundigen die de stap naar zelfstandigheid overwegen. Het korte antwoord: je kan een degelijk tot sterk inkomen opbouwen, maar er is geen vast loon. Als zelfstandige werk je met bruto omzet, waarvan nog kosten, sociale bijdragen en belastingen afgaan. Het exacte bedrag hangt sterk af van hoe je je activiteit organiseert.
         </p>
-        <p>
-          Het korte antwoord: je kan een degelijk tot sterk inkomen opbouwen, maar er is geen vast loon. Als zelfstandige werk je met bruto omzet, waar nog kosten, sociale bijdragen en belastingen van afgaan.
-        </p>
-        <p>Het exacte bedrag hangt sterk af van hoe je je activiteit organiseert.</p>
 
         <h2 id="bruto-omzet">Bruto omzet: wat mag je verwachten?</h2>
         <p>
-          Als zelfstandige thuisverpleegkundige werk je met prestaties die terugbetaald worden via het RIZIV.
+          Als zelfstandige thuisverpleegkundige werk je met prestaties die terugbetaald worden via het RIZIV. Bij een voltijdse activiteit ligt de bruto omzet vaak tussen €4.000 en €8.000 per maand, met uitschieters afhankelijk van je werking. Belangrijk om te onthouden: dit is bruto omzet, geen nettoloon. Kosten en belastingen moeten hier nog van af.
         </p>
-        <p>Bij een voltijdse activiteit ligt de bruto omzet vaak in een bandbreedte van ongeveer:</p>
-        <p>€4.000 tot €8.000 per maand, met uitschieters afhankelijk van je werking.</p>
-        <p>Belangrijk:</p>
-        <ul>
-          <li>dit is bruto omzet, geen nettoloon</li>
-          <li>kosten en belastingen moeten hier nog af</li>
-        </ul>
         <p>De hoogte hangt onder meer af van:</p>
         <ul>
           <li>aantal patiënten</li>
@@ -64,90 +53,59 @@ const articleContent: Record<string, {
 
         <h2 id="inkomen-opbouw">Hoe wordt je inkomen opgebouwd?</h2>
         <h3>Vergoedingen per prestatie</h3>
-        <p>Elke zorgverstrekking heeft een vast tarief binnen de RIZIV-nomenclatuur.</p>
-        <p>Je inkomen groeit met:</p>
-        <ul>
-          <li>het aantal prestaties</li>
-          <li>het type prestaties</li>
-        </ul>
+        <p>
+          Elke zorgverstrekking heeft een vast tarief binnen de RIZIV-nomenclatuur. Je inkomen groeit met het aantal prestaties dat je uitvoert en met het type prestaties: technische zorgen leveren bijvoorbeeld een hogere vergoeding op dan eenvoudige toiletten.
+        </p>
 
         <h3>Premies en voordelen</h3>
-        <p>Naast je prestaties kan je rekenen op:</p>
+        <p>
+          Naast je prestaties kan je rekenen op een aantal premies die je totale inkomen versterken:
+        </p>
         <ul>
           <li>Telematicapremie (± €800/jaar)</li>
           <li>Opleidingspremies</li>
-          <li>RIZIV sociaal statuut (± €600–€700/jaar)</li>
+          <li>RIZIV sociaal statuut (± €600 tot €700/jaar)</li>
         </ul>
         <p>
-          Deze premies helpen om je totale inkomen te versterken. De voorwaarden kunnen variëren afhankelijk van je activiteit.
+          De voorwaarden kunnen variëren afhankelijk van je activiteit, maar samen vormen ze een belangrijke aanvulling op je omzet.
         </p>
 
         <h2 id="kosten">Welke kosten heb je als zelfstandige?</h2>
-        <p>Als zelfstandige draag je zelf je kosten.</p>
-
-        <h3>Verplaatsingen en wagen</h3>
-        <p>Brandstof, onderhoud en verzekering vormen vaak een belangrijke kost.</p>
-
-        <h3>Materiaal</h3>
-        <p>Handschoenen, ontsmetting en klein materiaal lijken beperkt, maar lopen op.</p>
-
-        <h3>Software en administratie</h3>
         <p>
-          Je hebt systemen nodig voor patiëntendossiers, registratie en facturatie. Meer hierover lees je in ons artikel over <Link to="/blog/software-thuisverpleging/" className="text-secondary hover:underline">software in de thuisverpleging</Link>.
+          Als zelfstandige draag je zelf alle kosten van je activiteit. Brandstof, onderhoud en verzekering van je wagen vormen vaak een belangrijke post, zeker als je veel huisbezoeken combineert. Ook handschoenen, ontsmetting en klein materiaal lijken beperkt, maar lopen op de duur stevig op.
+        </p>
+        <p>
+          Daarnaast heb je systemen nodig voor patiëntendossiers, registratie en facturatie. Meer hierover lees je in ons artikel over <Link to="/blog/software-thuisverpleging/" className="text-secondary hover:underline">software in de thuisverpleging</Link>. Tot slot zijn er beroepsaansprakelijkheidsverzekering en sociale bijdragen (ongeveer 20% van je netto belastbaar inkomen).
         </p>
 
-        <h3>Verzekeringen en bijdragen</h3>
-        <p>Beroepsaansprakelijkheid en sociale bijdragen (ongeveer 20%).</p>
-
         <h2 id="netto">Wat hou je netto over?</h2>
-        <p>Je bruto omzet is niet je uiteindelijke inkomen.</p>
-        <p>Na kosten, sociale bijdragen en belastingen blijft een deel over.</p>
-        <p>Een vaak gebruikte vuistregel: ongeveer 40% tot 60% netto overhouden.</p>
+        <p>
+          Je bruto omzet is niet je uiteindelijke inkomen. Na kosten, sociale bijdragen en belastingen blijft een deel over. Een vaak gebruikte vuistregel is dat je ongeveer 40% tot 60% van je bruto omzet netto overhoudt, afhankelijk van je werking en kostenstructuur.
+        </p>
         <div className="my-8 p-6 bg-secondary/5 border-l-4 border-secondary rounded-r-lg">
           <p className="text-primary text-lg font-medium mb-0">
-            Voorbeeld: €6.000 bruto → €2.500 – €3.500 netto (indicatief)
+            Voorbeeld: €6.000 bruto, ongeveer €2.500 tot €3.500 netto (indicatief)
           </p>
         </div>
 
         <h2 id="bepaalt-inkomen">Wat bepaalt je inkomen?</h2>
-        <p>De verschillen zitten vooral in organisatie.</p>
-        <p>Belangrijke factoren:</p>
-        <ul>
-          <li>planning en routes</li>
-          <li>aantal patiënten</li>
-          <li>verplaatsingstijd</li>
-          <li>type zorg</li>
-          <li>ondersteuning</li>
-        </ul>
         <p>
-          De manier waarop je je werk organiseert en de ondersteuning die je hebt, maakt een groot verschil.
+          De grootste verschillen tussen verpleegkundigen zitten niet in het uurtarief, maar in organisatie. Hoe je je planning en routes opbouwt, hoeveel patiënten je opvolgt, hoeveel verplaatsingstijd je verliest, welk type zorg je biedt en welke ondersteuning je krijgt: het maakt allemaal een groot verschil. Wie efficiënt werkt en goed ondersteund wordt, houdt aan dezelfde uren vaak fors meer over.
         </p>
 
         <h2 id="meer-dan-inkomen">Meer dan inkomen alleen</h2>
-        <p>Zelfstandig werken draait niet alleen om geld.</p>
-        <p>Veel verpleegkundigen kiezen hiervoor om:</p>
-        <ul>
-          <li>autonoom te werken</li>
-          <li>hun werk zelf te organiseren</li>
-          <li>kwalitatieve zorg te bieden</li>
-        </ul>
+        <p>
+          Zelfstandig werken draait niet alleen om geld. Veel verpleegkundigen kiezen voor dit statuut om autonoom te werken, hun werk zelf te organiseren en kwalitatieve zorg te bieden zoals zij dat zien. Het inkomen is belangrijk, maar zelden de enige drijfveer.
+        </p>
 
         <h2 id="conclusie">Conclusie</h2>
-        <p>Je kan als zelfstandige thuisverpleegkundige een sterk inkomen opbouwen, maar:</p>
-        <ul>
-          <li>het is geen vast loon</li>
-          <li>het hangt af van je werking</li>
-          <li>kosten en belastingen hebben grote impact</li>
-        </ul>
-        <p>Het verschil zit vooral in hoe je je werk organiseert.</p>
+        <p>
+          Je kan als zelfstandige thuisverpleegkundige een sterk inkomen opbouwen, maar het is geen vast loon en het hangt sterk af van je werking. Kosten en belastingen hebben een grote impact op wat je uiteindelijk overhoudt, en het verschil zit vooral in hoe je je werk organiseert.
+        </p>
 
         <h2 id="wat-betekent">Wat betekent dit voor jou?</h2>
-        <p>Wil je weten wat dit concreet betekent voor jouw situatie?</p>
         <p>
-          Dan volstaat een algemene richtlijn niet. Je inkomen hangt af van je regio, je type zorg en hoe je je werk organiseert.
-        </p>
-        <p>
-          Heb je vragen over de stap naar zelfstandigheid — bijvoorbeeld rond opstart, administratie of sociale bijdragen — dan kan je je laten begeleiden door gespecialiseerde partners zoals <a href="https://www.xerius.be" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Xerius</a>.
+          Wil je weten wat dit concreet betekent voor jouw situatie, dan volstaat een algemene richtlijn niet. Je inkomen hangt af van je regio, je type zorg en hoe je je werk organiseert. Heb je vragen over de stap naar zelfstandigheid (bijvoorbeeld rond opstart, administratie of sociale bijdragen), dan kan je je laten begeleiden door gespecialiseerde partners zoals <a href="https://www.xerius.be" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Xerius</a>.
         </p>
         <p>
           Daarnaast kiezen sommige verpleegkundigen ervoor om samen te werken, bijvoorbeeld om ondersteuning te krijgen bij <Link to="/blog/patienten-thuisverpleegkundige/" className="text-secondary hover:underline">patiënteninstroom</Link>, <Link to="/blog/administratie-thuisverpleging/" className="text-secondary hover:underline">administratie</Link> of software, zodat ze efficiënter kunnen werken en zich meer kunnen focussen op zorg.
