@@ -5,7 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
-import { Trash2, RefreshCw, AlertCircle, CheckCircle2, Mail, GraduationCap, Briefcase, FileText } from "lucide-react";
+import { Trash2, RefreshCw, AlertCircle, CheckCircle2, Mail, GraduationCap, Briefcase, FileText, Eye } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import {
   Table,
   TableBody,
