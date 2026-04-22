@@ -52,6 +52,7 @@ const SubmissionsAdmin = () => {
   const [applications, setApplications] = useState<Application[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [filter, setFilter] = useState<"all" | "contact" | "opleiding" | "sollicitatie" | "failed">("all");
+  const [viewItem, setViewItem] = useState<{ title: string; subtitle?: string; body: string } | null>(null);
   const { toast } = useToast();
 
   const getHeaders = () => ({
