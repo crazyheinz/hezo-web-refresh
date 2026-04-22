@@ -389,6 +389,20 @@ const SubmissionsAdmin = () => {
           </Card>
         )}
       </div>
+
+      <Dialog open={!!viewItem} onOpenChange={(open) => !open && setViewItem(null)}>
+        <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle>{viewItem?.title}</DialogTitle>
+            {viewItem?.subtitle && (
+              <DialogDescription className="text-xs">{viewItem.subtitle}</DialogDescription>
+            )}
+          </DialogHeader>
+          <div className="text-sm whitespace-pre-wrap leading-relaxed bg-muted/50 rounded-md p-4">
+            {viewItem?.body}
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
