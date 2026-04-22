@@ -257,7 +257,23 @@ const SubmissionsAdmin = () => {
                               </div>
                             )}
                             {s.message && (
-                              <div className="text-xs text-muted-foreground whitespace-pre-wrap line-clamp-3">{s.message}</div>
+                              <div className="flex items-start gap-2">
+                                <div className="text-xs text-muted-foreground whitespace-pre-wrap line-clamp-2 flex-1">{s.message}</div>
+                                <Button
+                                  variant="ghost"
+                                  size="sm"
+                                  className="h-7 px-2 shrink-0"
+                                  onClick={() =>
+                                    setViewItem({
+                                      title: `${s.type === "opleiding" ? "Opleiding" : "Contact"} — ${s.name}`,
+                                      subtitle: `${s.email}${s.phone ? ` · ${s.phone}` : ""}${s.opleiding_naam ? ` · ${s.opleiding_naam}` : ""}`,
+                                      body: s.message!,
+                                    })
+                                  }
+                                >
+                                  <Eye className="w-3.5 h-3.5" />
+                                </Button>
+                              </div>
                             )}
                           </TableCell>
                           <TableCell>
