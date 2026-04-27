@@ -1,9 +1,8 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
-import { Resend } from "npm:resend@4.0.0";
 
 const ADMIN_PASSWORD = Deno.env.get("WEBINAR_ADMIN_PASSWORD");
-const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
+const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
 
 const allowedOrigins = [
   'https://hezo.be',
@@ -23,8 +22,8 @@ function getCorsHeaders(origin: string | null): Record<string, string> {
 }
 
 function validateAdminPassword(req: Request): boolean {
-  const password = req.headers.get('x-admin-password');
-  return password === ADMIN_PASSWORD;
+  const password = req.headers.get('x-admin-password')?.trim();
+  return !!ADMIN_PASSWORD && password === ADMIN_PASSWORD.trim();
 }
 
 async function sendInviteEmail(
@@ -36,7 +35,13 @@ async function sendInviteEmail(
   try {
     const greeting = name ? `Beste ${name}` : 'Beste';
     
-    const { error } = await resend.emails.send({
+    const response = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${RESEND_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
       from: 'Hezo <info@hezo.be>',
       to: [email],
       subject: `Uitnodiging: ${webinarTitle}`,
@@ -112,11 +117,13 @@ async function sendInviteEmail(
 </body>
 </html>
       `,
+      }),
     });
 
-    if (error) {
-      console.error('Email sending error:', error);
-      return { success: false, error: error.message };
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error('Email sending error:', errorText);
+      return { success: false, error: errorText };
     }
 
     return { success: true };
