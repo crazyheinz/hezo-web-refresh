@@ -23,8 +23,8 @@ function getCorsHeaders(origin: string | null): Record<string, string> {
 }
 
 function validateAdminPassword(req: Request): boolean {
-  const password = req.headers.get("x-admin-password");
-  return !!ADMIN_PASSWORD && password === ADMIN_PASSWORD;
+  const password = req.headers.get("x-admin-password")?.trim();
+  return !!ADMIN_PASSWORD && password === ADMIN_PASSWORD.trim();
 }
 
 serve(async (req) => {
