@@ -295,6 +295,58 @@ serve(async (req) => {
       }
     }
 
+    // Send confirmation email to sender for contact form submissions
+    if (submissionType === "contact" && data.email) {
+      try {
+        const contactConfirmResponse = await fetch("https://api.resend.com/emails", {
+          method: "POST",
+          headers: {
+            "Authorization": `Bearer ${RESEND_API_KEY}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            from: "Hezo <info@hezo.be>",
+            to: [data.email],
+            subject: "We hebben je bericht goed ontvangen — Hezo",
+            html: `
+              <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #1a202c;">
+                <h1 style="color: #1a365d;">Bedankt voor je bericht, ${safeName}!</h1>
+                <p>We hebben je vraag goed ontvangen. Een van onze medewerkers neemt <strong>binnen 1 à 2 werkdagen</strong> contact met je op via e-mail of telefoon.</p>
+                <h3 style="color: #1a365d; margin-top: 24px;">Een samenvatting van wat je ons stuurde:</h3>
+                <ul style="list-style: none; padding: 0;">
+                  <li><strong>Naam:</strong> ${safeName}</li>
+                  <li><strong>E-mail:</strong> ${safeEmail}</li>
+                  <li><strong>Telefoon:</strong> ${safePhone || "Niet opgegeven"}</li>
+                </ul>
+                <p style="background: #f7fafc; border-left: 4px solid #326AAA; padding: 12px 16px; margin: 16px 0;">
+                  <strong>Je bericht:</strong><br />
+                  ${safeMessage}
+                </p>
+                <p style="margin-top: 24px;">
+                  Heb je in tussentijd een dringende vraag? Bel ons gerust op <strong>09 265 17 20</strong> of mail naar
+                  <a href="mailto:info@hezo.be" style="color: #326AAA;">info@hezo.be</a>.
+                </p>
+                <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 24px 0;" />
+                <p style="color: #718096; font-size: 14px;">
+                  Met vriendelijke groeten,<br />
+                  <strong>Het Hezo Team</strong>
+                </p>
+              </div>
+            `,
+          }),
+        });
+
+        if (!contactConfirmResponse.ok) {
+          const confirmError = await contactConfirmResponse.text();
+          console.error("Contact confirmation email error:", confirmError);
+        } else {
+          console.log("Contact confirmation email sent to:", data.email);
+        }
+      } catch (confErr) {
+        console.error("Contact confirmation email exception:", confErr);
+      }
+    }
+
     // Return success as long as we saved to DB (even if email failed)
     if (dbError && !emailSent) {
       return new Response(
