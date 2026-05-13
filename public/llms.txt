@@ -1,0 +1,31 @@
+# Hezo
+
+> Hezo ondersteunt zelfstandige thuisverpleegkundigen in België met administratie, facturatie, patiënteninstroom, opleiding en begeleiding. Volledig zelfstandig, sterker in een netwerk.
+
+Hezo is een Belgisch netwerk voor zelfstandige thuisverpleegkundigen. We nemen administratieve last weg, organiseren patiënteninstroom, verzorgen RIZIV-facturatie en bieden opleiding en begeleiding, zodat verpleegkundigen meer tijd overhouden voor zorg.
+
+## Pages
+
+- [Home](/): Wat Hezo doet voor zelfstandige thuisverpleegkundigen.
+- [Wat we doen](/onze-diensten/): Diensten: administratie, facturatie, patiënteninstroom, opleiding, begeleiding.
+- [Zo sluit je aan](/zo-sluit-je-aan/): Stappenplan om aan te sluiten bij het Hezo-netwerk.
+- [Opleidingen](/opleidingen/): Bijscholingen en opleidingen voor thuisverpleegkundigen.
+- [Vacatures](/vacatures/): Openstaande vacatures en regio's.
+- [Contact](/contact/): Contactgegevens en contactformulier.
+
+## Blog
+
+- [Blog overzicht](/blog/): Artikels over thuisverpleging, administratie, software en zelfstandig ondernemen in de zorg.
+- [Wat verdien je als zelfstandige thuisverpleegkundige](/blog/inkomen-zelfstandige-thuisverpleegkundige/): Bruto omzet, kosten en netto inkomen uitgelegd.
+- [Zelfstandig thuisverpleegkundige worden](/blog/zelfstandig-thuisverpleegkundige-worden/): Stappenplan, voorwaarden en RIZIV-nummer.
+- [Thuisverpleging is meer dan een spuitje](/blog/thuisverpleging-meer-dan-spuitje/): Wat het beroep écht inhoudt.
+- [Software in de thuisverpleging](/blog/software-thuisverpleging/): Tools voor registratie en facturatie.
+- [Patiënten vinden als thuisverpleegkundige](/blog/patienten-thuisverpleegkundige/): Hoe een stabiele instroom opbouwen.
+- [Administratie in de thuisverpleging](/blog/administratie-thuisverpleging/): Wat erbij komt kijken en efficiënter werken.
+- [Werk-privébalans](/blog/werk-privebalans-thuisverpleegkundige/): Rust en structuur als zelfstandige.
+- [HBO5 naar graduaat Basisverpleegkunde](/blog/hbo5-graduaat-basisverpleegkunde/): Wat de hervorming betekent.
+
+## Optional
+
+- [Privacy](/privacy/): Privacybeleid (AVG-conform).
+- [Cookies](/cookies/): Cookiebeleid.
