@@ -65,6 +65,10 @@ const HeroSection = () => {
             <motion.img
               src={homeHeroIllustration}
               alt="Illustratie van een zelfstandig thuisverpleegkundige"
+              width={512}
+              height={512}
+              fetchPriority="high"
+              decoding="async"
               className="w-full h-auto object-contain max-w-md"
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
