@@ -14,7 +14,7 @@ export const blogArticles: BlogArticleData[] = [
     id: "inkomen-zelfstandige-thuisverpleegkundige",
     title: "Wat verdien je als zelfstandige thuisverpleegkundige in België?",
     excerpt: "Hoeveel verdien je als zelfstandige thuisverpleegkundige in België? Ontdek je bruto omzet, kosten en netto inkomen helder uitgelegd.",
-    metaTitle: "Wat verdien je als zelfstandige thuisverpleegkundige in België? | Inkomen & kosten uitgelegd",
+    metaTitle: "Inkomen zelfstandige thuisverpleegkundige België | Hezo",
     date: "2026-04-18",
     category: "Inkomen",
     readTime: "8 min"
