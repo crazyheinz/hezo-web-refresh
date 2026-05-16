@@ -14,7 +14,7 @@ export const blogArticles: BlogArticleData[] = [
     id: "inkomen-zelfstandige-thuisverpleegkundige",
     title: "Wat verdien je als zelfstandige thuisverpleegkundige in België?",
     excerpt: "Hoeveel verdien je als zelfstandige thuisverpleegkundige in België? Ontdek je bruto omzet, kosten en netto inkomen helder uitgelegd.",
-    metaTitle: "Wat verdien je als zelfstandige thuisverpleegkundige in België? | Inkomen & kosten uitgelegd",
+    metaTitle: "Inkomen zelfstandige thuisverpleegkundige België | Hezo",
     date: "2026-04-18",
     category: "Inkomen",
     readTime: "8 min"
@@ -31,8 +31,8 @@ export const blogArticles: BlogArticleData[] = [
   {
     id: "werk-privebalans-thuisverpleegkundige",
     title: "Werk-privébalans als zelfstandige thuisverpleegkundige: waarom het vaak misloopt (en hoe het anders kan)",
-    excerpt: "Werk-privébalans in de thuisverpleging is niet evident. Ontdek waarom het vaak misloopt en hoe je als zelfstandige verpleegkundige meer rust en structuur creëert.",
-    metaTitle: "Werk-privébalans thuisverpleegkundige: tips & ondersteuning | Hezo",
+    excerpt: "Werk-privébalans in de thuisverpleging is niet evident. Ontdek waarom het vaak misloopt en hoe je meer rust en structuur creëert.",
+    metaTitle: "Werk-privébalans thuisverpleegkundige | Hezo",
     date: "2026-03-24",
     category: "Welzijn",
     readTime: "9 min"
@@ -50,7 +50,7 @@ export const blogArticles: BlogArticleData[] = [
     id: "patienten-thuisverpleegkundige",
     title: "Patiënten vinden als thuisverpleegkundige: hoe werkt het?",
     excerpt: "Hoe kom je als zelfstandige thuisverpleegkundige aan patiënten? Ontdek hoe zorgvragen ontstaan en hoe je een stabiele instroom opbouwt.",
-    metaTitle: "Patiënten vinden als thuisverpleegkundige: hoe werkt het? | Hezo",
+    metaTitle: "Patiënten vinden als thuisverpleegkundige | Hezo",
     date: "2026-03-22",
     category: "Patiënteninstroom",
     readTime: "8 min"
