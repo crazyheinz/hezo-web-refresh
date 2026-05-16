@@ -50,7 +50,7 @@ export const blogArticles: BlogArticleData[] = [
     id: "patienten-thuisverpleegkundige",
     title: "Patiënten vinden als thuisverpleegkundige: hoe werkt het?",
     excerpt: "Hoe kom je als zelfstandige thuisverpleegkundige aan patiënten? Ontdek hoe zorgvragen ontstaan en hoe je een stabiele instroom opbouwt.",
-    metaTitle: "Patiënten vinden als thuisverpleegkundige: hoe werkt het? | Hezo",
+    metaTitle: "Patiënten vinden als thuisverpleegkundige | Hezo",
     date: "2026-03-22",
     category: "Patiënteninstroom",
     readTime: "8 min"
