@@ -31,8 +31,8 @@ export const blogArticles: BlogArticleData[] = [
   {
     id: "werk-privebalans-thuisverpleegkundige",
     title: "Werk-privébalans als zelfstandige thuisverpleegkundige: waarom het vaak misloopt (en hoe het anders kan)",
-    excerpt: "Werk-privébalans in de thuisverpleging is niet evident. Ontdek waarom het vaak misloopt en hoe je als zelfstandige verpleegkundige meer rust en structuur creëert.",
-    metaTitle: "Werk-privébalans thuisverpleegkundige: tips & ondersteuning | Hezo",
+    excerpt: "Werk-privébalans in de thuisverpleging is niet evident. Ontdek waarom het vaak misloopt en hoe je meer rust en structuur creëert.",
+    metaTitle: "Werk-privébalans thuisverpleegkundige | Hezo",
     date: "2026-03-24",
     category: "Welzijn",
     readTime: "9 min"
