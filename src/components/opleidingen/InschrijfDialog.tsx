@@ -27,6 +27,7 @@ const SITUATIE_OPTIES = [
 const InschrijfDialog = ({ opleidingNaam, opleidingDatum, children }: InschrijfDialogProps) => {
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [reedsKlant, setReedsKlant] = useState(false);
   const [formData, setFormData] = useState({
     voornaam: "",
     achternaam: "",
@@ -41,7 +42,7 @@ const InschrijfDialog = ({ opleidingNaam, opleidingDatum, children }: InschrijfD
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.situatie) {
+    if (!reedsKlant && !formData.situatie) {
       toast({
         title: "Vul je professionele situatie in",
         description: "Dit veld is verplicht zodat we je inschrijving correct kunnen verwerken.",
@@ -52,16 +53,26 @@ const InschrijfDialog = ({ opleidingNaam, opleidingDatum, children }: InschrijfD
     setLoading(true);
 
     try {
-      const messageLines = [
-        `Inschrijving voor opleiding: ${opleidingNaam}`,
-        `Datum: ${opleidingDatum}`,
-        ``,
-        `Professionele situatie: ${formData.situatie}`,
-        `Werkregio: ${formData.regio || "Niet opgegeven"}`,
-        `Interesse in samenwerking met Hezo: ${formData.samenwerking ? "Ja" : "Nee"}`,
-        ``,
-        `Opmerking: ${formData.opmerking || "Geen opmerking"}`,
-      ];
+      const messageLines = reedsKlant
+        ? [
+            `Inschrijving voor opleiding: ${opleidingNaam}`,
+            `Datum: ${opleidingDatum}`,
+            ``,
+            `Reeds aangesloten bij Hezo: Ja`,
+            ``,
+            `Opmerking: ${formData.opmerking || "Geen opmerking"}`,
+          ]
+        : [
+            `Inschrijving voor opleiding: ${opleidingNaam}`,
+            `Datum: ${opleidingDatum}`,
+            ``,
+            `Reeds aangesloten bij Hezo: Nee`,
+            `Professionele situatie: ${formData.situatie}`,
+            `Werkregio: ${formData.regio || "Niet opgegeven"}`,
+            `Interesse in samenwerking met Hezo: ${formData.samenwerking ? "Ja" : "Nee"}`,
+            ``,
+            `Opmerking: ${formData.opmerking || "Geen opmerking"}`,
+          ];
 
       const { error } = await supabase.functions.invoke("send-contact", {
         body: {
@@ -91,6 +102,7 @@ const InschrijfDialog = ({ opleidingNaam, opleidingDatum, children }: InschrijfD
         samenwerking: false,
         opmerking: "",
       });
+      setReedsKlant(false);
       setOpen(false);
     } catch (err) {
       toast({
@@ -158,32 +170,48 @@ const InschrijfDialog = ({ opleidingNaam, opleidingDatum, children }: InschrijfD
             </div>
           </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="situatie">Professionele situatie *</Label>
-            <Select
-              value={formData.situatie}
-              onValueChange={(v) => setFormData({ ...formData, situatie: v })}
-            >
-              <SelectTrigger id="situatie">
-                <SelectValue placeholder="Kies een optie" />
-              </SelectTrigger>
-              <SelectContent>
-                {SITUATIE_OPTIES.map((opt) => (
-                  <SelectItem key={opt} value={opt}>{opt}</SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+          <div className="flex items-start gap-2 pt-1">
+            <Checkbox
+              id="reedsKlant"
+              checked={reedsKlant}
+              onCheckedChange={(checked) => setReedsKlant(checked === true)}
+              className="mt-0.5"
+            />
+            <Label htmlFor="reedsKlant" className="font-normal leading-snug cursor-pointer">
+              Ik ben reeds aangesloten bij Hezo
+            </Label>
           </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="regio">Waar ben je actief of wil je actief zijn?</Label>
-            <Input
-              id="regio"
-              value={formData.regio}
-              onChange={(e) => setFormData({ ...formData, regio: e.target.value })}
-              placeholder="Bijvoorbeeld Gent, Antwerpen, Brugge…"
-            />
-          </div>
+          {!reedsKlant && (
+            <>
+              <div className="space-y-2">
+                <Label htmlFor="situatie">Professionele situatie *</Label>
+                <Select
+                  value={formData.situatie}
+                  onValueChange={(v) => setFormData({ ...formData, situatie: v })}
+                >
+                  <SelectTrigger id="situatie">
+                    <SelectValue placeholder="Kies een optie" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {SITUATIE_OPTIES.map((opt) => (
+                      <SelectItem key={opt} value={opt}>{opt}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="regio">Waar ben je actief of wil je actief zijn?</Label>
+                <Input
+                  id="regio"
+                  value={formData.regio}
+                  onChange={(e) => setFormData({ ...formData, regio: e.target.value })}
+                  placeholder="Bijvoorbeeld Gent, Antwerpen, Brugge…"
+                />
+              </div>
+            </>
+          )}
 
           <div className="space-y-2">
             <Label htmlFor="opmerking">Opmerking</Label>
@@ -196,17 +224,19 @@ const InschrijfDialog = ({ opleidingNaam, opleidingDatum, children }: InschrijfD
             />
           </div>
 
-          <div className="flex items-start gap-2 pt-1">
-            <Checkbox
-              id="samenwerking"
-              checked={formData.samenwerking}
-              onCheckedChange={(checked) => setFormData({ ...formData, samenwerking: checked === true })}
-              className="mt-0.5"
-            />
-            <Label htmlFor="samenwerking" className="font-normal leading-snug cursor-pointer">
-              Ik ontvang graag meer informatie over samenwerken met Hezo
-            </Label>
-          </div>
+          {!reedsKlant && (
+            <div className="flex items-start gap-2 pt-1">
+              <Checkbox
+                id="samenwerking"
+                checked={formData.samenwerking}
+                onCheckedChange={(checked) => setFormData({ ...formData, samenwerking: checked === true })}
+                className="mt-0.5"
+              />
+              <Label htmlFor="samenwerking" className="font-normal leading-snug cursor-pointer">
+                Ik ontvang graag meer informatie over samenwerken met Hezo
+              </Label>
+            </div>
+          )}
 
           <Button type="submit" className="w-full" disabled={loading}>
             {loading ? "Bezig met verzenden..." : "Inschrijven"}
