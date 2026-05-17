@@ -27,6 +27,7 @@ const SITUATIE_OPTIES = [
 const InschrijfDialog = ({ opleidingNaam, opleidingDatum, children }: InschrijfDialogProps) => {
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [reedsKlant, setReedsKlant] = useState(false);
   const [formData, setFormData] = useState({
     voornaam: "",
     achternaam: "",
