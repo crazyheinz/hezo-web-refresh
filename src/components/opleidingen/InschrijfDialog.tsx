@@ -170,32 +170,48 @@ const InschrijfDialog = ({ opleidingNaam, opleidingDatum, children }: InschrijfD
             </div>
           </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="situatie">Professionele situatie *</Label>
-            <Select
-              value={formData.situatie}
-              onValueChange={(v) => setFormData({ ...formData, situatie: v })}
-            >
-              <SelectTrigger id="situatie">
-                <SelectValue placeholder="Kies een optie" />
-              </SelectTrigger>
-              <SelectContent>
-                {SITUATIE_OPTIES.map((opt) => (
-                  <SelectItem key={opt} value={opt}>{opt}</SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+          <div className="flex items-start gap-2 pt-1">
+            <Checkbox
+              id="reedsKlant"
+              checked={reedsKlant}
+              onCheckedChange={(checked) => setReedsKlant(checked === true)}
+              className="mt-0.5"
+            />
+            <Label htmlFor="reedsKlant" className="font-normal leading-snug cursor-pointer">
+              Ik ben reeds aangesloten bij Hezo
+            </Label>
           </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="regio">Waar ben je actief of wil je actief zijn?</Label>
-            <Input
-              id="regio"
-              value={formData.regio}
-              onChange={(e) => setFormData({ ...formData, regio: e.target.value })}
-              placeholder="Bijvoorbeeld Gent, Antwerpen, Brugge…"
-            />
-          </div>
+          {!reedsKlant && (
+            <>
+              <div className="space-y-2">
+                <Label htmlFor="situatie">Professionele situatie *</Label>
+                <Select
+                  value={formData.situatie}
+                  onValueChange={(v) => setFormData({ ...formData, situatie: v })}
+                >
+                  <SelectTrigger id="situatie">
+                    <SelectValue placeholder="Kies een optie" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {SITUATIE_OPTIES.map((opt) => (
+                      <SelectItem key={opt} value={opt}>{opt}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="regio">Waar ben je actief of wil je actief zijn?</Label>
+                <Input
+                  id="regio"
+                  value={formData.regio}
+                  onChange={(e) => setFormData({ ...formData, regio: e.target.value })}
+                  placeholder="Bijvoorbeeld Gent, Antwerpen, Brugge…"
+                />
+              </div>
+            </>
+          )}
 
           <div className="space-y-2">
             <Label htmlFor="opmerking">Opmerking</Label>
@@ -208,17 +224,19 @@ const InschrijfDialog = ({ opleidingNaam, opleidingDatum, children }: InschrijfD
             />
           </div>
 
-          <div className="flex items-start gap-2 pt-1">
-            <Checkbox
-              id="samenwerking"
-              checked={formData.samenwerking}
-              onCheckedChange={(checked) => setFormData({ ...formData, samenwerking: checked === true })}
-              className="mt-0.5"
-            />
-            <Label htmlFor="samenwerking" className="font-normal leading-snug cursor-pointer">
-              Ik ontvang graag meer informatie over samenwerken met Hezo
-            </Label>
-          </div>
+          {!reedsKlant && (
+            <div className="flex items-start gap-2 pt-1">
+              <Checkbox
+                id="samenwerking"
+                checked={formData.samenwerking}
+                onCheckedChange={(checked) => setFormData({ ...formData, samenwerking: checked === true })}
+                className="mt-0.5"
+              />
+              <Label htmlFor="samenwerking" className="font-normal leading-snug cursor-pointer">
+                Ik ontvang graag meer informatie over samenwerken met Hezo
+              </Label>
+            </div>
+          )}
 
           <Button type="submit" className="w-full" disabled={loading}>
             {loading ? "Bezig met verzenden..." : "Inschrijven"}
