@@ -365,7 +365,7 @@ const Vacatures = () => {
                 "@type": "Place",
                 "address": {
                   "@type": "PostalAddress",
-                  "addressLocality": job.id === "regiomanager" ? "Gent" : job.id === "verantwoordelijke-antwerpen" ? "Antwerpen" : job.id === "verantwoordelijke-west-vlaanderen" ? "West-Vlaanderen" : "België",
+                  "addressLocality": job.id === "regiomanager" ? "Gent" : job.id === "verantwoordelijke-antwerpen" ? "Antwerpen" : job.id === "verantwoordelijke-west-vlaanderen" ? "West-Vlaanderen" : job.id === "zelfstandig-antwerpen-zuid-berchem" ? "Antwerpen Zuid - Berchem" : "België",
                   "addressRegion": "Vlaanderen",
                   "addressCountry": "BE"
                 }
