@@ -42,7 +42,7 @@ const InschrijfDialog = ({ opleidingNaam, opleidingDatum, children }: InschrijfD
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.situatie) {
+    if (!reedsKlant && !formData.situatie) {
       toast({
         title: "Vul je professionele situatie in",
         description: "Dit veld is verplicht zodat we je inschrijving correct kunnen verwerken.",
@@ -53,16 +53,26 @@ const InschrijfDialog = ({ opleidingNaam, opleidingDatum, children }: InschrijfD
     setLoading(true);
 
     try {
-      const messageLines = [
-        `Inschrijving voor opleiding: ${opleidingNaam}`,
-        `Datum: ${opleidingDatum}`,
-        ``,
-        `Professionele situatie: ${formData.situatie}`,
-        `Werkregio: ${formData.regio || "Niet opgegeven"}`,
-        `Interesse in samenwerking met Hezo: ${formData.samenwerking ? "Ja" : "Nee"}`,
-        ``,
-        `Opmerking: ${formData.opmerking || "Geen opmerking"}`,
-      ];
+      const messageLines = reedsKlant
+        ? [
+            `Inschrijving voor opleiding: ${opleidingNaam}`,
+            `Datum: ${opleidingDatum}`,
+            ``,
+            `Reeds aangesloten bij Hezo: Ja`,
+            ``,
+            `Opmerking: ${formData.opmerking || "Geen opmerking"}`,
+          ]
+        : [
+            `Inschrijving voor opleiding: ${opleidingNaam}`,
+            `Datum: ${opleidingDatum}`,
+            ``,
+            `Reeds aangesloten bij Hezo: Nee`,
+            `Professionele situatie: ${formData.situatie}`,
+            `Werkregio: ${formData.regio || "Niet opgegeven"}`,
+            `Interesse in samenwerking met Hezo: ${formData.samenwerking ? "Ja" : "Nee"}`,
+            ``,
+            `Opmerking: ${formData.opmerking || "Geen opmerking"}`,
+          ];
 
       const { error } = await supabase.functions.invoke("send-contact", {
         body: {
