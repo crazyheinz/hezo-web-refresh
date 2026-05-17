@@ -1,50 +1,36 @@
+## Nieuwe vacature toevoegen
 
-# Bevestigingsmail voor contactformulier
+Een nieuwe vacature "Zelfstandig thuisverpleegkundige – regio Antwerpen Zuid - Berchem" toevoegen aan `src/pages/Vacatures.tsx`, met dezelfde structuur en opmaak als de bestaande vacatures.
 
-## Context
-- Het "Sluit aan" formulier bestaat niet apart — `/zo-sluit-je-aan/` linkt naar `/contact/`. Eén fix dekt dus beide.
-- Opleidingen + sollicitaties krijgen al een bevestiging.
-- Contact (`type: "contact"`) krijgt nu enkel een interne notificatie naar `info@hezo.be`, geen mail naar de aanvrager.
+### Wijzigingen
 
-## Wijziging
-Eén bestand: `supabase/functions/send-contact/index.ts`
+**1. Nieuwe job entry in `allJobs` array (`src/pages/Vacatures.tsx`)**
 
-Toevoegen na het versturen van de notificatiemail: een tweede Resend-call **enkel als `submissionType === "contact"`** en `data.email` aanwezig is.
+Toevoegen als eerste item (zodat het bovenaan verschijnt), met:
+- `id`: `"zelfstandig-antwerpen-zuid-berchem"`
+- `title`: `"Zelfstandig thuisverpleegkundige - Antwerpen Zuid - Berchem"` (locatie achter " - " zodat de bestaande MapPin-locatie-extractie werkt)
+- `tagline`: `"Zorg met impact. Werk met vrijheid. Groei met ondersteuning."`
+- `active`: `true`
+- `description`: introtekst (de twee paragrafen na de tagline, samengevoegd)
+- `responsibilities`: de 8 bullets uit sectie 1.1 (Hygiënische zorg, medicatie, wondzorg, sondes/katheters/infusen, bloedafnames, parameters, pijnobservatie, luisteren, respect voor autonomie)
+- `profile`: de 6 bullets uit sectie 1.2 (diploma, RIZIV, eigen vervoer, zelfstandig werken, patiëntgericht, samenwerken)
+- `offer`: alle bullets uit sectie 1.3, gegroepeerd onder hun sub-koppen via cursieve sectietitels in de tekst, bv:
+  - "Werkbaar evenwicht: duidelijke planning en voorspelbare rondes"
+  - "Werkbaar evenwicht: beperkte avond- en weekendbelasting"
+  - etc.
+  
+  (De bestaande structuur ondersteunt geen sub-koppen, dus de sub-rubrieken "Werkbaar evenwicht", "Sterke ondersteuning", "Transparante en correcte vergoeding met inkomensgarantie", "Een aangename werkomgeving die meedenkt" worden als prefix in elke bullet meegenomen. Alternatief: pak ze als platte lijst zonder prefixen — bevestig keuze indien nodig.)
 
-### Inhoud van de bevestigingsmail
+**2. JobPosting structured data (regels 305-329)**
 
-- **Van:** `Hezo <info@hezo.be>` (zelfde patroon als opleiding-bevestiging)
-- **Aan:** de aanvrager
-- **Onderwerp:** `We hebben je bericht goed ontvangen — Hezo`
-- **Body** (zelfde HTML-stijl als opleiding-confirmatie, met Hezo blue `#1a365d`):
+De ternary voor `addressLocality` uitbreiden zodat de nieuwe id `"zelfstandig-antwerpen-zuid-berchem"` `"Antwerpen Zuid - Berchem"` als locality krijgt. Geen verdere SEO-wijzigingen nodig (FAQ blijft ongewijzigd).
 
-> Bedankt voor je bericht, {Naam}!
->
-> We hebben je vraag goed ontvangen. Een van onze medewerkers neemt **binnen 1 à 2 werkdagen** contact met je op via e-mail of telefoon.
->
-> **Een samenvatting van wat je ons stuurde:**
-> - Naam: {naam}
-> - E-mail: {email}
-> - Telefoon: {telefoon of "niet opgegeven"}
-> - Bericht: {bericht}
->
-> Heb je in tussentijd een dringende vraag? Bel ons gerust op **09 265 17 20** of mail naar info@hezo.be.
->
-> Met vriendelijke groeten,
-> **Het Hezo Team**
+### Geen wijzigingen aan
 
-### Foutafhandeling
-- Try/catch rond de bevestiging (zoals bij opleiding) — bevestiging mag de hoofdflow niet breken
-- Errors loggen maar 200 blijven teruggeven
-- Alle user input via `escapeHtml`
+- Het sollicitatieformulier (werkt generiek op `selectedJob`).
+- Sitemap (vacatures-detailpagina's bestaan niet als aparte routes).
+- Edge functions.
 
-## Wat NIET in scope
-- Domein-verificatie in Resend (apart traject — bevestiging zal pas effectief versturen na verificatie)
-- Inhaalmail naar de 12 mensen met `email_sent: false`
-- UI-wijzigingen in `Contact.tsx`
+### Open vraag
 
-## Test
-Na deploy: één testbericht via `/contact/` indienen en bevestigen dat:
-1. `info@hezo.be` notificatie ontvangt
-2. Het opgegeven mailadres een bevestiging ontvangt
-3. Logs in `send-contact` tonen "Contact confirmation email sent"
+Wens je de "Wat mag je verwachten?"-bullets met de sub-kop prefixen (bv. "Werkbaar evenwicht: …") of als één platte lijst zonder prefixen?

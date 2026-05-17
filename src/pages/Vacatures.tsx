@@ -86,6 +86,52 @@ const Vacatures = () => {
 
   const allJobs = [
     {
+      id: "zelfstandig-antwerpen-zuid-berchem",
+      title: "Zelfstandig thuisverpleegkundige - Antwerpen Zuid - Berchem",
+      tagline: "Zorg met impact. Werk met vrijheid. Groei met ondersteuning.",
+      active: true,
+      description:
+        "Ben jij een zelfstandig verpleegkundige (of wil je dat worden) en zoek je een werkcontext waar je écht kan focussen op zorg, waar je kan bijleren en groeien op persoonlijk en professioneel vlak? Binnen de praktijk Hezo Antwerpen werk je in een betrokken en hecht team waar kwaliteit, respect en samenwerking centraal staan. Tegelijk behoud je jouw autonomie als zelfstandige, met een duidelijke structuur en ondersteuning op de achtergrond. Als zelfstandig thuisverpleegkundige sta je in voor de dagelijkse zorg bij patiënten in jouw regio. Je werkt zelfstandig je ronde af, maar staat er nooit alleen voor.",
+      responsibilities: [
+        "Hygiënische zorg (wassen, kleden, mobiliseren)",
+        "Toedienen van medicatie (oraal, subcutaan, intramusculair, …)",
+        "Wondzorg (van eenvoudig tot complex, inclusief compressie en VAC)",
+        "Plaatsen en opvolgen van sondes, katheters en infusen",
+        "Bloedafnames en andere verpleegtechnische handelingen",
+        "Opvolging van parameters (bloeddruk, glycemie, saturatie, …)",
+        "Pijnobservatie en aangepaste interventies",
+        "Luisteren naar de patiënt",
+        "Zorgen voor de patiënt in zijn autonomie en eigenheid, met de nodige respect",
+      ],
+      profile: [
+        "Je beschikt over een diploma verpleegkunde (HBO5, Bachelor of Master)",
+        "Je hebt een geldig RIZIV-nummer",
+        "Je beschikt over eigen vervoer",
+        "Je werkt graag zelfstandig en neemt verantwoordelijkheid",
+        "Je bent patiëntgericht, empathisch en professioneel",
+        "Je gelooft in samenwerking en wil meebouwen aan de toekomst van thuisverpleging",
+      ],
+      offer: [
+        "Werkbaar evenwicht: duidelijke planning en voorspelbare rondes",
+        "Werkbaar evenwicht: beperkte avond- en weekendbelasting",
+        "Werkbaar evenwicht: mogelijkheid om je engagement af te stemmen op jouw situatie",
+        "Werkbaar evenwicht: werkzekerheid",
+        "Sterke ondersteuning: administratieve ontzorging (facturatie, opvolging, …)",
+        "Sterke ondersteuning: gratis opleidingen en begeleiding",
+        "Sterke ondersteuning: ondersteuning in kwaliteit, rapportage en communicatie",
+        "Sterke ondersteuning: begeleiding bij opstart en verdere groei",
+        "Transparante en correcte vergoeding met inkomensgarantie: aantrekkelijk ereloon volgens RIZIV",
+        "Transparante en correcte vergoeding met inkomensgarantie: zeer scherpe praktijkcommissie – vanaf 1 jaar ervaring 8% afdracht",
+        "Transparante en correcte vergoeding met inkomensgarantie: snelle en correcte uitbetaling",
+        "Transparante en correcte vergoeding met inkomensgarantie: financiële transparantie",
+        "Transparante en correcte vergoeding met inkomensgarantie: behoud van alle premies (telematica, opleiding, etc.)",
+        "Transparante en correcte vergoeding met inkomensgarantie: inkomensgarantie tot €200 – brengt de ronde je geen €200 op, dan passen wij het verschil bij",
+        "Een aangename werkomgeving die meedenkt: je maakt deel uit van een groter geheel, zonder je zelfstandigheid te verliezen",
+        "Een aangename werkomgeving die meedenkt: bereikbare collega's met een gezamenlijke focus op de patiënt",
+        "Een aangename werkomgeving die meedenkt: ruimte voor initiatief, innovatie en verbetering van zorg",
+      ],
+    },
+    {
       id: "regiomanager",
       title: "Zelfstandig Verantwoordelijke Thuisverpleging - Gent",
       tagline: "Wil jij mee een nieuw netwerk voor zelfstandige thuisverpleging uitbouwen én verantwoordelijke verpleegkundige worden van jouw eigen zorgregio?",
@@ -319,7 +365,7 @@ const Vacatures = () => {
                 "@type": "Place",
                 "address": {
                   "@type": "PostalAddress",
-                  "addressLocality": job.id === "regiomanager" ? "Gent" : job.id === "verantwoordelijke-antwerpen" ? "Antwerpen" : job.id === "verantwoordelijke-west-vlaanderen" ? "West-Vlaanderen" : "België",
+                  "addressLocality": job.id === "regiomanager" ? "Gent" : job.id === "verantwoordelijke-antwerpen" ? "Antwerpen" : job.id === "verantwoordelijke-west-vlaanderen" ? "West-Vlaanderen" : job.id === "zelfstandig-antwerpen-zuid-berchem" ? "Antwerpen Zuid - Berchem" : "België",
                   "addressRegion": "Vlaanderen",
                   "addressCountry": "BE"
                 }
