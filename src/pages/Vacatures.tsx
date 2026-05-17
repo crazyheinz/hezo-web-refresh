@@ -116,7 +116,7 @@ const Vacatures = () => {
         "Mogelijkheid om je engagement af te stemmen op jouw situatie, met werkzekerheid",
         "Administratieve ontzorging (facturatie, opvolging, …) en ondersteuning in kwaliteit, rapportage en communicatie",
         "Gratis opleidingen, begeleiding bij opstart en verdere groei",
-        "Aantrekkelijk ereloon volgens RIZIV en zeer scherpe praktijkcommissie",
+        "Aantrekkelijk ereloon volgens RIZIV en zeer scherpe praktijkcommissie – vanaf 1 jaar ervaring 8% afdracht",
         "Snelle en correcte uitbetaling met volledige financiële transparantie",
         "Behoud van alle premies (telematica, opleiding, etc.)",
         "Inkomensgarantie tot €200 per werkdag – brengt de ronde je geen €200 op, dan passen wij het verschil bij",
