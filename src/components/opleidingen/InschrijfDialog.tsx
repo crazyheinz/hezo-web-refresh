@@ -102,6 +102,7 @@ const InschrijfDialog = ({ opleidingNaam, opleidingDatum, children }: InschrijfD
         samenwerking: false,
         opmerking: "",
       });
+      setReedsKlant(false);
       setOpen(false);
     } catch (err) {
       toast({
