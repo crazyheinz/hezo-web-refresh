@@ -176,17 +176,6 @@ const InschrijfDialog = ({ opleidingNaam, opleidingDatum, children }: InschrijfD
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="riziv">RIZIV-nummer</Label>
-            <Input
-              id="riziv"
-              value={formData.riziv}
-              onChange={(e) => setFormData({ ...formData, riziv: e.target.value })}
-              placeholder="Optioneel"
-            />
-            <p className="text-xs text-muted-foreground">Ben je nog in opleiding? Laat dit veld dan leeg.</p>
-          </div>
-
-          <div className="space-y-2">
             <Label htmlFor="regio">Waar ben je actief of wil je actief zijn?</Label>
             <Input
               id="regio"
