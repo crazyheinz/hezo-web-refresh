@@ -176,7 +176,9 @@ const InkomenSimulator = () => {
                   </div>
 
                   <div className="space-y-4 pt-4 border-t">
-                    <Label className="text-base font-medium block">Zorgmix (samen 100%)</Label>
+                    <Label className="text-base font-medium block">
+                      Zorgmix <span className="text-xs text-muted-foreground font-normal">(samen altijd 100%)</span>
+                    </Label>
 
                     <div>
                       <div className="flex justify-between text-sm mb-2">
@@ -187,8 +189,19 @@ const InkomenSimulator = () => {
                         value={[mixBasis]}
                         onValueChange={(v) => {
                           const nieuwe = v[0];
+                          const delta = nieuwe - mixBasis;
+                          // verdeel het verschil over toilet en tech (proportioneel)
+                          const restTotaal = mixToilet + mixTech;
+                          let nieuweToilet: number;
+                          if (restTotaal === 0) {
+                            nieuweToilet = Math.max(0, mixToilet - delta);
+                          } else {
+                            const aandeelToilet = mixToilet / restTotaal;
+                            nieuweToilet = Math.round((mixToilet - delta * aandeelToilet) / 5) * 5;
+                          }
+                          nieuweToilet = Math.max(0, Math.min(100 - nieuwe, nieuweToilet));
                           setMixBasis(nieuwe);
-                          if (nieuwe + mixToilet > 100) setMixToilet(100 - nieuwe);
+                          setMixToilet(nieuweToilet);
                         }}
                         min={0}
                         max={100}
@@ -204,8 +217,8 @@ const InkomenSimulator = () => {
                       <Slider
                         value={[mixToilet]}
                         onValueChange={(v) => {
-                          const nieuwe = v[0];
-                          if (mixBasis + nieuwe <= 100) setMixToilet(nieuwe);
+                          const nieuwe = Math.min(v[0], 100 - mixBasis);
+                          setMixToilet(nieuwe);
                         }}
                         min={0}
                         max={100}
@@ -213,9 +226,22 @@ const InkomenSimulator = () => {
                       />
                     </div>
 
-                    <div className="text-sm text-muted-foreground">
-                      Technische zorg (wondzorg, complexere injecties):{" "}
-                      <span className="font-medium text-secondary">{mixTech}%</span>
+                    <div>
+                      <div className="flex justify-between text-sm mb-2">
+                        <span>Technische zorg (wondzorg, complexere injecties)</span>
+                        <span className="font-medium text-secondary">{mixTech}%</span>
+                      </div>
+                      <Slider
+                        value={[mixTech]}
+                        onValueChange={(v) => {
+                          const nieuweTech = Math.min(v[0], 100 - mixBasis);
+                          // tech = 100 - basis - toilet  =>  toilet = 100 - basis - tech
+                          setMixToilet(100 - mixBasis - nieuweTech);
+                        }}
+                        min={0}
+                        max={100}
+                        step={5}
+                      />
                     </div>
                   </div>
 
