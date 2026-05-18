@@ -1095,6 +1095,19 @@ const articleContent: Record<string, {
   },
 };
 
+const articleFaqs: Record<string, { q: string; a: string }[]> = {
+  "zelfstandig-thuisverpleegkundige-worden": [
+    { q: "Heb ik altijd een RIZIV-nummer nodig?", a: "Ja, als je prestaties wil aanrekenen in de thuisverpleging is een RIZIV-nummer verplicht. Zonder RIZIV-nummer kan je geen prestaties factureren binnen de ziekteverzekering." },
+    { q: "Wat als ik ziek word als zelfstandige?", a: "Als zelfstandige heb je bij ziekte recht op een uitkering via je sociaal verzekeringsfonds, op voorwaarde dat je in orde bent met je sociale bijdragen. De uitkering start vanaf de 8ste dag arbeidsongeschiktheid. Veel zelfstandige verpleegkundigen kiezen voor een aanvullende verzekering (gewaarborgd inkomen) voor betere bescherming." },
+    { q: "Heb ik een boekhouder nodig als zelfstandig thuisverpleegkundige?", a: "Je bent niet verplicht, maar in de praktijk kiezen veel starters daar wel voor, zeker in de eerste jaren. Een boekhouder helpt bij de keuze tussen eenmanszaak of vennootschap, correcte fiscale aangiftes en inzicht in kosten." },
+    { q: "Moet ik btw aanrekenen op mijn zorgprestaties?", a: "Nee, verpleegkundige prestaties binnen de RIZIV-nomenclatuur zijn vrijgesteld van btw (artikel 44 Btw-Wetboek). Je rekent dus geen btw aan op zorg, en kan ook geen btw recupereren op je beroepskosten." },
+    { q: "Hoeveel sociale bijdragen betaal ik als zelfstandige verpleegkundige?", a: "De sociale bijdragen bedragen ongeveer 20,5% van je netto belastbaar inkomen. In de eerste drie jaar wordt een voorlopige minimumbijdrage aangerekend, die achteraf wordt herzien op basis van je effectief inkomen." },
+    { q: "Hoe kom ik aan patienten als ik net start?", a: "Patienten komen via huisartsen, ziekenhuizen, mutualiteiten, woonzorgcentra en mond-tot-mondreclame. Bij Hezo krijg je gespreide instroom via het netwerk van Welzijnsgroep Helan, zodat je niet vanaf nul moet vertrekken." },
+    { q: "Kan ik combineren met een loondienstverband?", a: "Ja, je kan starten als zelfstandige in bijberoep, bijvoorbeeld naast een job in een ziekenhuis of woonzorgcentrum. De drempel voor sociale bijdragen ligt lager en je bouwt rustig je praktijk uit. Bij voldoende omzet kan je later overschakelen naar hoofdberoep." },
+    { q: "Hoe lang duurt de volledige opstart?", a: "Vanaf het moment dat je je dossier indient, duurt de administratieve opstart (KBO, sociaal verzekeringsfonds, RIZIV-bevestiging, verzekeringen) doorgaans 2 tot 6 weken. Met goede voorbereiding en de juiste partners kan dat vlot verlopen." },
+  ],
+};
+
 const formatDate = (dateString: string) => {
   const date = new Date(dateString);
   return date.toLocaleDateString("nl-BE", {
