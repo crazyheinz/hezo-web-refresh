@@ -7,7 +7,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import { Download, CheckCircle2, FileText } from "lucide-react";
+
+const PDF_URL = "https://www.hezo.be/downloads/startersgids-thuisverpleegkundige.pdf";
 
 const Startersgids = () => {
   const { toast } = useToast();
@@ -17,7 +20,6 @@ const Startersgids = () => {
     name: "",
     email: "",
     region: "",
-    isActiveFreelancer: false,
     privacy: false,
   });
 
@@ -33,33 +35,26 @@ const Startersgids = () => {
     }
     setSubmitting(true);
     try {
-      const res = await fetch(
-        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/request-lead-magnet`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            name: form.name,
-            email: form.email,
-            region: form.region,
-            isActiveFreelancer: form.isActiveFreelancer,
-          }),
+      const { error } = await supabase.functions.invoke("request-lead-magnet", {
+        body: {
+          name: form.name,
+          email: form.email,
+          region: form.region,
         },
-      );
-      if (!res.ok) {
-        const err = await res.json().catch(() => ({}));
-        throw new Error(err.error || "Mislukt");
-      }
+      });
+
+      if (error) console.warn("Lead magnet request failed", error);
       setDone(true);
       toast({
         title: "Bedankt!",
-        description: "De startersgids is naar je mailbox verstuurd.",
+        description: "Je kan de startersgids nu downloaden.",
       });
-    } catch (e) {
+    } catch (error) {
+      console.warn("Lead magnet request failed", error);
+      setDone(true);
       toast({
-        title: "Er ging iets mis",
-        description: "Probeer opnieuw of mail info@hezo.be",
-        variant: "destructive",
+        title: "Bedankt!",
+        description: "Je kan de startersgids nu downloaden.",
       });
     } finally {
       setSubmitting(false);
