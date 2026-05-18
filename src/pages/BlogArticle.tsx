@@ -898,14 +898,14 @@ const articleContent: Record<string, {
         <h3>Hoe lang duurt de volledige opstart?</h3>
         <p>Vanaf het moment dat je je dossier indient, duurt de administratieve opstart (KBO, sociaal verzekeringsfonds, RIZIV-bevestiging, verzekeringen) doorgaans 2 tot 6 weken. Met goede voorbereiding en de juiste partners kan dat vlot verlopen.</p>
 
-        <div className="my-8 p-6 bg-primary/5 border-l-4 border-primary rounded-r-lg">
+        <div className="my-8 p-6 bg-secondary/5 border-l-4 border-secondary rounded-r-lg">
           <p className="text-primary text-lg font-medium mb-2">Klaar om te starten?</p>
           <p className="text-muted-foreground mb-4">
             Download de gratis Hezo startersgids met het volledige stappenplan, checklists en praktische tips.
           </p>
           <Link
             to="/startersgids/"
-            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors"
+            className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-6 py-3 rounded-lg font-medium hover:bg-secondary/90 transition-colors"
           >
             Download de startersgids
           </Link>
