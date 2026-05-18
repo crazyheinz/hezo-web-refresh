@@ -1176,7 +1176,16 @@ const BlogArticle = () => {
                   "name": article.title
                 }
               ]
-            }
+            },
+            ...(articleFaqs[article.id] ? [{
+              "@type": "FAQPage",
+              "@id": `https://www.hezo.be/blog/${article.id}/#faq`,
+              "mainEntity": articleFaqs[article.id].map(f => ({
+                "@type": "Question",
+                "name": f.q,
+                "acceptedAnswer": { "@type": "Answer", "text": f.a }
+              }))
+            }] : [])
           ]
         }}
       />
