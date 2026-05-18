@@ -138,7 +138,7 @@ serve(async (req: Request) => {
           subject: "Jouw startersgids zelfstandig thuisverpleegkundige",
           html: `<!DOCTYPE html><html><body style="font-family:Arial,sans-serif;color:#1A2E5C;line-height:1.6;max-width:600px;margin:0 auto;padding:24px;">
 <h2 style="color:#1A2E5C;">Bedankt ${safeName}</h2>
-<p>Hierbij jouw startersgids "Zelfstandig thuisverpleegkundige worden in Belgie". Een praktisch stappenplan in 7 stappen, met realistische doorlooptijden en kostenramingen.</p>
+<p>Hierbij jouw startersgids "Zelfstandig thuisverpleegkundige worden in België". Een praktisch stappenplan in 7 stappen, met realistische doorlooptijden en kostenramingen.</p>
 <p style="margin:28px 0;">
   <a href="${PDF_URL}" style="background:#326AAA;color:#ffffff;padding:14px 24px;text-decoration:none;border-radius:8px;font-weight:bold;display:inline-block;">Download de startersgids (PDF)</a>
 </p>
