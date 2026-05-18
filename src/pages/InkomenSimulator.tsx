@@ -263,11 +263,12 @@ const InkomenSimulator = () => {
                       />
                       <div className="flex-1">
                         <Label htmlFor="aangesloten" className="text-base font-medium cursor-pointer">
-                          Aangesloten bij een praktijk of netwerk
+                          Aangesloten bij een praktijk
                         </Label>
                         <p className="text-xs text-muted-foreground mt-1">
-                          Patiënteninstroom, administratie en software via de praktijk, in ruil voor een
-                          commissie. Het percentage varieert sterk per praktijk en ervaring.
+                          Je werkt onder een bestaande praktijk en betaalt daar een commissie voor. Wat
+                          die commissie precies dekt (patiënteninstroom, administratie, software,
+                          ondersteuning) verschilt sterk per praktijk.
                         </p>
                       </div>
                     </div>
