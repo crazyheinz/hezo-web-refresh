@@ -342,31 +342,65 @@ const Vacatures = () => {
               "description": "Bekijk openstaande vacatures bij Hezo. Werk als praktijkcoach, zelfstandig verantwoordelijke verpleegkundige in de thuisverpleging.",
               "url": "https://www.hezo.be/vacatures/"
             },
-            ...jobs.map(job => ({
-              "@type": "JobPosting",
-              "title": job.title,
-              "description": job.description,
-              "datePosted": "2025-01-15",
-              "validThrough": "2026-12-31",
-              "employmentType": "FULL_TIME",
-              "hiringOrganization": {
-                "@type": "Organization",
-                "name": "Hezo",
-                "sameAs": "https://www.hezo.be",
-                "logo": "https://www.hezo.be/favicon.png"
-              },
-              "jobLocation": {
-                "@type": "Place",
-                "address": {
-                  "@type": "PostalAddress",
-                  "addressLocality": job.id === "regiomanager" ? "Gent" : job.id === "verantwoordelijke-antwerpen" ? "Antwerpen" : job.id === "verantwoordelijke-west-vlaanderen" ? "West-Vlaanderen" : job.id === "zelfstandig-antwerpen-zuid-berchem" ? "Antwerpen Zuid - Berchem" : "België",
-                  "addressRegion": "Vlaanderen",
-                  "addressCountry": "BE"
+            ...jobs.map(job => {
+              const locality = job.id === "regiomanager" ? "Gent" : job.id === "verantwoordelijke-antwerpen" ? "Antwerpen" : job.id === "verantwoordelijke-west-vlaanderen" ? "Brugge" : job.id === "zelfstandig-antwerpen-zuid-berchem" ? "Antwerpen" : "Gent";
+              const datePosted = "2026-04-01";
+              const validThrough = "2026-12-31";
+              const isOperational = job.id === "zelfstandig-antwerpen-zuid-berchem";
+              const baseSalary = isOperational
+                ? { min: 4000, max: 7000, unit: "MONTH" }
+                : { min: 5000, max: 8500, unit: "MONTH" };
+              return {
+                "@type": "JobPosting",
+                "@id": `https://www.hezo.be/vacatures/#${job.id}`,
+                "identifier": {
+                  "@type": "PropertyValue",
+                  "name": "Hezo",
+                  "value": job.id
+                },
+                "title": job.title,
+                "description": `<p>${job.description}</p><h3>Verantwoordelijkheden</h3><ul>${job.responsibilities.map(r => `<li>${r}</li>`).join("")}</ul><h3>Profiel</h3><ul>${job.profile.map(p => `<li>${p}</li>`).join("")}</ul><h3>Wat bieden we</h3><ul>${job.offer.map(o => `<li>${o}</li>`).join("")}</ul>`,
+                "datePosted": datePosted,
+                "validThrough": validThrough,
+                "employmentType": ["CONTRACTOR", "FULL_TIME", "PART_TIME"],
+                "hiringOrganization": {
+                  "@type": "Organization",
+                  "name": "Hezo",
+                  "sameAs": "https://www.hezo.be",
+                  "logo": "https://www.hezo.be/favicon.png"
+                },
+                "jobLocation": {
+                  "@type": "Place",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": locality,
+                    "addressRegion": "Vlaanderen",
+                    "addressCountry": "BE"
+                  }
+                },
+                "baseSalary": {
+                  "@type": "MonetaryAmount",
+                  "currency": "EUR",
+                  "value": {
+                    "@type": "QuantitativeValue",
+                    "minValue": baseSalary.min,
+                    "maxValue": baseSalary.max,
+                    "unitText": baseSalary.unit
+                  }
+                },
+                "qualifications": job.profile.join(" "),
+                "responsibilities": job.responsibilities.join(" "),
+                "jobBenefits": job.offer.join(" "),
+                "industry": "Healthcare",
+                "occupationalCategory": "29-1141 Registered Nurses",
+                "directApply": true,
+                "url": `https://www.hezo.be/vacatures/#${job.id}`,
+                "applicantLocationRequirements": {
+                  "@type": "Country",
+                  "name": "BE"
                 }
-              },
-              "industry": "Healthcare",
-              "occupationalCategory": "Healthcare Support"
-            })),
+              };
+            }),
             {
               "@type": "FAQPage",
               "mainEntity": [

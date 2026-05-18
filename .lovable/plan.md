@@ -1,36 +1,44 @@
-## Nieuwe vacature toevoegen
+# Afwerking SEO-groeiplan Hezo
 
-Een nieuwe vacature "Zelfstandig thuisverpleegkundige – regio Antwerpen Zuid - Berchem" toevoegen aan `src/pages/Vacatures.tsx`, met dezelfde structuur en opmaak als de bestaande vacatures.
+## 1. Database migratie goedkeuren
+De `lead_magnets` tabel migratie staat klaar — ik vraag goedkeuring zodra we starten zodat het lead-formulier op `/startersgids/` werkt.
 
-### Wijzigingen
+## 2. Cornerstone blog uitbreiden
+Artikel `zelfstandig-thuisverpleegkundige-worden` uitbreiden naar ~2.500 woorden:
+- RIZIV-conventie + nomenclatuur basics
+- Sociaal statuut (Xerius/Acerta), btw-vrijstelling medische prestaties
+- Stappenplan opstart (KBO, RIZIV-nummer, verzekering BA, software)
+- Inkomen & kosten realistisch (link naar `/inkomen-simulator/`)
+- FAQ-blok (8 vragen) met `FAQPage` JSON-LD schema
+- Sticky CTA naar startersgids + simulator
+- Bestand: `src/data/blogArticles.ts` (content) + check `src/pages/BlogArticle.tsx` voor FAQ schema injectie
 
-**1. Nieuwe job entry in `allJobs` array (`src/pages/Vacatures.tsx`)**
+## 3. Vacatures JobPosting verrijken
+In `src/pages/Vacatures.tsx` per vacature de bestaande JSON-LD uitbreiden met:
+- `identifier` (Hezo + vacature slug)
+- `datePosted` + `validThrough` (90 dagen)
+- `baseSalary` (MonetaryAmount, range per regio)
+- `qualifications`, `responsibilities`, `jobBenefits`
+- `directApply: true` met anchor naar sollicitatieformulier
+- `employmentType: ["FULL_TIME","PART_TIME","CONTRACTOR"]`
 
-Toevoegen als eerste item (zodat het bovenaan verschijnt), met:
-- `id`: `"zelfstandig-antwerpen-zuid-berchem"`
-- `title`: `"Zelfstandig thuisverpleegkundige - Antwerpen Zuid - Berchem"` (locatie achter " - " zodat de bestaande MapPin-locatie-extractie werkt)
-- `tagline`: `"Zorg met impact. Werk met vrijheid. Groei met ondersteuning."`
-- `active`: `true`
-- `description`: introtekst (de twee paragrafen na de tagline, samengevoegd)
-- `responsibilities`: de 8 bullets uit sectie 1.1 (Hygiënische zorg, medicatie, wondzorg, sondes/katheters/infusen, bloedafnames, parameters, pijnobservatie, luisteren, respect voor autonomie)
-- `profile`: de 6 bullets uit sectie 1.2 (diploma, RIZIV, eigen vervoer, zelfstandig werken, patiëntgericht, samenwerken)
-- `offer`: alle bullets uit sectie 1.3, gegroepeerd onder hun sub-koppen via cursieve sectietitels in de tekst, bv:
-  - "Werkbaar evenwicht: duidelijke planning en voorspelbare rondes"
-  - "Werkbaar evenwicht: beperkte avond- en weekendbelasting"
-  - etc.
-  
-  (De bestaande structuur ondersteunt geen sub-koppen, dus de sub-rubrieken "Werkbaar evenwicht", "Sterke ondersteuning", "Transparante en correcte vergoeding met inkomensgarantie", "Een aangename werkomgeving die meedenkt" worden als prefix in elke bullet meegenomen. Alternatief: pak ze als platte lijst zonder prefixen — bevestig keuze indien nodig.)
+## 4. Navigatie & interne links
+- Header: link naar `/inkomen-simulator/` onder "Voor zelfstandigen" (of CTA-knop)
+- Footer: links naar `/startersgids/`, `/inkomen-simulator/`, `/thuisverpleging/gent/`, `/thuisverpleging/antwerpen/`
+- Op homepage een subtiele CTA-strook naar simulator
+- Op `/wat-we-doen/` en cornerstone blog: cross-links naar regio-pagina's
 
-**2. JobPosting structured data (regels 305-329)**
+## 5. Sitemap, prerender & robots
+- Verifiëren dat `scripts/generate-sitemap.mjs` Gent + Antwerpen + simulator + startersgids bevat
+- `src/prerender.tsx` lijst checken
+- `public/sitemap.xml` regenereren
 
-De ternary voor `addressLocality` uitbreiden zodat de nieuwe id `"zelfstandig-antwerpen-zuid-berchem"` `"Antwerpen Zuid - Berchem"` als locality krijgt. Geen verdere SEO-wijzigingen nodig (FAQ blijft ongewijzigd).
+## 6. Edge function deploy + visuele check
+- `request-lead-magnet` deployen
+- Preview check: startersgids formulier, simulator berekening, regio pagina's Gent & Antwerpen, vacature JSON-LD via view-source
 
-### Geen wijzigingen aan
-
-- Het sollicitatieformulier (werkt generiek op `selectedJob`).
-- Sitemap (vacatures-detailpagina's bestaan niet als aparte routes).
-- Edge functions.
-
-### Open vraag
-
-Wens je de "Wat mag je verwachten?"-bullets met de sub-kop prefixen (bv. "Werkbaar evenwicht: …") of als één platte lijst zonder prefixen?
+## Technische details
+- FAQ schema: `@type: FAQPage` met `mainEntity` array van `Question`/`Answer`
+- Vacatures baseSalary: `{ "@type": "MonetaryAmount", "currency": "EUR", "value": { "@type": "QuantitativeValue", "minValue": 3500, "maxValue": 5500, "unitText": "MONTH" } }`
+- Geen wijziging aan bestaande tekst-content buiten cornerstone artikel (memory: literal preservation)
+- Alle nieuwe content in NL, "thuisverpleegkundigen", geen emojis/em-dashes

@@ -44,6 +44,26 @@ const Footer = () => {
                   Blog
                 </Link>
               </li>
+              <li>
+                <Link to="/inkomen-simulator/" className="text-sm hover:text-secondary transition-colors">
+                  Inkomensimulator
+                </Link>
+              </li>
+              <li>
+                <Link to="/startersgids/" className="text-sm hover:text-secondary transition-colors">
+                  Gratis startersgids
+                </Link>
+              </li>
+              <li>
+                <Link to="/thuisverpleging/gent/" className="text-sm hover:text-secondary transition-colors">
+                  Thuisverpleging Gent
+                </Link>
+              </li>
+              <li>
+                <Link to="/thuisverpleging/antwerpen/" className="text-sm hover:text-secondary transition-colors">
+                  Thuisverpleging Antwerpen
+                </Link>
+              </li>
             </ul>
           </div>
 
