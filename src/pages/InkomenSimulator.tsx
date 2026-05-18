@@ -97,7 +97,7 @@ const InkomenSimulator = () => {
     applicationCategory: "FinanceApplication",
     operatingSystem: "Web",
     description:
-      "Bereken indicatief je netto inkomen als zelfstandige thuisverpleegkundige in België op basis van werkdagen, rondes, patiënten en zorgtype.",
+      "Bereken indicatief je netto inkomen als zelfstandige thuisverpleegkundige in België op basis van werkdagen, patiënten en zorgtype.",
     offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
   };
 
@@ -105,7 +105,7 @@ const InkomenSimulator = () => {
     <>
       <SEO
         title="Inkomen zelfstandige thuisverpleegkundige berekenen | Simulator - Hezo"
-        description="Hoeveel verdien je als zelfstandige thuisverpleegkundige? Bereken indicatief je netto maandinkomen op basis van werkdagen, rondes, patiënten en zorgtype."
+        description="Hoeveel verdien je als zelfstandige thuisverpleegkundige? Bereken indicatief je netto maandinkomen op basis van werkdagen, patiënten en zorgtype."
         path="/inkomen-simulator/"
         structuredData={structuredData}
       />
@@ -119,7 +119,7 @@ const InkomenSimulator = () => {
                 Inkomensimulator zelfstandige thuisverpleegkundige
               </h1>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Een realistische indicatie van je netto maandinkomen op basis van je werkritme, rondes,
+                Een realistische indicatie van je netto maandinkomen op basis van je werkritme,
                 patiëntenmix en of je solo werkt of via een netwerk. Geen registratie nodig.
               </p>
             </div>
