@@ -34,9 +34,9 @@ const InkomenSimulator = () => {
 
     const brutoOmzet = totalePrestaties * gemTarief;
 
-    // Praktijkafdracht (varieert sterk per praktijk en ervaring)
-    const afdracht = aangesloten ? brutoOmzet * (afdrachtPct / 100) : 0;
-    const brutoNaAfdracht = brutoOmzet - afdracht;
+    // Praktijkcommissie (varieert sterk per praktijk en ervaring)
+    const commissie = aangesloten ? brutoOmzet * (afdrachtPct / 100) : 0;
+    const brutoNaCommissie = brutoOmzet - commissie;
 
     // Vaste maandelijkse beroepskosten (geschatte gemiddelden)
     const kostenAuto = 450; // brandstof, onderhoud, verzekering, afschrijving
@@ -57,7 +57,13 @@ const InkomenSimulator = () => {
       kostenOverhead +
       kostenOpleiding;
 
-    const inkomenVoorBijdragen = brutoNaAfdracht - vasteKosten;
+    // RIZIV-premies (jaarlijks, omgerekend naar maand)
+    // Telematicapremie ~€800/jaar, premie bijscholing ~€500/jaar, accrediteringstoeslag indicatief
+    const premieTelematica = 800 / 12;
+    const premieBijscholing = 500 / 12;
+    const premies = premieTelematica + premieBijscholing;
+
+    const inkomenVoorBijdragen = brutoNaCommissie - vasteKosten + premies;
 
     // Sociale bijdragen 20,5%
     const socialeBijdragen = inkomenVoorBijdragen * 0.205;
@@ -70,8 +76,8 @@ const InkomenSimulator = () => {
 
     return {
       brutoOmzet: Math.round(brutoOmzet),
-      afdracht: Math.round(afdracht),
-      brutoNaAfdracht: Math.round(brutoNaAfdracht),
+      commissie: Math.round(commissie),
+      brutoNaCommissie: Math.round(brutoNaCommissie),
       vasteKosten: Math.round(vasteKosten),
       kostenAuto,
       kostenMateriaal,
@@ -81,6 +87,9 @@ const InkomenSimulator = () => {
       kostenTelecom,
       kostenOverhead,
       kostenOpleiding,
+      premies: Math.round(premies),
+      premieTelematica: Math.round(premieTelematica),
+      premieBijscholing: Math.round(premieBijscholing),
       socialeBijdragen: Math.round(socialeBijdragen),
       belastingen: Math.round(belastingen),
       netto: Math.round(netto),
