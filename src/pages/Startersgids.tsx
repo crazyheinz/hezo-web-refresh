@@ -43,21 +43,19 @@ const Startersgids = () => {
         },
       });
 
-      if (error) console.warn("Lead magnet request failed", error);
+      if (error) throw error;
       setDone(true);
       toast({
-        title: "Download beschikbaar",
-        description: "De startersgids wordt geopend. We sturen hem ook naar je mailbox.",
+        title: "Aanvraag verstuurd",
+        description: "We sturen de startersgids naar je mailbox.",
       });
-      window.location.assign(PDF_URL);
     } catch (error) {
       console.warn("Lead magnet request failed", error);
-      setDone(true);
       toast({
-        title: "Download beschikbaar",
-        description: "De startersgids wordt geopend. We sturen hem ook naar je mailbox.",
+        title: "Versturen lukt niet",
+        description: "Probeer het opnieuw of contacteer ons via info@hezo.be.",
+        variant: "destructive",
       });
-      window.location.assign(PDF_URL);
     } finally {
       setSubmitting(false);
     }
@@ -130,9 +128,9 @@ const Startersgids = () => {
                 {done ? (
                   <div className="text-center py-6">
                     <CheckCircle2 className="h-14 w-14 text-secondary mx-auto mb-4" />
-                    <h2 className="text-xl font-semibold text-primary mb-2">Je download start</h2>
+                    <h2 className="text-xl font-semibold text-primary mb-2">Check je mailbox</h2>
                     <p className="text-muted-foreground mb-6">
-                      We hebben je aanvraag genoteerd. Lukt het openen niet automatisch, gebruik dan de knop hieronder.
+                      We hebben je aanvraag genoteerd en sturen de startersgids naar het opgegeven e-mailadres.
                     </p>
                     <Button asChild variant="outline">
                       <a
@@ -141,7 +139,7 @@ const Startersgids = () => {
                         rel="noopener"
                       >
                         <Download className="mr-2 h-4 w-4" />
-                        Download de gids
+                        Open de PDF ook meteen
                       </a>
                     </Button>
                   </div>
@@ -151,7 +149,7 @@ const Startersgids = () => {
                       Vraag de gids gratis aan
                     </h2>
                     <p className="text-sm text-muted-foreground mb-4">
-                      Je kan de PDF meteen downloaden. We sturen hem ook naar je mailbox.
+                      Vul je gegevens in en ontvang de PDF in je mailbox.
                     </p>
 
                     <div>
@@ -209,7 +207,7 @@ const Startersgids = () => {
                       ) : (
                         <>
                           <Download className="mr-2 h-4 w-4" />
-                          Download de gids
+                          Stuur de PDF naar mijn mailbox
                         </>
                       )}
                     </Button>
