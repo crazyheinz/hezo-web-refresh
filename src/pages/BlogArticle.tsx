@@ -905,7 +905,7 @@ const articleContent: Record<string, {
           </p>
           <Link
             to="/startersgids/"
-            className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-6 py-3 rounded-lg font-medium hover:bg-secondary/90 transition-colors"
+            className="inline-flex items-center gap-2 bg-secondary !text-secondary-foreground hover:!text-secondary-foreground px-6 py-3 rounded-lg font-medium hover:bg-secondary/90 no-underline transition-colors"
           >
             Download de startersgids
           </Link>
