@@ -15,8 +15,8 @@ const TARIEF_TECHNISCH = 35; // wondzorg, injecties complexer
 
 const InkomenSimulator = () => {
   const [dagen, setDagen] = useState(5);
-  const [rondes, setRondes] = useState(2);
-  const [patientenPerRonde, setPatientenPerRonde] = useState(8);
+  const [patientenVm, setPatientenVm] = useState(15);
+  const [patientenNm, setPatientenNm] = useState(8);
   const [mixBasis, setMixBasis] = useState(40);
   const [mixToilet, setMixToilet] = useState(30);
   const [aangesloten, setAangesloten] = useState(false);
@@ -24,7 +24,7 @@ const InkomenSimulator = () => {
 
   // mixTech = rest
   const mixTech = Math.max(0, 100 - mixBasis - mixToilet);
-  const patientenPerDag = rondes * patientenPerRonde;
+  const patientenPerDag = patientenVm + patientenNm;
 
   const result = useMemo(() => {
     const weken = 4.33;
@@ -97,7 +97,7 @@ const InkomenSimulator = () => {
     applicationCategory: "FinanceApplication",
     operatingSystem: "Web",
     description:
-      "Bereken indicatief je netto inkomen als zelfstandige thuisverpleegkundige in België op basis van werkdagen, rondes, patiënten en zorgtype.",
+      "Bereken indicatief je netto inkomen als zelfstandige thuisverpleegkundige in België op basis van werkdagen, patiënten en zorgtype.",
     offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
   };
 
@@ -105,7 +105,7 @@ const InkomenSimulator = () => {
     <>
       <SEO
         title="Inkomen zelfstandige thuisverpleegkundige berekenen | Simulator - Hezo"
-        description="Hoeveel verdien je als zelfstandige thuisverpleegkundige? Bereken indicatief je netto maandinkomen op basis van werkdagen, rondes, patiënten en zorgtype."
+        description="Hoeveel verdien je als zelfstandige thuisverpleegkundige? Bereken indicatief je netto maandinkomen op basis van werkdagen, patiënten en zorgtype."
         path="/inkomen-simulator/"
         structuredData={structuredData}
       />
@@ -119,7 +119,7 @@ const InkomenSimulator = () => {
                 Inkomensimulator zelfstandige thuisverpleegkundige
               </h1>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Een realistische indicatie van je netto maandinkomen op basis van je werkritme, rondes,
+                Een realistische indicatie van je netto maandinkomen op basis van je werkritme,
                 patiëntenmix en of je solo werkt of via een netwerk. Geen registratie nodig.
               </p>
             </div>
@@ -144,31 +144,29 @@ const InkomenSimulator = () => {
 
                   <div>
                     <Label className="text-base font-medium">
-                      Rondes per dag: <span className="text-secondary font-bold">{rondes}</span>
+                      Patiënten in de voormiddag:{" "}
+                      <span className="text-secondary font-bold">{patientenVm}</span>
                     </Label>
                     <Slider
-                      value={[rondes]}
-                      onValueChange={(v) => setRondes(v[0])}
-                      min={1}
-                      max={3}
+                      value={[patientenVm]}
+                      onValueChange={(v) => setPatientenVm(v[0])}
+                      min={0}
+                      max={35}
                       step={1}
                       className="mt-3"
                     />
-                    <p className="text-xs text-muted-foreground mt-2">
-                      Bv. ochtendronde + avondronde = 2 rondes per dag.
-                    </p>
                   </div>
 
                   <div>
                     <Label className="text-base font-medium">
-                      Patiënten per ronde:{" "}
-                      <span className="text-secondary font-bold">{patientenPerRonde}</span>
+                      Patiënten in de namiddag / avond:{" "}
+                      <span className="text-secondary font-bold">{patientenNm}</span>
                     </Label>
                     <Slider
-                      value={[patientenPerRonde]}
-                      onValueChange={(v) => setPatientenPerRonde(v[0])}
-                      min={4}
-                      max={20}
+                      value={[patientenNm]}
+                      onValueChange={(v) => setPatientenNm(v[0])}
+                      min={0}
+                      max={35}
                       step={1}
                       className="mt-3"
                     />
