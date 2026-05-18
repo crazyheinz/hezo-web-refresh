@@ -46,14 +46,14 @@ const Startersgids = () => {
       if (error) console.warn("Lead magnet request failed", error);
       setDone(true);
       toast({
-        title: "Bedankt!",
+        title: "Download beschikbaar",
         description: "Je kan de startersgids nu downloaden.",
       });
     } catch (error) {
       console.warn("Lead magnet request failed", error);
       setDone(true);
       toast({
-        title: "Bedankt!",
+        title: "Download beschikbaar",
         description: "Je kan de startersgids nu downloaden.",
       });
     } finally {
@@ -139,7 +139,7 @@ const Startersgids = () => {
                         rel="noopener"
                       >
                         <Download className="mr-2 h-4 w-4" />
-                        Of download direct
+                        Download de gids
                       </a>
                     </Button>
                   </div>
@@ -149,7 +149,7 @@ const Startersgids = () => {
                       Vraag de gids gratis aan
                     </h2>
                     <p className="text-sm text-muted-foreground mb-4">
-                      Je ontvangt de PDF direct in je mailbox.
+                      Je kan de PDF meteen downloaden. We sturen hem ook naar je mailbox.
                     </p>
 
                     <div>
@@ -207,7 +207,7 @@ const Startersgids = () => {
                       ) : (
                         <>
                           <Download className="mr-2 h-4 w-4" />
-                          Verstuur de gids
+                          Naar de download
                         </>
                       )}
                     </Button>
