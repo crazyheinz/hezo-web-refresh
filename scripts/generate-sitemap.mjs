@@ -16,6 +16,10 @@ const staticRoutes = [
   { path: "/vacatures/", priority: "0.8", changefreq: "weekly" },
   { path: "/contact/", priority: "0.7", changefreq: "monthly" },
   { path: "/blog/", priority: "0.8", changefreq: "weekly" },
+  { path: "/thuisverpleging/antwerpen/", priority: "0.9", changefreq: "monthly" },
+  { path: "/thuisverpleging/gent/", priority: "0.9", changefreq: "monthly" },
+  { path: "/inkomen-simulator/", priority: "0.8", changefreq: "monthly" },
+  { path: "/startersgids/", priority: "0.8", changefreq: "monthly" },
   { path: "/privacy/", priority: "0.3", changefreq: "yearly" },
   { path: "/cookies/", priority: "0.3", changefreq: "yearly" },
 ];
