@@ -267,7 +267,7 @@ const InkomenSimulator = () => {
                         </Label>
                         <p className="text-xs text-muted-foreground mt-1">
                           Patiënteninstroom, administratie en software via de praktijk, in ruil voor een
-                          afdracht. Het percentage varieert sterk per praktijk en ervaring.
+                          commissie. Het percentage varieert sterk per praktijk en ervaring.
                         </p>
                       </div>
                     </div>
@@ -275,7 +275,7 @@ const InkomenSimulator = () => {
                     {aangesloten && (
                       <div>
                         <Label className="text-sm font-medium">
-                          Praktijkafdracht:{" "}
+                          Praktijkcommissie:{" "}
                           <span className="text-secondary font-bold">{afdrachtPct}%</span>
                         </Label>
                         <Slider
