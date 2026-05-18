@@ -750,6 +750,8 @@ const articleContent: Record<string, {
     headings: [
       { id: "waarom-zelfstandig", label: "Waarom kiezen voor zelfstandig werken?" },
       { id: "stappenplan", label: "Zelfstandig worden in 4 stappen" },
+      { id: "sociaal-statuut", label: "Sociaal statuut en btw-vrijstelling" },
+      { id: "inkomen", label: "Wat kan je verdienen?" },
       { id: "veelgestelde-vragen", label: "Veelgestelde vragen" },
     ],
     content: (
@@ -757,6 +759,13 @@ const articleContent: Record<string, {
         <p className="lead">
           Als zelfstandig thuisverpleegkundige combineer je zorg met ondernemerschap. Je bepaalt zelf je agenda en patiënten, maar krijgt ook te maken met administratie, regelgeving en instroom. Hezo ondersteunt je bij elke stap, van oriëntatie tot een duurzaam uitgebouwde praktijk.
         </p>
+
+        <div className="my-6 p-5 bg-secondary/10 border-l-4 border-secondary rounded-r-lg">
+          <p className="text-primary text-base font-medium mb-2">Direct praktisch aan de slag?</p>
+          <p className="text-muted-foreground text-base mb-3">
+            Download onze gratis <Link to="/startersgids/" className="text-secondary hover:underline font-medium">startersgids</Link> met het volledige stappenplan, of bereken vrijblijvend je verwachte inkomen met de <Link to="/inkomen-simulator/" className="text-secondary hover:underline font-medium">inkomensimulator</Link>.
+          </p>
+        </div>
 
         <h2 id="waarom-zelfstandig">Waarom kiezen voor zelfstandig werken als thuisverpleegkundige?</h2>
         <ul>
@@ -837,16 +846,70 @@ const articleContent: Record<string, {
           </p>
         </div>
 
+        <h2 id="sociaal-statuut">Sociaal statuut, sociale bijdragen en btw-vrijstelling</h2>
+        <p>
+          Naast je RIZIV-nummer en KBO-inschrijving moet je je aansluiten bij een sociaal verzekeringsfonds zoals Xerius, Acerta of Liantis. Deze regelen je sociale bijdragen, pensioenopbouw, ziekte- en invaliditeitsuitkering, geboorte- en adoptie-uitkeringen. Sociale bijdragen bedragen ongeveer 20,5% van je netto belastbaar inkomen. In de eerste drie jaar wordt voorlopig een minimumbijdrage aangerekend, met een herziening achteraf.
+        </p>
+        <p>
+          Verpleegkundige prestaties die je aanrekent via de RIZIV-nomenclatuur zijn <strong>vrijgesteld van btw</strong> op basis van artikel 44 van het Btw-Wetboek. Je moet dus geen btw aanrekenen op zorgprestaties, maar je kan ook geen btw recupereren op je beroepskosten. Voor sommige niet-medische activiteiten (bv. coördinatie, opleiding aan derden) kan dat anders liggen. Bespreek dit met je boekhouder bij de opstart.
+        </p>
+        <p>
+          Daarnaast neem je een aantal verzekeringen die voor zelfstandige zorgverleners essentieel zijn:
+        </p>
+        <ul>
+          <li><strong>Beroepsaansprakelijkheid (BA):</strong> dekt schade die je tijdens een zorghandeling kan veroorzaken</li>
+          <li><strong>Gewaarborgd inkomen:</strong> aanvulling bovenop de uitkering bij arbeidsongeschiktheid</li>
+          <li><strong>VAPZ (Vrij Aanvullend Pensioen Zelfstandigen):</strong> fiscaalvriendelijk extra pensioen opbouwen</li>
+          <li><strong>Auto- en omniumverzekering met beroepsdekking</strong> voor je werkverplaatsingen</li>
+        </ul>
+
+        <h2 id="inkomen">Wat kan je realistisch verdienen?</h2>
+        <p>
+          Het inkomen van een zelfstandige thuisverpleegkundige hangt af van je aantal patiënten, het type zorg, je regio en je verplaatsingstijd. Bij een voltijdse activiteit ligt de bruto omzet doorgaans tussen €4.000 en €8.000 per maand. Na kosten, sociale bijdragen en belastingen hou je netto ongeveer 40% tot 60% over, afhankelijk van je werking.
+        </p>
+        <p>
+          Wil je een realistische inschatting voor jouw situatie? Onze <Link to="/inkomen-simulator/" className="text-secondary hover:underline font-medium">inkomensimulator</Link> berekent in enkele kliks je verwachte bruto en netto inkomen op basis van je werkdagen, patiënten per dag en zorgmix. Voor een gedetailleerde uitleg lees je het artikel{" "}
+          <Link to="/blog/inkomen-zelfstandige-thuisverpleegkundige/" className="text-secondary hover:underline">wat verdien je als zelfstandige thuisverpleegkundige in België</Link>.
+        </p>
+
         <h2 id="veelgestelde-vragen">Veelgestelde vragen</h2>
 
         <h3>Heb ik altijd een RIZIV-nummer nodig?</h3>
-        <p>Ja, als je prestaties wil aanrekenen in de thuisverpleging is een RIZIV-nummer verplicht.</p>
+        <p>Ja, als je prestaties wil aanrekenen in de thuisverpleging is een RIZIV-nummer verplicht. Zonder RIZIV-nummer kan je geen prestaties factureren binnen de ziekteverzekering.</p>
 
         <h3>Wat als ik ziek word als zelfstandige?</h3>
         <p>Als zelfstandige heb je bij ziekte recht op een uitkering via je sociaal verzekeringsfonds, op voorwaarde dat je in orde bent met je sociale bijdragen. De uitkering start vanaf de 8ste dag arbeidsongeschiktheid. Veel zelfstandige verpleegkundigen kiezen voor een aanvullende verzekering (gewaarborgd inkomen) voor betere bescherming.</p>
 
         <h3>Heb ik een boekhouder nodig als zelfstandig thuisverpleegkundige?</h3>
-        <p>Je bent niet verplicht, maar in de praktijk kiezen veel starters daar wél voor, zeker in de eerste jaren. Een boekhouder kan helpen bij de keuze tussen eenmanszaak of vennootschap, correcte fiscale aangiftes en inzicht in kosten.</p>
+        <p>Je bent niet verplicht, maar in de praktijk kiezen veel starters daar wél voor, zeker in de eerste jaren. Een boekhouder helpt bij de keuze tussen eenmanszaak of vennootschap, correcte fiscale aangiftes en inzicht in kosten.</p>
+
+        <h3>Moet ik btw aanrekenen op mijn zorgprestaties?</h3>
+        <p>Nee, verpleegkundige prestaties binnen de RIZIV-nomenclatuur zijn vrijgesteld van btw (artikel 44 Btw-Wetboek). Je rekent dus geen btw aan op zorg, en kan ook geen btw recupereren op je beroepskosten.</p>
+
+        <h3>Hoeveel sociale bijdragen betaal ik als zelfstandige verpleegkundige?</h3>
+        <p>De sociale bijdragen bedragen ongeveer 20,5% van je netto belastbaar inkomen. In de eerste drie jaar wordt een voorlopige minimumbijdrage aangerekend, die achteraf wordt herzien op basis van je effectief inkomen.</p>
+
+        <h3>Hoe kom ik aan patiënten als ik net start?</h3>
+        <p>Patiënten komen via huisartsen, ziekenhuizen, mutualiteiten, woonzorgcentra en mond-tot-mondreclame. Bij Hezo krijg je gespreide instroom via het netwerk van Welzijnsgroep Helan, zodat je niet vanaf nul moet vertrekken.</p>
+
+        <h3>Kan ik combineren met een loondienstverband?</h3>
+        <p>Ja, je kan starten als zelfstandige in bijberoep, bijvoorbeeld naast een job in een ziekenhuis of woonzorgcentrum. De drempel voor sociale bijdragen ligt lager en je bouwt rustig je praktijk uit. Bij voldoende omzet kan je later overschakelen naar hoofdberoep.</p>
+
+        <h3>Hoe lang duurt de volledige opstart?</h3>
+        <p>Vanaf het moment dat je je dossier indient, duurt de administratieve opstart (KBO, sociaal verzekeringsfonds, RIZIV-bevestiging, verzekeringen) doorgaans 2 tot 6 weken. Met goede voorbereiding en de juiste partners kan dat vlot verlopen.</p>
+
+        <div className="my-8 p-6 bg-primary/5 border-l-4 border-primary rounded-r-lg">
+          <p className="text-primary text-lg font-medium mb-2">Klaar om te starten?</p>
+          <p className="text-muted-foreground mb-4">
+            Download de gratis Hezo startersgids met het volledige stappenplan, checklists en praktische tips.
+          </p>
+          <Link
+            to="/startersgids/"
+            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors"
+          >
+            Download de startersgids
+          </Link>
+        </div>
       </>
     ),
   },
