@@ -130,11 +130,11 @@ const Startersgids = () => {
                     <CheckCircle2 className="h-14 w-14 text-secondary mx-auto mb-4" />
                     <h2 className="text-xl font-semibold text-primary mb-2">Check je mailbox</h2>
                     <p className="text-muted-foreground mb-6">
-                      We hebben de startersgids verstuurd naar <strong>{form.email}</strong>.
+                      We hebben je aanvraag genoteerd. Je kan de gids meteen openen.
                     </p>
                     <Button asChild variant="outline">
                       <a
-                        href="/downloads/startersgids-thuisverpleegkundige.pdf"
+                        href={PDF_URL}
                         target="_blank"
                         rel="noopener"
                       >
@@ -181,22 +181,6 @@ const Startersgids = () => {
                         value={form.region}
                         onChange={(e) => setForm({ ...form, region: e.target.value })}
                       />
-                    </div>
-
-                    <div className="flex items-start gap-2">
-                      <Checkbox
-                        id="freelance"
-                        checked={form.isActiveFreelancer}
-                        onCheckedChange={(c) =>
-                          setForm({ ...form, isActiveFreelancer: c as boolean })
-                        }
-                      />
-                      <Label
-                        htmlFor="freelance"
-                        className="text-sm font-normal cursor-pointer leading-tight"
-                      >
-                        Ik werk al als zelfstandige
-                      </Label>
                     </div>
 
                     <div className="flex items-start gap-2">
