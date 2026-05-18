@@ -9,19 +9,22 @@ import { Calculator, ArrowRight, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 // Indicatieve gemiddelde RIZIV-vergoedingen (afgerond) per prestatie-type
-const TARIEF_BASIS = 14; // hygienische zorg / basisbezoek
+const TARIEF_BASIS = 14; // hygiënische zorg / basisbezoek
 const TARIEF_TOILET = 22; // toilet + ADL
 const TARIEF_TECHNISCH = 35; // wondzorg, injecties complexer
 
 const InkomenSimulator = () => {
   const [dagen, setDagen] = useState(5);
-  const [patientenPerDag, setPatientenPerDag] = useState(14);
+  const [rondes, setRondes] = useState(2);
+  const [patientenPerRonde, setPatientenPerRonde] = useState(8);
   const [mixBasis, setMixBasis] = useState(40);
   const [mixToilet, setMixToilet] = useState(30);
   const [aangesloten, setAangesloten] = useState(false);
+  const [afdrachtPct, setAfdrachtPct] = useState(5);
 
   // mixTech = rest
   const mixTech = Math.max(0, 100 - mixBasis - mixToilet);
+  const patientenPerDag = rondes * patientenPerRonde;
 
   const result = useMemo(() => {
     const weken = 4.33;
@@ -29,18 +32,32 @@ const InkomenSimulator = () => {
     const gemTarief =
       (TARIEF_BASIS * mixBasis + TARIEF_TOILET * mixToilet + TARIEF_TECHNISCH * mixTech) / 100;
 
-    let brutoMaand = totalePrestaties * gemTarief;
+    const brutoOmzet = totalePrestaties * gemTarief;
 
-    // Afdracht aan netwerk (Hezo: 8% vanaf 1 jaar ervaring) of solo (0)
-    const afdracht = aangesloten ? brutoMaand * 0.08 : 0;
-    brutoMaand -= afdracht;
+    // Praktijkafdracht (varieert sterk per praktijk en ervaring)
+    const afdracht = aangesloten ? brutoOmzet * (afdrachtPct / 100) : 0;
+    const brutoNaAfdracht = brutoOmzet - afdracht;
 
-    // Vaste kosten / maand (auto + materiaal + verzekering + boekhouder)
-    const vasteKosten = 850;
-    // Solo: hogere kosten (eigen software, eigen tariferingsdienst)
-    const extraKostenSolo = aangesloten ? 0 : 180;
+    // Vaste maandelijkse beroepskosten (geschatte gemiddelden)
+    const kostenAuto = 450; // brandstof, onderhoud, verzekering, afschrijving
+    const kostenMateriaal = 120; // handschoenen, ontsmetting, klein materiaal
+    const kostenSoftware = aangesloten ? 0 : 90; // patiëntdossier, tarificatie, facturatie
+    const kostenVerzekering = 80; // BA, gewaarborgd inkomen (deel)
+    const kostenBoekhouder = 110; // eenmanszaak indicatief
+    const kostenTelecom = 35; // gsm, internet (beroepsdeel)
+    const kostenOverhead = aangesloten ? 0 : 80; // tariferingsdienst, kleine uitbestedingen
+    const kostenOpleiding = 25; // bijscholing maandbasis
+    const vasteKosten =
+      kostenAuto +
+      kostenMateriaal +
+      kostenSoftware +
+      kostenVerzekering +
+      kostenBoekhouder +
+      kostenTelecom +
+      kostenOverhead +
+      kostenOpleiding;
 
-    const inkomenVoorBijdragen = brutoMaand - vasteKosten - extraKostenSolo;
+    const inkomenVoorBijdragen = brutoNaAfdracht - vasteKosten;
 
     // Sociale bijdragen 20,5%
     const socialeBijdragen = inkomenVoorBijdragen * 0.205;
@@ -52,14 +69,24 @@ const InkomenSimulator = () => {
     const netto = belastbaar - belastingen;
 
     return {
-      brutoMaand: Math.round(brutoMaand),
-      vasteKosten: vasteKosten + extraKostenSolo,
+      brutoOmzet: Math.round(brutoOmzet),
+      afdracht: Math.round(afdracht),
+      brutoNaAfdracht: Math.round(brutoNaAfdracht),
+      vasteKosten: Math.round(vasteKosten),
+      kostenAuto,
+      kostenMateriaal,
+      kostenSoftware,
+      kostenVerzekering,
+      kostenBoekhouder,
+      kostenTelecom,
+      kostenOverhead,
+      kostenOpleiding,
       socialeBijdragen: Math.round(socialeBijdragen),
       belastingen: Math.round(belastingen),
       netto: Math.round(netto),
       nettoJaar: Math.round(netto * 12),
     };
-  }, [dagen, patientenPerDag, mixBasis, mixToilet, mixTech, aangesloten]);
+  }, [dagen, patientenPerDag, mixBasis, mixToilet, mixTech, aangesloten, afdrachtPct]);
 
   const fmt = (n: number) => `€${n.toLocaleString("nl-BE")}`;
 
@@ -70,7 +97,7 @@ const InkomenSimulator = () => {
     applicationCategory: "FinanceApplication",
     operatingSystem: "Web",
     description:
-      "Bereken indicatief je netto inkomen als zelfstandige thuisverpleegkundige in Belgie op basis van werkdagen, patienten en zorgtype.",
+      "Bereken indicatief je netto inkomen als zelfstandige thuisverpleegkundige in België op basis van werkdagen, rondes, patiënten en zorgtype.",
     offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
   };
 
@@ -78,7 +105,7 @@ const InkomenSimulator = () => {
     <>
       <SEO
         title="Inkomen zelfstandige thuisverpleegkundige berekenen | Simulator - Hezo"
-        description="Hoeveel verdien je als zelfstandige thuisverpleegkundige? Bereken indicatief je netto maandinkomen op basis van werkdagen, patienten en zorgtype."
+        description="Hoeveel verdien je als zelfstandige thuisverpleegkundige? Bereken indicatief je netto maandinkomen op basis van werkdagen, rondes, patiënten en zorgtype."
         path="/inkomen-simulator/"
         structuredData={structuredData}
       />
@@ -92,8 +119,8 @@ const InkomenSimulator = () => {
                 Inkomensimulator zelfstandige thuisverpleegkundige
               </h1>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Een realistische indicatie van je netto maandinkomen op basis van je werkritme, patientenmix en
-                of je solo werkt of via een netwerk. Geen registratie nodig.
+                Een realistische indicatie van je netto maandinkomen op basis van je werkritme, rondes,
+                patiëntenmix en of je solo werkt of via een netwerk. Geen registratie nodig.
               </p>
             </div>
 
@@ -117,17 +144,37 @@ const InkomenSimulator = () => {
 
                   <div>
                     <Label className="text-base font-medium">
-                      Patienten per dag:{" "}
-                      <span className="text-secondary font-bold">{patientenPerDag}</span>
+                      Rondes per dag: <span className="text-secondary font-bold">{rondes}</span>
                     </Label>
                     <Slider
-                      value={[patientenPerDag]}
-                      onValueChange={(v) => setPatientenPerDag(v[0])}
-                      min={8}
-                      max={25}
+                      value={[rondes]}
+                      onValueChange={(v) => setRondes(v[0])}
+                      min={1}
+                      max={3}
                       step={1}
                       className="mt-3"
                     />
+                    <p className="text-xs text-muted-foreground mt-2">
+                      Bv. ochtendronde + avondronde = 2 rondes per dag.
+                    </p>
+                  </div>
+
+                  <div>
+                    <Label className="text-base font-medium">
+                      Patiënten per ronde:{" "}
+                      <span className="text-secondary font-bold">{patientenPerRonde}</span>
+                    </Label>
+                    <Slider
+                      value={[patientenPerRonde]}
+                      onValueChange={(v) => setPatientenPerRonde(v[0])}
+                      min={4}
+                      max={20}
+                      step={1}
+                      className="mt-3"
+                    />
+                    <p className="text-xs text-muted-foreground mt-2">
+                      Totaal: <span className="font-medium text-secondary">{patientenPerDag} patiënten per dag</span>
+                    </p>
                   </div>
 
                   <div className="space-y-4 pt-4 border-t">
@@ -135,7 +182,7 @@ const InkomenSimulator = () => {
 
                     <div>
                       <div className="flex justify-between text-sm mb-2">
-                        <span>Basiszorg / hygiene</span>
+                        <span>Basiszorg / hygiëne</span>
                         <span className="font-medium text-secondary">{mixBasis}%</span>
                       </div>
                       <Slider
@@ -174,21 +221,44 @@ const InkomenSimulator = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3 pt-4 border-t">
-                    <Switch
-                      id="aangesloten"
-                      checked={aangesloten}
-                      onCheckedChange={setAangesloten}
-                    />
-                    <div className="flex-1">
-                      <Label htmlFor="aangesloten" className="text-base font-medium cursor-pointer">
-                        Aangesloten bij een netwerk (zoals Hezo)
-                      </Label>
-                      <p className="text-xs text-muted-foreground mt-1">
-                        Lagere overheadkosten en patienteninstroom, in ruil voor 8% praktijkafdracht
-                        (vanaf 1 jaar ervaring).
-                      </p>
+                  <div className="pt-4 border-t space-y-4">
+                    <div className="flex items-start gap-3">
+                      <Switch
+                        id="aangesloten"
+                        checked={aangesloten}
+                        onCheckedChange={setAangesloten}
+                      />
+                      <div className="flex-1">
+                        <Label htmlFor="aangesloten" className="text-base font-medium cursor-pointer">
+                          Aangesloten bij een praktijk of netwerk
+                        </Label>
+                        <p className="text-xs text-muted-foreground mt-1">
+                          Patiënteninstroom, administratie en software via de praktijk, in ruil voor een
+                          afdracht. Het percentage varieert sterk per praktijk en ervaring.
+                        </p>
+                      </div>
                     </div>
+
+                    {aangesloten && (
+                      <div>
+                        <Label className="text-sm font-medium">
+                          Praktijkafdracht:{" "}
+                          <span className="text-secondary font-bold">{afdrachtPct}%</span>
+                        </Label>
+                        <Slider
+                          value={[afdrachtPct]}
+                          onValueChange={(v) => setAfdrachtPct(v[0])}
+                          min={0}
+                          max={15}
+                          step={1}
+                          className="mt-3"
+                        />
+                        <p className="text-xs text-muted-foreground mt-2">
+                          Indicatief: percentages verschillen per praktijk, regio en anciënniteit. Vraag dit
+                          steeds expliciet na bij de praktijk waar je je wil aansluiten.
+                        </p>
+                      </div>
+                    )}
                   </div>
                 </CardContent>
               </Card>
@@ -210,14 +280,45 @@ const InkomenSimulator = () => {
                 <Card>
                   <CardContent className="p-6 space-y-3">
                     <h3 className="font-semibold text-primary mb-3">Opbouw berekening</h3>
-                    <Row label="Bruto omzet (na afdracht)" value={fmt(result.brutoMaand)} />
-                    <Row label="Vaste kosten" value={`- ${fmt(result.vasteKosten)}`} />
+                    <Row label="Bruto omzet RIZIV" value={fmt(result.brutoOmzet)} />
+                    {aangesloten && (
+                      <Row
+                        label={`Praktijkafdracht (${afdrachtPct}%)`}
+                        value={`- ${fmt(result.afdracht)}`}
+                      />
+                    )}
+                    <Row label="Vaste beroepskosten" value={`- ${fmt(result.vasteKosten)}`} />
                     <Row label="Sociale bijdragen (20,5%)" value={`- ${fmt(result.socialeBijdragen)}`} />
                     <Row label="Belastingen (gemiddeld 25%)" value={`- ${fmt(result.belastingen)}`} />
                     <div className="pt-3 border-t flex justify-between font-semibold text-primary">
                       <span>Netto / maand</span>
                       <span>{fmt(result.netto)}</span>
                     </div>
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardContent className="p-6">
+                    <h3 className="font-semibold text-primary mb-3">Wat zit er in de vaste kosten?</h3>
+                    <ul className="text-sm text-muted-foreground space-y-1.5">
+                      <li className="flex justify-between"><span>Auto (brandstof, onderhoud, verzekering, afschrijving)</span><span className="font-medium">{fmt(result.kostenAuto)}</span></li>
+                      <li className="flex justify-between"><span>Materiaal (handschoenen, ontsmetting, klein materiaal)</span><span className="font-medium">{fmt(result.kostenMateriaal)}</span></li>
+                      {result.kostenSoftware > 0 && (
+                        <li className="flex justify-between"><span>Software (patiëntdossier, tarificatie, facturatie)</span><span className="font-medium">{fmt(result.kostenSoftware)}</span></li>
+                      )}
+                      <li className="flex justify-between"><span>Verzekeringen (BA, gewaarborgd inkomen deel)</span><span className="font-medium">{fmt(result.kostenVerzekering)}</span></li>
+                      <li className="flex justify-between"><span>Boekhouder</span><span className="font-medium">{fmt(result.kostenBoekhouder)}</span></li>
+                      <li className="flex justify-between"><span>Telecom (gsm, internet beroepsdeel)</span><span className="font-medium">{fmt(result.kostenTelecom)}</span></li>
+                      {result.kostenOverhead > 0 && (
+                        <li className="flex justify-between"><span>Tariferingsdienst en overige</span><span className="font-medium">{fmt(result.kostenOverhead)}</span></li>
+                      )}
+                      <li className="flex justify-between"><span>Bijscholing (gemiddeld)</span><span className="font-medium">{fmt(result.kostenOpleiding)}</span></li>
+                    </ul>
+                    <p className="text-xs text-muted-foreground mt-3">
+                      Indicatieve gemiddelden. Reële kosten variëren per regio, kilometers, materiaalgebruik
+                      en gekozen verzekeringen. Niet opgenomen: VAPZ, IPT, eindejaarspremies of eenmalige
+                      investeringen.
+                    </p>
                   </CardContent>
                 </Card>
 
@@ -262,8 +363,8 @@ const InkomenSimulator = () => {
                   Download de startersgids
                 </h2>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Een praktisch stappenplan in 7 stappen: RIZIV, sociaal statuut, verzekeringen en patienteninstroom.
-                  Gratis, in PDF, naar je mailbox.
+                  Een praktisch stappenplan in 7 stappen: RIZIV, sociaal statuut, verzekeringen en
+                  patiënteninstroom. Gratis, in PDF, naar je mailbox.
                 </p>
                 <Button asChild variant="secondary">
                   <Link to="/startersgids/">
