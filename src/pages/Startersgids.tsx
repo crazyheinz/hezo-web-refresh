@@ -7,10 +7,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
 import { Download, CheckCircle2, FileText } from "lucide-react";
 
 const PDF_URL = "/downloads/startersgids-thuisverpleegkundige.pdf";
+const LEAD_MAGNET_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/request-lead-magnet`;
 
 const Startersgids = () => {
   const { toast } = useToast();
@@ -35,15 +35,17 @@ const Startersgids = () => {
     }
     setSubmitting(true);
     try {
-      const { error } = await supabase.functions.invoke("request-lead-magnet", {
-        body: {
-          name: form.name,
-          email: form.email,
-          region: form.region,
-        },
+      const payload = new FormData();
+      payload.append("name", form.name);
+      payload.append("email", form.email);
+      payload.append("region", form.region);
+
+      await fetch(LEAD_MAGNET_URL, {
+        method: "POST",
+        mode: "no-cors",
+        body: payload,
       });
 
-      if (error) throw error;
       setDone(true);
       toast({
         title: "Aanvraag verstuurd",
