@@ -10,7 +10,7 @@ import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { Download, CheckCircle2, FileText } from "lucide-react";
 
-const PDF_URL = "https://www.hezo.be/downloads/startersgids-thuisverpleegkundige.pdf";
+const PDF_URL = "/downloads/startersgids-thuisverpleegkundige.pdf";
 
 const Startersgids = () => {
   const { toast } = useToast();
@@ -47,15 +47,17 @@ const Startersgids = () => {
       setDone(true);
       toast({
         title: "Download beschikbaar",
-        description: "Je kan de startersgids nu downloaden.",
+        description: "De startersgids wordt geopend. We sturen hem ook naar je mailbox.",
       });
+      window.location.assign(PDF_URL);
     } catch (error) {
       console.warn("Lead magnet request failed", error);
       setDone(true);
       toast({
         title: "Download beschikbaar",
-        description: "Je kan de startersgids nu downloaden.",
+        description: "De startersgids wordt geopend. We sturen hem ook naar je mailbox.",
       });
+      window.location.assign(PDF_URL);
     } finally {
       setSubmitting(false);
     }
@@ -128,9 +130,9 @@ const Startersgids = () => {
                 {done ? (
                   <div className="text-center py-6">
                     <CheckCircle2 className="h-14 w-14 text-secondary mx-auto mb-4" />
-                    <h2 className="text-xl font-semibold text-primary mb-2">Check je mailbox</h2>
+                    <h2 className="text-xl font-semibold text-primary mb-2">Je download start</h2>
                     <p className="text-muted-foreground mb-6">
-                      We hebben je aanvraag genoteerd. Je kan de gids meteen openen.
+                      We hebben je aanvraag genoteerd. Lukt het openen niet automatisch, gebruik dan de knop hieronder.
                     </p>
                     <Button asChild variant="outline">
                       <a
@@ -207,7 +209,7 @@ const Startersgids = () => {
                       ) : (
                         <>
                           <Download className="mr-2 h-4 w-4" />
-                          Naar de download
+                          Download de gids
                         </>
                       )}
                     </Button>

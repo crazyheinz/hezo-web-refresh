@@ -58,7 +58,8 @@ function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-const PDF_URL = "https://www.hezo.be/downloads/startersgids-thuisverpleegkundige.pdf";
+const SITE_URL = "https://hezo.be";
+const PDF_URL = `${SITE_URL}/downloads/startersgids-thuisverpleegkundige.pdf`;
 
 interface LeadRequest {
   name: string;
@@ -122,6 +123,8 @@ serve(async (req: Request) => {
     try {
       const safeName = escapeHtml(name);
 
+      console.log("Sending startersgids email", { email, region });
+
       // E-mail naar lead
       const userRes = await fetch("https://api.resend.com/emails", {
         method: "POST",
@@ -150,9 +153,12 @@ serve(async (req: Request) => {
       });
 
       if (!userRes.ok) {
-        emailError = `Resend: ${userRes.status}`;
+        const errorText = await userRes.text();
+        emailError = `Resend: ${userRes.status} ${errorText}`.slice(0, 500);
+        console.error("Startersgids email failed", emailError);
       } else {
         emailSent = true;
+        console.log("Startersgids email sent", { email });
       }
 
       // Interne notificatie
@@ -176,9 +182,11 @@ serve(async (req: Request) => {
       });
     } catch (e) {
       emailError = String(e).slice(0, 500);
+      console.error("Startersgids email exception", emailError);
     }
   } else {
     emailError = "RESEND_API_KEY niet geconfigureerd";
+    console.error(emailError);
   }
 
   await supabase.from("lead_magnets").insert({
