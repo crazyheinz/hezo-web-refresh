@@ -144,31 +144,29 @@ const InkomenSimulator = () => {
 
                   <div>
                     <Label className="text-base font-medium">
-                      Rondes per dag: <span className="text-secondary font-bold">{rondes}</span>
+                      Patiënten in de voormiddag:{" "}
+                      <span className="text-secondary font-bold">{patientenVm}</span>
                     </Label>
                     <Slider
-                      value={[rondes]}
-                      onValueChange={(v) => setRondes(v[0])}
-                      min={1}
-                      max={3}
+                      value={[patientenVm]}
+                      onValueChange={(v) => setPatientenVm(v[0])}
+                      min={0}
+                      max={35}
                       step={1}
                       className="mt-3"
                     />
-                    <p className="text-xs text-muted-foreground mt-2">
-                      Bv. ochtendronde + avondronde = 2 rondes per dag.
-                    </p>
                   </div>
 
                   <div>
                     <Label className="text-base font-medium">
-                      Patiënten per ronde:{" "}
-                      <span className="text-secondary font-bold">{patientenPerRonde}</span>
+                      Patiënten in de namiddag / avond:{" "}
+                      <span className="text-secondary font-bold">{patientenNm}</span>
                     </Label>
                     <Slider
-                      value={[patientenPerRonde]}
-                      onValueChange={(v) => setPatientenPerRonde(v[0])}
-                      min={4}
-                      max={20}
+                      value={[patientenNm]}
+                      onValueChange={(v) => setPatientenNm(v[0])}
+                      min={0}
+                      max={35}
                       step={1}
                       className="mt-3"
                     />
