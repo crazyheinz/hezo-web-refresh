@@ -72,7 +72,17 @@ serve(async (req: Request) => {
 
   let body: LeadRequest;
   try {
-    body = await req.json();
+    const contentType = req.headers.get("content-type") || "";
+    if (contentType.includes("multipart/form-data") || contentType.includes("application/x-www-form-urlencoded")) {
+      const formData = await req.formData();
+      body = {
+        name: String(formData.get("name") || ""),
+        email: String(formData.get("email") || ""),
+        region: String(formData.get("region") || ""),
+      };
+    } else {
+      body = await req.json();
+    }
   } catch {
     return new Response(JSON.stringify({ error: "Ongeldige aanvraag" }), {
       status: 400,
