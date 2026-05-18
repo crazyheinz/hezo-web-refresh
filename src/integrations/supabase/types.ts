@@ -95,6 +95,42 @@ export type Database = {
         }
         Relationships: []
       }
+      lead_magnets: {
+        Row: {
+          created_at: string
+          email: string
+          email_error: string | null
+          email_sent: boolean
+          id: string
+          is_active_freelancer: boolean
+          magnet_type: string
+          name: string
+          region: string | null
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          email_error?: string | null
+          email_sent?: boolean
+          id?: string
+          is_active_freelancer?: boolean
+          magnet_type?: string
+          name: string
+          region?: string | null
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          email_error?: string | null
+          email_sent?: boolean
+          id?: string
+          is_active_freelancer?: boolean
+          magnet_type?: string
+          name?: string
+          region?: string | null
+        }
+        Relationships: []
+      }
       trainings: {
         Row: {
           beschrijving: string

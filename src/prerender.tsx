@@ -26,6 +26,10 @@ const staticRoutes = [
   "/contact/",
   "/privacy/",
   "/cookies/",
+  "/thuisverpleging/antwerpen/",
+  "/thuisverpleging/gent/",
+  "/inkomen-simulator/",
+  "/startersgids/",
 ];
 
 export async function prerender(data: { url: string }) {

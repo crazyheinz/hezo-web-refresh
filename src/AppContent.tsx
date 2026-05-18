@@ -20,6 +20,9 @@ import OpleidingenAdmin from "./pages/OpleidingenAdmin";
 import SubmissionsAdmin from "./pages/SubmissionsAdmin";
 import Privacy from "./pages/Privacy";
 import Cookies from "./pages/Cookies";
+import Regio from "./pages/Regio";
+import InkomenSimulator from "./pages/InkomenSimulator";
+import Startersgids from "./pages/Startersgids";
 import NotFound from "./pages/NotFound";
 import CookieConsent from "./components/CookieConsent";
 import GoogleAnalytics from "./components/GoogleAnalytics";
@@ -59,6 +62,12 @@ const AppContent = () => (
             <Route path="/privacy/" element={<Privacy />} />
             <Route path="/cookies" element={<Cookies />} />
             <Route path="/cookies/" element={<Cookies />} />
+            <Route path="/thuisverpleging/:slug" element={<Regio />} />
+            <Route path="/thuisverpleging/:slug/" element={<Regio />} />
+            <Route path="/inkomen-simulator" element={<InkomenSimulator />} />
+            <Route path="/inkomen-simulator/" element={<InkomenSimulator />} />
+            <Route path="/startersgids" element={<Startersgids />} />
+            <Route path="/startersgids/" element={<Startersgids />} />
             <Route path="/webinar-admin" element={<WebinarAdmin />} />
             <Route path="/webinar/:token" element={<WebinarView />} />
             <Route path="/opleidingen-admin" element={<OpleidingenAdmin />} />
