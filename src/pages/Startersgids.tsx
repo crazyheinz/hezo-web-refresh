@@ -7,7 +7,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import { Download, CheckCircle2, FileText } from "lucide-react";
+
+const PDF_URL = "https://www.hezo.be/downloads/startersgids-thuisverpleegkundige.pdf";
 
 const Startersgids = () => {
   const { toast } = useToast();
@@ -17,7 +20,6 @@ const Startersgids = () => {
     name: "",
     email: "",
     region: "",
-    isActiveFreelancer: false,
     privacy: false,
   });
 
@@ -33,33 +35,26 @@ const Startersgids = () => {
     }
     setSubmitting(true);
     try {
-      const res = await fetch(
-        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/request-lead-magnet`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            name: form.name,
-            email: form.email,
-            region: form.region,
-            isActiveFreelancer: form.isActiveFreelancer,
-          }),
+      const { error } = await supabase.functions.invoke("request-lead-magnet", {
+        body: {
+          name: form.name,
+          email: form.email,
+          region: form.region,
         },
-      );
-      if (!res.ok) {
-        const err = await res.json().catch(() => ({}));
-        throw new Error(err.error || "Mislukt");
-      }
+      });
+
+      if (error) console.warn("Lead magnet request failed", error);
       setDone(true);
       toast({
-        title: "Bedankt!",
-        description: "De startersgids is naar je mailbox verstuurd.",
+        title: "Download beschikbaar",
+        description: "Je kan de startersgids nu downloaden.",
       });
-    } catch (e) {
+    } catch (error) {
+      console.warn("Lead magnet request failed", error);
+      setDone(true);
       toast({
-        title: "Er ging iets mis",
-        description: "Probeer opnieuw of mail info@hezo.be",
-        variant: "destructive",
+        title: "Download beschikbaar",
+        description: "Je kan de startersgids nu downloaden.",
       });
     } finally {
       setSubmitting(false);
@@ -135,16 +130,16 @@ const Startersgids = () => {
                     <CheckCircle2 className="h-14 w-14 text-secondary mx-auto mb-4" />
                     <h2 className="text-xl font-semibold text-primary mb-2">Check je mailbox</h2>
                     <p className="text-muted-foreground mb-6">
-                      We hebben de startersgids verstuurd naar <strong>{form.email}</strong>.
+                      We hebben je aanvraag genoteerd. Je kan de gids meteen openen.
                     </p>
                     <Button asChild variant="outline">
                       <a
-                        href="/downloads/startersgids-thuisverpleegkundige.pdf"
+                        href={PDF_URL}
                         target="_blank"
                         rel="noopener"
                       >
                         <Download className="mr-2 h-4 w-4" />
-                        Of download direct
+                        Download de gids
                       </a>
                     </Button>
                   </div>
@@ -154,7 +149,7 @@ const Startersgids = () => {
                       Vraag de gids gratis aan
                     </h2>
                     <p className="text-sm text-muted-foreground mb-4">
-                      Je ontvangt de PDF direct in je mailbox.
+                      Je kan de PDF meteen downloaden. We sturen hem ook naar je mailbox.
                     </p>
 
                     <div>
@@ -190,22 +185,6 @@ const Startersgids = () => {
 
                     <div className="flex items-start gap-2">
                       <Checkbox
-                        id="freelance"
-                        checked={form.isActiveFreelancer}
-                        onCheckedChange={(c) =>
-                          setForm({ ...form, isActiveFreelancer: c as boolean })
-                        }
-                      />
-                      <Label
-                        htmlFor="freelance"
-                        className="text-sm font-normal cursor-pointer leading-tight"
-                      >
-                        Ik werk al als zelfstandige
-                      </Label>
-                    </div>
-
-                    <div className="flex items-start gap-2">
-                      <Checkbox
                         id="privacy"
                         checked={form.privacy}
                         onCheckedChange={(c) => setForm({ ...form, privacy: c as boolean })}
@@ -228,7 +207,7 @@ const Startersgids = () => {
                       ) : (
                         <>
                           <Download className="mr-2 h-4 w-4" />
-                          Verstuur de gids
+                          Naar de download
                         </>
                       )}
                     </Button>

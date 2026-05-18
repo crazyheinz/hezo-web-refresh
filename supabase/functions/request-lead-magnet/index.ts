@@ -64,7 +64,6 @@ interface LeadRequest {
   name: string;
   email: string;
   region?: string;
-  isActiveFreelancer?: boolean;
 }
 
 serve(async (req: Request) => {
@@ -100,7 +99,6 @@ serve(async (req: Request) => {
   const name = (body.name || "").trim().slice(0, 120);
   const email = (body.email || "").trim().toLowerCase().slice(0, 200);
   const region = (body.region || "").trim().slice(0, 80) || null;
-  const isActive = !!body.isActiveFreelancer;
 
   if (!name || name.length < 2) {
     return new Response(JSON.stringify({ error: "Geef een geldige naam op" }), {
@@ -173,7 +171,6 @@ serve(async (req: Request) => {
   <li>Naam: ${escapeHtml(name)}</li>
   <li>E-mail: ${escapeHtml(email)}</li>
   <li>Regio: ${escapeHtml(region || "niet opgegeven")}</li>
-  <li>Reeds zelfstandig: ${isActive ? "Ja" : "Nee"}</li>
 </ul>`,
         }),
       });
@@ -189,7 +186,6 @@ serve(async (req: Request) => {
     email,
     magnet_type: "startersgids",
     region,
-    is_active_freelancer: isActive,
     email_sent: emailSent,
     email_error: emailError,
   });
