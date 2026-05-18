@@ -15,8 +15,8 @@ const TARIEF_TECHNISCH = 35; // wondzorg, injecties complexer
 
 const InkomenSimulator = () => {
   const [dagen, setDagen] = useState(5);
-  const [rondes, setRondes] = useState(2);
-  const [patientenPerRonde, setPatientenPerRonde] = useState(8);
+  const [patientenVm, setPatientenVm] = useState(15);
+  const [patientenNm, setPatientenNm] = useState(8);
   const [mixBasis, setMixBasis] = useState(40);
   const [mixToilet, setMixToilet] = useState(30);
   const [aangesloten, setAangesloten] = useState(false);
@@ -24,7 +24,7 @@ const InkomenSimulator = () => {
 
   // mixTech = rest
   const mixTech = Math.max(0, 100 - mixBasis - mixToilet);
-  const patientenPerDag = rondes * patientenPerRonde;
+  const patientenPerDag = patientenVm + patientenNm;
 
   const result = useMemo(() => {
     const weken = 4.33;
