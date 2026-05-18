@@ -316,11 +316,15 @@ const InkomenSimulator = () => {
                     <Row label="Bruto omzet RIZIV" value={fmt(result.brutoOmzet)} />
                     {aangesloten && (
                       <Row
-                        label={`Praktijkafdracht (${afdrachtPct}%)`}
-                        value={`- ${fmt(result.afdracht)}`}
+                        label={`Praktijkcommissie (${afdrachtPct}%)`}
+                        value={`- ${fmt(result.commissie)}`}
                       />
                     )}
                     <Row label="Vaste beroepskosten" value={`- ${fmt(result.vasteKosten)}`} />
+                    <Row
+                      label="RIZIV-premies (telematica, bijscholing)"
+                      value={`+ ${fmt(result.premies)}`}
+                    />
                     <Row label="Sociale bijdragen (20,5%)" value={`- ${fmt(result.socialeBijdragen)}`} />
                     <Row label="Belastingen (gemiddeld 25%)" value={`- ${fmt(result.belastingen)}`} />
                     <div className="pt-3 border-t flex justify-between font-semibold text-primary">
