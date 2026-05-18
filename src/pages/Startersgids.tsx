@@ -71,7 +71,7 @@ const Startersgids = () => {
     "@type": "WebPage",
     name: "Startersgids zelfstandig thuisverpleegkundige",
     description:
-      "Gratis PDF-gids voor wie zelfstandig thuisverpleegkundige wil worden in Belgie. Stappenplan in 7 stappen.",
+      "Gratis PDF-gids voor wie zelfstandig thuisverpleegkundige wil worden in België. Stappenplan in 7 stappen.",
     url: "https://www.hezo.be/startersgids/",
   };
 
@@ -79,7 +79,7 @@ const Startersgids = () => {
     <>
       <SEO
         title="Gratis startersgids zelfstandig thuisverpleegkundige | Hezo"
-        description="Download gratis de Hezo startersgids: stappenplan in 7 stappen om zelfstandig thuisverpleegkundige te worden in Belgie. RIZIV, statuut, verzekeringen."
+        description="Download gratis de Hezo startersgids: stappenplan in 7 stappen om zelfstandig thuisverpleegkundige te worden in België. RIZIV, statuut, verzekeringen."
         path="/startersgids/"
         structuredData={structuredData}
       />
@@ -94,7 +94,7 @@ const Startersgids = () => {
                 Startersgids zelfstandig thuisverpleegkundige
               </h1>
               <p className="text-lg text-muted-foreground mb-6">
-                Wil je zelfstandig thuisverpleegkundige worden in Belgie, maar weet je niet waar te beginnen?
+                Wil je zelfstandig thuisverpleegkundige worden in België, maar weet je niet waar te beginnen?
                 Onze gratis PDF-gids brengt het volledige traject in 7 concrete stappen, met realistische
                 doorlooptijden en kostenramingen.
               </p>
@@ -106,7 +106,7 @@ const Startersgids = () => {
                   "Ondernemingsnummer en btw-vrijstelling (artikel 44)",
                   "Verzekeringen (beroepsaansprakelijkheid, VAPZ)",
                   "Software, materiaal en wagen",
-                  "Patienteninstroom opbouwen via huisartsen en netwerken",
+                  "Patiënteninstroom opbouwen via huisartsen en netwerken",
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-secondary flex-shrink-0 mt-0.5" />
