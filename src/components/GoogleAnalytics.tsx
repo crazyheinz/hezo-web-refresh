@@ -1,55 +1,42 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 import { getConsent } from "./CookieConsent";
 
-const GA_ID = "G-XXXXXXXXXX"; // TODO: vervang door je echte GA4 Measurement ID
+const GTM_ID = "GTM-TL7D2WTX";
 
-const loadGA = () => {
-  if (document.getElementById("ga-script")) return;
+const loadGTM = () => {
+  if (document.getElementById("gtm-script")) return;
 
+  // GTM head script
   const script = document.createElement("script");
-  script.id = "ga-script";
-  script.async = true;
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+  script.id = "gtm-script";
+  script.innerHTML = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${GTM_ID}');`;
   document.head.appendChild(script);
 
-  const inline = document.createElement("script");
-  inline.id = "ga-inline";
-  inline.textContent = `
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', '${GA_ID}', { anonymize_ip: true });
-  `;
-  document.head.appendChild(inline);
+  // GTM noscript fallback
+  const noscript = document.createElement("noscript");
+  noscript.id = "gtm-noscript";
+  noscript.innerHTML = `<iframe src="https://www.googletagmanager.com/ns.html?id=${GTM_ID}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`;
+  document.body.insertBefore(noscript, document.body.firstChild);
 };
 
 const GoogleAnalytics = () => {
   const [consent, setConsent] = useState(getConsent);
-  const location = useLocation();
 
-  // Listen for consent changes
   useEffect(() => {
     const handler = () => setConsent(getConsent());
     window.addEventListener("cookie-consent-change", handler);
     return () => window.removeEventListener("cookie-consent-change", handler);
   }, []);
 
-  // Load GA only after acceptance
   useEffect(() => {
     if (consent === "accepted") {
-      loadGA();
+      loadGTM();
     }
   }, [consent]);
-
-  // Track page views
-  useEffect(() => {
-    if (consent === "accepted" && (window as any).gtag) {
-      (window as any).gtag("config", GA_ID, {
-        page_path: location.pathname,
-      });
-    }
-  }, [location.pathname, consent]);
 
   return null;
 };
