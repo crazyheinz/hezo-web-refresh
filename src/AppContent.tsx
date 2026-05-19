@@ -24,7 +24,6 @@ import Regio from "./pages/Regio";
 import InkomenSimulator from "./pages/InkomenSimulator";
 import Startersgids from "./pages/Startersgids";
 import NotFound from "./pages/NotFound";
-import CookieConsent from "./components/CookieConsent";
 import GoogleAnalytics from "./components/GoogleAnalytics";
 
 const queryClient = new QueryClient();
@@ -78,7 +77,6 @@ const AppContent = () => (
         </main>
         <Footer />
       </div>
-      <CookieConsent />
     </TooltipProvider>
   </QueryClientProvider>
 );
