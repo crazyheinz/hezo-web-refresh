@@ -38,7 +38,7 @@ export const regios: Record<string, RegioData> = {
       "in de regio. Onze praktijk in Antwerpen Zuid - Berchem heeft regelmatig openstaande plekken voor nieuwe collega's.",
     vacatureLink: {
       titel: "Zelfstandig thuisverpleegkundige Antwerpen Zuid - Berchem",
-      href: "/vacatures/#zelfstandig-antwerpen-zuid-berchem",
+      href: "/vacatures/zelfstandig-antwerpen-zuid-berchem/",
     },
     gemeentes: [
       "Antwerpen-Stad", "Berchem", "Borgerhout", "Deurne", "Merksem", "Wilrijk",
@@ -70,7 +70,7 @@ export const regios: Record<string, RegioData> = {
       "We hebben in Gent actieve vacatures voor zelfstandig verantwoordelijke verpleegkundigen die mee een regio willen uitbouwen.",
     vacatureLink: {
       titel: "Zelfstandig Verantwoordelijke Thuisverpleging Gent",
-      href: "/vacatures/#regiomanager",
+      href: "/vacatures/regiomanager/",
     },
     gemeentes: [
       "Gent-Centrum", "Ledeberg", "Gentbrugge", "Sint-Amandsberg", "Drongen",
