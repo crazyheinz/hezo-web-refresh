@@ -462,7 +462,7 @@ const articleContent: Record<string, {
 
          <h2 id="hezo-ondersteuning">Hoe Hezo je ondersteunt</h2>
         <p>Hezo ondersteunt zelfstandige thuisverpleegkundigen bij het kiezen, opzetten en gebruiken van software.</p>
-        <p>We vertrekken niet vanuit één specifiek pakket, maar luisteren eerst naar jouw situatie en noden: hoe werk je, alleen of in een praktijk, welke administratie komt er bij kijken, en wat verwacht je van planning, registratie en facturatie? Op basis daarvan geven we gericht advies over welke software het best bij jou past. We kennen de gangbare pakketten in de Belgische thuisverpleging en kunnen de voor- en nadelen van elk pakket concreet toelichten, zodat je een geïnformeerde keuze maakt.</p>
+        <p>We vertrekken niet vanuit één specifiek pakket, maar luisteren eerst naar jouw manier van werken en wat voor jou écht belangrijk is. Wat zijn je gewoontes, wat zijn je must-haves, en hoe digitaal vaardig ben je? De ene wil vooral duidelijke alarmen en herinneringen, de andere wil een sterk overzicht van planning en patiënten, nog iemand anders kiest in de eerste plaats voor een betaalbaar pakket. Op basis daarvan geven we gericht advies over welke software het best bij jou past. We kennen de gangbare pakketten in de Belgische thuisverpleging en kunnen de voor- en nadelen van elk pakket concreet toelichten, zodat je een geïnformeerde keuze maakt.</p>
         <p>Daarnaast zorgen we ervoor dat:</p>
         <ul>
           <li>je software correct ingesteld staat</li>
