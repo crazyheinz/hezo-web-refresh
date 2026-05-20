@@ -133,10 +133,40 @@ const InkomenSimulator = () => {
               </div>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-8">
-              {/* Invoer */}
+            {/* Hero resultaten - full width bovenaan */}
+            <div className="grid md:grid-cols-2 gap-4 mb-8">
+              <Card className="bg-primary text-primary-foreground">
+                <CardContent className="p-8">
+                  <div className="text-sm uppercase tracking-wide opacity-80 mb-2">
+                    Indicatieve bruto omzet RIZIV / maand
+                  </div>
+                  <div className="text-5xl font-bold mb-2">{fmt(result.brutoOmzet)}</div>
+                  <div className="text-sm opacity-80">
+                    Gemiddelde inschatting op basis van je werkritme en patiëntenaantal.
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-secondary/30 border-2">
+                <CardContent className="p-8">
+                  <div className="text-sm uppercase tracking-wide text-muted-foreground mb-2">
+                    Indicatief beschikbaar inkomen / maand
+                  </div>
+                  <div className="text-5xl font-bold text-primary mb-2">
+                    ± {fmt(result.netto)}
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    Ruwe schatting na vaste kosten, sociale bijdragen en belastingen.
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Invoer + Opbouw naast elkaar */}
+            <div className="grid lg:grid-cols-2 gap-8 mb-8">
               <Card>
                 <CardContent className="p-6 md:p-8 space-y-8">
+                  <h2 className="text-xl font-semibold text-primary">Jouw werkritme</h2>
                   <div>
                     <Label className="text-base font-medium">
                       Werkdagen per week: <span className="text-secondary font-bold">{dagen}</span>
@@ -229,39 +259,10 @@ const InkomenSimulator = () => {
                 </CardContent>
               </Card>
 
-              {/* Resultaat */}
-              <div className="space-y-4">
-                <Card className="bg-primary text-primary-foreground">
-                  <CardContent className="p-8">
-                    <div className="text-sm uppercase tracking-wide opacity-80 mb-2">
-                      Indicatieve bruto omzet RIZIV / maand
-                    </div>
-                    <div className="text-5xl font-bold mb-2">{fmt(result.brutoOmzet)}</div>
-                    <div className="text-sm opacity-80">
-                      Gemiddelde inschatting op basis van je werkritme en patiëntenaantal.
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card className="border-secondary/30">
-                  <CardContent className="p-6">
-                    <div className="text-xs uppercase tracking-wide text-muted-foreground mb-2">
-                      Indicatief beschikbaar inkomen / maand
-                    </div>
-                    <div className="text-3xl font-semibold text-primary mb-1">
-                      ongeveer {fmt(result.netto)}
-                    </div>
-                    <div className="text-xs text-muted-foreground">
-                      Ruwe schatting na vaste kosten, sociale bijdragen en belastingen. Sterk
-                      afhankelijk van eenmanszaak vs vennootschap, je fiscale situatie, kostenstructuur
-                      en persoonlijke optimalisatie.
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardContent className="p-6 space-y-3">
-                    <h3 className="font-semibold text-primary mb-3">Opbouw van de berekening</h3>
+              <Card>
+                <CardContent className="p-6 md:p-8">
+                  <h2 className="text-xl font-semibold text-primary mb-5">Opbouw van de berekening</h2>
+                  <div className="space-y-3">
                     <Row label="Bruto omzet RIZIV" value={fmt(result.brutoOmzet)} />
                     {aangesloten && (
                       <Row
@@ -278,90 +279,86 @@ const InkomenSimulator = () => {
                     <Row label="Belastingen (gemiddeld ±25%)" value={`- ${fmt(result.belastingen)}`} />
                     <div className="pt-3 border-t flex justify-between font-semibold text-primary">
                       <span>Indicatief beschikbaar / maand</span>
-                      <span>ongeveer {fmt(result.netto)}</span>
+                      <span>± {fmt(result.netto)}</span>
                     </div>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardContent className="p-6">
-                    <h3 className="font-semibold text-primary mb-3">Wat zit er in de vaste kosten?</h3>
-                    <ul className="text-sm text-muted-foreground space-y-1.5">
-                      <li className="flex justify-between"><span>Auto (brandstof, onderhoud, verzekering, afschrijving)</span><span className="font-medium">{fmt(result.kostenAuto)}</span></li>
-                      <li className="flex justify-between"><span>Materiaal (handschoenen, ontsmetting, klein materiaal)</span><span className="font-medium">{fmt(result.kostenMateriaal)}</span></li>
-                      {result.kostenSoftware > 0 && (
-                        <li className="flex justify-between"><span>Software (patiëntdossier, tarificatie, facturatie)</span><span className="font-medium">{fmt(result.kostenSoftware)}</span></li>
-                      )}
-                      <li className="flex justify-between"><span>Verzekeringen (BA, gewaarborgd inkomen deel)</span><span className="font-medium">{fmt(result.kostenVerzekering)}</span></li>
-                      <li className="flex justify-between"><span>Boekhouder</span><span className="font-medium">{fmt(result.kostenBoekhouder)}</span></li>
-                      <li className="flex justify-between"><span>Telecom (gsm, internet beroepsdeel)</span><span className="font-medium">{fmt(result.kostenTelecom)}</span></li>
-                      {result.kostenOverhead > 0 && (
-                        <li className="flex justify-between"><span>Tariferingsdienst en overige</span><span className="font-medium">{fmt(result.kostenOverhead)}</span></li>
-                      )}
-                      <li className="flex justify-between"><span>Bijscholing (gemiddeld)</span><span className="font-medium">{fmt(result.kostenOpleiding)}</span></li>
-                    </ul>
-                    <p className="text-xs text-muted-foreground mt-3">
-                      Indicatieve gemiddelden. Reële kosten variëren per regio, kilometers, materiaalgebruik
-                      en gekozen verzekeringen. Niet opgenomen: VAPZ, IPT, eindejaarspremies of eenmalige
-                      investeringen.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card className="bg-muted/40">
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-3">
-                      <Building2 className="h-5 w-5 text-secondary flex-shrink-0 mt-0.5" />
-                      <div>
-                        <h3 className="font-semibold text-primary mb-1">
-                          Eenmanszaak of vennootschap?
-                        </h3>
-                        <p className="text-sm text-muted-foreground">
-                          Deze simulatie vertrekt vanuit een eenmanszaak. Wie voltijds werkt, ziet vaak
-                          dat een vennootschap fiscaal interessanter wordt: sociale bijdragen en
-                          belastingen worden anders berekend. We gaan hier bewust niet in detail op in,
-                          maar het kan een belangrijk verschil maken in je beschikbaar inkomen.{" "}
-                          <Link to="/contact/" className="text-secondary underline">
-                            Bespreek dit met ons
-                          </Link>
-                          .
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <div className="text-xs text-muted-foreground p-5 bg-muted rounded-lg border border-border">
-                  <div className="flex items-start gap-2 mb-2">
-                    <Info className="h-4 w-4 text-secondary flex-shrink-0 mt-0.5" />
-                    <strong className="text-primary">Disclaimer</strong>
                   </div>
-                  <p className="mb-2">
-                    Dit blijft een vereenvoudigde simulatie. Je werkelijke inkomsten verschillen sterk
-                    afhankelijk van onder meer:
-                  </p>
-                  <ul className="list-disc list-inside space-y-0.5 mb-2">
-                    <li>regio en patiëntenmix</li>
-                    <li>verplaatsingen en kilometers</li>
-                    <li>fiscale structuur (eenmanszaak of vennootschap)</li>
-                    <li>de praktijk waarin je werkt</li>
-                    <li>werkritme, vakantie en anciënniteit</li>
-                    <li>vaste kosten en sociale bijdragen</li>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Kosten + Eenmanszaak naast elkaar */}
+            <div className="grid lg:grid-cols-2 gap-8 mb-8">
+              <Card>
+                <CardContent className="p-6 md:p-8">
+                  <h3 className="font-semibold text-primary mb-4">Wat zit er in de vaste kosten?</h3>
+                  <ul className="text-sm text-muted-foreground space-y-2">
+                    <li className="flex justify-between"><span>Auto (brandstof, onderhoud, verzekering, afschrijving)</span><span className="font-medium">{fmt(result.kostenAuto)}</span></li>
+                    <li className="flex justify-between"><span>Materiaal (handschoenen, ontsmetting, klein materiaal)</span><span className="font-medium">{fmt(result.kostenMateriaal)}</span></li>
+                    {result.kostenSoftware > 0 && (
+                      <li className="flex justify-between"><span>Software (patiëntdossier, tarificatie, facturatie)</span><span className="font-medium">{fmt(result.kostenSoftware)}</span></li>
+                    )}
+                    <li className="flex justify-between"><span>Verzekeringen (BA, gewaarborgd inkomen deel)</span><span className="font-medium">{fmt(result.kostenVerzekering)}</span></li>
+                    <li className="flex justify-between"><span>Boekhouder</span><span className="font-medium">{fmt(result.kostenBoekhouder)}</span></li>
+                    <li className="flex justify-between"><span>Telecom (gsm, internet beroepsdeel)</span><span className="font-medium">{fmt(result.kostenTelecom)}</span></li>
+                    {result.kostenOverhead > 0 && (
+                      <li className="flex justify-between"><span>Tariferingsdienst en overige</span><span className="font-medium">{fmt(result.kostenOverhead)}</span></li>
+                    )}
+                    <li className="flex justify-between"><span>Bijscholing (gemiddeld)</span><span className="font-medium">{fmt(result.kostenOpleiding)}</span></li>
                   </ul>
-                  <p>
-                    Voor een exacte berekening van sociale bijdragen contacteer een sociaal
-                    verzekeringsfonds zoals{" "}
-                    <a
-                      href="https://www.xerius.be"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-secondary underline"
-                    >
-                      Xerius
-                    </a>
-                    . Voor fiscale optimalisatie raden we aan om een boekhouder te raadplegen.
+                  <p className="text-xs text-muted-foreground mt-4">
+                    Indicatieve gemiddelden. Reële kosten variëren per regio, kilometers, materiaalgebruik
+                    en gekozen verzekeringen. Niet opgenomen: VAPZ, IPT, eindejaarspremies of eenmalige
+                    investeringen.
                   </p>
-                </div>
+                </CardContent>
+              </Card>
+
+              <div className="space-y-6">
+                <Card className="bg-muted/40 h-full">
+                  <CardContent className="p-6 md:p-8">
+                    <div className="flex items-start gap-3 mb-4">
+                      <Building2 className="h-5 w-5 text-secondary flex-shrink-0 mt-0.5" />
+                      <h3 className="font-semibold text-primary">
+                        Eenmanszaak of vennootschap?
+                      </h3>
+                    </div>
+                    <p className="text-sm text-muted-foreground mb-6">
+                      Deze simulatie vertrekt vanuit een eenmanszaak. Wie voltijds werkt, ziet vaak
+                      dat een vennootschap fiscaal interessanter wordt: sociale bijdragen en
+                      belastingen worden anders berekend. We gaan hier bewust niet in detail op in,
+                      maar het kan een belangrijk verschil maken in je beschikbaar inkomen.{" "}
+                      <Link to="/contact/" className="text-secondary underline">
+                        Bespreek dit met ons
+                      </Link>
+                      .
+                    </p>
+
+                    <div className="text-xs text-muted-foreground pt-5 border-t">
+                      <div className="flex items-start gap-2 mb-2">
+                        <Info className="h-4 w-4 text-secondary flex-shrink-0 mt-0.5" />
+                        <strong className="text-primary">Disclaimer</strong>
+                      </div>
+                      <p className="mb-2">
+                        Dit blijft een vereenvoudigde simulatie. Je werkelijke inkomsten verschillen
+                        sterk afhankelijk van onder meer regio en patiëntenmix, verplaatsingen,
+                        fiscale structuur, werkritme, anciënniteit, vaste kosten en sociale bijdragen.
+                      </p>
+                      <p>
+                        Voor een exacte berekening van sociale bijdragen contacteer een sociaal
+                        verzekeringsfonds zoals{" "}
+                        <a
+                          href="https://www.xerius.be"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-secondary underline"
+                        >
+                          Xerius
+                        </a>
+                        . Voor fiscale optimalisatie raden we aan om een boekhouder te raadplegen.
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
             </div>
 
