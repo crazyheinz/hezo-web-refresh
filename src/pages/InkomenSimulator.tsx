@@ -129,7 +129,7 @@ const InkomenSimulator = () => {
               </p>
               <div className="inline-flex items-center gap-2 mt-5 px-4 py-1.5 rounded-full bg-muted text-xs text-muted-foreground border border-border">
                 <Info className="h-3.5 w-3.5" />
-                Vereinvoudigde simulatie — geen boekhoudkundig advies
+                Vereenvoudigde simulatie. Geen boekhoudkundig advies.
               </div>
             </div>
 
