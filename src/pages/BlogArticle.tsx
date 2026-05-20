@@ -418,7 +418,7 @@ const articleContent: Record<string, {
         <p>Zonder correcte registratie en verwerking kan zorg niet correct gefactureerd worden.</p>
 
         <h2 id="welke-software">Welke software bestaat er?</h2>
-        <p>Er bestaan verschillende softwarepakketten voor thuisverpleegkundigen. Deze moeten voldoen aan bepaalde normen en gehomologeerd zijn om correct te kunnen werken binnen het systeem van de thuisverpleging. Bekende voorbeelden zijn <strong>Softn</strong> en <strong>CareForNurse van Corilus</strong>, maar er bestaan nog andere gehomologeerde pakketten.</p>
+        <p>Er bestaan verschillende softwarepakketten voor thuisverpleegkundigen. Deze moeten voldoen aan bepaalde normen en gehomologeerd zijn om correct te kunnen werken binnen het systeem van de thuisverpleging. Bekende voorbeelden zijn <strong>Softn</strong> en <strong>CareConnect Nurse van Corilus</strong>, maar er bestaan nog andere gehomologeerde pakketten.</p>
         <p>De verschillen zitten vaak in:</p>
         <ul>
           <li>gebruiksgemak</li>
@@ -470,6 +470,7 @@ const articleContent: Record<string, {
           <li>je ondersteuning krijgt wanneer er vragen of problemen zijn</li>
         </ul>
         <p>We vertrekken niet vanuit één specifieke software, maar kijken wat het best past bij jouw situatie.</p>
+        <p>Naast nursing software werk je als zelfstandige ook met een boekhoudpakket of een boekhouder. Hezo werkt hiervoor samen met <strong>Pia Go</strong>, een boekhoudservice op maat van eenmanszaken met persoonlijk advies. Zo zit je administratie én je boekhouding meteen goed.</p>
         <p>
           Bekijk ook <Link to="/onze-diensten/#administratie" className="text-secondary hover:underline">hoe Hezo je ondersteunt bij software en administratie</Link> en ontdek hoe we je helpen bij <Link to="/blog/patienten-thuisverpleegkundige/" className="text-secondary hover:underline">patiënteninstroom</Link>.
         </p>
