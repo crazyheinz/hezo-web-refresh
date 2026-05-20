@@ -33,13 +33,15 @@ const staticRoutes = [
 ];
 
 export async function prerender(data: { url: string }) {
-  const [{ default: AppContent }, { blogArticles }] = await Promise.all([
+  const [{ default: AppContent }, { blogArticles }, { activeVacatures }] = await Promise.all([
     import("./AppContent"),
     import("./data/blogArticles"),
+    import("./data/vacatures"),
   ]);
 
   const blogRoutes = blogArticles.map((a) => `/blog/${a.id}/`);
-  const allRoutes = [...staticRoutes, ...blogRoutes];
+  const vacatureRoutes = activeVacatures.map((v) => `/vacatures/${v.id}/`);
+  const allRoutes = [...staticRoutes, ...blogRoutes, ...vacatureRoutes];
   const helmetContext: { helmet?: any } = {};
 
   const html = renderToString(
