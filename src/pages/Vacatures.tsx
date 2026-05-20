@@ -101,7 +101,7 @@ const Vacatures = () => {
         "Opvolging van parameters (bloeddruk, glycemie, saturatie, …)",
         "Pijnobservatie en aangepaste interventies",
         "Luisteren naar de patiënt",
-        "Zorgen voor de patiënt in zijn autonomie en eigenheid, met de nodige respect",
+        "Zorgen voor de patiënt in zijn autonomie en eigenheid, met het nodige respect",
       ],
       profile: [
         "Je beschikt over een diploma verpleegkunde (HBO5, Bachelor of Master)",
