@@ -460,19 +460,21 @@ const articleContent: Record<string, {
         </ul>
         <p>Veel verpleegkundigen starten met een pakket, maar merken later dat het niet optimaal aansluit bij hun noden.</p>
 
-         <h2 id="hezo-ondersteuning">Hoe Hezo je ondersteunt</h2>
-        <p>Hezo ondersteunt zelfstandige thuisverpleegkundigen bij het kiezen, opzetten en gebruiken van software.</p>
-        <p>We vertrekken niet vanuit één specifiek pakket, maar luisteren eerst naar jouw manier van werken en wat voor jou écht belangrijk is. Wat zijn je gewoontes, wat zijn je must-haves, en hoe digitaal vaardig ben je? De ene wil vooral duidelijke alarmen en herinneringen, de andere wil een sterk overzicht van planning en patiënten, nog iemand anders kiest in de eerste plaats voor een betaalbaar pakket. Op basis daarvan geven we gericht advies over welke software het best bij jou past. We kennen de gangbare pakketten in de Belgische thuisverpleging en kunnen de voor- en nadelen van elk pakket concreet toelichten, zodat je een geïnformeerde keuze maakt.</p>
-        <p>Daarnaast zorgen we ervoor dat:</p>
-        <ul>
-          <li>je software correct ingesteld staat</li>
-          <li>alles werkt zoals het moet voor registratie en facturatie</li>
-          <li>je minder tijd verliest aan uitzoeken en fouten</li>
-          <li>je ondersteuning krijgt wanneer er vragen of problemen zijn</li>
-        </ul>
-        <p>
-          Bekijk ook <Link to="/onze-diensten/#administratie" className="text-secondary hover:underline">hoe Hezo je ondersteunt bij software en administratie</Link> en ontdek hoe we je helpen bij <Link to="/blog/patienten-thuisverpleegkundige/" className="text-secondary hover:underline">patiënteninstroom</Link>.
-        </p>
+          <h2 id="hezo-ondersteuning">Hoe Hezo je ondersteunt bij software</h2>
+         <p>Hezo ondersteunt zelfstandige thuisverpleegkundigen bij het kiezen, opzetten en gebruiken van software.</p>
+         <p>De meeste softwarepakketten binnen de thuisverpleging bieden dezelfde basisfunctionaliteiten. De verschillen zitten vooral in gebruiksgemak, prijs, ondersteuning en bepaalde extra functionaliteiten.</p>
+         <p>Sommige verpleegkundigen zoeken vooral een eenvoudig en betaalbaar pakket, terwijl anderen veel belang hechten aan een vlotte gebruikerservaring, duidelijke notificaties of een sterk overzicht van patiënten en planning.</p>
+         <p>Omdat we de meest gebruikte pakketten binnen de Belgische thuisverpleging goed kennen, helpen we je kiezen welke software het best aansluit bij jouw manier van werken.</p>
+         <p>Daarnaast zorgen we ervoor dat:</p>
+         <ul>
+           <li>je software correct ingesteld staat</li>
+           <li>registratie en facturatie correct werken</li>
+           <li>je minder tijd verliest aan administratie en fouten</li>
+           <li>je ondersteuning krijgt bij vragen of problemen</li>
+         </ul>
+         <p>
+           Bekijk ook <Link to="/onze-diensten/#administratie" className="text-secondary hover:underline">hoe Hezo je ondersteunt bij software en administratie</Link> en ontdek hoe we helpen bij <Link to="/blog/patienten-thuisverpleegkundige/" className="text-secondary hover:underline">patiënteninstroom</Link>.
+         </p>
       </>
     ),
     cta: (
