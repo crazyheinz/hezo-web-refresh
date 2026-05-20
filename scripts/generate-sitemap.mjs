@@ -43,6 +43,24 @@ while ((match = articleRegex.exec(blogFile)) !== null) {
   });
 }
 
+// Parse active vacatures from src/data/vacatures.ts
+const vacaturesFile = readFileSync(
+  path.resolve("src/data/vacatures.ts"),
+  "utf-8"
+);
+const vacatureRegex = /id:\s*"([^"]+)",\s*\n\s*title:[\s\S]*?active:\s*(true|false)/g;
+const vacatureRoutes = [];
+let vMatch;
+while ((vMatch = vacatureRegex.exec(vacaturesFile)) !== null) {
+  if (vMatch[2] === "true") {
+    vacatureRoutes.push({
+      path: `/vacatures/${vMatch[1]}/`,
+      priority: "0.8",
+      changefreq: "weekly",
+    });
+  }
+}
+
 // Build XML
 const today = new Date().toISOString().split("T")[0];
 
@@ -59,6 +77,14 @@ const urls = [
     (r) => `  <url>
     <loc>${SITE}${r.path}</loc>
     <lastmod>${r.lastmod}</lastmod>
+    <changefreq>${r.changefreq}</changefreq>
+    <priority>${r.priority}</priority>
+  </url>`
+  ),
+  ...vacatureRoutes.map(
+    (r) => `  <url>
+    <loc>${SITE}${r.path}</loc>
+    <lastmod>${today}</lastmod>
     <changefreq>${r.changefreq}</changefreq>
     <priority>${r.priority}</priority>
   </url>`

@@ -57,6 +57,13 @@ const Navigation = () => {
     { label: "Ons aanbod", href: "/onze-diensten/" },
     { label: "Opleidingen", href: "/opleidingen/" },
     { label: "Vacatures", href: "/vacatures/" },
+    {
+      label: "Regio's",
+      dropdown: [
+        { label: "Thuisverpleging Antwerpen", href: "/thuisverpleging/antwerpen/" },
+        { label: "Thuisverpleging Gent", href: "/thuisverpleging/gent/" },
+      ],
+    },
     { label: "Blog", href: "/blog/" },
     { label: "Contact", href: "/contact/" },
   ];

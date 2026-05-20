@@ -11,6 +11,7 @@ import OnzeDiensten from "./pages/OnzeDiensten";
 import ZoSluitJeAan from "./pages/ZoSluitJeAan";
 import Opleidingen from "./pages/Opleidingen";
 import Vacatures from "./pages/Vacatures";
+import VacatureDetail from "./pages/VacatureDetail";
 import Blog from "./pages/Blog";
 import BlogArticle from "./pages/BlogArticle";
 import Contact from "./pages/Contact";
@@ -52,6 +53,8 @@ const AppContent = () => (
             <Route path="/opleidingen/" element={<Opleidingen />} />
             <Route path="/vacatures" element={<Vacatures />} />
             <Route path="/vacatures/" element={<Vacatures />} />
+            <Route path="/vacatures/:slug" element={<VacatureDetail />} />
+            <Route path="/vacatures/:slug/" element={<VacatureDetail />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/" element={<Blog />} />
             <Route path="/blog/:articleId" element={<BlogArticle />} />
