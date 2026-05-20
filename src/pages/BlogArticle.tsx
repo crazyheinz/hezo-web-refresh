@@ -462,15 +462,14 @@ const articleContent: Record<string, {
 
          <h2 id="hezo-ondersteuning">Hoe Hezo je ondersteunt</h2>
         <p>Hezo ondersteunt zelfstandige thuisverpleegkundigen bij het kiezen, opzetten en gebruiken van software.</p>
-        <p>Of je nu alleen werkt of in een praktijk, we zorgen ervoor dat:</p>
+        <p>We vertrekken niet vanuit één specifiek pakket, maar luisteren eerst naar jouw situatie en noden: hoe werk je, alleen of in een praktijk, welke administratie komt er bij kijken, en wat verwacht je van planning, registratie en facturatie? Op basis daarvan geven we gericht advies over welke software het best bij jou past. We kennen de gangbare pakketten in de Belgische thuisverpleging en kunnen de voor- en nadelen van elk pakket concreet toelichten, zodat je een geïnformeerde keuze maakt.</p>
+        <p>Daarnaast zorgen we ervoor dat:</p>
         <ul>
           <li>je software correct ingesteld staat</li>
           <li>alles werkt zoals het moet voor registratie en facturatie</li>
           <li>je minder tijd verliest aan uitzoeken en fouten</li>
           <li>je ondersteuning krijgt wanneer er vragen of problemen zijn</li>
         </ul>
-        <p>We vertrekken niet vanuit één specifieke software, maar kijken wat het best past bij jouw situatie.</p>
-        <p>Naast nursing software werk je als zelfstandige ook met een boekhoudpakket of een boekhouder. Hezo werkt hiervoor samen met <strong>Pia Go</strong>, een boekhoudservice op maat van eenmanszaken met persoonlijk advies. Zo zit je administratie én je boekhouding meteen goed.</p>
         <p>
           Bekijk ook <Link to="/onze-diensten/#administratie" className="text-secondary hover:underline">hoe Hezo je ondersteunt bij software en administratie</Link> en ontdek hoe we je helpen bij <Link to="/blog/patienten-thuisverpleegkundige/" className="text-secondary hover:underline">patiënteninstroom</Link>.
         </p>
@@ -815,6 +814,7 @@ const articleContent: Record<string, {
 
         <h4>Heb ik een boekhouder nodig?</h4>
         <p>Als zelfstandig thuisverpleegkundige ben je niet verplicht om met een boekhouder te werken, maar in de praktijk kiezen veel starters daar wél voor. Een boekhouder kan helpen bij de keuze tussen eenmanszaak of vennootschap, correcte btw- en fiscale aangiftes, en inzicht in inkomsten en kosten.</p>
+        <p>Hezo werkt hiervoor samen met <strong>Pia Go</strong>, een boekhoudservice op maat van eenmanszaken met persoonlijk advies. Zo heb je vanaf de start een vast aanspreekpunt dat de sector kent en je boekhouding correct opvolgt.</p>
 
         <h3>Stap 3: Regel je opstart als zelfstandige</h3>
         <p>Ben je klaar om effectief te starten? Dan kan je je administratieve opstart officieel regelen.</p>
