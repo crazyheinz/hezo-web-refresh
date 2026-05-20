@@ -1,12 +1,23 @@
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Briefcase, MapPin, ArrowRight } from "lucide-react";
 import SEO from "@/components/SEO";
-import { activeVacatures } from "@/data/vacatures";
+import { activeVacatures, getVacatureBySlug } from "@/data/vacatures";
 
 const Vacatures = () => {
   const jobs = activeVacatures;
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // Redirect legacy anchor URLs (/vacatures/#slug) to nieuwe detailpagina's
+  useEffect(() => {
+    const hash = location.hash.replace(/^#/, "");
+    if (hash && getVacatureBySlug(hash)) {
+      navigate(`/vacatures/${hash}/`, { replace: true });
+    }
+  }, [location.hash, navigate]);
 
   const structuredData = {
     "@context": "https://schema.org",
