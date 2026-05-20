@@ -814,6 +814,7 @@ const articleContent: Record<string, {
 
         <h4>Heb ik een boekhouder nodig?</h4>
         <p>Als zelfstandig thuisverpleegkundige ben je niet verplicht om met een boekhouder te werken, maar in de praktijk kiezen veel starters daar wél voor. Een boekhouder kan helpen bij de keuze tussen eenmanszaak of vennootschap, correcte btw- en fiscale aangiftes, en inzicht in inkomsten en kosten.</p>
+        <p>Hezo werkt hiervoor samen met <strong>Pia Go</strong>, een boekhoudservice op maat van eenmanszaken met persoonlijk advies. Zo heb je vanaf de start een vast aanspreekpunt dat de sector kent en je boekhouding correct opvolgt.</p>
 
         <h3>Stap 3: Regel je opstart als zelfstandige</h3>
         <p>Ben je klaar om effectief te starten? Dan kan je je administratieve opstart officieel regelen.</p>
