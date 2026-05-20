@@ -81,6 +81,14 @@ const urls = [
     <priority>${r.priority}</priority>
   </url>`
   ),
+  ...vacatureRoutes.map(
+    (r) => `  <url>
+    <loc>${SITE}${r.path}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>${r.changefreq}</changefreq>
+    <priority>${r.priority}</priority>
+  </url>`
+  ),
 ];
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
