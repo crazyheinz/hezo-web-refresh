@@ -394,7 +394,7 @@ const articleContent: Record<string, {
       { id: "waar-loopt-het-moeilijk", label: "Waar loopt het vaak moeilijk?" },
       { id: "meer-dan-tool", label: "Waarom software meer is dan een tool" },
       { id: "juiste-software-kiezen", label: "Hoe kies je de juiste software?" },
-      { id: "hezo-ondersteuning", label: "Hoe Hezo je ondersteunt" },
+      { id: "hezo-ondersteuning", label: "Hoe Hezo je ondersteunt bij software" },
     ],
     content: (
       <>
