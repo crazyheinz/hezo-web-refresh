@@ -62,6 +62,7 @@ const Navigation = () => {
       dropdown: [
         { label: "Thuisverpleging Antwerpen", href: "/thuisverpleging/antwerpen/" },
         { label: "Thuisverpleging Gent", href: "/thuisverpleging/gent/" },
+        { label: "Thuisverpleging West-Vlaanderen", href: "/thuisverpleging/west-vlaanderen/" },
       ],
     },
     { label: "Blog", href: "/blog/" },
