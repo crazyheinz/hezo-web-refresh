@@ -18,6 +18,7 @@ const staticRoutes = [
   { path: "/blog/", priority: "0.8", changefreq: "weekly" },
   { path: "/thuisverpleging/antwerpen/", priority: "0.9", changefreq: "monthly" },
   { path: "/thuisverpleging/gent/", priority: "0.9", changefreq: "monthly" },
+  { path: "/thuisverpleging/west-vlaanderen/", priority: "0.9", changefreq: "monthly" },
   { path: "/inkomen-simulator/", priority: "0.8", changefreq: "monthly" },
   { path: "/startersgids/", priority: "0.8", changefreq: "monthly" },
   { path: "/privacy/", priority: "0.3", changefreq: "yearly" },

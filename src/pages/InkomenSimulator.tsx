@@ -307,8 +307,11 @@ const InkomenSimulator = () => {
                   </ul>
                   <p className="text-xs text-muted-foreground mt-4">
                     Indicatieve gemiddelden. Reële kosten variëren per regio, kilometers, materiaalgebruik
-                    en gekozen verzekeringen. Niet opgenomen: VAPZ, IPT, eindejaarspremies of eenmalige
-                    investeringen.
+                    en gekozen verzekeringen.
+                  </p>
+                  <p className="text-xs text-muted-foreground mt-2">
+                    Niet opgenomen: VAPZ, IPT, grotere investeringen, jaarlijkse afrekeningen of
+                    uitzonderlijke kosten.
                   </p>
                 </CardContent>
               </Card>
@@ -322,41 +325,18 @@ const InkomenSimulator = () => {
                         Eenmanszaak of vennootschap?
                       </h3>
                     </div>
-                    <p className="text-sm text-muted-foreground mb-6">
-                      Deze simulatie vertrekt vanuit een eenmanszaak. Wie voltijds werkt, ziet vaak
-                      dat een vennootschap fiscaal interessanter wordt: sociale bijdragen en
-                      belastingen worden anders berekend. We gaan hier bewust niet in detail op in,
-                      maar het kan een belangrijk verschil maken in je beschikbaar inkomen.{" "}
-                      <Link to="/contact/" className="text-secondary underline">
-                        Bespreek dit met ons
-                      </Link>
-                      .
+                    <p className="text-sm text-muted-foreground mb-3">
+                      Deze simulatie vertrekt vanuit een vereenvoudigde situatie als eenmanszaak.
                     </p>
-
-                    <div className="text-xs text-muted-foreground pt-5 border-t">
-                      <div className="flex items-start gap-2 mb-2">
-                        <Info className="h-4 w-4 text-secondary flex-shrink-0 mt-0.5" />
-                        <strong className="text-primary">Disclaimer</strong>
-                      </div>
-                      <p className="mb-2">
-                        Dit blijft een vereenvoudigde simulatie. Je werkelijke inkomsten verschillen
-                        sterk afhankelijk van onder meer regio en patiëntenmix, verplaatsingen,
-                        fiscale structuur, werkritme, anciënniteit, vaste kosten en sociale bijdragen.
-                      </p>
-                      <p>
-                        Voor een exacte berekening van sociale bijdragen contacteer een sociaal
-                        verzekeringsfonds zoals{" "}
-                        <a
-                          href="https://www.xerius.be"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-secondary underline"
-                        >
-                          Xerius
-                        </a>
-                        . Voor fiscale optimalisatie raden we aan om een boekhouder te raadplegen.
-                      </p>
-                    </div>
+                    <p className="text-sm text-muted-foreground mb-3">
+                      Bij een voltijdse activiteit kan een vennootschap fiscaal interessanter worden.
+                      Sociale bijdragen, belastingen en optimalisaties worden dan anders berekend, wat
+                      een belangrijke impact kan hebben op je beschikbaar inkomen.
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      Voor exacte fiscale en financiële berekeningen raden we aan een sociaal
+                      verzekeringsfonds of boekhouder te contacteren.
+                    </p>
                   </CardContent>
                 </Card>
               </div>

@@ -28,6 +28,7 @@ const staticRoutes = [
   "/cookies/",
   "/thuisverpleging/antwerpen/",
   "/thuisverpleging/gent/",
+  "/thuisverpleging/west-vlaanderen/",
   "/inkomen-simulator/",
   "/startersgids/",
 ];
