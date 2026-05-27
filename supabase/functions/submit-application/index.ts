@@ -222,6 +222,21 @@ serve(async (req) => {
       );
     }
 
+    // Magic-byte check — defends against spoofed Content-Type headers
+    if (cvFile && cvFile.size > 0) {
+      const magicError = await validateFileMagicBytes(cvFile);
+      if (magicError) {
+        console.error("Magic-byte validation error:", magicError);
+        return new Response(
+          JSON.stringify({ error: magicError }),
+          {
+            status: 400,
+            headers: { ...corsHeaders, "Content-Type": "application/json" },
+          }
+        );
+      }
+    }
+
     // Initialize Supabase client with service role
     const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
     const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
