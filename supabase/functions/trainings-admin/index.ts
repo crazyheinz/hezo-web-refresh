@@ -1,8 +1,6 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
-const ADMIN_PASSWORD = Deno.env.get("WEBINAR_ADMIN_PASSWORD");
-
 const allowedOrigins = [
   'https://hezo.be',
   'https://www.hezo.be',
@@ -19,6 +17,31 @@ function getCorsHeaders(origin: string | null): Record<string, string> {
     "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
     "Access-Control-Allow-Methods": "POST, OPTIONS",
   };
+}
+
+const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
+const SUPABASE_ANON_KEY = Deno.env.get("SUPABASE_ANON_KEY")!;
+const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+
+async function authorizeAdmin(req: Request): Promise<{ ok: true } | { ok: false; status: number }> {
+  const authHeader = req.headers.get("Authorization");
+  if (!authHeader?.startsWith("Bearer ")) return { ok: false, status: 401 };
+  const token = authHeader.replace("Bearer ", "");
+
+  const userClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+    global: { headers: { Authorization: authHeader } },
+  });
+  const { data: userData, error: userErr } = await userClient.auth.getUser(token);
+  if (userErr || !userData.user) return { ok: false, status: 401 };
+
+  const adminClient = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
+  const { data: roleData, error: roleErr } = await adminClient.rpc("has_role", {
+    _user_id: userData.user.id,
+    _role: "admin",
+  });
+  if (roleErr || !roleData) return { ok: false, status: 403 };
+
+  return { ok: true };
 }
 
 interface TrainingPayload {
@@ -61,24 +84,22 @@ serve(async (req) => {
     });
   }
 
+  const auth = await authorizeAdmin(req);
+  if (!auth.ok) {
+    return new Response(
+      JSON.stringify({ error: auth.status === 403 ? "Forbidden" : "Unauthorized" }),
+      { status: auth.status, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+    );
+  }
+
   try {
     const body = await req.json();
-    const { password, action, payload } = body as {
-      password?: string;
+    const { action, payload } = body as {
       action?: string;
       payload?: TrainingPayload;
     };
 
-    if (!password || password !== ADMIN_PASSWORD) {
-      return new Response(JSON.stringify({ error: "Unauthorized" }), {
-        status: 401,
-        headers: { ...corsHeaders, "Content-Type": "application/json" }
-      });
-    }
-
-    const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
-    const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
-    const supabase = createClient(supabaseUrl, supabaseServiceKey);
+    const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
 
     if (action === "list_all") {
       const { data, error } = await supabase
@@ -132,7 +153,6 @@ serve(async (req) => {
         });
       }
       const { id, ...rest } = payload;
-      // Only allow known fields
       const update: Record<string, unknown> = {};
       const allowed = ['titel', 'datum', 'tijd', 'locatie', 'max_deelnemers', 'beschrijving', 'lesgever', 'type', 'opname_beschikbaar', 'is_active'];
       for (const key of allowed) {
