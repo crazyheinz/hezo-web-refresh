@@ -19,6 +19,7 @@ import WebinarAdmin from "./pages/WebinarAdmin";
 import WebinarView from "./pages/WebinarView";
 import OpleidingenAdmin from "./pages/OpleidingenAdmin";
 import SubmissionsAdmin from "./pages/SubmissionsAdmin";
+import GebruikersAdmin from "./pages/GebruikersAdmin";
 import Privacy from "./pages/Privacy";
 import Cookies from "./pages/Cookies";
 import Regio from "./pages/Regio";
