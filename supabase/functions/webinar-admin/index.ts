@@ -160,17 +160,15 @@ serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
-  // Validate admin password
-  if (!validateAdminPassword(req)) {
+  const auth = await authorizeAdmin(req);
+  if (!auth.ok) {
     return new Response(
-      JSON.stringify({ error: "Unauthorized" }),
-      { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      JSON.stringify({ error: auth.status === 403 ? "Forbidden" : "Unauthorized" }),
+      { status: auth.status, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   }
 
-  const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
-  const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
-  const supabase = createClient(supabaseUrl, supabaseServiceKey);
+  const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
 
   const url = new URL(req.url);
   const path = url.pathname.split('/').pop();
