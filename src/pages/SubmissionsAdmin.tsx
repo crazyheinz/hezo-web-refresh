@@ -1,8 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
 import { Trash2, RefreshCw, AlertCircle, CheckCircle2, Mail, GraduationCap, Briefcase, FileText, Eye } from "lucide-react";
@@ -15,6 +13,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import AdminGate from "@/components/admin/AdminGate";
+import type { Session } from "@supabase/supabase-js";
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 
@@ -45,9 +45,7 @@ interface Application {
   created_at: string;
 }
 
-const SubmissionsAdmin = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [password, setPassword] = useState("");
+const SubmissionsView = ({ session }: { session: Session }) => {
   const [submissions, setSubmissions] = useState<Submission[]>([]);
   const [applications, setApplications] = useState<Application[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -55,17 +53,20 @@ const SubmissionsAdmin = () => {
   const [viewItem, setViewItem] = useState<{ title: string; subtitle?: string; body: string } | null>(null);
   const { toast } = useToast();
 
-  const getHeaders = () => ({
-    "Content-Type": "application/json",
-    "x-admin-password": password,
-  });
+  const headers = useCallback(
+    () => ({
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${session.access_token}`,
+    }),
+    [session.access_token]
+  );
 
-  const fetchAll = async () => {
+  const fetchAll = useCallback(async () => {
     setIsLoading(true);
     try {
       const [subRes, appRes] = await Promise.all([
-        fetch(`${SUPABASE_URL}/functions/v1/submissions-admin`, { headers: getHeaders() }),
-        fetch(`${SUPABASE_URL}/functions/v1/submissions-admin/applications`, { headers: getHeaders() }),
+        fetch(`${SUPABASE_URL}/functions/v1/submissions-admin`, { headers: headers() }),
+        fetch(`${SUPABASE_URL}/functions/v1/submissions-admin/applications`, { headers: headers() }),
       ]);
       if (!subRes.ok || !appRes.ok) throw new Error("Failed");
       setSubmissions(await subRes.json());
@@ -75,25 +76,11 @@ const SubmissionsAdmin = () => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [headers, toast]);
 
-  const handleLogin = async () => {
-    setIsLoading(true);
-    try {
-      const res = await fetch(`${SUPABASE_URL}/functions/v1/submissions-admin`, {
-        headers: getHeaders(),
-      });
-      if (res.ok) {
-        setIsAuthenticated(true);
-        await fetchAll();
-      } else {
-        toast({ title: "Onjuist wachtwoord", variant: "destructive" });
-      }
-    } catch {
-      toast({ title: "Fout bij inloggen", variant: "destructive" });
-    }
-    setIsLoading(false);
-  };
+  useEffect(() => {
+    fetchAll();
+  }, [fetchAll]);
 
   const deleteItem = async (id: string, isApplication: boolean) => {
     if (!confirm("Verwijderen?")) return;
@@ -103,7 +90,7 @@ const SubmissionsAdmin = () => {
         : `submissions-admin/${id}`;
       const res = await fetch(`${SUPABASE_URL}/functions/v1/${path}`, {
         method: "DELETE",
-        headers: getHeaders(),
+        headers: headers(),
       });
       if (!res.ok) throw new Error("Failed");
       toast({ title: "Verwijderd" });
@@ -114,7 +101,6 @@ const SubmissionsAdmin = () => {
   };
 
   const formatDate = (s: string) => new Date(s).toLocaleString("nl-BE");
-
   const showApplications = filter === "sollicitatie";
 
   const filteredSubmissions = submissions.filter((s) => {
@@ -133,34 +119,6 @@ const SubmissionsAdmin = () => {
   const failedCount =
     submissions.filter((s) => !s.email_sent).length +
     applications.filter((a) => !a.email_sent).length;
-
-  if (!isAuthenticated) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-muted p-4">
-        <Card className="w-full max-w-md">
-          <CardHeader>
-            <CardTitle>Inzendingen Admin</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div>
-              <Label htmlFor="password">Wachtwoord</Label>
-              <Input
-                id="password"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && handleLogin()}
-                placeholder="Voer admin wachtwoord in"
-              />
-            </div>
-            <Button onClick={handleLogin} disabled={isLoading} className="w-full">
-              {isLoading ? "Bezig..." : "Inloggen"}
-            </Button>
-          </CardContent>
-        </Card>
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen bg-muted p-4 md:p-8">
@@ -212,7 +170,6 @@ const SubmissionsAdmin = () => {
           </Button>
         </div>
 
-        {/* Submissions table (contact + opleiding) */}
         {!showApplications && (
           <Card>
             <CardHeader>
@@ -300,7 +257,6 @@ const SubmissionsAdmin = () => {
           </Card>
         )}
 
-        {/* Applications table */}
         {(filter === "all" || filter === "sollicitatie" || filter === "failed") && (
           <Card>
             <CardHeader>
@@ -406,5 +362,11 @@ const SubmissionsAdmin = () => {
     </div>
   );
 };
+
+const SubmissionsAdmin = () => (
+  <AdminGate title="Inzendingen Admin">
+    {(session) => <SubmissionsView session={session} />}
+  </AdminGate>
+);
 
 export default SubmissionsAdmin;
