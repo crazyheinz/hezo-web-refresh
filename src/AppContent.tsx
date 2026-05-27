@@ -19,6 +19,7 @@ import WebinarAdmin from "./pages/WebinarAdmin";
 import WebinarView from "./pages/WebinarView";
 import OpleidingenAdmin from "./pages/OpleidingenAdmin";
 import SubmissionsAdmin from "./pages/SubmissionsAdmin";
+import GebruikersAdmin from "./pages/GebruikersAdmin";
 import Privacy from "./pages/Privacy";
 import Cookies from "./pages/Cookies";
 import Regio from "./pages/Regio";
@@ -74,6 +75,7 @@ const AppContent = () => (
             <Route path="/webinar/:token" element={<WebinarView />} />
             <Route path="/opleidingen-admin" element={<OpleidingenAdmin />} />
             <Route path="/inzendingen-admin" element={<SubmissionsAdmin />} />
+            <Route path="/gebruikers-admin" element={<GebruikersAdmin />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
