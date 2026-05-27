@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
 import { Switch } from "@/components/ui/switch";
@@ -44,10 +44,8 @@ const emptyForm = {
   is_active: true,
 };
 
-const OpleidingenAdmin = () => {
+const OpleidingenView = ({ session }: { session: Session }) => {
   const { toast } = useToast();
-  const [password, setPassword] = useState("");
-  const [authed, setAuthed] = useState(false);
   const [loading, setLoading] = useState(false);
   const [trainings, setTrainings] = useState<Training[]>([]);
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -58,15 +56,18 @@ const OpleidingenAdmin = () => {
   const callApi = useCallback(async (action: string, payload?: Record<string, unknown>) => {
     const res = await fetch(FUNCTION_URL, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ password, action, payload }),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${session.access_token}`,
+      },
+      body: JSON.stringify({ action, payload }),
     });
     if (!res.ok) {
       const err = await res.json().catch(() => ({ error: "Request failed" }));
       throw new Error(err.error || `HTTP ${res.status}`);
     }
     return res.json();
-  }, [password]);
+  }, [session.access_token]);
 
   const loadTrainings = useCallback(async () => {
     setLoading(true);
@@ -80,33 +81,7 @@ const OpleidingenAdmin = () => {
     }
   }, [callApi, toast]);
 
-  const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    try {
-      const res = await fetch(FUNCTION_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ password, action: "list_all" }),
-      });
-      if (res.status === 401) {
-        toast({ title: "Onjuist wachtwoord", variant: "destructive" });
-        return;
-      }
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const data = await res.json();
-      setTrainings(data);
-      setAuthed(true);
-    } catch (err) {
-      toast({ title: "Fout", description: (err as Error).message, variant: "destructive" });
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    if (authed) loadTrainings();
-  }, [authed, loadTrainings]);
+  useEffect(() => { loadTrainings(); }, [loadTrainings]);
 
   const openCreate = () => {
     setEditingId(null);
@@ -176,43 +151,8 @@ const OpleidingenAdmin = () => {
     }
   };
 
-  if (!authed) {
-    return (
-      <div className="min-h-screen pt-32 pb-20">
-        <div className="container mx-auto px-4 max-w-md">
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Lock className="h-5 w-5" /> Opleidingen Admin
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={handleLogin} className="space-y-4">
-                <div>
-                  <Label htmlFor="password">Wachtwoord</Label>
-                  <Input
-                    id="password"
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    autoFocus
-                    required
-                  />
-                </div>
-                <Button type="submit" disabled={loading} className="w-full">
-                  {loading && <Loader2 className="h-4 w-4 mr-2 animate-spin" />}
-                  Inloggen
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <div className="min-h-screen pt-32 pb-20">
+    <div className="min-h-screen pt-12 pb-20">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="flex items-center justify-between mb-8">
           <h1 className="text-3xl font-bold">Opleidingen beheren</h1>
@@ -352,5 +292,11 @@ const OpleidingenAdmin = () => {
     </div>
   );
 };
+
+const OpleidingenAdmin = () => (
+  <AdminGate title="Opleidingen Admin">
+    {(session) => <OpleidingenView session={session} />}
+  </AdminGate>
+);
 
 export default OpleidingenAdmin;
