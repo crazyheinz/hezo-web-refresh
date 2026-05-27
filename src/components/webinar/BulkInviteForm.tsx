@@ -15,13 +15,13 @@ interface Recipient {
 
 interface BulkInviteFormProps {
   webinarId: string;
-  password: string;
+  accessToken: string;
   onSuccess: () => void;
 }
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 
-export const BulkInviteForm = ({ webinarId, password, onSuccess }: BulkInviteFormProps) => {
+export const BulkInviteForm = ({ webinarId, accessToken, onSuccess }: BulkInviteFormProps) => {
   const [textInput, setTextInput] = useState("");
   const [singleEmail, setSingleEmail] = useState("");
   const [singleName, setSingleName] = useState("");
@@ -109,7 +109,7 @@ export const BulkInviteForm = ({ webinarId, password, onSuccess }: BulkInviteFor
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "x-admin-password": password,
+          Authorization: `Bearer ${accessToken}`,
         },
         body: JSON.stringify({
           webinar_id: webinarId,
@@ -161,7 +161,7 @@ export const BulkInviteForm = ({ webinarId, password, onSuccess }: BulkInviteFor
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "x-admin-password": password,
+          Authorization: `Bearer ${accessToken}`,
         },
         body: JSON.stringify({
           webinar_id: webinarId,
