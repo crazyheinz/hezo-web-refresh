@@ -3,16 +3,48 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const RETENTION_DAYS = 60;
 
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-};
+const allowedOrigins = [
+  'https://hezo.be',
+  'https://www.hezo.be',
+  'https://hezo-web-refresh.lovable.app',
+  'https://id-preview--a96ce8fe-4af9-40f6-ac0c-9214f80fd048.lovable.app',
+];
+
+function getCorsHeaders(origin: string | null): Record<string, string> {
+  const allowedOrigin = origin && allowedOrigins.includes(origin) ? origin : allowedOrigins[0];
+  return {
+    'Access-Control-Allow-Origin': allowedOrigin,
+    'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type, x-cleanup-secret',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  };
+}
 
 serve(async (req) => {
+  const origin = req.headers.get('origin');
+  const corsHeaders = getCorsHeaders(origin);
+
   // Handle CORS preflight
   if (req.method === 'OPTIONS') {
     return new Response('ok', { headers: corsHeaders });
   }
+
+  // Authorization: either the service role key (used by pg_cron / internal callers)
+  // or a dedicated CLEANUP_SECRET header. Reject everything else.
+  const serviceRoleKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
+  const cleanupSecret = Deno.env.get('CLEANUP_SECRET');
+  const authHeader = req.headers.get('authorization') ?? '';
+  const providedSecret = req.headers.get('x-cleanup-secret');
+
+  const hasServiceRole = authHeader === `Bearer ${serviceRoleKey}`;
+  const hasCleanupSecret = !!cleanupSecret && providedSecret === cleanupSecret;
+
+  if (!hasServiceRole && !hasCleanupSecret) {
+    return new Response(
+      JSON.stringify({ error: 'Unauthorized' }),
+      { status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+    );
+  }
+
 
   try {
     const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
