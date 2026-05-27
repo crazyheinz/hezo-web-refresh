@@ -103,14 +103,14 @@ function validateInput(name: string, email: string, motivation: string, position
 // File validation function
 function validateFile(file: File | null): string | null {
   if (!file) return null; // File is optional
-  
+
   const maxSize = 10 * 1024 * 1024; // 10MB
   const allowedTypes = [
     'application/pdf',
     'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
     'application/msword'
   ];
-  
+
   if (file.size > maxSize) {
     return "File must be less than 10MB";
   }
@@ -119,6 +119,30 @@ function validateFile(file: File | null): string | null {
   }
   return null;
 }
+
+// Magic-byte validation — cannot be spoofed via Content-Type header
+async function validateFileMagicBytes(file: File): Promise<string | null> {
+  const buf = new Uint8Array(await file.slice(0, 8).arrayBuffer());
+
+  // PDF: %PDF
+  const isPdf =
+    buf[0] === 0x25 && buf[1] === 0x50 && buf[2] === 0x44 && buf[3] === 0x46;
+
+  // DOCX (and other OOXML / zip): PK\x03\x04
+  const isZip =
+    buf[0] === 0x50 && buf[1] === 0x4b && buf[2] === 0x03 && buf[3] === 0x04;
+
+  // Legacy .doc (OLE compound file): D0 CF 11 E0 A1 B1 1A E1
+  const isDoc =
+    buf[0] === 0xd0 && buf[1] === 0xcf && buf[2] === 0x11 && buf[3] === 0xe0 &&
+    buf[4] === 0xa1 && buf[5] === 0xb1 && buf[6] === 0x1a && buf[7] === 0xe1;
+
+  if (!isPdf && !isZip && !isDoc) {
+    return "Bestandsinhoud komt niet overeen met een geldig PDF- of Word-document.";
+  }
+  return null;
+}
+
 
 serve(async (req) => {
   const origin = req.headers.get('origin');
