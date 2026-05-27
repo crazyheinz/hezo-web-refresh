@@ -9,7 +9,9 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "
 import { Switch } from "@/components/ui/switch";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { Loader2, Plus, Pencil, Power, Trash2, Lock } from "lucide-react";
+import { Loader2, Plus, Pencil, Power, Trash2 } from "lucide-react";
+import AdminGate from "@/components/admin/AdminGate";
+import type { Session } from "@supabase/supabase-js";
 
 interface Training {
   id: string;
