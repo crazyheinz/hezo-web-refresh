@@ -217,9 +217,15 @@ serve(async (req) => {
       const webinarId = path;
       const body = await req.json();
 
+      // Whitelist updatable fields only
+      const allowedUpdate: Record<string, unknown> = {};
+      for (const key of ["title", "description", "video_url", "thumbnail_url", "is_active"] as const) {
+        if (body[key] !== undefined) allowedUpdate[key] = body[key];
+      }
+
       const { data, error } = await supabase
         .from('webinars')
-        .update(body)
+        .update(allowedUpdate)
         .eq('id', webinarId)
         .select()
         .single();
