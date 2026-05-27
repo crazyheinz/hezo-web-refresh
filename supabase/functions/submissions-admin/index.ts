@@ -1,8 +1,6 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
-const ADMIN_PASSWORD = Deno.env.get("WEBINAR_ADMIN_PASSWORD");
-
 const allowedOrigins = [
   "https://hezo.be",
   "https://www.hezo.be",
@@ -17,14 +15,34 @@ function getCorsHeaders(origin: string | null): Record<string, string> {
   const allowedOrigin = origin && allowedOrigins.includes(origin) ? origin : allowedOrigins[0];
   return {
     "Access-Control-Allow-Origin": allowedOrigin,
-    "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type, x-admin-password",
+    "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
     "Access-Control-Allow-Methods": "GET, DELETE, OPTIONS",
   };
 }
 
-function validateAdminPassword(req: Request): boolean {
-  const password = req.headers.get("x-admin-password")?.trim();
-  return !!ADMIN_PASSWORD && password === ADMIN_PASSWORD.trim();
+const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
+const SUPABASE_ANON_KEY = Deno.env.get("SUPABASE_ANON_KEY")!;
+const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+
+async function authorizeAdmin(req: Request): Promise<{ ok: true; userId: string } | { ok: false; status: number }> {
+  const authHeader = req.headers.get("Authorization");
+  if (!authHeader?.startsWith("Bearer ")) return { ok: false, status: 401 };
+  const token = authHeader.replace("Bearer ", "");
+
+  const userClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+    global: { headers: { Authorization: authHeader } },
+  });
+  const { data: userData, error: userErr } = await userClient.auth.getUser(token);
+  if (userErr || !userData.user) return { ok: false, status: 401 };
+
+  const adminClient = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
+  const { data: roleData, error: roleErr } = await adminClient.rpc("has_role", {
+    _user_id: userData.user.id,
+    _role: "admin",
+  });
+  if (roleErr || !roleData) return { ok: false, status: 403 };
+
+  return { ok: true, userId: userData.user.id };
 }
 
 serve(async (req) => {
@@ -35,17 +53,15 @@ serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
-  if (!validateAdminPassword(req)) {
+  const auth = await authorizeAdmin(req);
+  if (!auth.ok) {
     return new Response(
-      JSON.stringify({ error: "Unauthorized" }),
-      { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      JSON.stringify({ error: auth.status === 403 ? "Forbidden" : "Unauthorized" }),
+      { status: auth.status, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   }
 
-  const supabase = createClient(
-    Deno.env.get("SUPABASE_URL")!,
-    Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
-  );
+  const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
 
   try {
     const url = new URL(req.url);
