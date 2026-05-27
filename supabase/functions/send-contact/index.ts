@@ -169,6 +169,15 @@ serve(async (req) => {
     // Always save to database first - even if email fails
     const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
     const submissionType = rawData.type === "opleiding" ? "opleiding" : "contact";
+
+    // Cap length of optional opleiding fields to prevent unbounded storage
+    const opleidingNaam = rawData.opleidingNaam
+      ? String(rawData.opleidingNaam).slice(0, 500)
+      : null;
+    const opleidingDatum = rawData.opleidingDatum
+      ? String(rawData.opleidingDatum).slice(0, 100)
+      : null;
+
     const { data: submission, error: dbError } = await supabase
       .from("form_submissions")
       .insert({
@@ -177,8 +186,8 @@ serve(async (req) => {
         email: data.email,
         phone: data.phone || null,
         message: data.message,
-        opleiding_naam: rawData.opleidingNaam || null,
-        opleiding_datum: rawData.opleidingDatum || null,
+        opleiding_naam: opleidingNaam,
+        opleiding_datum: opleidingDatum,
         email_sent: false,
       })
       .select()
