@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { Trash2, Plus, Copy, Eye, Link2, Mail } from "lucide-react";
+import { Trash2, Plus, Copy, Eye, Link2 } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -22,6 +22,8 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { BulkInviteForm } from "@/components/webinar/BulkInviteForm";
+import AdminGate from "@/components/admin/AdminGate";
+import type { Session } from "@supabase/supabase-js";
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 
@@ -48,16 +50,13 @@ interface Invite {
   webinars?: { title: string };
 }
 
-const WebinarAdmin = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [password, setPassword] = useState("");
+const WebinarAdminInner = ({ session }: { session: Session }) => {
   const [webinars, setWebinars] = useState<Webinar[]>([]);
   const [invites, setInvites] = useState<Invite[]>([]);
   const [selectedWebinar, setSelectedWebinar] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
-  // New webinar form
   const [newTitle, setNewTitle] = useState("");
   const [newDescription, setNewDescription] = useState("");
   const [newVideoUrl, setNewVideoUrl] = useState("");
@@ -65,7 +64,7 @@ const WebinarAdmin = () => {
 
   const getHeaders = () => ({
     "Content-Type": "application/json",
-    "x-admin-password": password,
+    Authorization: `Bearer ${session.access_token}`,
   });
 
   const fetchWebinars = async () => {
@@ -83,7 +82,7 @@ const WebinarAdmin = () => {
 
   const fetchInvites = async (webinarId?: string) => {
     try {
-      const url = webinarId 
+      const url = webinarId
         ? `${SUPABASE_URL}/functions/v1/webinar-admin/invites?webinar_id=${webinarId}`
         : `${SUPABASE_URL}/functions/v1/webinar-admin/invites`;
       const res = await fetch(url, { headers: getHeaders() });
@@ -95,25 +94,11 @@ const WebinarAdmin = () => {
     }
   };
 
-  const handleLogin = async () => {
-    setIsLoading(true);
-    try {
-      const res = await fetch(`${SUPABASE_URL}/functions/v1/webinar-admin/webinars`, {
-        headers: getHeaders(),
-      });
-      if (res.ok) {
-        setIsAuthenticated(true);
-        const data = await res.json();
-        setWebinars(data);
-        fetchInvites();
-      } else {
-        toast({ title: "Onjuist wachtwoord", variant: "destructive" });
-      }
-    } catch {
-      toast({ title: "Fout bij inloggen", variant: "destructive" });
-    }
-    setIsLoading(false);
-  };
+  useEffect(() => {
+    fetchWebinars();
+    fetchInvites();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const createWebinar = async () => {
     if (!newTitle || !newVideoUrl) {
@@ -134,7 +119,7 @@ const WebinarAdmin = () => {
         }),
       });
       if (!res.ok) throw new Error("Failed to create webinar");
-      
+
       toast({ title: "Webinar aangemaakt!" });
       setNewTitle("");
       setNewDescription("");
@@ -156,7 +141,7 @@ const WebinarAdmin = () => {
         headers: getHeaders(),
       });
       if (!res.ok) throw new Error("Failed to delete webinar");
-      
+
       toast({ title: "Webinar verwijderd" });
       fetchWebinars();
       fetchInvites();
@@ -165,7 +150,6 @@ const WebinarAdmin = () => {
     }
   };
 
-
   const deleteInvite = async (id: string) => {
     try {
       const res = await fetch(`${SUPABASE_URL}/functions/v1/webinar-admin/invites/${id}`, {
@@ -173,7 +157,7 @@ const WebinarAdmin = () => {
         headers: getHeaders(),
       });
       if (!res.ok) throw new Error("Failed to delete invite");
-      
+
       toast({ title: "Uitnodiging verwijderd" });
       fetchInvites(selectedWebinar || undefined);
     } catch {
@@ -193,40 +177,11 @@ const WebinarAdmin = () => {
     return new Date(dateStr).toLocaleString("nl-BE");
   };
 
-  if (!isAuthenticated) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-muted p-4">
-        <Card className="w-full max-w-md">
-          <CardHeader>
-            <CardTitle>Webinar Admin</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div>
-              <Label htmlFor="password">Wachtwoord</Label>
-              <Input
-                id="password"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && handleLogin()}
-                placeholder="Voer admin wachtwoord in"
-              />
-            </div>
-            <Button onClick={handleLogin} disabled={isLoading} className="w-full">
-              {isLoading ? "Bezig..." : "Inloggen"}
-            </Button>
-          </CardContent>
-        </Card>
-      </div>
-    );
-  }
-
   return (
     <div className="min-h-screen bg-muted p-4 md:p-8">
       <div className="max-w-7xl mx-auto space-y-8">
         <h1 className="text-3xl font-bold">Webinar Beheer</h1>
 
-        {/* Create Webinar */}
         <Card>
           <CardHeader>
             <CardTitle>Nieuwe Webinar</CardTitle>
@@ -235,39 +190,19 @@ const WebinarAdmin = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="title">Titel *</Label>
-                <Input
-                  id="title"
-                  value={newTitle}
-                  onChange={(e) => setNewTitle(e.target.value)}
-                  placeholder="Webinar titel"
-                />
+                <Input id="title" value={newTitle} onChange={(e) => setNewTitle(e.target.value)} placeholder="Webinar titel" />
               </div>
               <div>
                 <Label htmlFor="videoUrl">Video URL *</Label>
-                <Input
-                  id="videoUrl"
-                  value={newVideoUrl}
-                  onChange={(e) => setNewVideoUrl(e.target.value)}
-                  placeholder="https://vimeo.com/... of YouTube URL"
-                />
+                <Input id="videoUrl" value={newVideoUrl} onChange={(e) => setNewVideoUrl(e.target.value)} placeholder="https://vimeo.com/... of YouTube URL" />
               </div>
               <div>
                 <Label htmlFor="thumbnailUrl">Thumbnail URL</Label>
-                <Input
-                  id="thumbnailUrl"
-                  value={newThumbnailUrl}
-                  onChange={(e) => setNewThumbnailUrl(e.target.value)}
-                  placeholder="https://..."
-                />
+                <Input id="thumbnailUrl" value={newThumbnailUrl} onChange={(e) => setNewThumbnailUrl(e.target.value)} placeholder="https://..." />
               </div>
               <div>
                 <Label htmlFor="description">Beschrijving</Label>
-                <Textarea
-                  id="description"
-                  value={newDescription}
-                  onChange={(e) => setNewDescription(e.target.value)}
-                  placeholder="Optionele beschrijving"
-                />
+                <Textarea id="description" value={newDescription} onChange={(e) => setNewDescription(e.target.value)} placeholder="Optionele beschrijving" />
               </div>
             </div>
             <Button onClick={createWebinar} disabled={isLoading}>
@@ -277,7 +212,6 @@ const WebinarAdmin = () => {
           </CardContent>
         </Card>
 
-        {/* Webinars List */}
         <Card>
           <CardHeader>
             <CardTitle>Webinars</CardTitle>
@@ -306,7 +240,7 @@ const WebinarAdmin = () => {
                         </a>
                       </TableCell>
                       <TableCell>
-                        <span className={`px-2 py-1 rounded-full text-xs ${webinar.is_active ? 'bg-primary/10 text-primary' : 'bg-destructive/10 text-destructive'}`}>
+                        <span className={`px-2 py-1 rounded-full text-xs ${webinar.is_active ? "bg-primary/10 text-primary" : "bg-destructive/10 text-destructive"}`}>
                           {webinar.is_active ? "Actief" : "Inactief"}
                         </span>
                       </TableCell>
@@ -315,8 +249,8 @@ const WebinarAdmin = () => {
                         <div className="flex gap-2">
                           <Dialog>
                             <DialogTrigger asChild>
-                              <Button 
-                                variant="outline" 
+                              <Button
+                                variant="outline"
                                 size="sm"
                                 onClick={() => {
                                   setSelectedWebinar(webinar.id);
@@ -332,14 +266,12 @@ const WebinarAdmin = () => {
                                 <DialogTitle>Uitnodigingen voor: {webinar.title}</DialogTitle>
                               </DialogHeader>
                               <div className="space-y-4">
-                                {/* Create Invite Form */}
                                 <BulkInviteForm
                                   webinarId={webinar.id}
-                                  password={password}
+                                  accessToken={session.access_token}
                                   onSuccess={() => fetchInvites(webinar.id)}
                                 />
 
-                                {/* Invites Table */}
                                 <Table>
                                   <TableHeader>
                                     <TableRow>
@@ -369,25 +301,13 @@ const WebinarAdmin = () => {
                                           <TableCell>{formatDate(invite.created_at)}</TableCell>
                                           <TableCell>
                                             <div className="flex gap-1">
-                                              <Button
-                                                variant="ghost"
-                                                size="sm"
-                                                onClick={() => copyMagicLink(invite.token)}
-                                              >
+                                              <Button variant="ghost" size="sm" onClick={() => copyMagicLink(invite.token)}>
                                                 <Copy className="w-4 h-4" />
                                               </Button>
-                                              <Button
-                                                variant="ghost"
-                                                size="sm"
-                                                onClick={() => window.open(`/webinar/${invite.token}`, '_blank')}
-                                              >
+                                              <Button variant="ghost" size="sm" onClick={() => window.open(`/webinar/${invite.token}`, "_blank")}>
                                                 <Eye className="w-4 h-4" />
                                               </Button>
-                                              <Button
-                                                variant="ghost"
-                                                size="sm"
-                                                onClick={() => deleteInvite(invite.id)}
-                                              >
+                                              <Button variant="ghost" size="sm" onClick={() => deleteInvite(invite.id)}>
                                                 <Trash2 className="w-4 h-4 text-destructive" />
                                               </Button>
                                             </div>
@@ -399,11 +319,7 @@ const WebinarAdmin = () => {
                               </div>
                             </DialogContent>
                           </Dialog>
-                          <Button
-                            variant="ghost"
-                            size="sm"
-                            onClick={() => deleteWebinar(webinar.id)}
-                          >
+                          <Button variant="ghost" size="sm" onClick={() => deleteWebinar(webinar.id)}>
                             <Trash2 className="w-4 h-4 text-destructive" />
                           </Button>
                         </div>
@@ -419,5 +335,11 @@ const WebinarAdmin = () => {
     </div>
   );
 };
+
+const WebinarAdmin = () => (
+  <AdminGate title="Webinar Admin">
+    {(session) => <WebinarAdminInner session={session} />}
+  </AdminGate>
+);
 
 export default WebinarAdmin;
