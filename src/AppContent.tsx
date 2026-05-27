@@ -75,6 +75,7 @@ const AppContent = () => (
             <Route path="/webinar/:token" element={<WebinarView />} />
             <Route path="/opleidingen-admin" element={<OpleidingenAdmin />} />
             <Route path="/inzendingen-admin" element={<SubmissionsAdmin />} />
+            <Route path="/gebruikers-admin" element={<GebruikersAdmin />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
