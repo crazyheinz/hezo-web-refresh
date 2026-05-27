@@ -169,6 +169,15 @@ serve(async (req) => {
     // Always save to database first - even if email fails
     const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
     const submissionType = rawData.type === "opleiding" ? "opleiding" : "contact";
+
+    // Cap length of optional opleiding fields to prevent unbounded storage
+    const opleidingNaam = rawData.opleidingNaam
+      ? String(rawData.opleidingNaam).slice(0, 500)
+      : null;
+    const opleidingDatum = rawData.opleidingDatum
+      ? String(rawData.opleidingDatum).slice(0, 100)
+      : null;
+
     const { data: submission, error: dbError } = await supabase
       .from("form_submissions")
       .insert({
@@ -177,8 +186,8 @@ serve(async (req) => {
         email: data.email,
         phone: data.phone || null,
         message: data.message,
-        opleiding_naam: rawData.opleidingNaam || null,
-        opleiding_datum: rawData.opleidingDatum || null,
+        opleiding_naam: opleidingNaam,
+        opleiding_datum: opleidingDatum,
         email_sent: false,
       })
       .select()
@@ -212,8 +221,8 @@ serve(async (req) => {
             <p><strong>Naam:</strong> ${safeName}</p>
             <p><strong>E-mail:</strong> <a href="mailto:${safeEmail}">${safeEmail}</a></p>
             <p><strong>Telefoon:</strong> ${safePhone || "Niet opgegeven"}</p>
-            ${rawData.opleidingNaam ? `<p><strong>Opleiding:</strong> ${escapeHtml(rawData.opleidingNaam)}</p>` : ""}
-            ${rawData.opleidingDatum ? `<p><strong>Datum:</strong> ${escapeHtml(rawData.opleidingDatum)}</p>` : ""}
+            ${opleidingNaam ? `<p><strong>Opleiding:</strong> ${escapeHtml(opleidingNaam)}</p>` : ""}
+            ${opleidingDatum ? `<p><strong>Datum:</strong> ${escapeHtml(opleidingDatum)}</p>` : ""}
             <h3>Bericht:</h3>
             <p>${safeMessage}</p>
             <hr />
@@ -255,11 +264,11 @@ serve(async (req) => {
           body: JSON.stringify({
             from: "Hezo <info@hezo.be>",
             to: [data.email],
-            subject: `Bevestiging aanvraag: ${escapeHtml(rawData.opleidingNaam || "")}`,
+            subject: `Bevestiging aanvraag: ${escapeHtml(opleidingNaam || "")}`,
             html: `
               <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
                 <h1 style="color: #1a365d;">Bedankt voor je aanvraag, ${safeName}!</h1>
-                <p>We hebben je aanvraag voor de opleiding <strong>${escapeHtml(rawData.opleidingNaam || "")}</strong> goed ontvangen.</p>
+                <p>We hebben je aanvraag voor de opleiding <strong>${escapeHtml(opleidingNaam || "")}</strong> goed ontvangen.</p>
                 <p style="background: #f7fafc; border-left: 4px solid #3182ce; padding: 12px 16px; margin: 20px 0;">
                   <strong>Belangrijk:</strong> Het invullen van dit formulier is nog geen definitieve inschrijving. 
                   Wij bekijken je aanvraag en bezorgen je zo snel mogelijk een bevestiging van inschrijving.
@@ -268,8 +277,8 @@ serve(async (req) => {
                 <ul style="list-style: none; padding: 0;">
                   <li><strong>Naam:</strong> ${safeName}</li>
                   <li><strong>E-mail:</strong> ${safeEmail}</li>
-                  <li><strong>Opleiding:</strong> ${escapeHtml(rawData.opleidingNaam || "")}</li>
-                  <li><strong>Datum:</strong> ${escapeHtml(rawData.opleidingDatum || "")}</li>
+                  <li><strong>Opleiding:</strong> ${escapeHtml(opleidingNaam || "")}</li>
+                  <li><strong>Datum:</strong> ${escapeHtml(opleidingDatum || "")}</li>
                 </ul>
                 <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 24px 0;" />
                 <p style="color: #718096; font-size: 14px;">
