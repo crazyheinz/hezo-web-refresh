@@ -322,7 +322,7 @@ export const vacatures: Vacature[] = [
     id: "praktijkcoach",
     title: "Praktijkcoach",
     tagline: "Word jij de motor achter sterke zelfstandige verpleegkundigen?",
-    active: true,
+    active: false,
     locality: "Gent",
     region: "Vlaanderen",
     metaTitle: "Vacature praktijkcoach thuisverpleging | Werken bij Hezo",
