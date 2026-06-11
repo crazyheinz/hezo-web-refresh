@@ -1,5 +1,6 @@
 import SEO from "@/components/SEO";
 import HeroSection from "@/components/home/HeroSection";
+import VerticalVideoSection from "@/components/home/VerticalVideoSection";
 import USPSection from "@/components/home/USPSection";
 import MissionSection from "@/components/home/MissionSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
@@ -91,6 +92,7 @@ const Home = () => {
         }}
       />
       <HeroSection />
+      <VerticalVideoSection />
       <USPSection />
       <MissionSection />
       <TestimonialsSection />
