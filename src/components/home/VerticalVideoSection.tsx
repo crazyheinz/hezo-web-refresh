@@ -123,7 +123,7 @@ const VerticalVideoSection = () => {
           </div>
 
           {/* Carousel */}
-          <div className="order-1 lg:order-2 flex justify-center">
+          <div className="order-1 lg:order-2 flex flex-col items-center">
             <Carousel
               setApi={setApi}
               opts={{
