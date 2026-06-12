@@ -9,12 +9,6 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const VIDEOS = [
   {
-    id: "Q-gvY42NchU",
-    title: "Hezo - meer patiënten, minder administratie",
-    description:
-      "Ontdek hoe Hezo zelfstandige thuisverpleegkundigen ondersteunt: meer patiënten, minder administratie.",
-  },
-  {
     id: "DUpwaM4uVqM",
     title: "Hezo - volledige autonomie voor thuisverpleegkundigen",
     description:
