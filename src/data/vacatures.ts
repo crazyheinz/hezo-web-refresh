@@ -72,7 +72,7 @@ export const vacatures: Vacature[] = [
     id: "zelfstandig-gent",
     title: "Zelfstandig thuisverpleegkundige - Gent",
     tagline: "Zorg met impact. Werk met vrijheid. Groei met ondersteuning.",
-    active: true,
+    active: false,
     locality: "Gent",
     region: "Gent",
     metaTitle: "Vacature zelfstandig thuisverpleegkundige Gent | Hezo",
